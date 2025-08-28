@@ -7,7 +7,7 @@
     "light": "#07C983",
     "dark": "#15803D"
   },,
-  "topbarCtaButton": {
+ "topbarCtaButton": {
     "name": "Chat with Support",
     "url": "/Additional_Resources/Chat_with_Support"
   },
@@ -19,7 +19,9 @@
         { "name": "Mapping Cloud to Desktop", "href": "/Getting_Started/Mapping_Cloud_to_Desktop_T.htm" },
         { "name": "Minimum System Requirements", "href": "/Getting_Started/Minimum_System_Requirements.htm" },
         { "name": "PLEXOS Cloud Workspace", "href": "/Getting_Started/PLEXOS_Cloud_Workspace.htm" },
-        { "name": "Preferences Page", "href": "/Getting_Started/Preferences_Page.htm" },
+        { "name": "Preferences Page", "href": "/Getting_Started/Preferences_Page.htm" }
+      ],
+      "groups": [
         {
           "group": "Configuration",
           "pages": [
@@ -45,109 +47,6 @@
         { "name": "Update Your Password", "href": "/Admin/Update_Your_Password.htm" },
         { "name": "Usage Page", "href": "/Admin/Usage_Page.htm" },
         { "name": "User Management", "href": "/Admin/User_Management.htm" }
-      ]
-    },
-    {
-      "group": "CLI",
-      "pages": [
-        { "name": "CLI Automation", "href": "/CLI/CLI_Automation_document.htm" },
-        { "name": "CLI Toolkit", "href": "/CLI/CLI_Toolkit.htm" },
-        { "name": "PLEXOS Cloud Python SDK", "href": "/CLI/PLEXOS_Cloud_Python_SDK.htm" },
-        { "name": "Parquet V2 Overview", "href": "/CLI/Parquet_V2_Overview.htm" }
-      ]
-    },
-    {
-      "group": "Cloud Integration with PLEXOS Desktop",
-      "pages": [
-        { "name": "Integration Guide", "href": "/Cloud_Integration_with_PLEXOS_Desktop/PLEXOS_Cloud_Integration_with_PLEXOS_Desktop.htm" }
-      ]
-    },
-    {
-      "group": "Data",
-      "pages": [
-        { "name": "Data Overview", "href": "/Data/Data_Overview.htm" },
-        { "name": "Downloading & Uploading Data", "href": "/Data/Downloading_and_Uploading.htm" },
-        { "name": "Editing Polygons & Components", "href": "/Data/Editing_Polygons_and_Components.htm" },
-        { "name": "Geocoding Object in PLEXOS", "href": "/Data/Geocoding_Object_in_PLEXOS.htm" },
-        { "name": "Make Changes to an Input", "href": "/Data/Make_Changes_to_an_Input_D.htm" },
-        { "name": "Managing Study Version", "href": "/Data/Managing_Study_Version_in_P.htm" },
-        { "name": "Map Settings", "href": "/Data/Map_Settings.htm" },
-        { "name": "Microsoft Excel Add-In", "href": "/Data/Microsoft_Excel_Add-In.htm" },
-        { "name": "Output Data Grid Page", "href": "/Data/Output_Data_Grid_Page.htm" },
-        { "name": "Understanding the Setup Tab", "href": "/Data/Understanding_the_Setup_Tab.htm" },
-        { "name": "Version Management in PLEXOS", "href": "/Data/Version_Management_in_PLEXOS.htm" },
-        { "name": "Viewing the Chart Analysis", "href": "/Data/Viewing_the_Chart_Analysis_D.htm" }
-      ]
-    },
-    {
-      "group": "Datahub",
-      "pages": [
-        { "name": "Datahub Overview", "href": "/Datahub/Datahub_Overview.htm" }
-      ]
-    },
-    {
-      "group": "Marketplace",
-      "pages": [
-        { "name": "FAQs", "href": "/Marketplace/Frequently_Asked_Questions.htm" },
-        { "name": "Marketplace Overview", "href": "/Marketplace/Marketplace_Overview.htm" },
-        { "name": "PLEXOS Cloud Marketplace", "href": "/Marketplace/PLEXOS_Cloud_Marketplace.htm" },
-        { "name": "Publishing Playbooks", "href": "/Marketplace/Publishing_Playbooks_to_the.htm" },
-        { "name": "Publishing Reports", "href": "/Marketplace/Publishing_Reports_to_the_Marketplace.htm" }
-      ]
-    },
-    {
-      "group": "Models",
-      "pages": [
-        { "name": "Distributed (Monte Carlo) Chronology", "href": "/Models/Distributed_(Monte_Carlo_Chronology).htm" },
-        { "name": "Models Overview", "href": "/Models/Models_overview.htm" },
-        { "name": "Object Editing in PLEXOS Cloud", "href": "/Models/Object_Editing_in_PLEXOS_Cloud.htm" },
-        { "name": "Run Configuration Panel", "href": "/Models/Run_Configuration_Panel.htm" }
-      ]
-    },
-    {
-      "group": "PLEXOS Intelligence",
-      "pages": [
-        { "name": "Overview", "href": "/PLEXOS_Intelligence/Plexos_Intelligence_Overview.htm" },
-        { "name": "PLEXOS Intelligence", "href": "/PLEXOS_Intelligence/PLEXOS_Intelligence.htm" },
-        { "name": "AI Policy", "href": "/PLEXOS_Intelligence/PLEXOS_Intelligence_AI_Policy.htm" },
-        { "name": "Example Prompts", "href": "/PLEXOS_Intelligence/Example_Prompts_for_PLEXOS.htm" }
-      ]
-    },
-    {
-      "group": "Reports",
-      "pages": [
-        { "name": "Analyze Monthly PLEXOS Cloud", "href": "/Reports/Analyze_Monthly_PLEXOS_Cloud.htm" },
-        { "name": "BI Solution Comparison", "href": "/Reports/BI_Solution_Comparison.htm" },
-        { "name": "Executive View", "href": "/Reports/Executive_View_in_PLEXOS_Cloud.htm" },
-        { "name": "How BI Analytics Dashboard Works", "href": "/Reports/How_BI_Analytics_Dashboard.htm" },
-        { "name": "Integrated Resource Planning", "href": "/Reports/Integrated_Resource_Planning.htm" },
-        { "name": "Solution Reports in PLEXOS Cloud", "href": "/Reports/Solution_Reports_in_PLEXOS_Cloud.htm" },
-        { "name": "Support for Secondary Y-axis", "href": "/Reports/Support_For_Secondary_Y_axis.htm" }
-      ]
-    },
-    {
-      "group": "Simulation Analytics",
-      "pages": [
-        { "name": "Simulation Analytics", "href": "/Simulation_Analytics/Simulation_Analytics.htm" }
-      ]
-    },
-    {
-      "group": "Simulations",
-      "pages": [
-        { "name": "Simulations Overview", "href": "/Simulations/Simulations_Overview.htm" },
-        { "name": "Credit Calculation Method", "href": "/Simulations/Credit_Calculation_Method.htm" },
-        { "name": "Credit Refund Policy", "href": "/Simulations/Credit_Refund_Policy.htm" },
-        { "name": "Manage Study-Level Simulations", "href": "/Simulations/Manage_Study_Level_Simulation.htm" },
-        { "name": "Pre- & Post-Simulation Tasks", "href": "/Simulations/Pre-_and_Post-Simulation_Tasks.htm" },
-        { "name": "Simulation Groups", "href": "/Simulations/Simulation_Groups.htm" },
-        { "name": "Simulation Management", "href": "/Simulations/Simulation_Management.htm" },
-        { "name": "Simulation Monitoring Dashboard", "href": "/Simulations/Simulation_Monitoring_Dashboard.htm" }
-      ]
-    },
-    {
-      "group": "Additional Resources",
-      "pages": [
-        { "name": "Chat with Support", "href": "/Additional_Resources/Chat_with_Support" }
       ]
     }
   ],
