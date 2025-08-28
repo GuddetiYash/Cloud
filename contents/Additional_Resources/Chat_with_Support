@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Chat with Support</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h6>Chat with Support</h6>
+  <p>Table of Contents</p>
+  <ul class="Disc">
+    <li><a href="#1">Overview</a></li>
+    <li><a href="#2">Key Benefits</a></li>
+    <li><a href="#3">How to initiate a Chat Request</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="1">Overview</h2>
+  <p>The <strong>Chat with Support</strong> feature provides users with a seamless and immediate connection to Energy Exemplar&#39;s live Support Analysts for immediate or non-immediate issues within the PLEXOS Cloud Interface. This feature aims to enhance the user experience by offering an additional channel for users to receive immediate help when needed while navigating within the PLEXOS Cloud interface. </p>
+  <p> </p>
+  <p>Users can utilize the Chat with Support icon, available at the bottom-right of the PLEXOS Cloud interface, to connect with Energy Exemplar&#39;s Support Analysts and obtain answers to their questions or resolve their issues through a real-time interactive live Chat session. </p>
+  <p><img height="352" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Chat with Support/Overview.png" width="708" /></p>
+  <p>The Chat with Support icon is visible to users only when Energy Exemplar Support Analysts are online. If all Support Analysts are offline or busy, users will not be able to view the Chat with Support icon in the user interface. Our Support Analysts are available for 24x5 working days during global business hours. However, during weekends, the Chat with Support icon will not be visible in the User interface. </p>
+  <p><br />
+    If the Analyst determines that the issue is more complex or requires further investigation, the chat session will conclude with the creation and submission of a case via Energy Exemplar’s Standard Ticketing Process.</p>
+  <hr />
+  <h2 id="2">Key Benefits </h2>
+  <p>The Chat with Support feature offers the following benefits for users. </p>
+  <ul class="Disc">
+    <li><strong>Real-Time Assistance:</strong> Instant access to live Support Analysts facilitates quick resolutions of queries and issues without the need for lengthy wait times. </li>
+    <br />
+    <li><strong>Enhanced User Experience: </strong>The Chat feature enriches the user experience by offering a convenient avenue for obtaining help directly within the PLEXOS Cloud interface. </li>
+    <br />
+    <li><strong>Efficient reporting and Access:</strong> Users can efficiently address and resolve common issues or inquiries, streamlining their workflow and maximizing productivity. </li>
+    <br />
+    <li><strong>Personalized Touch:</strong> Provides a personalized touch of human interaction, allowing users to receive immediate help when they need it. </li>
+  </ul>
+  <hr />
+  <h2 id="3">How to initiate a Chat Request </h2>
+  <p>Follow the steps below to access the Chat with Support feature:</p>
+  <ol class="Decimal">
+    <li>Log in to your PLEXOS Cloud environment. </li>
+    <li>Click on the <strong>Chat with Support</strong> icon located at the bottom-right of the PLEXOS Cloud interface. <br />
+      <img height="335" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Chat with Support/Click on the Logo.png" width="661" />
+    </li>
+    <br />
+    <li>The system will autofill your contact details. Enter the <strong>Subject</strong> name for your Chat request. <br />
+      <img height="335" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Chat with Support/Enter Subject.png" width="661" />
+    </li>
+    <br />
+    <li>Click on the <strong>START CHAT </strong>button to initiate a Chat request. <br />
+      <img height="335" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Chat with Support/Click on the Start Chat.png" width="661" />
+    </li>
+    <br />
+    <li>
+      <p>Once you click on the <strong>START CHAT</strong> button, you will either be given the Queue number if all our Support Analysts are busy, or you will enter the conversation with our available Support Analyst, where you can begin the conversation to receive assistance for your queries. Upon initiating the Chat request, for each Chat request, the system automatically creates a support ticket, and you will be notified with the ticket number via email. <br />
+        Example of the waiting queue:<br />
+        <img height="335" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Chat with Support/Queue Number.png" width="661" /><br />
+        <br />
+        Example of the Conversation:<br />
+        <img height="513" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Chat with Support/Example.gif" width="449" />
+      </p>
+    </li>
+    <br />
+    <li>
+      <p>You can also transfer files or screenshots to assist with your query. The file transfer icon will only be visible once our Support Analysts request a file. To transfer any file, you can ask our Support Analysts to grant file access. Upon enabling, you will see the file transfer option and can transfer files up to 5 MB. <br />
+        <img height="330" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Chat with Support/File Transfer Requested.png" width="658" />
+      </p>
+    </li>
+    <br />
+    <li>
+      <p>Use the <strong>Minimize </strong>icon on the Chat box to minimize the ongoing chat, and if there is a new message, you will see a message notification on the Chat box.  <br />
+        Message Notification: <br />
+        <img height="330" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Chat with Support/Message Notification.png" width="658" />
+      </p>
+    </li>
+    <br />
+    <li>
+      <p>Upon conclusion of your query, either you or our Support Analysts can close the Chat. To end the ongoing Chat from your side, click on the Close icon in the Chat box to end the Chat. <br />
+        For example: <br />
+        <img height="330" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Chat with Support/Close Chat.gif" width="658" />
+      </p>
+    </li>
+  </ol>
+  <p> </p>
+</body>
+</html>
