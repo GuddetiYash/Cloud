@@ -1,0 +1,1211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>PLEXOS Cloud Python SDK</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body onload="displayLastModifiedDate()">
+  <p style="color: white; font-size:10px; text-align: right;">Last updated on: <span data-field="date" data-format="MMMM DD, YYYY" style="color: white; font-size: 10px;">June 13, 2025</span></p>
+  <h1>PLEXOS Cloud Python SDK</h1>
+  <h2>In this article</h2>
+  <ul>
+    <li><a href="#1">Installation </a></li>
+    <li><a href="#2">Instantiation </a></li>
+    <li><a href="#3">Authentication Commands </a></li>
+    <li><a href="#4">Context Commands </a></li>
+    <li><a href="#5">Environmental Commands </a></li>
+    <li><a href="#6">Insights Commands </a></li>
+    <li><a href="#7">Log Commands </a></li>
+    <li><a href="#8">Simulation Commands </a></li>
+    <li><a href="#9">Solution Commands </a></li>
+    <li><a href="#10">Study Commands </a></li>
+    <li><a href="#11">Upgrade Commands </a></li>
+  </ul>
+  <p> </p>
+  <p>The Energy Exemplar&#39;s PLEXOS Cloud Python SDK is a convenient wrapper for the .NET PLEXOS Cloud CLI tool, directly mapping its features. Its primary purpose is to streamline the automation of tasks in Python by harnessing the capabilities of the PLEXOS Cloud CLI. This design aims to expedite development processes by providing an efficient interface for Python developers to leverage the functionality of PLEXOS Cloud CLI.</p>
+  <p> </p>
+  <h2 id="1">Installation</h2>
+  <h3>Windows Platform</h3>
+  <p>To install the<strong> Python SDK Cloud Toolkit </strong>for Windows:</p>
+  <p> </p>
+  <p>1.  Open PLEXOS Cloud and click on the <strong>Marketplace</strong> icon in the top-right corner of the screen. It will redirect you to the Marketplace page, where you can switch to the <strong>Tools</strong> tab to view and download the <strong>Python SDK Cloud Toolkit</strong>.</p>
+  <p> </p>
+  <p><img height="207" src="../assets/images/Python SDK/Download Python SDK Cloud Toolkit_Tools page.png" width="443" /></p>
+  <p> </p>
+  <p>2.  After the installer downloads, navigate to your Downloads &gt; unzip the <strong>PythonCloudSDK.zip</strong> folder &gt; extract the<strong> .wh</strong>l file.</p>
+  <p> </p>
+  <p><img height="137" src="../assets/images/Python SDK/Unzip and extract Python SDK folder.png" width="638" /></p>
+  <p> </p>
+  <p>3.  Open the Command Prompt (cmd) on your system, and execute the command shown below to install the .whl file:</p>
+  <p>     <strong>pip install &lt;name of the unziped file&gt;.whl<br />
+      <br />
+      <img height="137" src="../assets/images/Python SDK/Command to Install whl using cmd.png" width="638" /></strong><br />
+     </p>
+  <p>4.  The Pyhton SDK Cloud Toolkit will get installed on your system and you can start using it.</p>
+  <p> </p>
+  <p><strong>NOTE:</strong> Please ensure that the version number of the Command Line Interface (CLI) matches the version of the corresponding SDK .whl file. Whenever a new version of the CLI is installed, it is advised to install the corresponding SDK whl file to maintain compatibility.</p>
+  <p> </p>
+  <h3>Linux Platform</h3>
+  <p><strong>NOTE: </strong>PLEXOS DESKTOP and PLEXOS API are not supported on the Linux platform.</p>
+  <p><br />
+    Download the <strong>PLEXOS Cloud Toolkit (Linux)</strong> from the <strong>Marketplace &gt; Tools</strong> page in PLEXOS Cloud. It comes as an MSI installer and can be easily installed with a button click. After installation, find the default location of the installed file at <strong>%APPDATA%/local/programs/PLEXOS Cloud/</strong>.<br />
+     </p>
+  <p><img height="160" src="../assets/images/Python SDK/Download CLI Linux.png" width="353" /></p>
+  <p> </p>
+  <h4>Linux Platform Library Install</h4>
+  <p>The Linux Platform Library Install will download as a zip folder. You can unzip it into your preferred location. This chosen folder serves as the installation directory on the Linux platform. Before using the PLEXOS Cloud executable, make sure to Run the specified commands.</p>
+  <p> </p>
+  <p>| Libraries Install | apt-get update -y -q | | | apt-get install -y -q libc6-dev | | | apt-get install -y -q libsqlite3-dev | | | apt-get install -y -q libsqlite3-mod-spatialite |<br />
+     </p>
+  <h3>Cloud Toolkit Logs</h3>
+  <p> </p>
+  <h3>PLEXOS Cloud SDK</h3>
+  <p> </p>
+  <h3 id="2">Instantiation</h3>
+  <p><strong>Default Windows CLI</strong></p>
+  <p> </p>
+  <p> </p>
+  <p><strong>from eecloud.cloudsdk import CloudSDK<br />
+      from eecloud.models import *<br />
+      dotnet_exe_cli_path = &quot;C:\\Users\\john.doe\\AppData\\Local\\Programs\\PLEXOS.Cloud\\plexos-cloud.exe&quot;<br />
+      pxc = CloudSDK()</strong></p>
+  <p> </p>
+  <p> </p>
+  <p><strong>Specific CLI or Linux</strong></p>
+  <p> </p>
+  <p><strong>from eecloud.cloudsdk import CloudSDK<br />
+      from eecloud.models import *<br />
+      dotnet_exe_cli_path = &quot;/dbfs/mnt/preprod_adhoc/john/CloudCLI-Linux-x64/plexos-cloud&quot;<br />
+      pxc = CloudSDK(&quot;&lt;OS specific path to the CLI executable&gt;&quot;)</strong></p>
+  <hr />
+  <h2>Authentication Commands</h2>
+  <h3>Authentication Login (Windows)</h3>
+  <p>Use the command below to log in to PLEXOS Cloud using SSO (Windows only).</p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python">
+<span style="color:#56b6c2;">login</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_LoginResponse]</span>]
+pxc.auth.login(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+  </code>
+</pre>
+  </div>
+  <h3>Authentication Login (Service Principal)</h3>
+  <p>Use the command below to log in to PLEXOS Cloud using Service Principal.</p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">login_client_credentials</span>(<span style="color:#dcdcaa;">use_client_credentials</span>: <span style="color:#c586c0;">bool</span>, <span style="color:#dcdcaa;">client_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">client_secret</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">
+</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_LoginResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.auth.login_client_credentials(<span style="color:#dcdcaa;">use_client_credentials</span>=<span style="color:#d19a66;">True</span>, <span style="color:#dcdcaa;">client_id</span>=<span style="color:#ce9178;">&quot;xzy&quot;</span>, 
+<span style="color:#dcdcaa;">client_secret</span>=<span style="color:#ce9178;">&quot;xyz&quot;</span>, 
+<span style="color:#dcdcaa;">tenant_id</span>=<span style="color:#ce9178;">&quot;xzy&quot;</span>, <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_LoginResponse] = pxc.auth.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_LoginResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.IsLoggedIn)
+  </code>
+</pre>
+  </div>
+  <h3>Authentication Logout</h3>
+  <p>Use the command below to log out the current user and clear cached credentials.</p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">logout</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_LoggedOutResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.auth.logout(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_LoggedOutResponse] = 
+pxc.auth.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_LoggedOutResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.IsLoggedOut)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Authentication Status</h3>
+  <p>Use the command below to print the authorization environment summary.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">check_authentication_status</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_CheckAuthenticationStatusResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.auth.check_authentication_status(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_CheckAuthenticationStatusResponse] = 
+pxc.auth.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_CheckAuthenticationStatusResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.IsAuthenticated)
+  </code></pre>
+  </div>
+  <hr />
+  <h2 id="4">Context Commands</h2>
+  <h3>Context Clear</h3>
+  <p>Use the command below to clear out the current user’s context.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">clear_user_context</span>(<span style="color:#dcdcaa;">simulation_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">execution_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">solution_id</span>: <span style="color:#c586c0;">str</span> = 
+<span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_UserContextResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.context.clear_user_context(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_success_response</span>: <span style="color:#c586c0;">bool</span> = pxc.context.parse_command_success(command_responses)
+<span style="color:#569cd6;">print</span>(last_command_success_response)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3><br />
+    Context Get</h3>
+  <p>Use the command below to view the current user’s context.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">get_user_context</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_UserContextResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.context.get_user_context(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_UserContextResponse] = 
+pxc.context.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_UserContextResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Context)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Context Set</h3>
+  <p>Use the command below to set the current user’s context.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">set_user_context</span>(<span style="color:#dcdcaa;">simulation_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">execution_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">solution_id</span>: <span style="color:#c586c0;">str</span> = 
+<span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_UserContextResponse]</span>]
+<span style="color:#dcdcaa;">simulation_id</span> = <span style="color:#ce9178;">&quot;c5239ab2-d1f2-4e6b-b97e-7972f36bd44e&quot;</span>
+<span style="color:#dcdcaa;">execution_id</span> = <span style="color:#ce9178;">&quot;33463777-93c9-47cb-95b9-01728848f784&quot;</span>
+<span style="color:#dcdcaa;">study_id</span> = <span style="color:#ce9178;">&quot;b1669658-44d9-44c9-8b1f-73774f6d39bc&quot;</span>
+<span style="color:#dcdcaa;">solution_id</span> = <span style="color:#ce9178;">&quot;a00f1d74-41dd-413d-ae8e-96ff8d17cdb7&quot;</span>
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.context.set_user_context(simulation_id, execution_id, study_id, solution_id, 
+<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_UserContextResponse] = 
+pxc.context.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_UserContextResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Context)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Context Release-locks</h3>
+  <p>Use the command below to release any resource locks that a previous instance may have left due to an error.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">context_release_locks</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ContextReleaseLocksResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.context.context_release_locks(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ContextReleaseLocksResponse] = 
+pxc.context.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ContextReleaseLocksResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <hr />
+  <h2 id="5">Environmental Commands</h2>
+  <h3>Environment generate-web-link</h3>
+  <p>Use the command below to generate a PLEXOS Cloud Web URL to view in a browser.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;"> 
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">generate_web_link</span>(<span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">model_name</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">simulation_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">parameters</span>: 
+<span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, 
+<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_GenerateWebLinkUrlResponse]</span>]
+<span style="color:#dcdcaa;">study_id</span> = <span style="color:#ce9178;">&quot;b1669658-44d9-44c9-8b1f-73774f6d39bc&quot;</span>
+<span style="color:#dcdcaa;">model_name</span> = <span style="color:#ce9178;">&quot;test model&quot;</span>,
+<span style="color:#dcdcaa;">simulation_id</span> = <span style="color:#ce9178;">&quot;c5239ab2-d1f2-4e6b-b97e-7972f36bd44e&quot;</span>
+<span style="color:#dcdcaa;">parameters</span> = <span style="color:#ce9178;">&quot;param1&quot;</span>
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.environment.generate_web_link(<span style="color:#dcdcaa;">study_id</span>=study_id, <span style="color:#dcdcaa;">model_name</span>=model_name, 
+<span style="color:#dcdcaa;">simulation_id</span>=simulation_id, <span style="color:#dcdcaa;">parameters</span>=parameters, <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_GenerateWebLinkUrlResponse] = 
+pxc.environment.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_GenerateWebLinkUrlResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.CloudWebUrl)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Environment Get</h3>
+  <p>Use the command below to view the user&#39;s currently configured Cloud environment.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">get_user_environment</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_EnvironmentResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.environment.get_user_environment(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_EnvironmentResponse] = 
+pxc.environment.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_EnvironmentResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Environment)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Environment List Users</h3>
+  <p>Use the command below to get user details for the tenant.</p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_environment_users</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListEnvironmentUsersResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.environment.list_environment_users(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListEnvironmentUsersResponse] = 
+pxc.environment.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListEnvironmentUsersResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Users)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Environment Logging Path</h3>
+  <p>Use the command below to view the folder path, where Log Files are saved.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">show_log_file_path</span>(<span style="color:#dcdcaa;">todays_file</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ShowLogFileResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.environment.show_log_file_path(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ShowLogFileResponse] = 
+pxc.environment.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ShowLogFileResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.LoggingPath)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Environment Set</h3>
+  <p>Use the command below to set the current configured Cloud environment.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">set_user_environment</span>(<span style="color:#dcdcaa;">environment</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_EnvironmentResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.environment.set_user_environment(<span style="color:#ce9178;">&#39;EMEA&#39;</span>, <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response_success</span>: <span style="color:#c586c0;">bool</span> = 
+pxc.environment.parse_command_success(command_responses)
+<span style="color:#569cd6;">print</span>(last_command_response_success)
+  </code></pre>
+  </div>
+  <hr />
+  <h2 id="6">Insights Commands</h2>
+  <h3>Insights get-machine-recommendation</h3>
+  <p>Use the command below to get machine recommendations for a group of Models.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">get_recommendation_for_model</span>(<span style="color:#dcdcaa;">changeset_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">model_names</span>: <span style="color:#c586c0;">list</span>[<span style="color:#c586c0;">str</span>], 
+<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_MachineRecommendationResponse]</span>]
+<span style="color:#dcdcaa;">changeset_id</span> = <span style="color:#ce9178;">&quot;05b85972-4287-4aca-8949-5c3d78a17d32&quot;</span>
+<span style="color:#dcdcaa;">study_id</span> = <span style="color:#ce9178;">&quot;1908bcdb-1c68-4333-b836-1260b2e754cf&quot;</span>
+<span style="color:#dcdcaa;">model_names</span> = [<span style="color:#ce9178;">&quot;model1&quot;</span>, <span style="color:#ce9178;">&quot;model2&quot;</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.insights.get_recommendation_for_model(<span style="color:#dcdcaa;">changeset_id</span>=changeset_id, 
+<span style="color:#dcdcaa;">study_id</span>=study_id, <span style="color:#dcdcaa;">model_names</span>=model_names, <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_MachineRecommendationResponse] = 
+pxc.environment.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_MachineRecommendationResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.MachineRecommendationRecords)
+  </code></pre>
+  </div>
+  <hr />
+  <h2 id="7">Log Commands</h2>
+  <h3>Log Parse</h3>
+  <p>Use the command below to Parse the Simulation Logs.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">parse_log</span>(<span style="color:#dcdcaa;">log_file_path</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">system_object_name</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">user_locale</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ParseLogResponse]</span>]
+<span style="color:#dcdcaa;">log_file_path</span> = <span style="color:#ce9178;">&quot;C:\\Temp\\log.txt&quot;</span>
+<span style="color:#dcdcaa;">system_object_name</span> = <span style="color:#ce9178;">&quot;System&quot;</span>
+<span style="color:#dcdcaa;">user_locale</span> = <span style="color:#ce9178;">&quot;en-US&quot;</span>
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.log.parse_log(<span style="color:#dcdcaa;">log_file_path</span>=log_file_path, 
+<span style="color:#dcdcaa;">system_object_name</span>=system_object_name, <span style="color:#dcdcaa;">user_locale</span>=user_locale, <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ParseLogResponse] = 
+pxc.environment.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ParseLogResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.logStepDataList)
+  </code></pre>
+  </div>
+  <hr />
+  <h2 id="8">Simulation Commands</h2>
+  <h3>Simulation Build Request from Previous</h3>
+  <p>Use the command below to build a request based on the Simulation, Run previously.</p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">build_simulation_request_from_id</span>(<span style="color:#dcdcaa;">simulation_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">output_directory</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">file_name</span>: 
+<span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">overwrite</span>: <span style="color:#c586c0;">bool</span>, <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">changeset_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">model_name</span>: <span style="color:#c586c0;">str</span> = 
+<span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">requested_cpu_cores</span>: <span style="color:#c586c0;">int</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">requested_memory</span>: <span style="color:#c586c0;">float</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_BuildSimulationRequestFromIdResponse]</span>]
+<span style="color:#dcdcaa;">simulation_id</span> = <span style="color:#ce9178;">&quot;318f850a-627f-4d12-a38a-a36d86766f98&quot;</span>
+<span style="color:#dcdcaa;">output_directory</span> = <span style="color:#ce9178;">&quot;C:\\Temp&quot;</span>
+<span style="color:#dcdcaa;">file_name</span> = <span style="color:#ce9178;">&quot;xyz.txt&quot;</span>
+<span style="color:#dcdcaa;">study_id</span> = <span style="color:#ce9178;">&quot;4df93461-ec70-48e8-bfea-31d24fb4fb93&quot;</span>
+<span style="color:#dcdcaa;">changeset_id</span> = <span style="color:#ce9178;">&quot;723c97d8-5ad3-4557-9d08-6ca9f15f5748&quot;</span>
+<span style="color:#dcdcaa;">model_name</span> = <span style="color:#ce9178;">&quot;model1&quot;</span>
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.simulation.build_simulation_request_from_id(
+    <span style="color:#dcdcaa;">simulation_id</span>=simulation_id,
+    <span style="color:#dcdcaa;">output_directory</span>=output_directory,
+    <span style="color:#dcdcaa;">file_name</span>=file_name,
+    <span style="color:#dcdcaa;">overwrite</span>=<span style="color:#d19a66;">True</span>,
+    <span style="color:#dcdcaa;">study_id</span>=study_id,
+    <span style="color:#dcdcaa;">changeset_id</span>=changeset_id,
+    <span style="color:#dcdcaa;">model_name</span>=model_name,
+    <span style="color:#dcdcaa;">requested_cpu_cores</span>=<span style="color:#d19a66;">4</span>,
+    <span style="color:#dcdcaa;">requested_memory</span>=<span style="color:#d19a66;">2.5</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_BuildSimulationRequestFromIdResponse] = 
+pxc.environment.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_BuildSimulationRequestFromIdResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <h3>Simulation Cancel</h3>
+  <p>Use the command below to cancel the Simulation request.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">cancel_simulation</span>(<span style="color:#dcdcaa;">simulation_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_CancelSimulationResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.simulation.cancel_simulation(<span style="color:#dcdcaa;">simulation_id</span>=<span style="color:#ce9178;">&quot;3fc7a58f-14c6-45dc-a6fd-df8f744e5726&quot;</span>,
+<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_CancelSimulationResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_CancelSimulationResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.SimulationCancellationStatus.value)
+  </code></pre>
+  </div>
+  <h3>Simulation Capability List</h3>
+  <p>Use the command below to view the list of capabilities associated with the Simulation.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_simulation_pool_capability</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListSimulationPoolCapabilityResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.simulation.list_simulation_pool_capability(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListSimulationPoolCapabilityResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListSimulationPoolCapabilityResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.SimulationPoolCapabilities)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Simulation Engine List</h3>
+  <p>Use the command below to view the list of engines.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_simulation_engines</span>(<span style="color:#dcdcaa;">optimization_engine_type</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListSimulationEngineResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.simulation.list_simulation_engines(<span style="color:#dcdcaa;">optimization_engine_type</span>=<span style="color:#ce9178;">&quot;EngineType1&quot;</span>, 
+<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListSimulationEngineResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListSimulationEngineResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.SimulationEngines)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Simulation Enqueue</h3>
+  <p>Use the command below to enqueue a new Simulation request.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">enqueue_simulation</span>(<span style="color:#dcdcaa;">file_name</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_EnqueueSimulationResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.simulation.enqueue_simulation(<span style="color:#dcdcaa;">file_name</span>=<span style="color:#ce9178;">&quot;C:\\Temp\\test.json&quot;</span>, <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_EnqueueSimulationResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_EnqueueSimulationResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Simulation List</h3>
+  <p>Use the command below to view the list of Simulations.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_simulations</span>(
+    <span style="color:#dcdcaa;">simulation_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">execution_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">changeset_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">order_by</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">descending</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">top</span>: <span style="color:#c586c0;">int</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">skip</span>: <span style="color:#c586c0;">int</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">raw</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListSimulationResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.simulation.list_simulations(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListSimulationResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListSimulationResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.SimulationRecords)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Simulation Progress</h3>
+  <p>Use the command below to check the progress of the Simulation.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">check_simulation_progress</span>(<span style="color:#dcdcaa;">simulation_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">l
+ist</span>[<span style="color:#ffffff;">CommandResponse[Contracts_CheckSimulationProgressResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.simulation.check_simulation_progress(<span style="color:#dcdcaa;">simulation_id</span>=<span style="color:#ce9178;">&quot;4146b499-1425-4aef-b336-9bda14596ff3&quot;</span>, 
+<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_CheckSimulationProgressResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_CheckSimulationProgressResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Simulation Run-Group</h3>
+  <p>Use the command below to Run the Group of Simulation at once.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">run_simulation_group</span>(<span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">simulation_group_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_RunSimulationGroupResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.simulation.run_simulation_group(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;04d24765-c257-44ae-bcc9-fbdba2cb895b&quot;</span>,
+    <span style="color:#dcdcaa;">simulation_group_id</span>=<span style="color:#ce9178;">&quot;4d4100c2-54a4-44e2-a22d-b3ea2d7742fd&quot;</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)<span style="color:#d19a66;"></span>
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_RunSimulationGroupResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_RunSimulationGroupResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.data)
+  </code></pre>
+  </div>
+  <hr />
+  <h2 id="9">Solution Commands</h2>
+  <h3>Solution convert hybrid-to-parquet</h3>
+  <p>Use the command below to convert the PLEXOS Cloud Hybrid (sqlite + parquet) database format to the full parquet database structure.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">&gt;<span style="color: rgb(86, 182, 194);">convert_hybrid_to_parquet</span>(
+    <pre style="margin: 0;"><code class="language-python">    <span style="color:#dcdcaa;">sql_lite_path</span>: <span style="color:#c586c0;">str</span>,
+    <span style="color:#dcdcaa;">parquet_directory</span>: <span style="color:#c586c0;">str</span>,
+    <span style="color:#dcdcaa;">output_directory</span>: <span style="color:#c586c0;">str</span>,
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span>=<span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ConvertHybridToParquetResponse]</span>]
+<span style="color:#dcdcaa;">sql_lite_path</span> = <span style="color:#ce9178;">&quot;/Temp/db1.db&quot;</span>
+<span style="color:#dcdcaa;">parquet_directory</span> = <span style="color:#ce9178;">&quot;/Temp/parquet files&quot;</span>
+<span style="color:#dcdcaa;">output_directory</span> = <span style="color:#ce9178;">&quot;/Temp/output&quot;</span>
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.solution.convert_hybrid_to_parquet(
+    <span style="color:#dcdcaa;">sql_lite_path</span>=sql_lite_path,
+    <span style="color:#dcdcaa;">parquet_directory</span>=parquet_directory,
+    <span style="color:#dcdcaa;">output_directory</span>=output_directory,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)<span style="color:#d19a66;"></span>
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ConvertHybridToParquetResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ConvertHybridToParquetResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.response)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Solution convert zip-to-hybrid</h3>
+  <p>Use the command below to convert the PLEXOS zip output database to a hybrid format of sqlite with parquet data.</p>
+  <p> </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">&gt;
+    <pre style="margin: 0;"><code class="language-python">
+<span style="color:#56b6c2;">convert_raw_zip_to_hybrid</span>(
+    <span style="color:#dcdcaa;">zip_path</span>: <span style="color:#c586c0;">str</span>,
+    <span style="color:#dcdcaa;">output_directory</span>: <span style="color:#c586c0;">str</span>,
+    <span style="color:#dcdcaa;">schema_version</span>: <span style="color:#c586c0;">int</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ConvertRawZipToHybridResponse]</span>]
+<span style="color:#dcdcaa;">zip_path</span> = <span style="color:#ce9178;">&quot;/temp/zipfile.zip&quot;</span>
+<span style="color:#dcdcaa;">output_directory</span> = <span style="color:#ce9178;">&quot;/temp/output&quot;</span>
+<span style="color:#dcdcaa;">schema_version</span> = <span style="color:#d19a66;">1</span>
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.solution.convert_raw_zip_to_hybrid(
+    <span style="color:#dcdcaa;">zip_path</span>=zip_path,
+    <span style="color:#dcdcaa;">output_directory</span>=output_directory,
+    <span style="color:#dcdcaa;">schema_version</span>=schema_version,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)<span style="color:#d19a66;"></span>
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ConvertRawZipToHybridResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ConvertRawZipToHybridResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.response)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Solution convert zip-to-parquet</h3>
+  <p>Use the command below to convert PLEXOS zip output database to a parquet format.</p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">convert_raw_zip_to_parquet</span>(<span style="color:#dcdcaa;">zip_path</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">output_directory</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">parquet_schema_version</span>: <span style="color:#c586c0;">int</span> = 
+<span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ConvertRawZipToParquetResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.solution.convert_raw_zip_to_parquet(
+    <span style="color:#dcdcaa;">zip_path</span>=<span style="color:#ce9178;">&quot;&quot;</span>,
+    <span style="color:#dcdcaa;">output_directory</span>=<span style="color:#ce9178;">&quot;&quot;</span>,
+    <span style="color:#dcdcaa;">parquet_schema_version</span>=<span style="color:#d19a66;">1</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)<span style="color:#d19a66;"></span>
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ConvertRawZipToParquetResponse] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ConvertRawZipToParquetResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.response)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Solution files download</h3>
+  <p>Use the command below to download data related to a Solution.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">download_solution</span>(self, <span style="color:#dcdcaa;">solution_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">output_directory</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">solution_type</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, 
+<span style="color:#dcdcaa;">overwrite</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">file_name</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">generate_metadata</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">metadata_file_name</span>: <span style="color:#c586c0;">str</span> = 
+<span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">calling_application</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; 
+<span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_DownloadSolution]</span>]
+<span style="color:#dcdcaa;">solution_id</span> = <span style="color:#ce9178;">&quot;be81a667-9d68-427f-8645-2dedcda7f244&quot;</span>
+<span style="color:#dcdcaa;">solution_type</span> = <span style="color:#ce9178;">&quot;Hybrid&quot;</span>
+<span style="color:#dcdcaa;">output_directory</span> = <span style="color:#ce9178;">&quot;/temp/output&quot;</span>
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.solution.download_solution(
+    <span style="color:#dcdcaa;">solution_id</span>=solution_id,
+    <span style="color:#dcdcaa;">output_directory</span>=output_directory,
+    <span style="color:#dcdcaa;">solution_type</span>=solution_type,
+    <span style="color:#dcdcaa;">overwrite</span>=<span style="color:#d19a66;">True</span>,
+    <span style="color:#dcdcaa;">create_directory</span>=<span style="color:#d19a66;">True</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)<span style="color:#d19a66;"></span>
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_DownloadSolution] = 
+pxc.simulation.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_DownloadSolution = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Solution files list</h3>
+  <p>Use the command below to list files for a Solution.</p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_solution_files</span>(
+    <span style="color:#dcdcaa;">include_archive_entries</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">solution_type</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListSolutionFile]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.solution.list_solution_files(
+    <span style="color:#dcdcaa;">include_archive_entries</span>=<span style="color:#d19a66;">True</span>,
+    <span style="color:#dcdcaa;">solution_type</span>=<span style="color:#ce9178;">&quot;Hybrid&quot;</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)<span style="color:#d19a66;"></span>
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListSolutionFile] = 
+pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListSolutionFile = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.ConsoleSolutionTypeFileLists)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Solution latest-id</h3>
+  <p>Use the command below to get or view the most recent solution ID created for a Study and Model.</p>
+  <p> </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">get_solution_id</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">GuidValue</span>,
+    <span style="color:#dcdcaa;">model_name</span>: <span style="color:#c586c0;">str</span>,
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_GetSolutionIdResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.solution.get_solution_id(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;&quot;</span>,
+    <span style="color:#dcdcaa;">model_name</span>=<span style="color:#ce9178;">&quot;&quot;</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)<span style="color:#d19a66;"></span>
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_GetSolutionIdResponse] = 
+pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_GetSolutionIdResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Solution list</h3>
+  <p>Use the command below to view the list of all Solutions.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_solutions</span>(
+    <span style="color:#dcdcaa;">solution_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">simulation_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">execution_id</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">type</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">status</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">order_by</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">descending</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">top</span>: <span style="color:#c586c0;">int</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">skip</span>: <span style="color:#c586c0;">int</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">raw</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListSolutionsResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.solution.list_solutions(
+    <span style="color:#dcdcaa;">order_by</span>=<span style="color:#ce9178;">&quot;SolutionId&quot;</span>,
+    <span style="color:#dcdcaa;">descending</span>=<span style="color:#d19a66;">True</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListSolutionsResponse] = 
+pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListSolutionsResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Solutions)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Solution list-reports</h3>
+  <p>Use the command below to view the list of Solution Reports.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_solution_reports</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListSolutionReportResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.solution.list_solution_reports(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListSolutionReportResponse] = 
+pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListSolutionReportResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.SolutionReports)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Solution solution-reports</h3>
+  <p>Use the command below to get a Solution Report Data.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">solution_reports</span>(
+    <span style="color:#dcdcaa;">solution_id</span>: <span style="color:#c586c0;">str</span>,
+    <span style="color:#dcdcaa;">report_id</span>: <span style="color:#c586c0;">str</span>,
+    <span style="color:#dcdcaa;">output_directory</span>: <span style="color:#c586c0;">str</span>,
+    <span style="color:#dcdcaa;">file</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>,
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_SolutionReportsEmptyResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.solution.solution_reports(
+    <span style="color:#dcdcaa;">solution_id</span>=<span style="color:#ce9178;">&quot;b98aeabd-5948-4fed-b00a-8156fa2a0f8c&quot;</span>,
+    <span style="color:#dcdcaa;">report_id</span>=<span style="color:#ce9178;">&quot;4ce6a3a2-c4fa-4cda-8f02-947802002f52&quot;</span>,
+    <span style="color:#dcdcaa;">output_directory</span>=<span style="color:#ce9178;">&quot;/temp&quot;</span>,
+    <span style="color:#dcdcaa;">file</span>=<span style="color:#ce9178;">&quot;report1.csv&quot;</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">success</span>: <span style="color:#c586c0;">bool</span> = pxc.solution.parse_command_success(command_responses)
+<span style="color:#569cd6;">print</span>(success)
+  </code></pre>
+  </div>
+  <hr />
+  <h2 id="10">Study Commands</h2>
+  <h3>Study change set get-latest</h3>
+  <p>Use the command below to get the latest change set ID for the Study.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">&gt;
+    <pre style="margin: 0;"><code class="language-python">
+<span style="color:#56b6c2;">get_last_changeset_id</span>(<span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; 
+    <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_GetLastChangesetIdResponse]</span>]
+<span style="color:#dcdcaa;">command_responses</span> = pxc.study.get_last_changeset_id(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;408031d4-7b6a-4609-a84b-0c6958587133&quot;</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_GetLastChangesetIdResponse] = 
+pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> 
+    <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_GetLastChangesetIdResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.ChangesetId)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study changeset get-latest-local</h3>
+  <p>Use the command below to get the latest changeset ID for Study.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">get_last_local_changeset_id</span>(<span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; 
+    <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_GetLastChangesetIdResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.get_last_local_changeset_id(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;408031d4-7b6a-4609-a84b-0c6958587133&quot;</span>,
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_GetLastChangesetIdResponse] = 
+pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_GetLastChangesetIdResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.ChangesetId)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study changeset get-status</h3>
+  <p>Use the command below to fetch the changeset status of the current Study, if there are incoming or outgoing changesets or the Study is in sync.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">get_changeset_sync_status</span>(
+    self, 
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_GetChangesetSyncStatusResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.get_changeset_sync_status(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;5e707c04-6f39-406f-92cf-0164aca94397&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_GetChangesetSyncStatusResponse] = 
+pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> 
+    <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_GetChangesetSyncStatusResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Status)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study changeset get-urls</h3>
+  <p>Use the command below to list the download URLs for this changeset. Only used for building a Simulation Enqueue Request for this changeset, using the URLs still requires API authentication.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">get_studies_download_urls</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">changeset_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_GetStudiesDownloadUrlsResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.get_studies_download_urls(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;cf20db8c-2df9-488e-b5cb-01a95e845360&quot;</span>, 
+    <span style="color:#dcdcaa;">changeset_id</span>=<span style="color:#ce9178;">&quot;59756abc-c8e3-40a7-b531-6696b80fda17&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_GetStudiesDownloadUrlsResponse] = 
+pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_GetStudiesDownloadUrlsResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.SimulationDataUrls)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study changeset list</h3>
+  <p>Use the command below to view the list of changesets for a Study.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_changesets</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListChangesetsResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.list_changesets(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;d8caddde-c983-44ec-8440-27fb837fe60b&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListChangesetsResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListChangesetsResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Changesets)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study changeset pull</h3>
+  <p>Use the command below to pull the latest changes for a Study.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">pull_latest</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_PullLatestResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.pull_latest(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;7fee5f61-0e6f-4d4f-b281-e33bcfa07e4c&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_PullLatestResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_PullLatestResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study changeset push</h3>
+  <p>Use the command below to push the latest changes for a Study.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">push_changeset</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">commit_message</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_PushChangesetResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.push_changeset(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;40378f39-a52b-4883-b67b-dc407b0b6041&quot;</span>, 
+    <span style="color:#dcdcaa;">commit_message</span>=<span style="color:#ce9178;">&quot;modified gen1 max capacity&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_PushChangesetResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_PushChangesetResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study clone</h3>
+  <p>Use the command below to download and initialize a tracked Study from the Cloud.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">clone_study</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">output_directory_path</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_CloneStudyResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.clone_study(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;9534eb97-ce48-4eed-9313-fd7f209a5430&quot;</span>, 
+    <span style="color:#dcdcaa;">output_directory_path</span>=<span style="color:#ce9178;">&quot;/temp&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_CloneStudyResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_CloneStudyResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study create</h3>
+  <p>Use the command below to create a Study from Input Project file.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;"><span style="color: rgb(86, 182, 194);">create_study</span>(
+    <pre style="margin: 0;"><code class="language-python">    <span style="color:#dcdcaa;">study_name</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">study_description</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">study_db_path</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_StudyCommandResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.create_study(
+    <span style="color:#dcdcaa;">study_name</span>=<span style="color:#ce9178;">&quot;study1&quot;</span>, 
+    <span style="color:#dcdcaa;">study_description</span>=<span style="color:#ce9178;">&quot;description of study1&quot;</span>, 
+    <span style="color:#dcdcaa;">study_db_path</span>=<span style="color:#ce9178;">&quot;/temp/study1.xml&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_StudyCommandResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_StudyCommandResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.StudyId)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3><br />
+    Study delete-local</h3>
+  <p>Use the command below to Delete the local Study files.</p>
+  <p> </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">delete_local_study</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">full_delete</span>: <span style="color:#c586c0;">any</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_StudyCommandResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.delete_local_study(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;7fa1d88e-10b0-4fa7-9520-981c771a4404&quot;</span>, 
+    <span style="color:#dcdcaa;">full_delete</span>=<span style="color:#d19a66;">True</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_StudyCommandResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_StudyCommandResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.StudyId)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study find</h3>
+  <p>Use the command below to find the Study by name.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">find_study</span>(
+    <span style="color:#dcdcaa;">study_name</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListStudiesResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.find_study(
+    <span style="color:#dcdcaa;">study_name</span>=<span style="color:#ce9178;">&quot;study1&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListStudiesResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListStudiesResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Studies)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study grant-user-access</h3>
+  <p>Use the command below to grant an access to a Study.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">grant_user_access</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">user_emails</span>: <span style="color:#c586c0;">list</span>[<span style="color:#c586c0;">str</span>], 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_GrantUserAccessResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.grant_user_access(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;d893dc37-a305-4418-8a72-130a65dd4067&quot;</span>, 
+    <span style="color:#dcdcaa;">user_emails</span>=[<span style="color:#ce9178;">&quot;user1@email.com&quot;</span>, <span style="color:#ce9178;">&quot;user2@email.com&quot;</span>], 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_GrantUserAccessResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_GrantUserAccessResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Users)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study list</h3>
+  <p>Use the command below to view list of Studies.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_studies</span>(
+    <span style="color:#dcdcaa;">order_by</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">descending</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">top</span>: <span style="color:#c586c0;">int</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">skip</span>: <span style="color:#c586c0;">int</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">study_type</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">raw</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">filter_by_user_id</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListStudiesResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.list_studies(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListStudiesResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListStudiesResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Studies)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study list-local</h3>
+  <p>Use the command below to access the list of all local Studies that are tracked on the Cloud.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_local_studies</span>(
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListLocalStudiesResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.list_local_studies(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListLocalStudiesResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListLocalStudiesResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.StudyRecords)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study list-local-studyIDs</h3>
+  <p>Use the command below to list the PLEXOS Cloud Study IDs currently attached to a local Study directory.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_study_ids_for_folder</span>(
+    <span style="color:#dcdcaa;">study_directory_path</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListStudyIdsForFolderResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.list_study_ids_for_folder(
+    <span style="color:#dcdcaa;">study_directory_path</span>=<span style="color:#ce9178;">&quot;/Temp&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListStudyIdsForFolderResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListStudyIdsForFolderResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.StudyIds)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study repair-local</h3>
+  <p>Use the command to perform an attempt to repair the cloud sync of a local Study when data has been corrupted or Study gets moved.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">study_repair</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">database_file_path</span>: <span style="color:#c586c0;">str</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_RepairStudyResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.study_repair(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;4bce1f34-dcd4-485a-bb0b-70c9dcbceafb&quot;</span>, 
+    <span style="color:#dcdcaa;">database_file_path</span>=<span style="color:#ce9178;">&quot;db1.xml&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">success</span>: <span style="color:#c586c0;">bool</span> = pxc.study.parse_command_success(command_responses)
+<span style="color:#569cd6;">print</span>(success)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study settings add-configurations</h3>
+  <p>Use the command below to add configurations to the existing Study settings.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">add_configurations</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">study_setting_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">study_setting_type</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">settings_file_path</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">show_settings_example</span>: <span style="color:#c586c0;">any</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_SettingsChangedResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.add_configurations(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;&quot;</span>, 
+    <span style="color:#dcdcaa;">study_setting_id</span>=<span style="color:#ce9178;">&quot;&quot;</span>, 
+    <span style="color:#dcdcaa;">study_setting_type</span>=<span style="color:#ce9178;">&quot;&quot;</span>, 
+    <span style="color:#dcdcaa;">settings_file_path</span>=<span style="color:#ce9178;">&quot;&quot;</span>, 
+    <span style="color:#dcdcaa;">show_settings_example</span>=<span style="color:#d19a66;">True</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListStudyIdsForFolderResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListStudyIdsForFolderResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.StudyIds)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study settings create</h3>
+  <p>Use the command below to create Study settings based on settings type.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">create_settings</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">study_setting_type</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">settings_file_path</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">show_settings_example</span>: <span style="color:#c586c0;">any</span> = <span style="color:#d19a66;">None</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_SettingsChangedResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.create_settings(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;&quot;</span>, 
+    <span style="color:#dcdcaa;">study_setting_type</span>=<span style="color:#ce9178;">&quot;&quot;</span>, 
+    <span style="color:#dcdcaa;">settings_file_path</span>=<span style="color:#ce9178;">&quot;&quot;</span>, 
+    <span style="color:#dcdcaa;">show_settings_example</span>=<span style="color:#d19a66;">True</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_SettingsChangedResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_SettingsChangedResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.StudyIds)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study settings delete</h3>
+  <p>Use the command below to delete the Study settings.</p>
+  <p> </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">delete_settings</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">study_setting_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_SettingsChangedResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.delete_settings(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;72795144-f655-4b30-8361-4b82cd8c7a90&quot;</span>, 
+    <span style="color:#dcdcaa;">study_setting_id</span>=<span style="color:#ce9178;">&quot;0773e823-bdc0-4b39-b3bf-261ebbc6a6a8&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_SettingsChangedResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_SettingsChangedResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.StudyIds)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study settings list</h3>
+  <p>Use the command below to list the Study settings available for the given Study.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">list_settings</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ListStudySettingsResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.list_settings(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_ListStudySettingsResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_ListStudySettingsResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.StudySettings)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study stats geocoded objects</h3>
+  <p>Use the command below to view the number of geocoded objects.</p>
+  <p> </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">get_geocoded_objects</span>(
+    <span style="color:#dcdcaa;">study_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">changeset_id</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_GeocodedObjectsResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.get_geocoded_objects(
+    <span style="color:#dcdcaa;">study_id</span>=<span style="color:#ce9178;">&quot;264a9f2b-e4af-491c-8074-917d0ebc8de1&quot;</span>, 
+    <span style="color:#dcdcaa;">changeset_id</span>=<span style="color:#ce9178;">&quot;fd256325-2181-4f76-b119-794c1affca62&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_GeocodedObjectsResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_GeocodedObjectsResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data.Metric)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Study validate</h3>
+  <p>Use the command below to validate data for Study Creation.</p>
+  <p> </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">validate_study_data</span>(
+    <span style="color:#dcdcaa;">database_file_path</span>: <span style="color:#c586c0;">str</span>, 
+    <span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>
+) -&gt; <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_ValidateStudyResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.study.validate_study_data(
+    <span style="color:#dcdcaa;">database_file_path</span>=<span style="color:#ce9178;">&quot;/Temp/db.xml&quot;</span>, 
+    <span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>
+)
+<span style="color:#dcdcaa;">success</span>: <span style="color:#c586c0;">bool</span> = pxc.study.parse_command_success(command_responses)
+<span style="color:#569cd6;">print</span>(success)
+  </code></pre>
+  </div>
+  <hr />
+  <h2 id="11">Upgrade Commands</h2>
+  <h3>Upgrade check</h3>
+  <p>Use the command below to check for a newer version.</p>
+  <p>     </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">check_upgrade</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; 
+    <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_CheckUpgradeCommandResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.upgrade.check_upgrade(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_CheckUpgradeCommandResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> 
+    <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_CheckUpgradeCommandResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <p> </p>
+  <h3>Upgrade install</h3>
+  <p>Use the command below to install the upgrade if a newer one exists.</p>
+  <p>   </p>
+  <div style="position: relative; background-color: #1e1e1e; border: 1px solid #444; border-radius: 6px; padding: 1em; font-family: Consolas, monospace; margin-bottom: 1.5em; color: #ccc;">
+    <pre style="margin: 0;"><code class="language-python"><span style="color:#56b6c2;">install_upgrade</span>(<span style="color:#dcdcaa;">print_message</span>: <span style="color:#c586c0;">bool</span> = <span style="color:#d19a66;">False</span>) -&gt; 
+    <span style="color:#98c379;">list</span>[<span style="color:#ffffff;">CommandResponse[Contracts_InstallUpgradeResponse]</span>]
+<span style="color:#dcdcaa;">
+command_responses</span> = pxc.upgrade.install_upgrade(<span style="color:#dcdcaa;">print_message</span>=<span style="color:#d19a66;">True</span>)
+<span style="color:#dcdcaa;">last_command_response</span>: CommandResponse[Contracts_InstallUpgradeResponse] = pxc.solution.get_final_response(command_responses)
+<span style="color:#569cd6;">if</span> last_command_response <span style="color:#569cd6;">is not</span> <span style="color:#d19a66;">None</span> 
+    <span style="color:#569cd6;">and</span> last_command_response.Status == <span style="color:#ce9178;">&quot;Success&quot;</span>:
+    <span style="color:#dcdcaa;">data</span>: Contracts_InstallUpgradeResponse = last_command_response.EventData
+    <span style="color:#569cd6;">print</span>(data)
+  </code></pre>
+  </div>
+  <p> </p>
+</body>
+</html>

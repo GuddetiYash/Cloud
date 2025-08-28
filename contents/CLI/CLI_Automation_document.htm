@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <title>CLI Automation document</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css"/>
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>PLEXOS Cloud CLI Automation</h1>
+  <p><strong>Global options</strong></p>
+  <p><br/>
+    -f –format<br/>
+    Output format(json | csv | tsv | yaml | table | none)</p>
+  <p> </p>
+  <p>-q --quiet<br/>
+    Turns off verbose messages from app</p>
+  <p> </p>
+  <p>-aut --automation<br/>
+    Turns on developer friendly structured response messages from app<br/>
+     </p>
+  <h2>Auth Commands</h2>
+  <h3>Auth Login</h3>
+  <p>The command below helps you log in to PLEXOS Cloud, using either SSO or Service Principal.</p>
+  <p style="margin-left: 20px"><br/>
+    plexos-cloud auth login [-f | --format] [-q | --quiet] [-aut | --automation] [-c | --client-id] [-s | --client-secret] [-t | --tenant-id] [--service-principal]</p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><strong></strong><strong></strong><br/>
+    -c --client-id<br/>
+    Service Principal Client Id</p>
+  <p> </p>
+  <p>-s --client-secret<br/>
+    Service Principal Client Secret</p>
+  <p> </p>
+  <p>-t --tenant-id<br/>
+    Service Principal Tenant Id</p>
+  <p> </p>
+  <p>--service-principal<br/>
+    Indicates that the credentials represent a service principal</p>
+  <p> </p>
+  <p><strong>Command Output</strong></p>
+  <p>LoginResponse</p>
+  <p><img src="../assets/images/CLI Automation document/authlogin_commandoutput.png"/></p>
+  <p> </p>
+  <h3>Auth Logout</h3>
+  <p>Use the command below to log out the current user and clear cached credentials.<br/>
+     </p>
+  <p>      plexos-cloud auth logout [-f | --format] [-q | --quiet] [-aut | --automation]</p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p>LoggedOutResponse</p>
+  <p><img src="../assets/images/CLI Automation document/auth logout_command output.png"/></p>
+  <p> </p>
+  <h3>Authentication Status</h3>
+  <p>Use the command below to print the authentication and environment summary.</p>
+  <p> </p>
+  <p>     plexos-cloud auth status [-f | --format] [-q | --quiet] [-aut | --automation]</p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p>CheckAuthenticationStatusResponse</p>
+  <p><img src="../assets/images/CLI Automation document/auth status_command output.png"/></p>
+  <p> </p>
+  <p> </p>
+  <h2>Context Commands</h2>
+  <h3>Clear Context</h3>
+  <p>Use the command below to clear out the current user context.</p>
+  <p> </p>
+  <p>     plexos-cloud context clear [-f | --format] [-q | --quiet] [-aut | --automation] [--simulationId] [--studyId] [--executionId] [--changesetId] [--solutionId]</p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><img src="../assets/images/CLI Automation document/context clear_options.png"/></p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p>UserContextResponse</p>
+  <p><img src="../assets/images/CLI Automation document/context clear_command output.png"/></p>
+  <p>CurrentUserContext</p>
+  <p><img src="../assets/images/CLI Automation document/context clear_command output 2.png"/></p>
+  <p> </p>
+  <h3>Get Context</h3>
+  <p>Use the command below to view the current user context.</p>
+  <p> </p>
+  <p>     plexos-cloud context get [-f | --format] [-q | --quiet] [-aut | --automation]</p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img height="368" src="../assets/images/CLI Automation document/context get_command output.png" width="587"/></p>
+  <p> </p>
+  <h3>Context Release-locks</h3>
+  <p>Use the command below to release any resource locks that a previous instance may have left due to an error.</p>
+  <p> </p>
+  <p>     plexos-cloud context release-locks [-f | --format] [-q | --quiet] [-aut | --automation]</p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img src="../assets/images/CLI Automation document/context releaselocks_command output.png"/></p>
+  <p> </p>
+  <p>Set Context</p>
+  <p>Use the command below to set the current user context.</p>
+  <p> </p>
+  <p>     plexos-cloud context set [-f | --format] [-q | --quiet] [-aut | --automation] [--simulationId] [--studyId] [--executionId] [--changesetId] [--solutionId]</p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><img src="../assets/images/CLI Automation document/context set_options.png"/></p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img src="../assets/images/CLI Automation document/context set_command output.png"/></p>
+  <p> </p>
+  <p> </p>
+  <h2>Environment Commands</h2>
+  <h3>Environment- Generate Web Link</h3>
+  <p>Use the command below to generate a PLEXOS Cloud Web URL to view in a browser.</p>
+  <p> </p>
+  <p>     plexos-cloud environment generate-web-link [-f | --format] [-q | --quiet] [-aut | --automation] [--studyId] [--modelName] [--simulationId] [--parameters]</p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><img src="../assets/images/CLI Automation document/environmentgenerateweblink_options.png"/></p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img height="117" src="../assets/images/CLI Automation document/environmentgenerateweblink_command output.png" width="465"/></p>
+  <p> </p>
+  <h3>Environment- Get</h3>
+  <p>Use the command below to view the current configured Cloud environment.</p>
+  <p> </p>
+  <p>     plexos-cloud environment get [-f | --format] [-q | --quiet] [-aut | --automation]</p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img src="../assets/images/CLI Automation document/environmentget_command output.png"/></p>
+  <p> </p>
+  <h3>Environment- List Users</h3>
+  <p>Use the command below to get user details for the tenant.</p>
+  <p> </p>
+  <p>     plexos-cloud environment list-users [-f | --format] [-q | --quiet] [-aut | --automation]</p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img src="../assets/images/CLI Automation document/environmentlistusers_command output.png"/></p>
+  <p> </p>
+  <h3>Environment- Logging Path</h3>
+  <p>Use the command below to view the folder path where log files are saved.</p>
+  <p> </p>
+  <p>     plexos-cloud environment logging-path [-f | --format] [-q | --quiet] [-aut | --automation] [--today] [--open]</p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><img src="../assets/images/CLI Automation document/environmentloggingpath_options.png"/></p>
+  <p><br/>
+    <strong>Command output</strong>
+  </p>
+  <p><img src="../assets/images/CLI Automation document/environmentloggingpath_command output.png"/></p>
+  <p> </p>
+  <h3>Environment- Set</h3>
+  <p>Use the command below to set the current configured Cloud environment.</p>
+  <p> </p>
+  <p>     plexos-cloud environment set [-f | --format] [-q | --quiet] [-aut | --automation]</p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img src="../assets/images/CLI Automation document/environmentset_commandoutput.png"/></p>
+  <p> </p>
+  <h3>Environment- Status</h3>
+  <p>Use the command below to view the status of the environment.</p>
+  <p> </p>
+  <p>     plexos-cloud environment status [-f | --format] [-q | --quiet] [-aut | --automation]<br/>
+     </p>
+  <p><strong>Command output</strong></p>
+  <p><img height="117" src="../assets/images/CLI Automation document/environmentstatus_commandoutput.png" width="465"/></p>
+  <p> </p>
+  <h2>Insights Commands</h2>
+  <h3>Insights- Get Machine Recommendation</h3>
+  <p>Use the command below to get machine recommendations for a group of Models.</p>
+  <p> </p>
+  <p>     plexos-cloud insights get-machine-recommendation [-f | --format] [-q | --quiet] [-aut | --automation] [--studyId] [--changesetId] [--modelName]</p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><img src="../assets/images/CLI Automation document/insightsgetmachinerecommendation_options.png"/></p>
+  <p> </p>
+  <p>Command output</p>
+  <p><img height="799" src="../assets/images/CLI Automation document/insightsgetmachinerecommendation_commandoutput.png" width="585"/></p>
+  <p><img src="../assets/images/CLI Automation document/insightsgetmachinerecommendation_commandoutput2.png"/></p>
+  <p> </p>
+  <p> </p>
+  <h2>Log Commands</h2>
+  <h3>Log Parse</h3>
+  <p>Use the command below to parse the Simulation Log.</p>
+  <p> </p>
+  <p>     plexos-cloud log parse [-f | --format] [-q | --quiet] [-aut | --automation] [-l | --logfile] [-s | --system] [-c | --culture]</p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><img src="../assets/images/CLI Automation document/logparse_options.png"/></p>
+  <p> </p>
+  <p>Command output</p>
+  <p><img src="../assets/images/CLI Automation document/logparse_commandoutput.png"/></p>
+  <p><img src="../assets/images/CLI Automation document/logparse_commandoutput2.png"/></p>
+  <p> </p>
+  <p> </p>
+  <h2>Simulation Commands</h2>
+  <h3>Simulation Build Request from Previous</h3>
+  <p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif">Use the command below to build a Simulation request based on a previously Run Simulation.</span></span></span></p>
+  <p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif">     plexos-cloud simulation build-request-from-previous [-f | --format] [-q | --quiet] [-aut | --automation] [-d | --outputDirectory] [--overwrite] [--simulationId] [--file] [--changesetId] [--studyId] [--modelName] [--requestedCores] [--requestedMemory]</span></span></span></p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><img src="../assets/images/CLI Automation document/simulationbuildrequest_options.png"/></p>
+  <p> </p>
+  <p>Command output</p>
+  <p><img src="../assets/images/CLI Automation document/simulationbuildrequest_commandoutput.png"/></p>
+  <p><img src="../assets/images/CLI Automation document/simulationbuildrequest_commandoutput2.png"/></p>
+  <p><img src="../assets/images/CLI Automation document/simulationbuildrequest_commandoutput3.png"/></p>
+  <p><img src="../assets/images/CLI Automation document/simulationbuildrequest_commandoutput4.png"/></p>
+  <p><img src="../assets/images/CLI Automation document/simulationbuildrequest_commandoutput5.png"/></p>
+  <p><img src="../assets/images/CLI Automation document/simulationbuildrequest_commandoutput6.png"/></p>
+  <p><img src="../assets/images/CLI Automation document/simulationbuildrequest_commandoutput7.png"/></p>
+  <p> </p>
+  <h3>Simulation Cancel</h3>
+  <p>Use the command below to cancel the Simulation request.</p>
+  <p> </p>
+  <p>     plexos-cloud simulation cancel [-f | --format] [-q | --quiet] [-aut | --automation] [--simulationId]</p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><img src="../assets/images/CLI Automation document/simulationcancel_options.png"/></p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img src="../assets/images/CLI Automation document/simulationcancel_commandoutput.png"/></p>
+  <p> </p>
+  <h3>Simulation Capability List</h3>
+  <p>Use the command below to sort the PLEXOS Cloud Simulation Capability List.</p>
+  <p> </p>
+  <p>     plexos-cloud simulation capability list [-f | --format] [-q | --quiet] [-aut | --automation]</p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img src="../assets/images/CLI Automation document/simulationcapabilitylist_commandoutput.png"/></p>
+  <p> </p>
+  <h3><br/>
+    Simulation Engine List</h3>
+  <p>Use the command below to sort the List of engines.</p>
+  <p> </p>
+  <p>     plexos-cloud simulation engine list [-f | --format] [-q | --quiet] [-aut | --automation] [-t | --type]</p>
+  <p> </p>
+  <p><strong>Options</strong></p>
+  <p><img src="../assets/images/CLI Automation document/simulationenginelist_options.png"/></p>
+  <p> </p>
+  <p><strong>Command output</strong></p>
+  <p><img height="369" src="../assets/images/CLI Automation document/simulationenginelist_commandoutput.png" width="573"/></p>
+  <p> </p>
+  <p> </p>
+  <h3>Simulation Enqueque</h3>
+  <p>Use the command below to enqueue a new Simulation request.</p>
+  <p> </p>
+  <p>     plexos-cloud simulation enqueue [-f | --format] [-q | --quiet] [-aut | --automation] [--showExample] [--file] [--setContext]</p>
+  <p> </p>
+  <p><strong>Option</strong></p>
+  <p><img src="../assets/images/CLI Automation document/simulationenqueue_options.png"/><br/>
+     </p>
+  <p> </p>
+  <p><br/>
+     </p>
+  <p><br/>
+     </p>
+  <p> </p>
+  <p><br/>
+     </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+
+</body></html>

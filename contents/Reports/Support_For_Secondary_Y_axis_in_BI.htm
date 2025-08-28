@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Support For Secondary Y axis in BI</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="rh-authors" content="Jigyasa" />
+  <meta name="rh-index-keywords" content="BI,Line Chart,Secondary Y axis,Support for Secondary Y axis" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>BI Analytics : How to create a chart with Secondary Y- Axis</h1>
+  <p><br />
+    A Secondary Y axis allows users to display multiple metrics or data series with different scales on the same chart, making it easier to compare and analyze data with disparate units or magnitudes. This makes it possible for users to display information from two different categories on a single chart or graph with the help of two new tables &quot;data_secondary&quot; and &quot;fullkeyinfo_category_secondary,&quot; added to the Schema. Please refer to the example shown in the following screenshot and the steps below to understand the functionality.</p>
+  <p> </p>
+  <p><img height="341" src="../assets/images/SecondaryYAxis/SecondaryYaxis1.png" style="cursor: nesw-resize;" width="658" /></p>
+  <p> </p>
+  <p>The example above represents a line chart designed to provide a comprehensive comparison between two critical factors: &quot;Generation,&quot; derived from the Generator class, and &quot;Fuel Price,&quot; sourced from the Fuel Class. This chart utilizes a dual-axis approach, with &quot;Generation&quot; on the primary axis and &quot;Fuel Price&quot; on the secondary axis. This dual-axis design allows for a more nuanced and insightful analysis of the data, as it effectively showcases the relationship between these two variables in a single visualization.</p>
+  <p> </p>
+  <p><strong>NOTE: </strong>Please refer to the <a href="../assets/docs/BI_Schema_Definition_And_Guidelines.pdf">BI Schema Definition Doc</a>  for the detailed definition of all the tables discussed below.</p>
+  <p> </p>
+  <p>To build a similar visual of comparison between Generation and Fuel Price, follow the steps below:</p>
+  <p> </p>
+  <p>1.    From My Reports Actions menu, click Edit to open  the BI Analytics editor, Select Line chart visualization from the Visualization pane.</p>
+  <p> </p>
+  <p><img height="330" src="../assets/images/SecondaryYAxis/EditReport.png" width="583" /></p>
+  <p> </p>
+  <p><img height="366" src="../assets/images/SecondaryYAxis/LineChart.png" width="271" /><br />
+     </p>
+  <p>2.    To set the Primary Y Axis value on the left side of the chart&#39;s Y axis, where the generated data will appear, please follow the steps below:     </p>
+  <p> </p>
+  <p>        a.  From Data Pane’s “Fullkeyinfo_category”,     add field “childclassName”, open Filters, select Generator for   “childclassName”</p>
+  <p><img height="410" src="../assets/images/SecondaryYAxis/ChildClassName.png" style="padding: 27px; margin: 2px;" width="357" /><br />
+     </p>
+  <p>       b.     Select Property Name from “Fullkeyinfo_category”, open Filters, select Generation as Property name.    </p>
+  <p><img height="455" src="../assets/images/SecondaryYAxis/PropertyName.png" style="margin-top: 10px; margin-right: 2px; margin-left: 2px; padding: 27px;" width="391" /></p>
+  <p><br />
+            c.  Add the corresponding value from the Data Table to the Primary Y-axis. You now have completed  defining the primary Y-axis.</p>
+  <p>  <br />
+    3.    To set the Secondary Y Axis value on the left side of the chart&#39;s Y axis, where the fuel data will appear, please follow the steps below:  </p>
+  <p> </p>
+  <p><span style="padding-left:15px;padding-top:0px;">    a.  Add<strong> childclassName_Secondary </strong>from &quot;Fullkeyinfo_category_Secondary&quot;, open <strong>Filters</strong>,  select <strong>Fuel</strong> as   “childclassName”</span></p>
+  <p><img height="432" src="../assets/images/SecondaryYAxis/ChildClassName_Secondary.png" style="padding: 28px 27px 27px 17px; margin: 18px;" width="369" /><span style="padding-left:15px;padding-top:0px;"><br />
+               b.   Add the <strong>PropertyName_Secondary </strong>from &quot;Fullkeyinfo_category_Secondary&quot;, open <strong>Filters</strong>  and select  <strong>Price</strong>  as Property name.</span></p>
+  <p><span style="padding-left:15px;padding-top:0px;"><br />
+               c.   To set the X Axis as Date, Drag and drop <strong>Year</strong> to ‘X’ axis from &quot;Period_Start_Date&quot;   (Fullkeyinfo_category_Secondary ).</span></p>
+  <p><img height="332" src="../assets/images/SecondaryYAxis/DateXAxis.png" style="padding: 27px;" width="636" /></p>
+  <p><span style="padding-left:15px;padding-top:0px;"><br />
+               d.   Add corresponding value from &quot;data_Secondary&quot; table to <strong>Secondary Y-axis</strong>.</span><br />
+    <img height="331" src="../assets/images/SecondaryYAxis/SecondaryYaxis1.png" style="padding: 27px;" width="639" /><br />
+     
+  </p>
+  <p>5.  You can now see the compared line chart visualization between Generation and Fuel Price as shown in the above image. <br />
+    You  can further customize your chart, add data labels, legends, and more to make it more informative and visually appealing.</p>
+  <p><br />
+    <strong>NOTE</strong>: Currently, the use of secondary classes is not supported with membership tables. Other Bi features will be supported as it is. 
+  </p>
+  <p> </p>
+  <div style="left: 20px;top: 14492.6px;">
+    <p>NOTE: Please find below PDF file for the detailed definition of all the tables discussed above.</p>
+  </div>
+  <div style="left: 20px;top: 14492.6px;"><a href="../assets/docs/BI_Schema_Definition_And_Guidelines.pdf">BI_Schema_Definition_And_Guidelines.pdf</a></div>
+  <div style="left: 20px;top: 14492.6px;"> </div>
+</body>
+</html>

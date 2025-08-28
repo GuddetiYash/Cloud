@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>SAML 2.0 Integration</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1430</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">69771cf5-d580-48d5-b043-4836132972bc</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1430, TZXE7D2DFWED-1834737786-1430</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="SAML,SAML 2.0 Integration,SAMl 2.0" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body onload="displayLastModifiedDate()">
+  <p style="color: white; font-size:10px; text-align: right;">Last updated on: <span data-field="date" data-format="MMMM DD, YYYY" style="color: white; font-size: 10px;">February 23, 2024</span></p>
+  <h1>SAML 2.0 Integration</h1>
+  <h3>In this article:</h3>
+  <ul>
+    <li><a href="#Overview">Overview of SAML and Authentication</a></li>
+  </ul>
+  <ul class="Circle">
+    <li style="margin-left: 0.18in"><a href="#Prerequisites">Prerequisites</a></li>
+  </ul>
+  <ul>
+    <li><a href="#Configure/Enable_SSO_in_PLEXOS_Cloud">Configure and Enable SSO in PLEXOS</a></li>
+    <li><a href="#Validation">Validation</a></li>
+  </ul>
+  <p> </p>
+  <h2><a name="Overview" id="Overview"></a>Overview</h2>
+  <p><strong>SAML (Security Assertion Markup Language)</strong> is an XML-based standard for exchanging authentication and authorization data between parties, specifically between an identity provider (IdP) and a service provider (SP).<br />
+    <br />
+    And,<strong> Authentication</strong> is the process of verifying the identity of a user or device, while authorization is the process of granting or denying access to a resource or service based on the authenticated identity. <br />
+    <br />
+    SAML works by allowing an identity provider to authenticate a user and generate a SAML assertion, which is a digitally signed statement that contains information about the user, such as their identity and authentication status. The identity provider then sends this assertion to the service provider, which can use it to grant access to resources or services based on the information in the assertion.
+  </p>
+  <h3>Prerequisites</h3>
+  <p>To get started with the SSO setup, there are prerequisites that need to be done. As per your provider (Okta or Azure IdP), follow the below links for the configuration steps of <strong>Okta</strong> and <strong>Azure IdP</strong> before setting up the Single Sign-On for PLEXOS Cloud.</p>
+  <p> </p>
+  <ul>
+    <li><a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Getting_Started%2FConfiguration%2FOkta_Integration_for_SAML_2.htm" target="_blank">Configuring Okta IdP</a> </li>
+    <li><a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Getting_Started%2FConfiguration%2FHow_to_Configure_Azure_IdP.htm" target="_blank">Configuring Azure IdP</a></li>
+  </ul>
+  <p> </p>
+  <h2>Configure and Enable SSO in PLEXOS Cloud</h2>
+  <p><strong>SSO</strong>, or <strong>Single Sign-On</strong>, is a mechanism that allows you to log in to multiple applications or systems using a single set of credentials. Enabling SSO involves several steps and can vary depending on the specific technologies and applications involved.<br />
+    <br />
+    To enable SSO in PLEXOS Cloud, you need to integrate the EE Identity Web Server URL and configure the SAML 2.0 Identity Provider (IdP), PLEXOS Cloud SSO, and Validation.
+  </p>
+  <p> </p>
+  <p> <strong>NOTE : </strong>Before proceeding with the below setup for SSO, please ensure that you have checked the prerequisites for <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Getting_Started%2FConfiguration%2FOkta_Integration_for_SAML_2.htm" target="_blank">Okta</a> and <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Getting_Started%2FConfiguration%2FHow_to_Configure_Azure_IdP.htm" target="_blank">Azure IdP</a> Configuration.<br />
+    <br />
+    <strong>After setting up the prerequisites, follow the steps below to proceed with the SSO setup</strong>: 
+  </p>
+  <p> </p>
+  <p>1. Go to the <strong>Single Sign On </strong>Settings<strong> </strong>page in PLEXOS Cloud Admin panel and click the <b>Add New Settings</b> button.</p>
+  <p> </p>
+  <p><img alt="" height="393" src="../../assets/images/saml_addnewsetting.png" width="800" />  </p>
+  <p> </p>
+  <p>2. For the <strong>Protocol</strong>, set it to SAML2. Set the<strong> Authority</strong> as the &quot;SAML2 Metadata URL&quot; given by the SAML provider.</p>
+  <p> </p>
+  <p><strong>NOTE</strong>: The &quot;SAML2 Metadata URL&quot; can be found in the prerequisites mentioned above under Okta/IdP Configurations.</p>
+  <p> </p>
+  <p><img alt="" height="371" src="../../assets/images/saml_admin.png" width="808" /></p>
+  <p> </p>
+  <p>3. Set the <strong>Post Logout Redirect URI, Redirect URI, and Scope </strong>as NA.<br />
+     </p>
+  <p><img alt="" height="302" src="../../assets/images/saml_na.png" width="819" /></p>
+  <p><br />
+    4. For the <strong>Client ID</strong>, set it to the Entity ID given by the SAML provider. Click <b>Save</b> to enable SAML 2.0 in the application.</p>
+  <p> </p>
+  <p><strong>NOTE</strong>: The Client ID can be found in the prerequisites mentioned above under Okta/IdP Configurations.</p>
+  <p> </p>
+  <p><img alt="" height="600" src="../../assets/images/saml_client.png" width="800" /></p>
+  <p> </p>
+  <h2><a id="Validation"></a>Validation</h2>
+  <p>You have two different options for validation: Service Provider (SP) initiated or idP-initiated.</p>
+  <p>For <strong>SP-initiated</strong> login, follow the following steps.<br />
+     </p>
+  <ol>
+    <li>Log out and return to PLEXOS Cloud.</li>
+    <li>Enter your Email Address, and you should be redirected to the <strong>SAML 2.0 idP</strong>.</li>
+    <li>Log in to the <strong>idP</strong>, and you will be redirected to PLEXOS Cloud.</li>
+  </ol>
+  <p><br />
+    For <strong>IdP-initiated </strong>login, log in to the <strong>IdP</strong> and follow the directions given by the provider so that you are redirected to PLEXOS Cloud.<br />
+     </p>
+</body>
+</html>

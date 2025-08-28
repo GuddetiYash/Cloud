@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>How to Configure Azure IdP</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1428</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">1d862ad6-4fe1-4b23-89e5-d6d172a6d555</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1428, TZXE7D2DFWED-1834737786-1428</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="Azure IDP,SAML Configuration,Setup SAML" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body onload="displayLastModifiedDate()">
+  <p style="color: white; font-size:10px; text-align: right;">Last updated on: <span data-field="date" data-format="MMMM DD, YYYY" style="color: white; font-size: 10px;">August 01, 2024</span></p>
+  <h1>How to Configure Azure IdP</h1>
+  <p><strong>Azure IDP</strong> (Identity Provider) is a cloud-based service that enables authentication and authorization for users to access various applications and resources within the Azure ecosystem. It allows users to authenticate with their existing credentials, such as usernames and passwords and provides a single sign-on experience across multiple applications and services.<br />
+    <br />
+    It supports various authentication protocols, including Security Assertion Markup Language (SAML), OpenID Connect, and OAuth 2.0, allowing it to integrate with a wide range of applications and services. <br />
+    <br />
+    Follow below mentioned steps to configure Azure idP with SAML2 in PLEXOS Cloud.
+  </p>
+  <p>Refer to the region-wise URLs below for each of the environments listed in the Configuration table.<br />
+     </p>
+  <ul>
+    <li style="margin-left: 40px;">APAC:  <span style="color: #3498db;">identity-au.energyexemplar.com </span></li>
+    <li style="margin-left: 40px;">EMEA:  <span style="color: #3498db;">identity-eu.energyexemplar.com </span></li>
+    <li style="margin-left: 40px;">NAPROD :  <span style="color: #3498db;">eeprod-na.energyexemplar.com</span></li>
+  </ul>
+  <p> </p>
+  <h2>Basic SAML Configuration</h2>
+  <p>Below table lists out the SAML setup parameters, please refer for setting up the SAML</p>
+  <p>Highlight the url is case sensitive, it should as it is mentioned in Screenshots</p>
+  <ul>
+  </ul>
+  <p> </p>
+  <table class="Table borderonly" style="margin-left: 37px;width: 676px;border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-color: #000000;border-top-color: #000000;border-right-color: #000000;border-bottom-color: #000000">
+    <colgroup>
+      <col style="width: 271px;" />
+      <col style="width: 402px;" />
+    </colgroup>
+    <thead>
+      <tr>
+        <td style="padding: 0.1px;">
+          <p align="center" style="text-align:center"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Key</span></span></b></span></span></span></p>
+        </td>
+        <td style="padding: 0.1px;">
+          <p align="center" style="text-align:center"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Value</span></span></b></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.1px;">Identifier (Entity ID)</td>
+        <td style="padding: 0.1px;">
+          <ul class="Disc">
+            <li style="margin-bottom: 16px;"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">For APAC<br />
+                        <span style="color:#3498db"><span style="color: #3498db;"></span></span></span></span></span></span></span><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#3498db"><span style="color: #3498db;">https://identity-au.energyexemplar.com/Saml2</span></span></span></span></span></span></span></li>
+            <li style="margin-bottom: 16px;"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">For EMEA<br />
+                        <span style="color:#3498db"><span style="color: #3498db;"></span></span></span></span></span></span></span><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#3498db"><span style="color: #3498db;">https://identity-eu.energyexemplar.com/Saml2</span></span></span></span></span></span></span></li>
+            <li style="margin-bottom: 16px;"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">For NAPROD<br />
+                        <span style="color:#3498db"><span style="color: #3498db;"></span></span></span></span></span></span></span><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#3498db"><span style="color: #3498db;">https://eeprod-na.energyexemplar.com/Saml2</span></span></span></span></span></span></span></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.1px;">
+          <p>Reply URL (Assertion Consumer Service URL)</p>
+        </td>
+        <td style="padding: 0.1px;">
+          <ul class="Disc">
+            <li style="margin-bottom: 16px;"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">For APAC<br />
+                        <span style="color:#3498db"><span style="color: #3498db;"></span></span></span></span></span></span></span><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#3498db"><span style="color: #3498db;">https://identity-au.energyexemplar.com/Saml2/Acs</span></span></span></span></span></span></span></li>
+            <li style="margin-bottom: 16px;"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">For EMEA<br />
+                        <span style="color:#3498db"><span style="color: #3498db;"></span></span></span></span></span></span></span><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#3498db"><span style="color: #3498db;">https://identity-eu.energyexemplar.com/Saml2/Acs</span></span></span></span></span></span></span></li>
+            <li style="margin-bottom: 16px;"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">For NAPROD<br />
+                        <span style="color:#3498db"><span style="color: #3498db;"></span></span></span></span></span></span></span><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#3498db"><span style="color: #3498db;">https://eeprod-na.energyexemplar.com/Saml2/Acs</span></span></span></span></span></span></span></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.1px;">
+          <p>Sign On URL</p>
+        </td>
+        <td style="padding: 0.1px;">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;"> Blank</span></font>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.1px;">
+          <p>Relay State (Optional)</p>
+        </td>
+        <td style="padding: 0.1px;">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"> Blank</span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0.1px;">Logout URL (Optional)</td>
+        <td style="padding: 0.1px;"> Blank</td>
+      </tr>
+    </thead>
+  </table>
+  <p> </p>
+  <p> </p>
+  <div style="margin-left: 40px;"> <img height="175" src="../../assets/images/Azure_IDP/adp1.jpg" width="649" /><br />
+     </div>
+  <h2><br />
+    Attributes &amp; Claims</h2>
+  <p>Follow the list below for setting up the Attributes and Claims. Please make sure the value for &#39;<strong>Key</strong>&#39; should be in the exact case as mentioned.</p>
+  <div style="margin-left: 40px;"> </div>
+  <table border="1" style="margin-left: 37px;">
+    <tbody>
+      <tr>
+        <th colspan="1" rowspan="1" style="text-align: center;">Key</th>
+        <th colspan="1" rowspan="1" style="text-align: center;">Value</th>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td colspan="1" rowspan="1" style="text-align: center;">given_name</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">user.givenname</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="text-align: center;">family_name</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">user.surname</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="text-align: center;">email</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">user.mail</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="text-align: center;">name</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">user.displayname</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="text-align: center;">Unique User Identifier</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">user.userprincipalname</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br />
+      </p>
+  <p><strong><img src="../../assets/images/Blue_Book_Closed.gif" /> NOTE</strong>: Make sure the <strong>Namespace</strong> field is empty for all the claims except &#39;<strong>Unique User Identifier</strong>&#39;<br />
+    <br />
+             <img height="277" src="../../assets/images/Azure_IDP/adp2.jpg" width="777" /><br />
+    <br />
+    <br />
+            <img src="../../assets/images/Azure_IDP/adp3.jpg" />
+  </p>
+  <h2><br />
+    SAML Certificates</h2>
+  <p><strong>Copy App Federation Metadata URL</strong>: This value will be set in EE Cloud Web &#39;Authority&#39; Field<br />
+    <br />
+           <img height="334" src="../../assets/images/Azure_IDP/adp4.jpg" width="664" />
+  </p>
+  <p> </p>
+  <h2 style="margin-top: 3px;">Set up SAML</h2>
+  <p><strong>Copy Azure AD Identifier</strong>: This value will be set in EE Cloud Web &#39;ClientID&#39; Field.</p>
+  <p><br />
+    <br />
+           <img height="156" src="../../assets/images/SetUpSAML.png" width="631" />
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p><br />
+     </p>
+  <p> </p>
+  <p> </p>
+</body>
+</html>

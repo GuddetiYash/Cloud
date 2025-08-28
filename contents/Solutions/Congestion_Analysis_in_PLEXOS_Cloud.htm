@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Congestion Analysis in PLEXOS Cloud</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1187</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">9ad8f38e-d8ed-4fc8-8ed3-ec0088379d8b</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1187, TZXE7D2DFWED-1834737786-1187</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="Analysing Congestion,Congestion Analysis,Congestion Analysis in PLEXOS Cloud" />
+  <meta name="rh-authors" content="Jigyasa" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>Congestion Analysis in PLEXOS Cloud</h1>
+  <h4>Table of Contents</h4>
+  <ul>
+    <li><a href="#What_is_Congestion_and_Congestion_Analysis?">What is Congestion and Contingent Congestion</a></li>
+    <li><a href="#What_is Congestion_Analysis?">What is Congestion Analysis</a></li>
+    <li><a href="#Uses_for_Congestion_Analysis">Uses for Congestion Analysis</a></li>
+    <li><a href="#Analyzing_Congestion_in_PLEXOS_Cloud">Analyzing Congestion in PLEXOS Cloud</a></li>
+    <li><a href="#Analyzing Contingent Congestion in PLEXOS Cloud">Analyzing Contingent Congestion in PLEXOS Cloud</a></li>
+    <li><a href="#Understanding_the_Different_Reports">Understanding Different Reports</a></li>
+    <li><a href="#Notes_on_Model_Solutions">Notes on Model Solutions</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="What_is_Congestion_and_Congestion_Analysis?">What is Congestion and Contingent Congestion? </h2>
+  <h3><strong>[A] Congestion</strong> </h3>
+  <p>Congestion in a power transmission network occurs when the demand for electricity flow through certain transmission lines or network elements exceeds their designed capacity, reaching or surpassing safe operational limits. This situation prevents additional power flows, which could otherwise lead to overloads. Overloads can result in the overheating of wires and transformers or cause operations to enter unstable states.</p>
+  <h3><strong>[B] Contingent Congestion</strong></h3>
+  <p><strong></strong><strong></strong>Contingent Congestion is a potential increase in congestion that occurs when a specific contingency, such as a line outage or equipment failure, impacts the power supply. You can view and analyze the Contingent Congestion to better understand the implications of various potential contingencies and make more informed decisions to optimize the power performance and reliability.<strong></strong></p>
+  <h2><strong></strong></h2>
+  <hr />
+  <h2 id="What_is Congestion_Analysis?"><strong>What is Congestion Analysis </strong></h2>
+  <p>Congestion Analysis is the identification of congestion and the factors that drive it.<br />
+    <br />
+    Power flows through elements on the network dependent on injections – generation adds power to the network (positive injection) whereas load takes power from the network (negative injection).<br />
+    <br />
+    Contingencies model the potential losses of transmission elements on the network.  Facilities have a non-zero probability of failure, and the reliable delivery of power must take this into account.  When elements fail, power will be redirected per the physics of the transmission system across the remaining elements.  These remaining elements must remain below acceptable loading levels should a contingency occur.<br />
+    <br />
+    The map visualizations and output tabulations help the user to identify when and where congestion occurs on the system, while the congestion analysis tools allow the user to identify how both injections and contingencies impact power flow.
+  </p>
+  <hr />
+  <h2 id="Uses_for_Congestion_Analysis">Uses for Congestion Analysis </h2>
+  <p>All generation owners and load entities are exposed to deliverability risk. Congestion drives price differentials prices between locations (i.e., without congestion, prices would be homogenous), and leads to suboptimal economic dispatch.<br />
+     <br />
+    In regulated markets, congestion leads to higher production costs.  These increased production costs are usually passed on to the rate payer, but the utility has an obligation to reasonably mitigate these costs. In deregulated markets, entities such as asset owners, demand aggregators, and traders need to understand LMP differentials.  Asset owners and demand aggregators will seek to minimize these differentials, whereas traders will want to take an informed position based on these.</p>
+  <hr />
+  <h2 id="Analyzing Congestion in PLEXOS Cloud">Analyzing Congestion in PLEXOS Cloud </h2>
+  <p>Refer to the steps mentioned below to analyze the Congestion for your Model:</p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Navigate to the Models page.</li>
+    <br />
+    <li>Under the <strong>Models</strong> page, go to the desired Model, and select <strong>Run</strong>.<br />
+      <img height="415" src="../assets/images/Congestion Analysis in PLEXOS Cloud/New SS - Aug 2024/Click Run.png" width="821" />
+    </li>
+    <br />
+    <li> In the Run Congiguration Panel, go to <strong>Custom Run Configuration.</strong><br />
+      <img height="406" src="../assets/images/Congestion Analysis in PLEXOS Cloud/New SS - Aug 2024/Custom Run Configuration.png" width="820" />
+    </li>
+    <br />
+    <li>Select <strong>Produce Congestion Analysis Data</strong>, and then click <strong>Run Model</strong>.<br />
+      <img height="400" src="../assets/images/Congestion Analysis in PLEXOS Cloud/New SS - Aug 2024/Produce Congestion Analysis Data.png" width="822" />
+    </li>
+    <br />
+    <li>After the model finishes running successfully, navigate to the <strong>Solutions</strong> page. There are several ways to view the Congestion analysis for your Model from here. You can identify the Model which has the Congestion based on the Congestion icon as shown below in the screenshot.<br />
+      <img src="../assets/images/Congestion Analysis in PLEXOS Cloud/New SS - Aug 2024/Congestion Icon.png" />
+    </li>
+    <br />
+    <li>For geocoded studies, navigate to the <strong>Map</strong> tab located in the top right-hand corner of your screen. In the <strong>Property</strong> panel on the left side, under the <strong>Transmission</strong> and <strong>Line</strong> dropdowns, select the <strong>Congestion </strong>property, and then click <strong>Apply.<br />
+      </strong><strong></strong><br />
+      Refer to the GIF for example:<br />
+      <img height="420" src="../assets/images/Congestion Analysis in PLEXOS Cloud/New SS - Aug 2024/Select Congestion Preoperty.gif" width="849" />
+    </li>
+    <br />
+    <li>Once you click Apply, you can view and select the <strong>Period Type, Sample, Phase, </strong>and <strong>Time Period</strong> on the Map tab. Click on<strong> Output Trend</strong> to view the Congestion for lines. Output Trend displays the <strong>Congestion ($/MW) </strong>across the selected interval.<br />
+      <img height="424" src="../assets/images/Congestion Analysis in PLEXOS Cloud/New SS - Aug 2024/Output Trend.png" width="860" />
+    </li>
+    <br />
+    <li>If you click on a time period where there is Congestion in the system on the Output Trend chart, PLEXOS Cloud will show you which lines in the system are congested.<br />
+      <br />
+      In this example, if you select the point on 12 May 2023, you can see that <strong>Line North_West_115 </strong>has <strong>$7.34/MW</strong> and <strong>Line East_North_115</strong> has <strong>$5.31/MW</strong> of Congestion. To drill down further, click on the line (shown below in red).<br />
+      <img height="500" src="../assets/images/RN_2024/Jan 2024 Release SS/CongestionNewUI1.png" width="862" /><br />
+      <br />
+      [a] After clicking on the line, you can view the data for <strong>Induced Flow. </strong>The Congestion Insights panel also highlights the Congestion name as a tag along with the Node name. You can also navigate to these options by clicking on any line on the screen.<br />
+      <img height="408" src="../assets/images/RN_2024/Jan 2024 Release SS/CongestionDataNewUI.png" width="858" /><br />
+      <br />
+      [b] By clicking on a <strong>Node From</strong> label, you can view the <strong>Node Flow, Node Generation, </strong>and <strong>Node Congestion Charge Decomposition.</strong><br />
+      <img height="459" src="../assets/images/RN_2024/Jan 2024 Release SS/NodeFrom.png" style="cursor: nwse-resize;" width="629" />
+    </li>
+  </ol>
+  <hr />
+  <h2 id="Analyzing Contingent Congestion in PLEXOS Cloud">Analyzing Contingent Congestion in PLEXOS Cloud </h2>
+  <p><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nwse-resize;" width="17" /></strong><strong>NOTE: </strong> </strong>Ensure the Model is enabled for <strong>Contingent Congestion</strong> to view the Contingency for Lines.  Contingent Congestion is available for PLEXOS Version 10.000 Rev 6 and above. </p>
+  <p> </p>
+  <p>Analyzing Contingent Congestion is similar to analyzing Congestion in PLEXOS Cloud. Follow the step 1 to step 7 mentioned in the <strong>Analyzing Congestion in PLEXOS Cloud </strong>section, and then refer to the below mentioned steps for Contingent Congestion.</p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>On the Map tab under the Solution page, click on the Output Trend to view the Congestion for lines. Output Trend displays the <strong>Congestion ($/MW) </strong>across the selected interval.<br />
+      <img height="424" src="../assets/images/Congestion Analysis in PLEXOS Cloud/New SS - Aug 2024/Output Trend.png" width="860" />
+    </li>
+    <br />
+    <li>If you click on a time period where there is Congestion in the system on the Output Trend chart, PLEXOS Cloud will show you which lines in the system are congested. </li>
+    <br />
+    <li>Once you click on the time period, you can view the Congestion Card on the right-side of the screen that shows the Congested Lines labeled as <strong>N-0 Line</strong><strong> </strong>and Contingency labeled as <strong>N-x Line.</strong><br />
+      Refer to the GIF below to view the Contingent Congestion for lines:<br />
+      <img height="424" src="../assets/images/RN_2024/Aug 2024 Release SS/Team Canary/Contigent Congestion - Visual.gif" width="845" />
+    </li>
+    <br />
+    <li>Upon clicking the card, you can view:<br />
+      [a] <strong>Input, <strong style="margin-left: 0px"></strong><strong style="margin-left: 0px">Output, Connections, </strong>and <strong>Induced Flow</strong> Reports.</strong><br />
+      [b] <strong>Node From</strong> and<strong> Node To</strong> Reports include the Node Report, Node Flow, and Node Generation details. <br />
+      <img height="420" src="../assets/images/RN_2024/Aug 2024 Release SS/Team Canary/Contigent Congestion.png" width="847" />
+    </li>
+  </ol>
+  <hr />
+  <h2 id="Understanding the Different Reports">Understanding the Different Reports </h2>
+  <h3><strong>[A] Induced Flow Decomposition </strong></h3>
+  <p>Induced Flow Decomposition details how the different injections (generation or load) at identified buses contribute to the flow on the transmission element being inspected. The characteristics of each injection (capacity, load, and PTDF) are displayed for the specified interval.<br />
+     </p>
+  <h3><strong>[B] Congestion Charge Decomposition </strong></h3>
+  <p>This report allows users to understand the financial impact marginal cost of congestion at each node of interest.  </p>
+  <p><br />
+    The LMP of a given node is the sum of the marginal cost of energy, marginal cost of losses, and the marginal cost of congestion.  The congestion charge decomposition report identifies the congestion charge at the given node for each congested element in the system, allowing the user to identify which congested elements are most impactful.<br />
+     </p>
+  <h3><strong>[C] Node Flow Report </strong></h3>
+  <p>The node flow report allows the user to see all flows in and out of a given node.  It reports all injections (generation and demand) as well as detailing flows through lines or transformers, allowing the user to quickly see how power is distributed at that node. </p>
+  <hr />
+  <h2 id="Notes on Model Solutions">Notes on Model Solutions</h2>
+  <ul>
+    <li>Models that are run with Congestion Analysis enabled generate .ClOutput files. Since Congestion Analysis is only available in PLEXOS Cloud, enabling this feature will increase the size of the .zip solution file compared to the same model run in PLEXOS Desktop.</li>
+    <li>Congestion Analysis is only available for versions of PLEXOS 9.1 and later.</li>
+    <li>Contingent Congestion Analysis is only available for </li>
+  </ul>
+</body>
+</html>

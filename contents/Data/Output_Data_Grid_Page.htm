@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Output Data Grid Page</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1209</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">2038e72a-7668-4591-a74e-d085e3b792ea</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1209, TZXE7D2DFWED-1834737786-1209</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="Grid,Output Data Grid Page,Save Layout" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <h1>Output Data Grid Tab</h1>
+  <p>Table of Contents</p>
+  <ol class="RoundSquare">
+    <li><a href="#1">Overview</a></li>
+    <li><a href="#2">Grid View </a>
+      <ol>
+        <li><a href="#2.1">Show More Data</a></li>
+        <li><a href="#2.2">Number of Shown Records</a></li>
+        <li><a href="#2.3">Select Cells and View MIN, MAX,  AVG, and more summary data</a></li>
+      </ol>
+    </li>
+    <li><a href="#3">Chart View </a>
+      <ol>
+        <li><a href="#3.1">Chart Configuration Options</a></li>
+        <li><a href="#3.2">Legends</a></li>
+        <li><a href="#3.3">Tooltips</a></li>
+        <li><a href="#3.4">Chart Customization Options</a></li>
+      </ol>
+    </li>
+    <li><a href="#4">Save Layout</a></li>
+    <li><a href="#5">Drop Zeros from the Data Grid</a></li>
+    <li><a href="#6">Query Multiple Samples and Time Slices from the Data Grid</a></li>
+  </ol>
+  <p> </p>
+  <h2 id="1">Overview</h2>
+  <p>In the Output Data Grid tab, users can view and analyze Simulation results presented in a <strong>Grid </strong>and <strong>Chart </strong>format. This Grid tab displays various output data related to power system Simulations, such as generation, load, prices, or other relevant parameters. <br />
+    <img height="490" src="../assets/images/Charting View - Article/Overview 2.png" width="997" />
+  </p>
+  <p>To view the output data in Grid and Chart views, users must select the desired Objects and Properties from the Properties panel.</p>
+  <p>For example, </p>
+  <p><img height="495" src="../assets/images/RN_2024/Apr 2024 Release SS/Canary/Charting New UI/Release Notes/Selection of Properties.gif" width="997" /></p>
+  <hr />
+  <h2 id="2">Grid View</h2>
+  <p>Grid View presents a fundamental yet powerful tool for solution data analysis, offering a structured and comprehensive tabular representation of data. Its value lies in its ability to succinctly organize and display large datasets, facilitating easy comparison, sorting, and filtering of information.  </p>
+  <p> </p>
+  <p><img height="499" src="../assets/images/Solutions Page/Grid Tab/Grid View.jpg" width="1026" /></p>
+  <p> </p>
+  <h3>[A] Output Settings</h3>
+  <p>The Output Settings drop-down allows you to control how data is displayed within the Grid tab. </p>
+  <p> </p>
+  <p>These settings help refine your view by determining the simulation phase, time granularity, duration, and preferred view format.</p>
+  <p> </p>
+  <p><img height="499" src="../assets/images/Solutions Page/Grid Tab/Output Settings.jpg" width="1026" /></p>
+  <p> </p>
+  <p>The following components are available in the Output Settings panel:</p>
+  <p> </p>
+  <ol class="Decimal">
+    <li><strong>Phase:</strong> Defines the simulation phase (e.g., ST, MT). For the Grid tab, this is automatically set to the ST (Short-Term) phase.</li>
+    <br />
+    <li><strong>Period:</strong> Specifies the time aggregation level, such as Year, Month, or Interval. The Grid tab uses the Interval period by default to allow detailed, time-step-based Grid examination.</li>
+    <br />
+    <li><strong>From – To: </strong>Enables you to define the time range for your analysis. Select the specific start and end intervals to narrow your focus on the desired portion of the simulation timeline.</li>
+    <br />
+    <li>
+      <p><strong>Compare Solutions: </strong>The  <strong>Compare Solutions </strong>dropdown allows you to compare up to <strong>four Solutions</strong> side-by-side without navigating to the dedicated Comparison page.<br />
+        <br />
+        To compare Solutions, select your desired Solutions (up to four) and click <strong>APPLY.</strong><br />
+        <br />
+        The tab updates with additional columns, displaying side-by-side comparisons for the selected Solutions.<br />
+        <br />
+        <img height="473" src="../assets/images/RN_2025/August 2025/Canary/Compare Solutions - Grid Tab.gif" width="982" />
+      </p>
+    </li>
+  </ol>
+  <h3 id="2.1">[B]  Show More Data</h3>
+  <p>Users can click the <strong>Show More Data</strong> button to load the next batch of data if the total results are more than 100k. The Show More Data button can load more data if the current batch is loaded. After you click on Show More Data, you will see a Loading icon at the bottom. After all records are loaded, the Show More Data button is greyed out and you will be able to sort and filter all data. <br />
+    <img height="495" src="../assets/images/Output Data Grid page SS/ShowMoreData.png" width="997" /><br />
+     
+  </p>
+  <h3 id="2.2">[C] Number of Shown Records</h3>
+  <p>In the footer, you can view the text showing how much data is currently loaded in the grid versus the total number or records the query returned. If not, all records are loaded you can click the Show More Data button. </p>
+  <p><img height="495" src="../assets/images/Output Data Grid page SS/ShowingNoOfRecords.png" width="997" /></p>
+  <p> </p>
+  <h3 id="2.3">[D] Select Cells and View MIN, MAX,  AVG, and more summary data</h3>
+  <p>You can multi-select cells in the Grid to get COUNT, SUM, MIN, MAX and AVG for the selected records. This will be real time and the calculation changes when you select or deselect cells. </p>
+  <p>This option is available with the Name and Property views as well. </p>
+  <p><span style="line-height: 107%;"><img height="495" src="../assets/images/Output Data Grid page SS/AggregateFun.png" width="997" /></span></p>
+  <hr />
+  <h2 id="3">Chart View</h2>
+  <p>The Chart view provides a visual representation of data, allowing users to analyze the Solution output through various forms such as Line, Bar, Area, and Scatter Charts. With the Chart view, analyzing Solutions for complex or large datasets is easy, so that users can make informed decisions in real-time. </p>
+  <p>The Chart view provides extensive customization options for analyzing data more conveniently. Users can easily rename the X and Y Axes, enable or disable the Secondary Axis, incorporate shapes onto the Chart, implement Zooming and Autoscaling functionalities, Export Charts, reposition the legend and more.  </p>
+  <p><img height="495" src="../assets/images/Charting View - Article/Overview Features.gif" style="cursor: nesw-resize;" width="997" /><br />
+     <br />
+    By default, the Secondary Axis toggle will be in the disabled state. Users can enable the toggle to view Chart Type 2 and the Secondary Y Axis. </p>
+  <h3 id="3.1">[A] Chart Settings</h3>
+  <p>The Chart Settings allow users to select desired Primary and Secondary Y-axis properties, various Chart Types, Font Size, Markers, Legends, and Grid Lines to customize the chart according to their needs. <br />
+    <br />
+    <img height="502" src="../assets/images/Charting View - Article/Chart Settings.png" width="1000" />
+  </p>
+  <ol class="RoundSquare">
+    <li><strong>Primary Y Axis:</strong> This option displays the available properties for selection on the Primary Y Axis, located on the left side of the Chart. By default, the first property of the Primary Y Axis is selected for the Chart.</li>
+    <br />
+    <li><strong>Chart Type 1:</strong> This section showcases the available Chart types, such as Lines, Bar, Area, and Scatter, for Chart type 1. By default, the chart type is set to Line, but users can change the chart type according to their needs. </li>
+    <br />
+    <li><strong>Secondary Y Axis: </strong>Users can select properties for the Secondary Y Axis, located on the right side of the Chart. By default, the last property of the Secondary Y Axis is selected for the chart.  </li>
+    <br />
+    <li><strong>Chart Type 2: </strong>Similar to Chart Type 1, this section presents a variety of Chart types, including Lines, Bar, Area, and Scatter, for Chart type 2. By default, the Chart type is set to Line, but users can change the Chart type according to their needs. </li>
+    <br />
+    <li><strong>Data Type:</strong> It includes a Time Series and Duration Curve data types. These data types are crucial in charting for providing insights into time-dependent behavior and the distribution of values, enabling better decision-making and strategic planning.</li>
+    <br />
+    <li><strong>Font Size:</strong> This section provides options for adjusting the font size used for Chart context, offering choices such as Small, Medium, and Large. By default, the font size is set to Medium, but users can change the font type according to their needs. </li>
+    <br />
+    <li><strong>Secondary Axis Toggle:</strong> This option allows users to enable or disable the Secondary Y axis on the chart, providing flexibility in visualization. </li>
+    <br />
+    <li><strong>Show Markers:</strong> Users can utilize this option to visually display individual data points as markers on the chart, aiding in data interpretation and analysis. </li>
+    <br />
+    <li><strong>Show Grid Lines:</strong> Grid lines provide users with a reference framework for interpreting the data plotted on the chart. By displaying grid lines along the axes, users can accurately gauge the scale and relative positioning of data points within the chart. This allows users to make more precise measurements, comparisons, and estimations based on the chart&#39;s visual representation. </li>
+    <br />
+    <li><strong>Show Legends:</strong> This option allows users to selectively show or hide legends on the chart based on their preferences.</li>
+  </ol>
+  <h3><br />
+    [B] Legends </h3>
+  <p>Legends provide users with guidance in interpreting the meaning of different elements in a chart, such as colors, object names, and property names, depending on the selected Primary and Secondary Y Axis.</p>
+  <p> </p>
+  <p><img height="495" src="../assets/images/Charting View - Article/Legends.png" width="997" /></p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Users can drag and reposition the legend within the chart area according to their preference. This functionality proves useful when dealing with complex charts featuring multiple data series or categories. Users can adjust the legend&#39;s placement to avoid overlapping with other chart elements or to optimize the chart&#39;s layout for better readability. <br />
+      <br />
+      <img height="459" src="../assets/images/Charting View - Article/Legends - Drag and Drop.gif" width="956" />
+    </li>
+    <li>To view a particular legend, click on the corresponding color. <br />
+      <br />
+      <img height="459" src="../assets/images/Charting View - Article/Legends - Color.gif" width="956" />
+    </li>
+  </ol>
+  <h3><br />
+    [C] Chart Title</h3>
+  <p>The chart title reflects the selected period type from the Output Settings and the chosen Primary Axis properties from the Chart Settings. For example, when &quot;Generation&quot; is selected as the Primary Axis property and &quot;Interval&quot; as the period type, the chart title displays &quot;Generation by Interval.&quot;</p>
+  <p>This feature provides immediate context to charts, helping users quickly understand the data for better analysis.<br />
+    <img height="502" src="../assets/images/RN_2024/Sept 2024 Release SS/Team Kingfisher/Chart Title.png" width="1000" />
+  </p>
+  <h3 id="3.3"><br />
+    [D] Chart Types</h3>
+  <p>Chart types are particularly useful for visualizing how different data segments contribute to a total, making it easier to track changes and identify patterns over time. The available chart types include:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Line Chart:</strong> A line chart displays data points connected by straight lines, ideal for showing trends over time or continuous data. This chart type helps you easily identify patterns or changes in data over a specific period.</li>
+    <br />
+    <li><strong>LineStacked:</strong> A stacked line chart displays multiple data series as lines, with each series stacked on top of the previous one.</li>
+    <br />
+    <li><strong>Bar Chart:</strong> A bar chart represents data with rectangular bars, where the length of each bar corresponds to the value it represents. This chart type is excellent for comparing individual data points across different categories.</li>
+    <br />
+    <li><strong>BarStacked: </strong>A stacked bar chart represents data with rectangular bars divided into segments. Each segment represents a different data series, stacked one on top of the other within the same bar.</li>
+    <br />
+    <li><strong>Area Chart:</strong> An area chart is similar to a line chart, but the area beneath the line is filled in. This helps emphasize the magnitude of data and is useful when you want to visualize both trends and cumulative values over time.</li>
+    <br />
+    <li><strong>AreaStacked:</strong> A stacked area chart is similar to a line chart but with the area below each line filled in and stacked on top of the other series.</li>
+    <br />
+    <li>
+      <p><strong>Step:</strong> A step chart is a variation of a line chart where the data points are connected by a series of steps rather than straight lines. Step charts are ideal for showing changes that occur at specific points in time, such as changes in pricing, inventory levels, or interest rates.</p>
+    </li>
+    <br />
+    <li>
+      <p><strong>StepArea: </strong>A step area chart combines the features of a step chart and an area chart. Like a step chart, it connects data points with steps rather than straight lines. The area between the steps and the x-axis is filled in, emphasizing the magnitude of the changes. The filled areas help you quickly grasp the overall volume or magnitude of the data, making it easier to see how changes accumulate over a period.</p>
+    </li>
+    <br />
+    <li>
+      <p><strong>Scatter Chart:</strong> A scatter chart plots individual data points based on two variables, displaying them as dots. It’s especially useful for identifying relationships or correlations between variables, trends, and outliers.</p>
+    </li>
+  </ul>
+  <p><img height="504" src="../assets/images/RN_2024/Sept 2024 Release SS/Team Kingfisher/Chart Types.gif" width="1018" /></p>
+  <h3 id="3.3">[E] Data Types</h3>
+  <p> Data Type includes a Time Series and Duration Curve data types. These data types are crucial in charting for providing insights into time-dependent behavior and the distribution of values, enabling better decision-making and strategic planning.</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Time Series:</strong> Time series data consists of sequences of data points collected or recorded at specific time intervals, such as hourly, daily, weekly, or monthly. It is essential for tracking trends, patterns, and behaviors over time. It helps customers analyze how a variable changes over time, enabling them to forecast future trends, identify seasonal patterns, and detect anomalies.</li>
+    <br />
+    <li><strong>Duration Curve: </strong>In the Duration Curve, the data points are sorted in descending order of magnitude, and the curve shows the percentage of time that the variable exceeds a certain level. Duration curves are particularly useful for assessing the reliability or availability of resources. For example, in energy management, a duration curve can show the percentage of time a power plant operates at a certain capacity. This helps you understand the distribution and likelihood of different levels of performance or resource availability, aiding in resource planning and risk management.  </li>
+  </ul>
+  <p><img height="504" src="../assets/images/RN_2024/Sept 2024 Release SS/Team Kingfisher/Data Types.gif" width="1018" /></p>
+  <h3>[F] Tooltips </h3>
+  <p>Tooltips are interactive pop-up boxes that provide additional information about specific data points when users hover the cursor over them. Tooltips displays information for the X axis, Y axis, and Values, allowing users to gain insights or context without cluttering the chart with excessive labels or annotations.  <br />
+    <br />
+    <img height="502" src="../assets/images/Charting View - Article/Tooltips.png" width="1000" />
+  </p>
+  <p>Users can leverage tooltips to quickly identify data points of interest, compare values across different data series, or understand the significance of particular data points within the chart. </p>
+  <h3 id="3.4">[G] Chart Customization Options </h3>
+  <p>The Chart customization options allows users to download the Chart in PNG format, incorporate shapes onto the chart, implement zooming and autoscaling functionalities, and more. </p>
+  <p><img height="345" src="../assets/images/Charting View - Article/Chart Customization Options - New.png" width="718" /></p>
+  <p> </p>
+  <p><strong>[I] Download plot as a PNG</strong><br />
+    <br />
+    This option allows users to download the chart in PNG format. Users can utilize this option to easily download and share their customized charts with colleagues and clients, or integrate them into presentations, reports, or documents, facilitating seamless collaboration and communication.  
+  </p>
+  <p>Click on the <strong>Camera Icon</strong> to download the Chart in PNG format.<strong style="margin-left: 28px"></strong></p>
+  <p><img src="../assets/images/Charting View - Article/Download as PNG.png" /></p>
+  <p> </p>
+  <p><strong>[II] Zoom Button </strong></p>
+  <p>This option allows users to zoom in to the desired area of the Chart. Users can utilize this option to focus on specific data subsets for deeper analysis.   </p>
+  <p>To zoom in on a particular area of the chart: </p>
+  <ol class="LowerAlpha">
+    <li>Click on the <strong>Zoom Icon</strong> and select the area you wish to zoom in on the Chart. </li>
+    <li>To return to the original view, double-click anywhere on the Chart. </li>
+  </ol>
+  <p><img height="338" src="../assets/images/Charting View - Article/Zoom Button.gif" width="699" /></p>
+  <p> </p>
+  <p><strong>[III] Pan Button </strong></p>
+  <p>This option allows users to move or scroll across the chart horizontally or vertically.  </p>
+  <p>To pan across the chart: </p>
+  <ol class="LowerAlpha">
+    <li>Click on the <strong>Pan Icon </strong>and click and hold your mouse to explore the data on the chart. </li>
+    <li>To return to the original view, double-click anywhere on the Chart. </li>
+  </ol>
+  <p><img height="337" src="../assets/images/Charting View - Article/Pan Button.gif" width="704" /></p>
+  <p> </p>
+  <p><strong>[IV] Box Select </strong></p>
+  <p>Box selection allows users to select a specific range or subset of data points within the chart for further analysis of the data. This option is particularly useful when dealing with large datasets or complex visualizations where isolating specific data points or regions is necessary for deeper analysis. </p>
+  <p><img src="../assets/images/Charting View - Article/Box Select.png" /></p>
+  <p> </p>
+  <p><strong>[V] Lasso Select </strong></p>
+  <p>Lasso selection is another way like box selection to select a specific range or subset of data points within the chart for further analysis of the data. Instead of drawing a box to select data points, users can use the lasso tool to draw a freehand shape around the desired data points. This option is particularly useful for selecting non-linear or irregularly distributed data points.  </p>
+  <p>Lasso select is beneficial when dealing with complex data structures, such as scatter plots with overlapping points or line charts with multiple series, where traditional box selection may not be sufficient. </p>
+  <p><img src="../assets/images/Charting View - Article/Lasso Select.png" /></p>
+  <p> </p>
+  <p><strong>[VI] Various Drawing Options </strong></p>
+  <p>The drawing options in Chart view provide users with additional tools for interactively analyzing and exploring their data. By drawing lines, freeform shapes, or circles on the chart, users can visually identify patterns, trends, and relationships in the data and perform targeted analysis on selected subsets of data for deeper insights and understanding. </p>
+  <p><img height="346" src="../assets/images/Charting View - Article/Drawing Options.gif" width="725" /></p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Draw Line: </strong>This option allows users to draw a straight line on the chart, typically connecting two points of interest. Users can use this feature to visually compare the relationship between two variables or to highlight a specific trend or pattern in the data. For example, users might draw a line to represent a linear regression trend or to emphasize a particular slope or angle in the data. </li>
+    <li><strong>Draw Open Freeform:</strong> With this option, users can draw a freeform shape such as a curve or a series of connected lines on the chart. This feature is useful for outlining specific areas of interest or for highlighting irregular patterns in the data. Users might use open freeform drawing to enclose data points that belong to a particular category or to mark areas with anomalous behavior for further investigation. </li>
+    <li><strong>Draw Closed Freeform:</strong> Similar to open freeform drawing, this option allows users to draw a freeform shape on the chart, but with the ability to close the shape to create a bounded region. Users can use closed freeform drawing to segment the data into distinct clusters or to define regions for analysis, such as identifying outliers or determining areas of high density. </li>
+    <li><strong>Draw Circle: </strong>This option allows users to draw a circle on the chart, with the ability to adjust the size and position of the circle as needed. Drawing circles can be particularly useful for geographical analysis or for identifying outliers in the data. </li>
+    <li><strong>Draw Rectangle:</strong> This option allows users to draw a rectangular shape on the chart, with the ability to adjust the size and position of the rectangle as needed.</li>
+  </ul>
+  <p> </p>
+  <p><strong>[VII] Erase Active Shape </strong></p>
+  <p>This option allows users to remove or erase the active shape they have drawn on the chart. It provides users with the flexibility to correct mistakes or refine their selections without affecting other aspects of the chart or analysis. For example, if a user has drawn a shape to select a subset of data points but wants to modify or remove it, they can use the erase active shape option to remove it. </p>
+  <p><img height="342" src="../assets/images/Charting View - Article/Erase active shape.gif" width="717" /></p>
+  <p> </p>
+  <p><strong>[VIII] Zoom In/Out </strong></p>
+  <p>These options allow users to zoom in or out on specific areas of the chart to focus on particular details or to get a broader view of the data. </p>
+  <p><img src="../assets/images/Charting View - Article/Zoom In.png" /></p>
+  <p> </p>
+  <p><img src="../assets/images/Charting View - Article/Zoom Out.png" /></p>
+  <p> </p>
+  <p><strong>[IX] Autoscale </strong></p>
+  <p>The autoscale option automatically adjusts the axes of the chart to fit the range of the data being displayed. It ensures that all data points are visible within the chart&#39;s boundaries, optimizing the visualization for better clarity and readability. Users can use this option to quickly adjust the scale of the chart without manually adjusting the axes, especially when dealing with datasets with varying ranges or outliers. </p>
+  <p><img src="../assets/images/Charting View - Article/Autoscale.png" /></p>
+  <p> </p>
+  <p><strong>[X] Reset Axes </strong></p>
+  <p>This option resets the axes of the chart to their default scales and positions. It provides users with a convenient way to revert any changes made to the axes, such as manual adjustments or zooming, and return the chart to its original state. Users can use this option to reset the chart for a fresh analysis or to restore the initial view after exploring specific regions or subsets of data. </p>
+  <p><img src="../assets/images/Charting View - Article/Reset Axes.png" /></p>
+  <hr />
+  <h2 id="4"><strong>Save Layout</strong></h2>
+  <p>The Solutions Data Grid page allows you to save the current settings of your ad-hoc query for reuse. You can save the current view as a Layout and store the selected Properties, Objects, Phases, Periods, and more.</p>
+  <p>Layouts will save the time spent on selecting the same fields every time you evaluate a Solution.</p>
+  <p>  <img alt="" height="371" src="../assets/images/Output Data Grid page SS/Layout.png" width="759" /></p>
+  <p> </p>
+  <p><b>Follow the steps below to save the Layout</b>:</p>
+  <ol>
+    <li class="paragraph" style="margin-left: 32px;"><span style="vertical-align: baseline;">Go to any <b>Successful Solution</b></span></li>
+    <li class="paragraph" style="margin-left: 32px;"><span style="vertical-align: baseline;">Click on the grid icon </span><img src="../assets/images/Output Data Grid page SS/grid.png" style="width: 22px; height: 18px;" />located in the top right of the Solutions page.</li>
+    <li class="paragraph" style="margin-left: 32px;"><span style="font-size: 12pt;"><span style="vertical-align: baseline;">Using the Properties panel select the <b>Objects</b> and <b>Properties</b> that you want to view. </span></span></li>
+  </ol>
+  <p> </p>
+  <div style="margin-left: 0.07in">   <img height="348" src="../assets/images/Output Data Grid page SS/ObjectProperties.png" width="767" /></div>
+  <p>    </p>
+  <ol start="4">
+    <li class="paragraph" style="margin-left: 32px;"><span style="vertical-align: baseline;">In the example below we selected the Generator class, the Solar object, and then the Generation Property. After you have selected these, click <b>Apply</b>. Note</span><span style="vertical-align: baseline;"> at least 1 Object and 1 Property are required.</span></li>
+  </ol>
+  <p>    <img height="431" src="../assets/images/Output Data Grid page SS/ProObjSelection.gif" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" width="766" /></p>
+  <p> </p>
+  <ol start="5">
+    <li class="paragraph" style="margin-left: 32px;">
+      <p>You can see the records as per the selections you made and edit any of the fields above the grid to adjust your query.</p>
+    </li>
+  </ol>
+  <p> </p>
+  <ol start="6">
+    <li class="paragraph" style="margin-left: 32px;">
+      <p><span style="vertical-align: baseline;">To save these current settings (selection of fields, height, width etc.) </span><span style="vertical-align: baseline;">click on the layout icon </span><span style="width: 18px;height: 18px;"><img alt="" src="images/" style="width: 18px; height: 18px;" /></span> and then click <b>Save As.</b><b></b></p>
+    </li>
+  </ol>
+  <p> </p>
+  <p style="margin-left: 0.72in">        <img alt="" height="191" src="../assets/images/Output Data Grid page SS/SaveAs.png" width="188" /><span style="vertical-align: baseline;"></span></p>
+  <p> </p>
+  <ol start="7">
+    <li class="paragraph" style="margin-left: 32px;"><span style="vertical-align: baseline;">It will ask to give a name to your Layout. Enter a unique name for the Layout and click <b>Save.</b></span></li>
+  </ol>
+  <div style="margin-left: 80px;"><span style="vertical-align: baseline;">     <img alt="" height="241" src="../assets/images/Output Data Grid page SS/SaveAsEnterlayoutName.png" style="margin-top: 19px;" width="425" /></span></div>
+  <p>   </p>
+  <ol start="8">
+    <li class="paragraph" style="margin-left: 32px;"><span style="vertical-align: baseline;">You can now see a checkmark on the Layout icon, that indicates that the current Layout has been saved.</span></li>
+  </ol>
+  <div style="margin-left: 80px;"><span style="vertical-align: baseline;">     <img src="../assets/images/Output Data Grid page SS/LayoutIcon.png" style="width: 62px; height: 50px; margin-top: 17px;" /></span></div>
+  <p> </p>
+  <ol start="9">
+    <li class="paragraph" style="margin-left: 32px;"><span style="vertical-align: baseline;">Once you click on the icon, you can see all your saved Layouts.</span></li>
+  </ol>
+  <div style="margin-left: 80px;">
+    <p>   </p>
+    <p>  </p>
+         <img height="342" src="../assets/images/Output Data Grid page SS/SavedLayouts.png" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); margin-top: 14px; cursor: nesw-resize;" width="287" />
+  </div>
+  <p> </p>
+  <hr />
+  <h2 id="5">Drop Zeros from the Data Grid</h2>
+  <p>We have provided a check box to hide values that are entirely zero for any of the Properties selected. This will not return the Property whose value is zero for the entire horizon. <br />
+    <br />
+    For example, let&#39;s assume you have a 7-day run generation with values of 0,0,0,0,0,0, and you clicked the checkbox, <strong>Drop Zeroes</strong>, then that property will not be returned in the response. However, if even a single day has a non-zero value (e.g., 0,0,0,0,2,0), the property will be displayed in the grid with all zeroes except for the one day with a value of 2.<br />
+    <br />
+    To apply this in your output data grid page, check the box for <strong>Drop Zeros.</strong>
+  </p>
+  <div style="margin-left: 40px;">          <img height="464" src="../assets/images/Output Data Grid page SS/DropZeros.png" style="cursor: nwse-resize;" width="761" /></div>
+  <p> </p>
+  <hr />
+  <h2 id="6">Query Multiple Samples and Time Slices from the Output Data Grid</h2>
+  <p> </p>
+  <p>You can  query the output for multiple Samples or Time Slices at once from the Output Data Grid page. To support this, the Output Data Grid page  has the option to select Samples or Time Slices in bulk. Once you click on <strong>APPLY</strong>, all the selected Samples or Time Slices will have their results displayed. Thus, saving the time and effort to query each time for different samples. This option is accessible with Monte Carlo and Auto Samples Simulation types. For single runs, the Sample option will be disabled and default to ‘Mean’, and Time Slice will default to ‘All Periods’.</p>
+  <p> </p>
+  <p><strong>NOTE</strong>: The Time Slice drop-down will only be displayed for Studies in which the Time Slice object is configured in the PLEXOS desktop.</p>
+  <p> </p>
+  <p>To access multi-select Option –</p>
+  <p> </p>
+  <p>1. Go to a <strong>Solution</strong></p>
+  <p>2. Navigate to the <strong>Grid View</strong></p>
+  <p>3. Select the required Objects and Properties from the Properties Panel and click <strong>APPLY</strong>.</p>
+  <p>4. For selecting multiple Samples, click the<strong> Sample drop-down</strong>.</p>
+  <p>5. Choose the Samples and click <strong>APPLY</strong>.</p>
+  <p> </p>
+  <p><img height="430" src="../assets/images/RN_2024/Jan 2024 Release SS/MultiselectSamples.png" width="610" /></p>
+  <p> </p>
+  <p><strong>Multi-select  for Time Slice</strong>:</p>
+  <p><img height="259" src="../assets/images/RN_2024/Jan 2024 Release SS/Timeslice.png" width="616" /></p>
+</body>
+</html>

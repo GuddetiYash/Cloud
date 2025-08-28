@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Distributed Runs</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1188</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">217c3319-ee51-4e1b-bb61-f0abab32c8c3</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1188, TZXE7D2DFWED-1834737786-1188</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="Distributed Runs,Distributed Runs in PLEXOS Cloud,Run types" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <h1>Distributed Runs</h1>
+  <p>A Distributed Run enables you to control and maximize the computing resources for a model run. You can select the Virtual Machines Type and the Number of VM to allocate to your run by specifying them in the drop-downs below.</p>
+  <p> </p>
+  <p>Currently, PLEXOS Cloud supports below mentioned Distribution Methods for Distribution Run type. </p>
+  <ol class="Decimal">
+    <li><a href="#1">Chronological Split Execution</a></li>
+    <li><a href="#2">Monte Carlo (Auto-sample)</a></li>
+    <li><a href="#3">Monte Carlo</a></li>
+    <li><a href="#4">Parallel Models</a></li>
+    <li><a href="#5">Monte Carlo Outage</a></li>
+    <li><a href="#6">Planning</a></li>
+  </ol>
+  <p> </p>
+  <p>Refer to the following Infographic to understand the available Run Types in PLEXOS Cloud:</p>
+  <p> </p>
+  <p><img height="710" src="../assets/images/RN_2025/March 2025/Run Types.png" width="1036" /></p>
+  <p> </p>
+  <p>Follow the steps below to access the above-mentioned Distribution Methods: </p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Navigate to the <strong>Models </strong>page.<br />
+      <img height="419" src="../assets/images/New Run Config Panel/Models Page.png" width="987" />
+    </li>
+    <br />
+    <li>Select the Model or multiple Models you wish to run.   After selecting the Model(s), the <strong>Run Models </strong>panel will appear in the top-right corner of the screen. </li>
+    <br />
+    <li>Drag the panel to the left to view the full <strong>Run Configuration Panel.<br />
+        <img height="419" src="../assets/images/New Run Config Panel/Select Model and Drag Run Config Panel.gif" width="987" /></strong><br />
+      <br />
+      <strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong><strong></strong></strong>  <strong>NOTE: </strong>When you select the Models to run, the Run Configuration Panel provides key information, such as available Credits, Concurrent Cores, the selected Model name, and <strong>Configuration</strong> cards like <strong>Previous Run Details, Previous Configuration, Recommendations, </strong>and <strong>Study Recommendations. </strong>Selecting one of these cards and clicking <strong>Run </strong>can trigger the Model Run instantly.<strong></strong>
+    </li>
+    <br />
+    <li>On the <strong>Run Configuration Panel, </strong>select the desired configuration card that you wish to customize.</li>
+    <br />
+    <li>Click <strong>Customize </strong>to enter a new window where you can adjust the selected configuration.<br />
+      <img height="478" src="../assets/images/New Run Config Panel/Run Config Panel.gif" width="985" />
+    </li>
+    <br />
+    <li>In the <strong>Run Type</strong> section, you can view and select a Distribute Run Method of your choice.</li>
+  </ol>
+  <hr />
+  <h2 id="1">1. Chronological Split Execution</h2>
+  <p>Chronological Split Execution allows you to divide the chronological horizon to run the ST phase divisions in individual VMs, and as a result reduce run times and improve performance.</p>
+  <p> </p>
+  <p>This type of Distributed Run can be enabled in PLEXOS Cloud as long as you have an ST Schedule object enabled on your Model. During the simulation, the distribution method runs individual splits on separate VMs, and the final solution files are stitched together to view from the Parent Simulation.</p>
+  <p> </p>
+  <p>Understanding Chronological Split Execution simulation structure and solution stitching</p>
+  <p><br />
+    <strong>Parent Simulation</strong>
+  </p>
+  <p> </p>
+  <ul>
+    <li style="list-style-type: none;">
+      <ul style="list-style-type: circle;">
+        <li style="margin-left: 16px;">Runs MT/LT phases</li>
+        <li style="margin-left: 16px;">Plexos splits ST phases into new simulations which are enqueued as individual simulations.
+          <ul style="list-style-type: square;">
+            <li style="margin-left: 8px;">Each ST will possibly run on its own VM, but will have access to and may use the LT/MT from the parent so it doesn&#39;t re-run long running phases</li>
+          </ul>
+        </li>
+        <li style="margin-left: 16px;">Raw ST Child Simulation solution data will be available to download as part of the Parent Simulation. <b>Note:</b> This solution data will not contain any reportable information.</li>
+        <li style="margin-left: 16px;">PLEXOS stitches the ST solution data after all are done<span style="font-size: 8.0pt;"><span style="line-height: 107%;"> </span></span>
+          <ul style="list-style-type: square;">
+            <li style="margin-left: 8px;">Final Stitched solution data will be available from the Parent Simulation
+              <ul style="list-style-type: disc;">
+                <li style="margin-left: 8px;">Hybrid/Parquet etl process only happens on stitched solution data</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li style="margin-left: 16px;margin-bottom: 11px;">In the case of 1 or more children failing to complete successfully, stitching will still be attempted and may still produce partial output.</li>
+      </ul>
+    </li>
+  </ul>
+  <p><br />
+    <strong><span style="font-size: 11pt;">Child Simulation</span></strong>
+  </p>
+  <ul>
+    <li style="list-style-type: none;">
+      <ul style="list-style-type: circle;">
+        <li style="margin-left: 16px;">Typically runs the individual ST splits</li>
+        <li style="margin-left: 16px;">Will not directly have solution data of its own
+          <ul style="list-style-type: square;">
+            <li style="margin-left: 8px;">Log data, PLEXOS logs, raw solution data will be associated with the parent simulation</li>
+          </ul>
+        </li>
+        <li style="margin-left: 16px;">Has access too and may use any data available from the parent MT/LT simulation
+          <ul style="list-style-type: square;">
+            <li style="margin-left: 8px;margin-bottom: 11px;">Additional optimizations are in the works to help reduce time and processing of ST Child Simulations.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p><span style="font-size: 11pt;">The diagram below provides an overview of the workflow and steps that are followed to produce your Model solution files.</span><br />
+    <br />
+    <img alt="chronodiagram.jpg" src="../assets/images/Understanding Distributed Runs in PLEXOS Cloud/splitchrono.png" style="width: 616px; height: 552px; cursor: nwse-resize;" />
+  </p>
+  <hr />
+  <h2 id="2">2. Monte Carlo (Auto - Sample)</h2>
+  <p> </p>
+  <p>Monte Carlo (Auto-sample) allows you to run endogenous samples on multiple machines, then stitch your solutions together. With Monte Carlo (Auto-Sample), the total number of samples run will equal the Object Sample Count from the Stochastic Object multiplied by the number of requested instances. This means that if the model defines a Stochastic Object with 30 samples, every simulation instance will run 30 samples using different random number seeds.</p>
+  <p> </p>
+  <p>For example, if 30 samples are defined in the model, and a user requests 10 VM instances, this will produce a total of 300 samples if all simulations complete successfully.</p>
+  <p> </p>
+  <p><span style="line-height: 107%;"><span style="line-height: 107%;">Understanding Monte Carlo Sampling simulation structure and solution stitching</span></span><br />
+    <br />
+    In PLEXOS Cloud, the Parent Simulation contains the information that is ultimately passed on to the Child Simulations. Read more to understand the difference between parent and child simulations, and how solution stitching is done for Monte Carlo Sampling.<br />
+    <br />
+    Parent Simulation
+  </p>
+  <ul>
+    <li style="list-style-type: none;">
+      <ul style="list-style-type: circle;">
+        <li style="margin-left: 16px;"><span style="line-height: 107%;">The initial simulation splits the sampling but does not run a simulation using the PLEXOS engine.</span></li>
+        <li style="margin-left: 16px;">Splits into multiple simulations depending on model configuration and requested sample count (divisions)</li>
+        <li style="margin-left: 16px;"><span style="line-height: 107%;"><span style="line-height: 107%;">Produces generated input data, which is uploaded and associated with the Parent Simulation</span></span>
+          <ul style="list-style-type: square;">
+            <li style="margin-left: 8px;"><span style="line-height: 107%;">No other solution data is produced by this simulation</span></li>
+          </ul>
+        </li>
+        <li style="margin-left: 16px;">Sample divisions are determined by PLEXOS, not PLEXOS Cloud</li>
+        <li style="margin-left: 16px;"><span style="line-height: 107%;">Does not wait for children to finish, will exit when done</span>
+          <ul style="list-style-type: square;">
+            <li style="margin-left: 8px;">Short running process, same VM will be used to run Child Simulations after they&#39;re enqueued</li>
+            <li style="margin-left: 8px;margin-bottom: 11px;">No automatic stitching</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p><strong><span style="line-height: 107%;">Child Simulation</span></strong></p>
+  <ul>
+    <li style="list-style-type: none;">
+      <ul style="list-style-type: circle;">
+        <li style="margin-left: 16px;">Uses the generated input data from the parent as its input</li>
+        <li style="margin-left: 16px;">Produces solution data per simulation
+          <ul style="list-style-type: square;">
+            <li style="margin-left: 8px;">Parquet, Hybrid, Raw data available for each Child Simulation</li>
+          </ul>
+        </li>
+        <li style="margin-left: 16px;margin-bottom: 11px;"><span style="line-height: 107%;">No automatic stitching</span></li>
+      </ul>
+    </li>
+  </ul>
+  <p><strong><span style="font-size: 11pt;"><span style="line-height: 107%;"><span style="line-height: 107%;">Solution Stitching</span></span></span></strong></p>
+  <ul>
+    <li style="list-style-type: none;">
+      <ul style="list-style-type: circle;">
+        <li style="margin-left: 16px;">Explicit actions from the user are required to run stitching. It does not run automatically.</li>
+        <li style="margin-left: 16px;">The stitched solutions selected by user. Note: User defined order for stitching can be set through the PLEXOS Cloud API.</li>
+        <li style="margin-left: 16px;">Produces Parquet and Hybrid stitched data.</li>
+        <li style="margin-left: 16px;margin-bottom: 11px;">Stitching is only available on Hybrid and Parquet based solution data.</li>
+      </ul>
+    </li>
+  </ul>
+  <p><br />
+    The diagram below provides an overview of the workflow and steps that are followed to produce your Model solution files.<br />
+    <br />
+    <img alt="montecarlodiagram.jpg" height="800" src="../assets/images/Understanding Distributed Runs in PLEXOS Cloud/montecarlo.png" style="width: 654px; height: 544px;" width="679" />
+  </p>
+  <p> </p>
+  <p>Users can stitch the Solutions in two ways: </p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Before the Simulation Run, on the <strong>Run Configuration</strong> panel, users can click the checkbox of<strong> Stitch Solutions once Simulation completes</strong> to stitch the generated solutions.  </li>
+    <li>Alternatively, after the Simulation Run, users can navigate to the <strong>Simulations </strong>page, locate the respective model, and use the <strong>Stitch Solutions </strong>option from the<strong> Kabab Menu.</strong></li>
+  </ol>
+  <hr />
+  <h2 id="3">3. Monte Carlo</h2>
+  <p>This distribution method is used for user-defined samples. The total number of samples run is equal tot the Object Sample Count from the Stochastic Object. This means that if the model defines a Stochastic Object with 30 samples, any combination of how samples are split among the VMs will result in 30 total samples.</p>
+  <p> </p>
+  <p>For example, if 30 samples are defined in the model and a user requests 3 VM instances, each VM will run only 10 samples, with the total being 30. <br />
+     </p>
+  <p><strong>NOTE: </strong>For Monte Carlo (Auto-sample) and Monte Carlo function, a Stochastic object must be enabled in the model.</p>
+  <p> </p>
+  <p>Users can stitch the Solutions in two ways: </p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Before the Simulation Run, on the <strong>Run Configuration</strong> panel, users can click the checkbox of<strong> Stitch Solutions once Simulation completes</strong> to stitch the generated solutions.  </li>
+    <li>Alternatively, after the Simulation Run, users can navigate to the <strong>Simulations </strong>page, locate the respective model, and use the <strong>Stitch Solutions </strong>option from the<strong> Kabab Menu.</strong></li>
+  </ol>
+  <hr />
+  <h2 id="4">4. Parallel Models</h2>
+  <p>The parallel model distribution method in PLEXOS Cloud&#39;s Distributed run type is a technique that allows multiple models to be run simultaneously. This is achieved by selecting multiple models using the Ctrl + Click or Shift + Click method and then choosing a single virtual machine (VM) type to run these models on.</p>
+  <p> </p>
+  <p>When the models are selected and the VM type is chosen, each model is assigned to its own VM and is run in parallel, thereby reducing the time taken to complete the simulation. This is particularly useful when dealing with large and complex models that would otherwise require a significant amount of time to run.</p>
+  <p> </p>
+  <p>Using this method not only saves clicks by allowing multiple models to be selected and run simultaneously but also ensures that the execution is completed in a timely manner. It is an efficient and effective way to distribute the computational workload across multiple processors, making it easier to perform simulations and gain insights.</p>
+  <hr />
+  <h2 id="5">5.  Monte Carlo Outage</h2>
+  <p>The Monte Carlo Outage Distribution Method operates on Outage sample draws and enables users to split their Simulation based on Outage sample draws defined in the Stochastic Object of Model. </p>
+  <p> </p>
+  <p>This method is beneficial when users wish to divide the Simulation into outage samples, executing each outage sample concurrently on separate Virtual Machines (VMs), rather than running all outage samples on a single VM. Users can select the Monte Carlo Outage from the Distribution Method dropdown and specify the required Number of Divisions to Run the Monte Carlo Outage for their respective Simulations. </p>
+  <p> </p>
+  <p>For example, if the Model is defined with 30 outage sample draws and a user requests 3 for the Number of Divisions, then each Virtual Machine will Run only 10 Outage samples, with the total being 30  <br />
+    Outage samples. </p>
+  <p> </p>
+  <p><strong>NOTE:</strong> To use the Monte Carlo Outage method, ensure that you have a <strong>Stochastic Object</strong> enabled in your model.</p>
+  <p> </p>
+  <p>Users can stitch the Solutions in two ways: </p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Before the Simulation Run, on the <strong>Run Configuration</strong> panel, users can click the checkbox of<strong> Stitch Solutions once Simulation completes</strong> to stitch the generated solutions.  </li>
+    <li>Alternatively, after the Simulation Run, users can navigate to the <strong>Simulations </strong>page, locate the respective model, and use the <strong>Stitch Solutions </strong>option from the<strong> Kabab Menu.</strong></li>
+  </ol>
+  <hr />
+  <h2 id="6">6. Planning</h2>
+  <p>The Planning Distribution Method is beneficial when users want to split the Planning Horizon of the Model with the <strong>Year</strong> Horizon Units.</p>
+  <p> </p>
+  <p>Users can  select the Planning method from the Distribution Method dropdown and specify the required Number of Divisions and Horizon Units such as <strong>Year </strong>to Run the Planning method for their respective Simulations.    </p>
+  <p> </p>
+  <p>For example, if the Planning Horizon for a Model is set to 10 years, and a user requests 2 Divisions with Horizon Units set to Years, then each Virtual Machine will Run for 5 years. <br />
+    <br />
+    <strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong><strong>NOTE:  </strong></strong>The Planning Distribution Method now only supports the <strong>Year </strong>Horizon Unit, and until other intervals are supported, the   <strong>Day, Month, </strong>and<strong> Week</strong> Horizon Units will not be available. 
+  </p>
+  <hr />
+  <h2>Stitching the Solution</h2>
+  <p>Users can stitch the Solutions in two ways: </p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Before the Simulation Run, on the <strong>Run Configuration</strong> panel, users can click the checkbox of<strong> Stitch Solutions once Simulation completes</strong> to stitch the generated solutions.  </li>
+    <li>Alternatively, after the Simulation Run, users can navigate to the <strong>Simulations </strong>page, locate the respective model, and use the <strong>Stitch Solutions </strong>option from the<strong> Kabab Menu.</strong></li>
+  </ol>
+</body>
+</html>

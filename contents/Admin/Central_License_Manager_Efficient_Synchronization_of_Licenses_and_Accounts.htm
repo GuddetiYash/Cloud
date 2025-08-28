@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Central License Manager_Efficient Synchronization of Licenses and Accounts</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="rh-index-keywords" content="CLM,Central License Manager" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <h1>Central License Manager - Efficient Management of Licenses and Accounts</h1>
+  <h2>In this article</h2>
+  <ul class="Disc">
+    <li><a href="#1">Introduction</a></li>
+    <li><a href="#2">Central License Manager (CLM) Overview</a></li>
+    <li><a href="#3">Functionality Overview</a></li>
+    <li><a href="#4">Air Gapped Machine Access</a></li>
+    <li><a href="#5">Central License Manager (CLM) High-Level Architecture</a></li>
+    <li><a href="#6">Network Requirements for the CLM</a></li>
+    <li><a href="#7">Cloud Operations Standard</a></li>
+    <li><a href="#8">Application Release and Quality Controls</a></li>
+    <li><a href="#9">Application Security and Testing</a></li>
+    <li><a href="#10">Central License Manager Technical Software Support</a></li>
+    <li><a href="#11">Release Deployment Strategy for the Central License Manager (CLM) in PLEXOS Cloud</a></li>
+    <li><a href="#12">Legal Considerations</a></li>
+  </ul>
+  <p><br />
+    
+  </p>
+  <h2 id="1">Introduction</h2>
+  <p>In today’s environment, where software licenses represent a significant investment for organizations and security is crucial, Energy Exemplar’s Central License Manager (CLM) stands as a strategic asset. CLM enables efficient, secure, and uninterrupted software license management by centralizing license administration. This ensures you maximize your software investment while maintaining compliance.<br />
+     </p>
+  <p><img src="../assets/images/CLM Technical Document/Introduction.png" /></p>
+  <p> </p>
+  <p>CLM manages software licenses and entitlements from Energy Exemplar. The critical function is to provide control of and visibility into the status of user licenses, enabling you to limit licensing overages, reduce the risk of license non-compliance, and avoid misreporting of commercial agreements.</p>
+  <p><br />
+    The CLM&#39;s built-in dashboards offer ongoing visibility into license usage and inputs, aiding in software asset management. CLM supports tracking Energy Exemplar software that is licensed based on physical cores, datasets, named users, virtual cores (vCPUs), sockets, or the number of machines.   Admins can monitor which licenses have been issued to specific users or keys, including the dates of issuance, the associated products, and the expiration dates of the licenses. They can also access additional details like machine names and core counts. </p>
+  <p><br />
+    Presenting all this information enhances visibility into the status of every license generated for that tenant.  It encompasses the total number of named user licenses purchased, the remaining quantity, and all cloud entitlements and their current balances. Additionally, it includes licensed product modules in PLEXOS and Aurora. All this data is consistently tracked and monitored for any updates or changes. <br />
+     </p>
+  <h2 id="2">Central License Manager (CLM) Overview</h2>
+  <p>Central License Management (CLM) is a licensing tool that helps assign and manage licenses, provides a single platform for efficiently allocating licenses to users, and maintains records of license assignments and changes for accountability and review.</p>
+  <p> </p>
+  <p>Energy Exemplar products including the PLEXOS   Platform (Desktop and Cloud), Aurora, and PLEXOS Connect, fetch and synchronize licenses using CLM. CLM is essential for efficient license management and enables smooth and accurate access. </p>
+  <p> </p>
+  <h3>Core Features and Benefits:</h3>
+  <ul class="Disc">
+    <li><strong>Subscription: </strong>A Subscription in the Central License Manager is an agreement granting users access to specific software features for a set period. It involves:
+      <p> </p>
+      <ul>
+        <li><strong>Access Rights:</strong> Specifies features and services available to the subscriber.</li>
+        <li><strong>Duration:</strong> Defines the subscription&#39;s validity, typically monthly, annually, or multi-year.</li>
+        <li><strong>Usage Monitoring:</strong> Tracks usage and compliance with license terms.<br />
+          <br />
+          Subscription details are vital for managing software licenses across an organization in a central license manager (CLM). They help track and identify licenses, while real-time usage data provides insight into license availability and compliance. Subscription details offer a clear view of assigned licenses, including how they are pooled, distributed, and tracked based on the user roles.<br />
+          <br />
+          <img height="346" src="../assets/images/CLM Technical Document/Subscription page.png" width="762" />
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>User Management:</strong> In Central License Manager (CLM), user management is essential for controlling access to licensed software within an organization. The system allows administrators to view a list of active and inactive users, add new users, assign licenses, and set user roles based on their responsibilities. Admins can also send welcome emails to new users, providing them with the necessary access information.  CLM enables admins to manage user status, allowing them to mark users as active or inactive, which is helpful for temporary or suspended access. If a user is no longer needed, their license can be freed up for reallocation. This ensures efficient use of licenses and keeps the system organized by removing unnecessary users.</li>
+    <br />
+    <li><strong>Single Sign-in (SSO) Support:</strong> Single Sign-On (SSO) enables licensed users to access multiple systems or applications with single login credentials. Users can access the CLM and associated applications with a single set of credentials, eliminating the need to remember multiple passwords.</li>
+    <br />
+    <li><strong>Access Keys: </strong>The Access Keys page in the CLM allows users to generate or regenerate essential login keys, such as Client ID, Primary Secret, and Secondary Secret. These keys enable seamless access to Energy Exemplar services without requiring users to log in to PLEXOS Cloud directly. Located on the Access page, these generic keys can be utilized to access Energy Exemplar services such as PLEXOS Connect, the Command Line Interface (CLI), and the Application Programming Interface (API). Users can regenerate and copy these login keys and secrets multiple times, ensuring smooth service access.</li>
+    <br />
+    <li><strong>Enhanced Security and Control with SSO Integration in CLM:</strong> CLM is seamlessly integrated with Single Sign-On (SSO) systems. It enhances enterprise-level security and gives organizations granular control over software access and usage. Administrators can effortlessly manage user accounts, assign roles and permissions, and monitor license allocation, ensuring a secure and compliant software environment.  </li>
+    <br />
+    <li><strong>Instant Transfer Named User Licenses: </strong>This feature enables smooth license transfers between users, eliminating delays and costs typically associated with traditional license acquisition or switching processes. CLM ensures seamless operations and uninterrupted workflows, maximizing productivity and minimizing operational disruptions.</li>
+    <br />
+    <li><strong>Offline License Checkout:</strong> This capability allows users to check out a license for up to 30 days, enabling continuous work in remote or low-connectivity areas. This feature ensures productivity and workflow continuity regardless of location or connectivity constraints.</li>
+  </ul>
+  <p> </p>
+  <h2 id="3">Functionality Overview</h2>
+  <ul class="Disc">
+    <li><strong>Account Synchronization:</strong> Account synchronization in the Central License Manager involves maintaining consistent updates and alignment of user accounts and their associated licenses across all systems and platforms. This process includes synchronizing user details, roles, and permissions to ensure accuracy and consistency.<br />
+      <br />
+      It also involves reflecting any changes in license status, such as additions, removals, or transfers. This process ensures that contract and license data remain current and aligned with the user&#39;s environment. By continuously tracking and monitoring key information such as the number of purchased and remaining named user licenses, cloud entitlements, and licensed product modules in PLEXOS, and Aurora Admins can quickly identify any discrepancies or changes. <br />
+      <br />
+      This proactive approach helps maintain compliance, optimize resource allocation, and prevent potential issues related to expired licenses or overconsumption of entitlements. Essentially, it keeps the organization’s licensing in sync with its evolving needs and infrastructure.<br />
+        
+    </li>
+    <li><strong>User Management:</strong> CLM facilitates the creation of new users on the PLEXOS Platform, assigning appropriate license types based on stored user data. Users can be categorized as Analysts, Reviewers, Executives, Admin Only, or Cloud Analysts, ensuring they have the necessary permissions and access levels to perform their roles effectively.  </li>
+    <br />
+    <li><strong>License Refresh and Subscription Renewal: </strong><br />
+       
+      <ul>
+        <li><strong>License Refresh:</strong> License refresh refers to the process of updating or renewing the PLEXOS Platform licenses to ensure continued access to its f  eatures and services. This can involve reactivating or extending the validity of a license, ensuring compliance, and maintaining uninterrupted use of PLEXOS. CLM automatically refreshes the licenses for the PLEXOS Platform after 30 days. Users can manually refresh their licenses using a few Command Line Interface (CLI) commands available in the <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Admin%2FCentral_License_Manager_(CLM).htm&amp;rhsearch=welcome%20email">Central License Manager</a> article. </li>
+        <br />
+        <li><strong>Subscription Renewal:</strong> Based on your Subscription, you will have access to multiple Energy Exemplar applications, such as Aurora, PLEXOS Desktop, PLEXOS Connect, etc. Tenant Admins can contact their Customer Success Manager or Account Manager to renew their Subscription at expiry.<br />
+           </li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <h3>Data Collection and Transmission Overview for Energy Exemplar</h3>
+  <p>CLM (Central License Manager) collects licensing-related information to enhance customer support and improve the product. The data collected includes a limited number of licensed user data, to be specific - User name, email address, machine identifier, and IP address. No study data or Sensitive Personal Information (SPI) other than mentioned above is collected, stored or processed. </p>
+  <p> </p>
+  <p>Please refer to the Energy Exemplar’s Privacy policy, which complies with GDPR and other privacy-related requirements. The data in transit and “At Rest” is encrypted. For PLEXOS Connect customers, no user-specific information is gathered. However, simulation-related information such as run duration and features used is sent back to Energy Exemplar.</p>
+  <p> </p>
+  <p>When a user signs into the Cloud platform, they must use the Identity service, which logs authentication attempts. These logs are stored in a database, but the information is not sent to Energy Exemplar. Instead, it involves publicly available client IP web requests made to the API. This allows the system to identify the authenticated user and associate their IP address with license requests. </p>
+  <p> </p>
+  <p>The identity server audits all login attempts, with the data recorded in a SQL database. Long-term historical records, which are used for compliance and event reconstruction, are stored in a secure, cloud-based storage solution. Additionally, the Central License Manager (CLM) stores computer names and identifiers in a SQL database for license enforcement. All data is securely stored within the environment selected by the tenant. It is important to note that the IP captured is the customer&#39;s external IP address, not the IP of any individual machine. Energy Exemplar cannot monitor activities behind a customer’s firewall or track traffic routed through another external connection. </p>
+  <p> </p>
+  <p>The logged IP is essential for identifying the origin of a request, and Energy Exemplar has started exploring the option of blocking requests from specific geographical areas based on this information. Knowing the connecting IP helps ensure that they can monitor who is attempting to connect at any given time.<br />
+     </p>
+  <p> </p>
+  <h2 id="4">Air Gapped Machine Access</h2>
+  <p>In scenarios where PLEXOS is installed on machines that are completely isolated from external networks, obtaining a license via CLM is not feasible. These Air Gap machines, which are entirely disconnected from the internet, cannot meet the basic requirement of internet connectivity necessary for fetching the license through CLM. </p>
+  <p> </p>
+  <p><img height="331" src="../assets/images/CLM Technical Document/Air Gapped Network.png" width="517" /></p>
+  <p> </p>
+  <p>The Central License Manager is essential for securely managing and accessing Air Gapped machines systems isolated from external networks for security purposes. It allows you to connect to these machines by serving as an intermediary, ensuring sensitive data remains protected. You can securely transfer licenses and updates by exporting them online and manually importing them into the Air Gapped system. </p>
+  <p> </p>
+  <p>The Central License Manager ensures licenses are correctly applied, keeping your software operational. Additionally, it provides a user-friendly way to track and manage licenses across multiple Air Gapped machines, making it easier to maintain compliance and functionality in high-security environments. Refer to the architecture below for more understanding:<br />
+     </p>
+  <p> </p>
+  <p><img src="../assets/images/CLM Technical Document/CLM connection network diagram.png" /></p>
+  <p> </p>
+  <p> </p>
+  <h2 id="5">Central License Manager (CLM) High-Level Architecture</h2>
+  <p>The following image demonstrates the architecture and components of CLM:<br />
+    <br />
+    <img src="../assets/images/CLM Technical Document/CLM High Level Architecture.png" />
+  </p>
+  <p> </p>
+  <p>Thus, a Central License Manager is essential for organizations to streamline license management processes, ensure compliance, and optimize software cost allocation effectively across their IT infrastructure. Refer to the table below to view the URLs of different regions or environments:</p>
+  <p> </p>
+  <p><strong>NOTE:</strong> The Environment is the region where your PLEXOS Cloud tenant is hosted. You can validate this from the URL provided in the Welcome email. <br />
+     </p>
+  <table class="MsoTable15Grid4Accent2" style="border-collapse:collapse; border:none">
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid #4163e2; width:360px; padding:0cm 7px 0cm 7px; height:42px; background-color:#4163e2; border-top:1px solid #4163e2; border-right:none; border-left:1px solid #4163e2" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:white">Environment/Region</span></span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid #4163e2; width:360px; padding:0cm 7px 0cm 7px; height:42px; background-color:#4163e2; border-top:1px solid #4163e2; border-right:1px solid #4163e2; border-left:none" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:white">URL</span></span></span></b></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; background-color:#d8dff9; border-top:none; border-right:1px solid #8ca0ed; border-left:1px solid #8ca0ed" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333">North America</span></span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; background-color:#d8dff9; border-top:none; border-right:1px solid #8ca0ed; border-left:none" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><a href="https://license-manager-web-eeprod-na.energyexemplar.com" style="color:#1d3cba; text-decoration:underline"><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">https://license-manager-web-eeprod-na.energyexemplar.com</span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; border-top:none; border-right:1px solid #8ca0ed; border-left:1px solid #8ca0ed" valign="top">
+          <p><span style="color:#ffffff;"><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">Europe, Middle East, and Africa</span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; border-top:none; border-right:1px solid #8ca0ed; border-left:none" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><a href="https://license-manager-web-eu.energyexemplar.com" style="color:#1d3cba; text-decoration:underline" target="_blank" title="https://license-manager-web-eu.energyexemplar.com/"><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">https://license-manager-web-eu.energyexemplar.com</span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; background-color:#d8dff9; border-top:none; border-right:1px solid #8ca0ed; border-left:1px solid #8ca0ed" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333">Asia Pacific</span></span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; background-color:#d8dff9; border-top:none; border-right:1px solid #8ca0ed; border-left:none" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><a href="https://license-manager-web-au.energyexemplar.com" style="color:#1d3cba; text-decoration:underline"><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">https://license-manager-web-au.energyexemplar.com</span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; border-top:none; border-right:1px solid #8ca0ed; border-left:1px solid #8ca0ed" valign="top">
+          <p><span style="color:#ffffff;"><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">India</span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; border-top:none; border-right:1px solid #8ca0ed; border-left:none" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><a href="" style="color:#1d3cba; text-decoration:underline"><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">https://license-manager-web-ind.energyexemplar.com</span></span></a><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; height:59px; background-color:#d8dff9; border-top:none; border-right:1px solid #8ca0ed; border-left:1px solid #8ca0ed" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333">South Africa</span></span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; height:59px; background-color:#d8dff9; border-top:none; border-right:1px solid #8ca0ed; border-left:none" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><a href="https://licensemanager-web-sa.energyexemplar.com" style="color:#1d3cba; text-decoration:underline"><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">https://licensemanager-web-sa.energyexemplar.com</span></span></a><span lang="EN-AU" style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; height:65px; border-top:none; border-right:1px solid #8ca0ed; border-left:1px solid #8ca0ed" valign="top">
+          <p><span style="color:#ffffff;"><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">North America Business Critical Environment</span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; height:65px; border-top:none; border-right:1px solid #8ca0ed; border-left:none" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><a href="https://licensemanager-web-na-bcs.energyexemplar.com" style="color:#1d3cba; text-decoration:underline"><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">https://licensemanager-web-na-bcs.energyexemplar.com</span></span></a><span lang="EN-AU" style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; height:56px; background-color:#d8dff9; border-top:none; border-right:1px solid #8ca0ed; border-left:1px solid #8ca0ed" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333">Australia Energy Market Operator STG</span></span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; height:56px; background-color:#d8dff9; border-top:none; border-right:1px solid #8ca0ed; border-left:none" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><a href="https://license-manager-web-eestage-au.energyexemplar.com" style="color:#1d3cba; text-decoration:underline"><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">https://license-manager-web-eestage-au.energyexemplar.com</span></span></a><span lang="EN-AU" style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; height:56px; border-top:none; border-right:1px solid #8ca0ed; border-left:1px solid #8ca0ed" valign="top">
+          <p><span style="color:#ffffff;"><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><b><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">Australia Energy Market Operator PROD</span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid #8ca0ed; width:360px; padding:0cm 7px 0cm 7px; height:56px; border-top:none; border-right:1px solid #8ca0ed; border-left:none" valign="top">
+          <p><span style="font-size:11pt"><span style="font-family:&quot;Objektiv MK1 Regular&quot;,serif"><span style="color:#333446"><a href="https://license-manager-web-aemo-aue.energyexemplar.com" style="color:#1d3cba; text-decoration:underline"><span style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif">https://license-manager-web-aemo-aue.energyexemplar.com</span></span></a><span lang="EN-AU" style="font-size:12.0pt"><span style="font-family:&quot;Objektiv Mk1&quot;,sans-serif"><span style="color:#333333"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h2 id="6">Network Requirements for the CLM</h2>
+  <p>Below are the Network Requirements for accessing PLEXOS Cloud and utilizing the Central License Manager (CLM):</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Ingress and Egress Port Configuration:</strong> Enable both the Inbound (ingress) and outbound (egress) traffic on port 443 for HTTPS to ensure that the network configuration permits inbound and outbound traffic on port 443 for HTTPS.</li>
+    <br />
+    <li><strong>Whitelisting Domain: </strong>Whitelist*.energyexemplar.com to allow access to any subdomain under energyexemplar.com.</li>
+    <br />
+    <li><strong>Handling a Company Proxy (if Applicable):</strong> If your organization uses a company proxy, configure it to permit traffic to and from *.energyexemplar.com on port 443.  </li>
+  </ul>
+  <p> </p>
+  <p>Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Troubleshooting%2FProxy_Settings_for_PLEXOS_Cloud.htm">Proxy Settings for using PLEXOS Cloud.</a></p>
+  <p> </p>
+  <h2 id="7">Cloud Operations Standards</h2>
+  <p>Cloud operations standards ensure efficient, secure, and compliant management of cloud environments. Key elements include:</p>
+  <h3>Data Access Controls and Auditing</h3>
+  <p>Energy Exemplar employees do not have access to customer data by default. Access to customer data is restricted. We use several layers of controls for monitoring data access, including administrative and technical controls. Customers may choose to authorize access to support or cloud operations staff for testing or validation purposes.</p>
+  <p> </p>
+  <h3>General Operating Stance</h3>
+  <p>Energy Exemplar&#39;s Cloud offerings are ISO 27001 and SOC 2 TYPE II certified and undergo annual 3rd party audits. The General Operating Stance refers to its overall approach to managing operations, including principles, policies, and practices that guide its day-to-day functioning.</p>
+  <p>To ensure the highest levels of security, compliance, redundancy, and fault tolerance, our Data Centre Operations are conducted with best-in-class infrastructure services from top-tier public cloud providers. We operate in geographically dispersed SOC2 TYPE 11 and ISO 27001-compliant facilities, which are certified in public records by each cloud provider.</p>
+  <p> </p>
+  <h3>Physical Security</h3>
+  <p>Physical security is essential for safeguarding the infrastructure that supports CLM systems, ensuring the protection of sensitive license information, and maintaining overall system integrity. Proper physical security measures complement logical and cyber security practices to create a comprehensive security posture for CLM. </p>
+  <p>The public Cloud Infrastructure Provider provides physical security and is audited under its compliance standards. Energy Exemplar has no physical access to any cloud infrastructure. A copy of the Provider’s compliance report can be provided upon request.</p>
+  <p> </p>
+  <h3>Transport Security</h3>
+  <p>Transport security is vital for ensuring that data associated with CLM systems is protected from unauthorized access, tampering, or interception during transmission. By implementing strong encryption, authentication, and network security measures, you can safeguard the CLM data and maintain the integrity and confidentiality of their license management processes.</p>
+  <p>PLEXOS Cloud transfers data securely through the industry-standard method of Windows Communication Foundation with TLS 1.2 or above encryption. To support back-end integration from your network, Energy Exemplar can provide VPN connections using industry-standard AES (128 or 256) IPSec encryptions.</p>
+  <p> </p>
+  <h3>Data At Rest in the Cloud</h3>
+  <p>Data at Rest in the cloud refers to data that is stored in a cloud environment, such as in databases, storage services, or file systems, and is not actively being transmitted or processed. Data that is uploaded into the cloud is, by default, encrypted at rest.</p>
+  <p> </p>
+  <h3>Customer Environment</h3>
+  <p>Energy Exemplar operations establish a standard and secure tenant network for each customer. Securely housing customer data in a separate network ensures tenant data confidentiality. Additionally, application-specific controls protect data from unauthorized access across multiple application layers.</p>
+  <p> </p>
+  <h3>Authentication and Authorization</h3>
+  <p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Aptos,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%"><span style="font-family:&quot;Calibri&quot;,sans-serif">All access to the Cloud Service is authenticated and authorized. Energy Exemplar offers customers several options to simplify the user login experience without compromising security. We use Local Authentication where passwords are stored inside the Cloud environment, maintained separately from your network credentials. Customers can also choose to integrate with their in-house Microsoft Active Directory.</span></span></span></span></span></span></p>
+  <p style="margin-bottom:11px"> </p>
+  <h3 style="margin-bottom: 11px;">Data Privacy</h3>
+  <p>Data privacy involves protecting personal and sensitive information through proper classification, encryption, access control, and adherence to legal and regulatory requirements. Energy Exemplar’s data privacy policy can be found at <a href="https://www.energyexemplar.com/privacy">https://www.energyexemplar.com/privacy</a></p>
+  <p> </p>
+  <p><img height="179" src="../assets/images/CLM Technical Document/Data Access Controls and Auditing.png" width="568" /></p>
+  <p style="margin-bottom:11px"> </p>
+  <h3>Data Backup and Disaster Recovery</h3>
+  <p>The service utilizes the backup services provided by the Cloud Provider. These backups are replicated in multizone, which enables data restoration (data resiliency). Overall, Energy Exemplar’s Business Continuity plan covers disaster recovery (DR). The plan can be provided upon request after customer onboarding. It is tested annually or at any time of major architectural changes that warrant the test.<br />
+    <br />
+    The plan covers customer communication in the event of a DR solution to ensure periodic updates are provided during the event, and the customer is kept up to date on the resolution progress. A backup and Disaster recovery strategy is designed to support:
+  </p>
+  <ul class="Disc">
+    <li>RPO (Recovery Point Objective) of 4hours</li>
+    <li>RTO (Recovery Time Objective) of 24 hours<br />
+       </li>
+  </ul>
+  <h3>24x7 Operations Support</h3>
+  <p>Our Azure Cloud Infrastructure is managed and maintained by an IS027001-certified 24x7x365 Operations team. Providers&#39; onsite NOC staff provide Tier 1 and Tier 2 responses; higher-skilled staff are on call for Tier 3 and 4 issues. Our 24x7 customer responses are regularly audited for quality and adherence to SLA.<br />
+    <br />
+    Executive staff review NOC SLA reports to ensure optimal operations. Additionally. We leverage our integrated Support Team for 24x5 Tier 1 product support.
+  </p>
+  <p> </p>
+  <p> </p>
+  <h2 id="8">Application Release and Quality Controls</h2>
+  <p>To ensure consistent quality and seamless experience, the development team goes through multiple integrated stages of testing including but not limited to the following:</p>
+  <ul class="Disc">
+    <li><strong>Code reviews are performed on all application source changes: </strong>All source code is peer reviewed/architect reviewed before merging to ensure security, quality, and consistency.</li>
+    <br />
+    <li><strong>Continuous automated testing during the development cycle: </strong>Our team runs continuous tests during the development cycle to identify defects early in the development cycle and resolve them early in the development process.</li>
+    <br />
+    <li><strong>Backward compatibility testing:</strong> We maintain a large repository of models with which we test for backward compatibility and increased model accuracy. Our support and QA teams collaborate with customers to increase this repository of models.</li>
+    <br />
+    <li><strong>Security testing:</strong> As part of our DevOps release pipeline, we go through static source code analysis for security issues consistent with industry best practices.</li>
+    <br />
+    <li><strong>OWASP Top Ten Security testing:</strong> Our architects are trained in OWASP security testing and perform security reviews prior to every merge and release.</li>
+    <br />
+    <li><strong>Security Penetration testing by independent vendor:</strong> PLEXOS is security tested and certified by an external vendor annually.</li>
+    <br />
+    <li><strong>Defect Queue Reviews: </strong>We perform reviews of the defect backlog internally before every release with a policy to not release with any open severity 1 or 2 issues (major functionality).</li>
+    <br />
+    <li><strong>Close monitoring of Escape Defects:</strong> Our support team tracks and reports on customer defects after a release to ensure the quality of the release is consistent with expectations.</li>
+    <br />
+    <li><strong>Our release process: </strong>We have several stages with an open Beta to allow customer exposure late in the development cycle to validate release quality and product performance.</li>
+  </ul>
+  <h2 id="9"><br />
+    Application Security and Testing</h2>
+  <p>Application Security is a strong consideration during every step of our deployment process and ongoing maintenance as well as key steps within our application development and release processes. As standard practice we conduct the annual third-party security testing on the application to resolve all high and medium security incidents.</p>
+  <p> </p>
+  <p>The objectives for Web Application &amp; Application Programming Interface (API) security testing are:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>To verify the input validation functionality of Energy Exemplar application.</li>
+    <br />
+    <li>To verify the access control and authentication-related security flaws of Energy Exemplar application.</li>
+    <br />
+    <li>To test the security of Energy Exemplar application in its business workflow level.</li>
+    <br />
+    <li>To analyze the security of all the API endpoints associated with Energy Exemplar application.</li>
+    <br />
+    <li>To analyze whether transactions and all other data of the application are encrypted (both At Rest and In Transit) with updated encryption algorithms.</li>
+    <br />
+    <li>To analyze the security of the backend server system of web application portals.</li>
+    <br />
+    <li>To identify whether it is possible to tamper with the transaction amount processed by the application API.</li>
+    <br />
+    <li>To identify configuration level security vulnerabilities, present in the web application server and API server.</li>
+    <br />
+    <li>To verify that the Access Control Policy is enforced in the Energy Exemplar Application.</li>
+    <br />
+    <li>To identify application data breach possibilities with respect to OVVASP ASVS.</li>
+    <br />
+    <li>To identify if an application is exposing sensitive files like source code, API code, configuration files, etc., to public access.</li>
+    <br />
+    <li>To identify if an application has a rate-limiting feature to block Denial of Service attacks.</li>
+    <br />
+    <li>To analyze Access logs and identify if logs are exposing sensitive information.</li>
+  </ul>
+  <p> </p>
+  <h3>Security Assessment Approach</h3>
+  <p><img height="329" src="../assets/images/CLM Technical Document/Secutiry Assessment Approach.png" width="913" /></p>
+  <p> </p>
+  <h3>Security Assurance</h3>
+  <p>The assessment and reassessment have proven that there are no Critical or High vulnerabilities across the Energy Exemplar Application and API. Further we have met the Secure Application certificate expectations of OWASP, NIST, SANS and CERT-ln. The compliance certificate will be awarded with a validity period of one year.</p>
+  <p> </p>
+  <h3>Guidelines for Access Control and Security at Energy Exemplar</h3>
+  <p>Access control and security are crucial for protecting sensitive information and systems. Here are some guidelines:</p>
+  <ul class="Disc">
+    <li><strong>User Credentials</strong><br />
+      An account will be created for staff with appropriate access as requested by their reporting/line manager. Login credentials are to be kept secure and are not to be shared with another individual. Staff must change their password when automatically prompted. If an individual believes their login credentials have been compromised, they must notify IT services immediately.</li>
+    <br />
+    <li><strong>Minimum Password Requirements</strong><br />
+      EE has implemented strong password policies and guidelines in line with ISO 27001.</li>
+    <br />
+    <li><strong>Multi-Factor Authentication</strong><br />
+      All staff, contractors, or third-party vendors assigned an Energy Exemplar email address or access Energy Exemplar platforms must have Multi-Factor Authentication enabled. This provides an added level of protection in the event user credentials are stolen. Users have the option to configure their mobile numbers to receive a verification code via SMS/TXT or download and install Microsoft Authenticator on their Mobile Phones.</li>
+    <br />
+    <li><strong>Email</strong><br />
+      All emails are tracked and archived for retention and backup purposes. This can only be accessed by Energy Exemplar IT Services in the event of a restore process or security breach, or when requested by a reporting/line manager. Mimecast’s Email Security Platform has been implemented to appropriately protect Energy Exemplar. IT Services receive alerts if a message is in breach of a security policy and can reroute, delete, or block an email message without the end user’s knowledge.</li>
+    <br />
+    <li><strong>Remote Access</strong><br />
+      Staff who require access to infrastructure, such as but not limited to Local Storage, Testing, and Simulation Servers whilst away from an Energy Exemplar office, can remotely connect to these resources via a company-provided secured VPN connection. The currently approved method of remote access is via VPN client - FortiClient. Access to local infrastructure via any other connection method is strictly prohibited such as, but not limited to TeamViewer, GoToMyPC, and ConnectWise.</li>
+    <br />
+    <li><strong>Facilities</strong><br />
+      Energy Exemplar offices require the use of a swipe card/pass to gain access to the premises. Each pass is assigned to a staff member and access to the building is logged for security purposes. Swipe cards/passes are not shared by employees, nor are they allowed to be used by unauthorized personnel. If a pass is lost or stolen, staff must immediately contact IT Services to have the pass disabled. For Energy Exemplar offices that use Key access, under no circumstance are keys given out to external parties and or copies made. Each key has a unique number that is assigned to each employee and is to be handed back at the end of their employment at Energy Exemplar.</li>
+    <br />
+    <li><strong>Company Issued Smartphones</strong><br />
+      All devices that connect to the Energy Exemplar network and or emails must be password protected. The operating system on the device must not be tampered with or changed. iPhones are not to be Jailbroken and Android devices must not be Hooted. Only official firmware updates can be applied to mobile devices.</li>
+    <br />
+    <li><strong>Desk phone - Landline</strong><br />
+      Staff will be provided a fixed-line desk phone if required to perform their role. The use of landline services is monitored and tracked and may be reviewed as part of an audit, security breach, or at the request of a reporting/line manager.</li>
+    <br />
+    <li><strong>Information Security Awareness Training</strong><br />
+      Staff are required to undertake mandatory information security awareness training.</li>
+    <br />
+    <li><strong>Reporting of Security Incidents</strong><br />
+      It is the responsibility of all employees to report any incident, or suspected incidents, involving a breach of Information and or a breach of IT security where information or data has been externally obtained. These incidents are to be reported directly to the Head of Global IT for investigation without delay.</li>
+    <br />
+    <li><strong>Portable Storage Devices</strong><br />
+      Portable storage devices are not to be used unless issued by Energy Exemplar IT Services. Issued USB devices will be encrypted, and passwords are protected to ensure that in the event they are lost or stolen, information is not able to be recovered. USB ports on all workstations will be disabled for portable storage devices unless it is deemed a requirement for the employee to perform their role. Ports will continue to operate other USB devices.</li>
+    <br />
+    <li><strong>Loss or theft of Equipment</strong><br />
+      When a device (laptop, smartphone, iPad) is lost or stolen, the employee must notify IT immediately to report the incident at any time of day or night. The IT department will, among other things, reset passwords and block all access to network resources including email until the issue has been resolved.</li>
+  </ul>
+  <p> </p>
+  <h2 id="10">Central License Manager Technical Software Support</h2>
+  <p>Technical Support for the Central License Manager (CLM) in PLEXOS Cloud is focused on addressing Break-Fixes of the software application, resolving errors and problems with running, and executing the application, and providing general expertise related to platform functionality.</p>
+  <p>Additionally, Technical Support serves as an entry point for inquiries related to customer models and data on the platform. However, assistance with models and data is not considered technical support and is not covered by Energy Exemplar’s Standard Support provisioning terms and conditions. Energy Exemplar Support remains committed to responding with the highest urgency to all customer help requests and will make every reasonable commercial effort to resolve issues as promptly as possible.<br />
+     </p>
+  <h3>Standard (Basic) Support</h3>
+  <p>Energy Exemplar Support provides response and technical support to the CLM Customers as per the following Standard Service Level:</p>
+  <p>All technical issues are to be logged within the support area of the EE’s Customer web portal or via E-mail (<a href="http://support@energyexemplar.com">support@energyexemplar.com</a>), and EE will endeavour to respond as quickly as commercially possible, and as follows: </p>
+  <ul class="Disc">
+    <li>within 24 - 48 business hours for initial response to a logged technical issue.  </li>
+    <li>within 48 - 96 business hours for resolution of a Software defect. Software errors or defects that are the responsibility of EE.  </li>
+    <li>within 1-2 weeks for delivery of “minor” Software enhancement where the EE agrees to undertake same.</li>
+  </ul>
+  <p> </p>
+  <p>In summary, the Standard (Basic) SLA is defined as:</p>
+  <table class="Table" style="width:552px; margin-left:-1px; border-collapse:collapse" width="552">
+    <tbody>
+      <tr>
+        <td rowspan="2" style="border-bottom:1px solid black; width:272px; padding:0cm 0cm 0cm 0cm; height:50px; background-color:#4472c4; border-top:1px solid black; border-right:1px solid black; border-left:1px solid black" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><i><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">Standard Service Level</span></span></i></b> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:280px; padding:0cm 0cm 0cm 0cm; height:50px; background-color:#4472c4; border-top:1px solid black; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">Case Priority</span></span></b> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black; width:280px; padding:0cm 0cm 0cm 0cm; height:29px; background-color:#4472c4; border-top:none; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">P1 - P6</span></span> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black; width:272px; padding:0cm 0cm 0cm 0cm; height:26px; background-color:white; border-top:none; border-right:1px solid black; border-left:1px solid black" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black">Response Time  </span></span></b> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:280px; padding:0cm 0cm 0cm 0cm; height:26px; background-color:white; border-top:none; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black">24 – 48 Hours</span></span> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black; width:272px; padding:0cm 0cm 0cm 0cm; height:23px; background-color:white; border-top:none; border-right:1px solid black; border-left:1px solid black" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black">Support window/ hours</span></span></b> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:280px; padding:0cm 0cm 0cm 0cm; height:23px; background-color:white; border-top:none; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black">24x5 </span></span> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black; width:272px; padding:0cm 0cm 0cm 0cm; height:47px; background-color:white; border-top:none; border-right:1px solid black; border-left:1px solid black" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black">Resolution Time Target </span></span></b> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:280px; padding:0cm 0cm 0cm 0cm; height:47px; background-color:white; border-top:none; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black">48 – 96 Hours (Software defect)</span></span> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black">1-2 Weeks (Software enhancement)</span></span> <span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Connect with Cloud Support to raise Priority 1 or 2 issues over the weekend. Please call the phone number below for your region:</p>
+  <ul class="Disc">
+    <li>24*5 Product Support</li>
+  </ul>
+  <p> </p>
+  <p>With the standard (Basic) support SLA, PLEXOS customers&#39; support requests/cases are addressed by priority in the order received. A newly received case is acknowledged and assigned to the next available support analyst. The only key factor considered in standard case handling is the priority level, as mutually agreed upon between the customer and Energy Exemplar when the case is first responded to. </p>
+  <p> </p>
+  <h3>Priority Definition</h3>
+  <p>Upon receipt of a support case from the user, Energy Exemplar Support reserves the right to assess the priority level stated and potentially reclassify the case to a lower or higher priority as appropriate for the specific issue or problem in question.</p>
+  <p><strong>NOTE:</strong> Issues regarding fetching the license in the CLM are considered a P1 issue. Rest all will be classified based on the analysis of the Energy Exemplar Support team.<br />
+    <br />
+    Case priority is defined as follows:
+  </p>
+  <table class="Table" style="width:552px; margin-left:-1px; border-collapse:collapse" width="552">
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid black;width:162px;padding:0cm 0cm 0cm 0cm;height:34px;background-color:#4472c4;border-top:1px solid black;border-right:1px solid black;border-left:1px solid black;color:#FFFFFF" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><i><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">Priority</span></span></span></i></b><i> </i> <span style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:390px; padding:0cm 0cm 0cm 0cm; height:34px; background-color:#4472c4; border-top:1px solid black; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">Definition</span></span></span></b> <span style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr style="color: #FFFFFF">
+        <td style="border-bottom:1px solid black;width:162px;padding:0cm 0cm 0cm 0cm;height:78px;border-top:none;border-right:1px solid black;border-left:1px solid black;color:#FFFFFF">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><i><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">P1 - Critical</span></span></span></i></b><i> </i> </span></span></span></span><span style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:390px; padding:0cm 0cm 0cm 0cm; height:78px; border-top:none; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">The product is unusable for <b>all users</b>, errors out, causes loss of data, and data corruption. A major feature/function failure that prevents users from performing their critical work function(s)/operations with no workaround   </span></span> </span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;width:162px;padding:0cm 0cm 0cm 0cm;height:39px;border-top:none;border-right:1px solid black;border-left:1px solid black;color:#FFFFFF">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><i><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">P2 - High</span></span></span></i></b></span></span></span></span></span></span></span></span></span></span></span></b>  <span style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:390px; padding:0cm 0cm 0cm 0cm; height:39px; border-top:none; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">A feature/function is unusable for <b>one/a</b> <b>small subset of users</b>, errors out, causes loss of data, causes data corruption with no workaround</span></span> </span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;width:162px;padding:0cm 0cm 0cm 0cm;height:51px;border-top:none;border-right:1px solid black;border-left:1px solid black;color:#FFFFFF">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><i><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">P3 - Medium</span></span></span></i></b></span></span></span></span></span></span></span></span></span></span></span></b>  <span style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:390px; padding:0cm 0cm 0cm 0cm; height:51px; border-top:none; border-right:1px solid black; border-left:none" valign="bottom"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">A severe problem that has a workaround for one or more users, A minor feature or function failure that prevents users from performing non-critical work function(s)/operations with no workaround.</span></span></span></span></span></span></td>
+      </tr>
+      <tr class="rh-cursor-row">
+        <td style="border-bottom:1px solid black;width:162px;padding:0cm 0cm 0cm 0cm;height:38px;border-top:none;border-right:1px solid black;border-left:1px solid black;color:#FFFFFF">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><i><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">P4 - Low</span></span></span></i></b></span></span></span></span></span></span></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:390px; padding:0cm 0cm 0cm 0cm; height:38px; border-top:none; border-right:1px solid black; border-left:none" valign="bottom">A minor feature or function/ failure with a workaround.</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;width:162px;padding:0cm 0cm 0cm 0cm;height:39px;border-top:none;border-right:1px solid black;border-left:1px solid black;color:#FFFFFF">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><i><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">P5 - Informational</span></span></span></i></b></span></span></span></span></span></span></span></span> <span style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:390px; padding:0cm 0cm 0cm 0cm; height:39px; border-top:none; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Cosmetic issues that do not impact the performance of the product</span></span></span></span></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;width:162px;padding:0cm 0cm 0cm 0cm;height:45px;border-top:none;border-right:1px solid black;border-left:1px solid black;color:#FFFFFF">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:black"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><b><i><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><span style="color:white">P5 - Others/Questions</span></span></span></i></b></span></span></span></span></span></span></span></span></span></span></span></b>  <span style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black; width:390px; padding:0cm 0cm 0cm 0cm; height:45px; border-top:none; border-right:1px solid black; border-left:none" valign="bottom">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span style="font-size:11pt"><span style="line-height:normal"><span style="vertical-align:baseline"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif">Knowledge request, Modeling question, How-to, or general inquiry</span></span></span></span></span></span></span></span></span></span><span style="font-size:12.0pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"></span></span></span></span></span></span></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h2 id="11">Release Deployment Strategy for the Central License Manager (CLM) in PLEXOS Cloud</h2>
+  <p>The release deployment strategy for the Central License Manager (CLM) in PLEXOS Cloud ensures a seamless transition with regular updates. As part of the PLEXOS Cloud release cycle, users will receive monthly updates to the CLM page, enhancing existing functionalities without replacing the current system.</p>
+  <p>To keep users well-informed and prepared to utilize the updated features, we issue a customer notification email for each region 15 days before the scheduled deployment. This email includes essential details such as:</p>
+  <ul class="Disc">
+    <li>Deployment start time</li>
+    <li>End time</li>
+    <li>Affected components</li>
+    <li>Maintenance Description</li>
+    <li>Link to the Release Notes</li>
+  </ul>
+  <p> </p>
+  <p>The <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Release_Notes%2FPLEXOS_Cloud_Release_Notes.htm&amp;rhsearch=Email%20Preferences">Release Notes</a> are designed to educate users about the enhancements, new features, and bug fixes included in the current release cycle. Users can find more detailed information about these updates in the <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Getting_Started%2FGetting_Started_Using_PLEXOS_Cloud.htm">PLEXOS Cloud Help Center.</a></p>
+  <p>This structured approach ensures that users remain well-equipped to fully leverage the enhanced functionalities provided by the CLM updates. To start receiving the monthly update email from the PLEXOS Cloud. Users must Subscribe to the Status page using the link provided below:</p>
+  <p><a href="https://status.energyexemplar.com/">PLEXOS Cloud Status page</a></p>
+  <p><br />
+    Please refer to the following email that describes the schedule for license maintenance. You can click on the link in the email to get release notes for your license.</p>
+  <p>Release Notes link: <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Release_Notes%2FPLEXOS_Cloud_Release_Notes.htm&amp;rhsearch=release%20notes">Help Center | PLEXOS Cloud (energyexemplar.com)</a><br />
+     </p>
+  <p><br />
+    <img src="../assets/images/CLM Technical Document/Customer notification email.png" />
+  </p>
+  <p> </p>
+  <p> </p>
+  <h2 id="12">Legal Considerations</h2>
+  <h3>Confidential/Limited Use Disclosure</h3>
+  <p>CONFIDENTIAL. This information, documentation, communication, data, or other material provided herewith or herein contains confidential and proprietary information of Energy Exemplar LLC and its affiliates. Neither this documentation nor its contents should be disclosed to others or reproduced or used without the prior written permission of Energy Exemplar LLC. THE INFORMATION IN THIS DOCUMENTATION IS PROVIDED “AS IS,” AND ENERGY EXEMPLAR DISCLAIMS ALL EXPRESS AND IMPLIED WARRANTIES OF ANY KIND RELATING TO IT, INCLUDING WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. Information in this documentation may be subject to export restrictions.</p>
+  <p> </p>
+  <h3>Trademark Notice</h3>
+  <p>The logos and text for Energy Exemplar, PLEXOS, and Aurora are trademarks or registered trademarks of Energy Exemplar in the United States and other countries.</p>
+  <p> </p>
+  <h3>Internal proprietary Documentation</h3>
+  <p>This document contains confidential and proprietary information of Energy Exemplar. It is intended solely for the internal use of authorized personnel within Energy Exemplar. Unauthorized distribution, dissemination, or use of this document or the information contained herein is strictly prohibited. By accepting this document, you agree to keep its content confidential and not to disclose it to any third party without the express written permission of Energy Exemplar.</p>
+  <p> </p>
+  <h3>Copyright Notice</h3>
+  <p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Aptos,sans-serif"><span lang="EN-US" style="font-size:12.0pt"><span style="line-height:107%"><span style="font-family:&quot;Calibri&quot;,sans-serif">© 2024 Energy Exemplar LLC. All Rights Reserved.</span></span></span></span></span></span></p>
+  <p style="margin-bottom:11px"> </p>
+</body>
+</html>

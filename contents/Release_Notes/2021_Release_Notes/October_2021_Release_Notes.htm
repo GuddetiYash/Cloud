@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>October 2021 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>October 2021 Release Notes</h1>
+  <h3>In this article:</h3>
+  <ul>
+    <li><a href="#0cbcreate">New Performance Configurations Available for Running Simulations</a></li>
+    <li><a href="#0cbsimp">Improved Real-Time Logging on In-Progress Simulations</a></li>
+    <li><a href="#0cbsimula">Gurobi as the Default Solver</a></li>
+    <li><a href="#2solut">Improved Setup and Solutions Performance</a></li>
+    <li><a href="#3models">Models Workspace UI Improvements</a></li>
+    <li><a href="#4user">Cloud Bridge Improvements</a></li>
+    <li><a href="#5excel">Excel Plugin Improvements</a></li>
+    <li><a href="#6api">API Changes</a></li>
+  </ul>
+  <div class="note" id="0tempd">
+    <h3 id="00d"><br />
+      Temporarily Disabled Feature</h3>
+    <p>The October release continues to enhance the underlying architecture including how Cloud Bridge and PLEXOS Cloud manage changes to studies.  <br />
+      To allow our teams time to fully implement related changes to PLEXOS Cloud, we disabled the Congestion Analysis (Analyze Congestion) feature temporarily. We will enable it in an upcoming release.<br />
+       </p>
+  </div>
+  <h2 id="0cbcreate">New Performance Configurations are Available for Running Simulations (Beta)</h2>
+  <p>We&#39;ve delivered optimized virtual machine configurations with the new PLEXOS 9 engine in PLEXOS Cloud. For many models we tested, it delivers a 15-20% performance improvement over PLEXOS 8.3. You should also see faster machine spin-up times of 20-50%.  This will reduce the waiting time for the simulation to start.<br />
+    <br />
+    To leverage these optimized configurations, select PLEXOS 9 Performance from the engine dropdown and then any of the machines in the VM dropdown. There is also a PLEXOS 9 Standard engine that uses non-optimized virtual machines.  Let us know what you think of Performance edition and how it works with your simulations.<br />
+    <br />
+    To learn more about PLEXOS 9 make sure to attend the webcast series. More details are available at <a href="http://plexos9.com" target="_blank">PLEXOS9.com</a>.<br />
+    <br />
+    <img src="../../assets/images/RN_2021/October/Optimized Configurations with Plexos 9.jpg" style="border-style: solid;" />
+  </p>
+  <h2 id="0cbsimp"><br />
+    Improved Real-Time Logging on In-progress Simulations</h2>
+  <p>From Solutions view, a real-time log of an in-progress simulation. The log shows the PLEXOS engine log that you would see on the PLEXOS desktop. The log is updated every 15 seconds and will show the last 100 lines of the log. <br />
+    <br />
+      <img src="../../assets/images/RN_2021/October/Real Time Logging.jpg" style="border-style: solid;" /><br />
+     
+  </p>
+  <h2 id="0cbsimula">Gurobi as the Default Solver</h2>
+  <p>Gurobi is now the default solver for all simulation runs for PLEXOS engines 8.3 and up that support Gurobi. Our testing has shown for many types of models that Gurobi provides strong results and performance. Users can edit the solver in Advanced Configuration before starting the simulation run. The adjusted solver will persist for the model it was edited from.<br />
+    <br />
+    <img src="../../assets/images/RN_2021/October/Gurobi.jpg" style="border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" /><br />
+     
+  </p>
+  <h2 id="#2solut">Improved Setup and Solutions Performance</h2>
+  <p>We worked to improve load times of many of the most used pages within the application, Setup and Solutions. For very large models, we found that load times improved 10x on these screens. This should improve the user experience and workflow.</p>
+  <h2 id="3models"><br />
+    Models Workspace UI Improvements</h2>
+  <p>We continue to improve the new Models workspace by adding new features and improving useability.  There is now a duplicate option:  A popup for confirmation on delete, highlighting of cells on change and we updated some of the terminology based on customer feedback.<br />
+    <br />
+    <img src="../../assets/images/RN_2021/October/Models 2.jpg" style="border-style: solid;" />
+  </p>
+  <h2 id="4user"><br />
+    Cloud Bridge Improvements</h2>
+  <p>We made enhancements to Cloud Bridge to improve resiliency and performance on uploads.<br />
+     </p>
+  <h2 id="5excel">Excel Plugin Improvements</h2>
+  <p>We improved performance when loading objects from PLEXOS Cloud to Excel.</p>
+  <h2 id="6api"><br />
+    API Changes</h2>
+  <p>Data querying improvements. Optimized queries, added appropriate indexes in data tables. Working with larger models should be easier than before. This is evolving functionality that will improve with each new release.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+</body>
+</html>

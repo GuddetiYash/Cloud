@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <title>February 2023 Release Notes</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/>
+  <meta name="rh-authors" content=""/>
+<meta name="robots" content="noindex, nofollow"/></head>
+<body>
+  <h1>February 2023 Release Notes</h1>
+  <h3>In this article: </h3>
+  <ul>
+    <li><a href="#1one">Create and Edit BI Analytics Dashboards directly in PLEXOS Cloud UI</a></li>
+    <li><a href="#2two">Addition of Aggregation and Transpose in the Solutions Reports</a></li>
+    <li><a href="#3three">Improve Simulation Run time with Gurobi Tuner in the PLEXOS Cloud Interface</a></li>
+    <li><a href="#4four">Excel Add-In Enhancements</a></li>
+    <li><a href="#5five">Persistence of Study and Data Files Connection</a></li>
+    <li><a href="#6six">View Versions and manage Geocodes on the new Data tab in the Primary Navigation</a></li>
+    <li><a href="#7seven">New location for accessing Administration functions</a></li>
+    <li><a href="#8eight">New Study specific Simulation Management tab</a></li>
+    <li><a href="#9nine">Support uploading of &quot;ML.NET&quot; files from PLEXOS Cloud Bridge</a></li>
+    <li><a href="#10ten">Managing Storage in PLEXOS Cloud - Enhancements</a></li>
+    <li><a href="#11Eleven">Change in Re-activation Period for Users</a></li>
+    <li><a href="#12twelve">Enhancements to Study Permissions</a></li>
+    <li><a href="#13thirteen">Automate Managing Storage for Old Solutions and Archived Content</a></li>
+    <li><a href="#14fourteen">Improved performance and loading of data in the Solutions Output Data Grid </a></li>
+    <li><a href="#15fifteen">CLI Enhancements</a></li>
+    <li><a href="#16sixteen">API Updates</a></li>
+    <li><a href="#17seventeen">Additional Improvements and Bug Fixes</a></li>
+  </ul>
+  <p> </p>
+  <p>The following video covers the overview of the features in the <strong>February 2023</strong>, <strong>December 2022</strong> and <strong>November 2022</strong> releases:<br/>
+     </p>
+  <p><iframe allowfullscreen="" height="380" src="https://player.vimeo.com/video/798278024?h=e8de1bf5b3" width="660"></iframe></p>
+  <p> </p>
+  <p>For more detailed descriptions of the features and improvements available in the <strong>February 2023</strong> release, scroll through the topics below.<br/>
+     </p>
+  <h2 id="1one"><strong>Create and Edit BI Analytics Dashboards directly in PLEXOS Cloud UI</strong></h2>
+  <p>With this release, we have enhanced the look and feel of <strong>BI Analytics Dashboard</strong>. We have added editing for BI Reports directly in the PLEXOS Cloud interface. </p>
+  <p><br/>
+    In this release, the BI Analytics Dashboard includes the following capabilities.</p>
+  <p> </p>
+  <h3><strong>Show Out of the Box (OOTB) Reports and Custom Reports</strong></h3>
+  <p>In this update, we have made the BI Dashboard&#39;s layout the same as the Solutions Reports layout to make it more user-friendly. Now in BI Reports, you can see, EE Reports and Custom Reports (My Reports). <br/>
+     </p>
+  <p>  <img height="340" src="../../assets/images/RN_2023/Feb/ootbreport.jpg" width="664"/><br/>
+     </p>
+  <h3>Edit and Publish Custom Reports</h3>
+  <p>You can now edit your own reports and make them public or private (hidden from others) </p>
+  <h3> </h3>
+  <h3>Ability to maximize and minimize the Reports page</h3>
+  <p>You can maximize the Reports window to have a larger view of the page. </p>
+  <h3> </h3>
+  <h3>Add New Reports</h3>
+  <p>You can now add any existing reports or create a new one under My Reports (Custom Reports)</p>
+  <h3> </h3>
+  <h3>Search New Reports</h3>
+  <p>Reports can be searched by entering the required keywords in the search tab. Learn more about the above-added functionalities <strong><a href="../../Reports/How_BI_Analytics_Dashboard_Enhances_the_Reporting_Experience.htm" target="_blank">BI Analytics Dashboard</a> </strong>.</p>
+  <p> </p>
+  <h2 id="2two">Addition of Aggregation and Transpose in the Solutions Reports</h2>
+  <p>We have continued to enhance Solutions Reports. In this release, we have provided the 4 Aggregation functions<strong> ( SUM, MIN, MAX, and AVG) </strong>to be used in the Report data and an option to apply Transpose in the Report table.</p>
+  <h3> </h3>
+  <h3><strong>Aggregation</strong></h3>
+  <p>The Aggregation method allows you to fulfill the requirement for getting the values for Sum, Average, Min, and Max.<br/>
+    In this method, we have provided the functionality to edit the “Json” file of the report. In that file, you can add the required Aggregation function (SUM, AVG, MIN, and MAX).</p>
+  <h3> </h3>
+  <h3>Transposing the data of the Report</h3>
+  <p>Transposing the data in your Report means swapping the rows and columns. It is very useful when you need to rearrange the data for rows in columns or vice versa. In this release, we have introduced this feature so that you can quickly switch data between columns and rows.</p>
+  <p> </p>
+  <p>To know more about the <strong>Aggregation</strong> method and <strong>Transpose</strong>, refer to the detailed article on <strong><a href="../../Reports/Solution_Reports_in_PLEXOS_Cloud.htm" target="_blank">Solution Reports</a></strong> .<br/>
+    <br/>
+     
+  </p>
+  <h2 id="3three">Improve Simulation Run time with Gurobi Tuner in the PLEXOS Cloud Interface</h2>
+  <p><b>The Gurobi Tuner </b>helps tune different parameter values in your model to improve the performance by reducing the overall simulation duration.<br/>
+    The Gurobi Tuner can now be used from the PLEXOS Cloud UI as well. In the previous release, it could only be done via the Command Line Interface (CLI).<br/>
+     </p>
+  <p><img height="440" src="../../assets/images/RN_2023/Feb/gurobituner.png" width="565"/><br/>
+     </p>
+  <p>Follow the steps mentioned below to trigger the Gurobi Tuner.<br/>
+    <br/>
+    1. Go to <strong>Models</strong> page and select the Model you want to tune.<br/>
+    2. Click on <strong>Run.</strong><br/>
+    3. In the configuration window, Select the Run Type as ‘Tuning’ from the drop-down.<br/>
+     
+  </p>
+  <p>         <img height="532" src="../../assets/images/RN_2023/Feb/gurobituner2.png" width="311"/></p>
+  <p> </p>
+  <p>4. Select the Tuner type as “<strong>Gurobi Tuner</strong>” and then select the values for each of the other fields including “<strong>Engine Version</strong>”, “<strong>Tuning time</strong>”, “<strong>Tuning Attempts</strong>” and “<strong>MIP Gap Target.</strong>”</p>
+  <p> </p>
+  <p>         <img height="300" src="../../assets/images/RN_2023/Feb/gurobituner3.png" width="334"/><br/>
+     </p>
+  <p> </p>
+  <p style="margin-left: 0.27in">The <strong>MIP Gap Target</strong> parameter controls the minimal quality of the returned solution. The default value for MIP Gap Target is “0.00001” which can be changed as there is no upper limit.</p>
+  <p style="margin-left: 0.27in"> </p>
+  <p style="margin-left: 0.27in"><strong>Tuning Time</strong> is the amount of time it will take to tune in your data. By default, it is set to 7200 mins. However, you can change it with the desired value.</p>
+  <p style="margin-left: 0.27in"> </p>
+  <p style="margin-left: 0.27in"><strong>Tuning Attempts </strong>is the number of trials used by the Gurobi Tuner to figure out the right parameters for the simulation. &#39;5&#39; attempts is the default, you can change that too.</p>
+  <p> </p>
+  <p><br/>
+    5. Now go to<strong> Advanced Configuration</strong> and select the required Input for – <strong>Study</strong>, <strong>Model,</strong> and <strong>Simulation</strong>. Study and Model are selected by default. You can select simulation from the drop-down. It will take solution files from the selected simulation as input.</p>
+  <p> </p>
+  <p>       <img height="308" src="../../assets/images/RN_2023/Feb/gurobituner4.png" width="453"/></p>
+  <p><br/>
+           <img height="343" src="../../assets/images/RN_2023/Feb/gurobituner5.png" width="456"/><br/>
+     </p>
+  <h2 id="4four">Excel Add-In Enhancements</h2>
+  <p>The MS Excel Add-In for PLEXOS Cloud now supports the DateFrom and DateTo values of model properties by having the “IsDateRequired” column value set to “Yes” in the Schema tab of the template. You can now edit data in the <b>Value</b> column of any &lt;<b>ClassName&gt;Property</b> sheet for the selected Study and click Save to upload the changes to your Study in PLEXOS Cloud.</p>
+  <p><strong><br/>
+      <br/>
+        <img height="434" src="../../assets/images/RN_2023/Feb/excel.jpg" width="403"/> </strong></p>
+  <p> </p>
+  <h2 id="5five"><br/>
+    Persistence of Study and Data Files Connection</h2>
+  <p>Previously, the changes made to the Data Files had to be pushed before closing the Excel but the Persistent Data File Functionality eliminate this effort by allowing the Data File to load automatically with the recent changes saved when you save the Data File and re-open it again. It will select the associated Study and Data Files by reading the data from the Config sheet. The MS Excel Add-In preserve the connection to the last study used, as well as any data files that was open during the last editing session. When the user re-opens the Excel editing template file, the Study selection will be populated automatically, and any data file tabs will be re-opened.<br/>
+     </p>
+  <p>Learn more about <a href="../../Data/Microsoft_Excel_Add-in.htm" target="_blank">Microsoft Excel Add-in</a></p>
+  <p> </p>
+  <p><br/>
+     </p>
+  <h2>View Versions and Manage Geocodes on the New Data Tab in the Primary Navigation</h2>
+  <p>In the Primary Navigation on the left side of the screen, a new item labeled Data has been added. Data combines the previous geocode Setup functionality with the Version history. This allows users to track and view the Versions of the current  selected Study along with input data geocodes for viewing map data, editing the layout, and downloading, and uploading the geocodes and shape files.</p>
+  <p><br/>
+    <br/>
+      <img height="225" src="../../assets/images/RN_2023/Feb/managegeo.jpg" width="741"/>
+  </p>
+  <p><br/>
+    The Data tab consist of two tabs under it as mentioned below:</p>
+  <p> </p>
+  <p>It shows the list of versions for the currently selected Study on the left side of the screen and tracks the Adds, Edits, Removes, Timeseries and Ancillary data changes made under the currently selected version on the right side of the screen.</p>
+  <p> </p>
+  <p>  <img height="239" src="../../assets/images/RN_2023/Feb/managegeo2.jpg" width="785"/></p>
+  <p> </p>
+  <p><b>Setup:</b> For the currently selected Study, it allows you to set up the map data, move around objects, and edit the layout of objects, download or upload map data in CSV or Shapefile format.</p>
+  <p> </p>
+  <p>  <img height="216" src="../../assets/images/RN_2023/Feb/map.jpg" width="790"/></p>
+  <p><br/>
+     </p>
+  <div id="" style="left: 20px;top: 2349.02px;">
+    <h2 id="7seven">New location for accessing Administration functions</h2>
+    <p>Administrators now have easier access to key functions as there is a new Admin button at the bottom of the left navigation bar. This moves it from under the Username and adds an updated Administration panel to allows users to navigate back and forth quick between Studies and admin functions.</p>
+    <p> </p>
+      <img height="387" src="../../assets/images/RN_2023/Feb/admin.jpg" width="791"/><br/>
+     
+    <h2 id="8eight">New Study specific Simulation Management tab</h2>
+    <p>The Simulations tab in the primary navigation pane shows all Simulations triggered for the Study selected in the Study dropdown. All users that have permission to the selected Study can access the Simulation Management page. It allows users to monitor in-progress and completed Simulations for a particular Study. Also, it shows all key details for the runs during the selected time period as well as key metrics at the top and a trend chart to show simulations over time.<br/>
+      <br/>
+      With this new page there are now three ways to view Simulations:
+    </p>
+    <p> </p>
+    <ol>
+      <li style="margin-left: 8px;">
+        <p><b>Study page-</b> Accessible from the left navigation. Shows simulations for all users for the selected study.</p>
+      </li>
+      <li style="margin-left: 8px;">
+        <p><b>User page-</b> Accessible from the Username dropdown. Shows all simulations across all studies for the logged in user.</p>
+      </li>
+      <li style="margin-left: 8px;">
+        <p><b>Admin page-</b> Accessible from the Admin page. Shows all simulations across all studies and all users. Available only to Administrators.</p>
+      </li>
+    </ol>
+    <div style="margin-left: 8px;"> </div>
+                   <img height="365" src="../../assets/images/RN_2023/Feb/simtab.jpg" width="746"/><br/>
+    <br/>
+    Learn more about <a target="_blank">Study Specific Simulation Management</a>.<br/>
+    <br/>
+     
+    <h2 id="9nine"><strong>Support uploading of &quot;ML.NET&quot; from PLEXOS Cloud Bridge</strong></h2>
+    <p>PLEXOS Cloud now allows users to extend their PLEXOS simulation modeling with trained ML models. <br/>
+      Users can train the model in PLEXOS Desktop and include that model as part of their PLEXOS input database and it will be uploaded along with the rest of the PLEXOS data so that &quot;ML.NET&quot; models can be applied in cloud simulations with following limitations:<br/>
+      <br/>
+      1.  The &quot;ML.NET&quot; models are stored in .zip files that are connected to Variable objects through the Data File attribute of the &quot;Variable.Profile&quot; Property. The folder structure of the model and extensions should be valid as shown below:
+    </p>
+    <p> </p>
+    <p>            <img height="183" src="../../assets/images/RN_2023/Feb/mlnet.jpg" width="671"/></p>
+    <p> </p>
+    <p><b><img src="../../assets/images/Blue_Book_Closed.gif"/> NOTE:</b> The invalid structure of file and its extensions will cause an error while Study upload.<br/>
+      <br/>
+      2.  The &quot;ML.NET&quot; zip file size should be less than 10 MB (&lt;10MB).<br/>
+      <br/>
+      Learn more about <a target="_blank">Uploading a Study to PLEXOS Cloud.</a>
+    </p>
+    <p>  </p>
+    <h2 id="11Eleven">Change in Re-activation period for Users</h2>
+    <p>In the <b>Users</b> page of <b>Administration</b>, any a user set to <b>Inactive</b>, can only be active again by an Admin <b>after 30 days</b>. Similarly, the re-activation period for user license is set to 30 days. This is done to prevent license sharing between users.<br/>
+      If an administrator accidentally set a user to Inactive and needs to adjust it before 30 days, they can contact support and provide the User ID that is available at the top of the user detail page (use the copy button when opening the support issue)</p>
+    <p> </p>
+      <img height="326" src="../../assets/images/RN_2023/Feb/inactive.jpg" width="656"/><br/>
+     
+    <h2 id="12twelve">Enhancements to Study Permissions</h2>
+    <p>Permissions have been updated to only allow Study Owners and Admins to Archive, Rename, and edit the description of a Study. Previously, all members of a Study would be able to perform these actions.</p>
+    <p> </p>
+      <img height="186" src="../../assets/images/RN_2023/Feb/studypermit.jpg" width="753"/>
+    <p><br/>
+      Learn more about <a href="../../Admin/Study_Level_Permission.htm" target="_blank">Study Level Permission.</a></p>
+    <p> </p>
+  </div>
+  <h2 id="10ten">Managing Storage in PLEXOS Cloud- Enhancements</h2>
+  <p>The Study Management page under Administration is updated with four new storage metrics that provide a high-level summary of the storage across all the Studies and Solutions. These four metrics are:</p>
+  <ol>
+    <li style="margin-left: 8px;">
+      <p>Total Storage</p>
+    </li>
+    <li style="margin-left: 8px;">
+      <p>Remaining Storage</p>
+    </li>
+    <li style="margin-left: 8px;">
+      <p>Active Storage</p>
+    </li>
+    <li style="margin-left: 8px;">
+      <p>Archived Storage</p>
+    </li>
+  </ol>
+  <p><br/>
+    See the metrics details as shown below:</p>
+  <p> </p>
+  <p>  <img src="../../assets/images/RN_2023/Feb/studyman.jpg"/><br/>
+     </p>
+  <ol>
+    <li style="margin-left: 8px;">
+      <p><b>Total Storage:</b> The first number shows the total storage consumed across Studies and Solutions tab including Active and Archived Storage. The second number shows the total storage allocated for all users in a tenant.</p>
+    </li>
+    <li style="margin-left: 8px;">
+      <p><b>Remaining Storage</b>: Shows the sum of total available storage minus consumed storage.</p>
+    </li>
+    <li style="margin-left: 8px;">
+      <p><b>Active Storage:</b> Shows the total storage consumed by all Active Studies and Solutions.</p>
+    </li>
+    <li style="margin-left: 8px;">
+      <p><b>Archived Storage:</b> Shows the total storage consumed by all Archived Studies and Solutions.</p>
+    </li>
+  </ol>
+  <p> </p>
+  <p>Learn more about <a href="../../Admin/Managing_Storage.htm" target="_blank">Managing Storage in PLEXOS</a></p>
+  <h2><br/>
+    <strong>Automate Managing Storage for old Solutions and Archived Content</strong>
+  </h2>
+  <p>The new Storage tab in the Tenant Preferences page allows you to manage auto Archival and Deletion of Solutions over a specific time period. This helps to manage storage by tracking the unused Solutions created in the past years and configuring them for Archival and Deletion per your requirement. The Storage tab is divided into three sections as shown below:<br/>
+    <br/>
+    <b>NOTE:</b>  This feature is only available to administrators.
+  </p>
+  <p> </p>
+  <p>  <img height="222" src="../../assets/images/RN_2023/Feb/tenentpref.jpg" width="735"/></p>
+  <p><br/>
+    Learn more about <a href="../../Admin/Tenant_Preferences_Page.htm" target="_blank">Tenant Preferences Page.</a></p>
+  <p> </p>
+  <h2 id="14fourteen">Improved performance and loading of data in the Solutions Output Data Grid</h2>
+  <p>We have added major improvements to the Output Data Grid within Solutions to improve performance and allow you to select and load significantly more data.</p>
+  <h3><strong>Faster and Easier loading of data in the Grid</strong></h3>
+  <p>We have implemented a solution for fast and easy loading of data in the Grid. This process will break down the large number of records into smaller chunks or you can say pages to make the data loading process easier and faster.<br/>
+    <br/>
+    Now, you can see a certain amount of records on one page, and thereafter, the <b>Show More Data</b> button will be enabled for the data that is there on the other half of the page.<br/>
+    <br/>
+    You can also see the total number of data present along with the total number of records shown.<br/>
+    We have also added Infinite scrolling to scroll through the records on a page.
+  </p>
+  <p> </p>
+  <p><br/>
+    <img height="421" src="../../assets/images/RN_2023/Feb/datagrid1.png" width="715"/>
+  </p>
+  <p><br/>
+    <img height="424" src="../../assets/images/RN_2023/Feb/datagrid2.png" width="715"/>
+  </p>
+  <p> </p>
+  <p>In the above example, the <strong>Show More Data</strong> button is disabled. It gets enabled once all ‘37290’ records are loaded. For example, refer to the image below.</p>
+  <p> </p>
+  <p><img height="428" src="../../assets/images/RN_2023/Feb/datagrid3.png" width="721"/></p>
+  <p> </p>
+  <h3 class="paragraph">Remove limitations for selection of properties &amp; objects:</h3>
+  <p>In this update, we have removed the limitation on the selection of properties and objects. Now, you can select multiple or all the properties at once. Previously it was restricted to selecting only 5 properties at once.</p>
+  <p class="paragraph"> </p>
+  <p><img height="423" src="../../assets/images/RN_2023/Feb/remove.png" width="723"/></p>
+  <p> </p>
+  <p> </p>
+  <h3 class="paragraph">Show Popup for Huge data</h3>
+  <p class="paragraph">When the number of records exceeds 10 million rows then a popup will be shown to encourage you to adjust the query to reduce the amount of data.<br/>
+     </p>
+  <p><img height="439" src="../../assets/images/RN_2023/Feb/popup.png" width="729"/></p>
+  <p> </p>
+  <h3 class="paragraph"><strong>Sort and filter data only when all data is loaded on the grid</strong></h3>
+  <p>The sorting and filtering options will only be enabled when all the available data is loaded. This is done to ensure the accuracy of the result you get. You can also see the message for this on top of the Grid.<br/>
+     </p>
+  <p><img height="422" src="../../assets/images/RN_2023/Feb/filter1.png" width="728"/></p>
+  <p class="paragraph"><br/>
+    See the example below showing this option enabled for a lesser amount of data.<br/>
+     </p>
+  <p><img height="527" src="../../assets/images/RN_2023/Feb/filter2.png" width="736"/></p>
+  <p> </p>
+  <p class="paragraph"> </p>
+  <p><img height="534" src="../../assets/images/RN_2023/Feb/filter3.jpg" width="736"/></p>
+  <p> </p>
+  <h2><strong>CLI Enhancements</strong></h2>
+  <p>Support for ML.Net training models is now included for PLEXOS Cloud Studies. This functionality was not previously supported.<br/>
+    <br/>
+    The push changeset command now returns the changeset ID of the changeset just created. This allows for easier access to simulation data for future reference. The command below allows you to learn more information about pushing study changes:
+  </p>
+  <p style="margin-left: 40px;"><br/>
+    pxc study changeset push -?</p>
+  <p><br/>
+    You can now enqueue simulations using solution archives from previous runs. This improves the workflow if you have archived a study solution and still want to run a simulation based on a previous request.</p>
+  <p><br/>
+    There have also been general bug fixes related to switching environments and logging in. Learn more here in the <a href="../../CLI/CLI_Toolkit.htm" target="_blank">Introduction to PLEXOS Cloud Toolkit (CLI). </a>.</p>
+  <p> </p>
+  <h2 id="16sixteen">API Updates</h2>
+  <p>There have been no updates to PLEXOS Cloud APIs in this release.</p>
+  <p> </p>
+  <h2 id="17seventeen">Additional Improvements and Bug Fixes</h2>
+  <p>We have continued to make improvements in the UI and fix bugs affecting user experience, stability, and performance of the PLEXOS Cloud. <br/>
+    <br/>
+    Solution Reports now should be a unique name before saving it. The user will not be able to save the Report until a unique name is entered. <br/>
+    Improvements have been made to enhance the performance of the Simulation management pages.<br/>
+    <br/>
+    Changing the name of a study, the description, or archiving it can now only be done by Study Owners and Tenant Admins. This is the same for Public and Private Studies.<br/>
+    <br/>
+    Additionally, some improvements have been made in Excel Add-in as well.<br/>
+    <br/>
+    <strong></strong>
+  </p>
+  <p><strong>NOTICE:  </strong>PLEXOS Versions prior to &#39;8.3&#39; are no longer supported by Energy Exemplar as of 1st January 2023.<br/>
+    <br/>
+    <br/>
+    <br/>
+     
+  </p>
+  <p> </p>
+  <p> </p>
+
+</body></html>

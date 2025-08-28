@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Simulation Dashboard</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="rh-authors" content="Jigyasa Kumari" />
+  <meta name="rh-index-keywords" content="Simulation Monitoring Dashboard,Simulation Monitoring Dashboard in PLEXOS Cloud" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>Simulation Dashboard</h1>
+  <p><b>Note: </b>This change is applicable for both <strong>Simulate</strong> and <strong>Analytics Tier</strong> customers.</p>
+  <p> </p>
+  <p>Table of Contents</p>
+  <ul class="Disc">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#power">Power Model Widgets</a></li>
+    <li><a href="#gas">Gas Simulations Widgets</a></li>
+    <li><a href="#memory">Manage Long Running Simulations with Real-Time CPU, Memory, and Final Gap Widgets</a></li>
+    <li><a href="#multiple">View multiple Simulations at a time using the Simulation Dashboard</a></li>
+    <li><a href="#simulations group">Add Models to the Simulation Group</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="overview">Overview</h2>
+  <p>The <strong>Simulation Dashboard </strong>feature offers real-time progress updates on the Status, Key metrics, and logs for ongoing Simulations. It provides users with the necessary information to assess whether the Simulation is progressing as anticipated.  </p>
+  <p>If deviations are detected, users can make informed decisions, including the option to cancel the simulation. <br />
+    <br />
+    <strong>NOTE 1</strong>: To view the data within the Simulation Dashboard, you need to have the <strong>Diagnostics</strong> parameter enabled under the model settings in PLEXOS Desktop. 
+  </p>
+  <p> </p>
+  <p><strong>NOTE 2:</strong> As the Simulation Monitoring Dashboard is currently in Beta release, there are a few limitations to be aware of.  </p>
+  <ul class="Disc">
+    <li>Firstly, the dashboard only populates data for the studies that have locale settings of <strong>en-US</strong>, <strong>en-AU</strong> and <strong>en- GB.</strong><strong></strong></li>
+    <li>If your model is configured with only one region, you may not be able to view certain charts such as Load, Unserved Energy, Price, and Generation, as they will not load. Else all other components of the dashboard will remain visible and accessible. </li>
+    <li>Currently, this feature is available only for Power and Gas Modules.  </li>
+  </ul>
+  <p> </p>
+  <p>Once you have completed the above settings, you can get the dashboard by following the below steps: </p>
+  <ol class="Decimal">
+    <li>Navigate to the <strong>Simulations</strong> page within a Study. </li>
+    <li>Find a Simulation that is currently in Progress and Double-click anywhere in the row. <br />
+      <img height="240" src="../assets/images/Simulation Monitoring Dashboard/Sim Monitoring DashboardInProgress.png" width="668" />
+    </li>
+    <li>A new tab will open on the Simulations page showing the Simulation Dashboard as shown in the images below. <br />
+      <img height="314" src="../assets/images/Simulation Monitoring Dashboard/Simulation Monitoring Dashboard.png" width="628" />
+    </li>
+    <li>The charts shown will continuously update as the Simulation progresses. You have the option to cancel the Run at any time during this process. </li>
+  </ol>
+  <hr />
+  <h2 id="power">Power Model Widgets<br />
+    <br />
+    <img height="348" src="../assets/images/Simulation Monitoring Dashboard/Simulation Monitoring Dashboard.png" width="723" />
+  </h2>
+  <p>To gain a clear understanding of each chart&#39;s meaning, please refer to the following definitions:</p>
+  <ul>
+    <li><strong>Unserved Energy</strong> : Unserved Energy is System Load that could not be met due to a shortage in Generation and/or transmission capacity.</li>
+    <li><strong>Memory</strong>: Memory here refers to the memory consumption of the current phase per step.</li>
+    <li><strong>Load</strong>: Load is the total load that occurred in the system.</li>
+    <li><strong>Generation: </strong>Generation Chart represents System level generation per step per phase. It shows data for the current running phase only.</li>
+    <li><strong>Estimated time to completion</strong>: It is the Estimated time for the current running Simulation Phase. </li>
+    <li><strong>Status Count</strong> : It is the progress of the Simulation phases for your current Model run in percentage </li>
+    <li><strong>Price</strong> : It is the average System price.</li>
+    <li><strong>Time</strong>: It is the total time taken to solve a current step per phase.</li>
+  </ul>
+  <ol class="Decimal">
+  </ol>
+  <hr />
+  <h2 id="gas">Gas Simulations Widgets</h2>
+  <p>The  Gas Simulations widgets are <strong>Gas Demand, Gas Supply/Gas Production, Gas Shortage, </strong>and <strong>Gas Price </strong>which shows the data related to Gas Simulations. </p>
+  <p><img height="348" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/GAS Widgets/Overview - with Gas unhighlight.png" width="723" /></p>
+  <ul>
+    <li><strong>Gas Demand:</strong> This refers to the collective gas demand originating from all gas zones within the current model being executed. Gas Demand is measured in terajoules (TJ), over a specified period. The X-Axis represents the timeline for Step Start Date and Y-Axis represents the Gas Demand in in terajoules (TJ). </li>
+    <li><strong>Gas Supply: </strong>Gas Supply represents the total gas output from all gas fields across the various gas zones within the current model being executed. The X-Axis represents the timeline for Step Start Date and Y-Axis represents the Gas Supply in terajoules (TJ). This widget is visible only when the Model engine Version is 9.2 R07 and above. </li>
+    <li><strong>Gas Production: </strong>Gas Production denotes the cumulative output of gas from all gas fields across the different gas zones within the current model being executed. This widget is visible only when the Model engine Version is 9.2 R06 and below. </li>
+    <li><strong>Gas Shortage:</strong> Gas Shortage signifies the combined deficit between gas demand and available supply across all gas zones within the current model being executed. The X-Axis represents the timeline for Step Start Date and Y-Axis represents the Gas Shortage in terajoules (TJ). </li>
+    <li><strong>Gas Price: </strong>Gas Price indicates the aggregate of average gas prices observed across all gas nodes within every gas zone in the model being executed. The X-Axis represents the timeline for Step Start Date and Y-Axis represents the Gas Price in dollars per gigajoule ($/GJ). </li>
+  </ul>
+  <p><br />
+    NOTE: For PLEXOS Versions 9.2 R07 and above, the Gas Supply widget is shown instead of the Gas Production widget. </p>
+  <p>Example of Gas widgets on the Simulation Dashboard for Engine Versions <strong>9.2 R07 and above: </strong></p>
+  <p><img height="346" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/GAS Widgets/Overview - with Gas unhighlight.png" width="693" /><br />
+    <br />
+    Example of Gas widgets on the Simulation Dashboard for Engine Versions <strong>9.2 R06 and below:</strong><br />
+     <img height="328" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/GAS Widgets/Gas Production.png" width="689" />
+  </p>
+  <p> </p>
+  <p>Please refer to the scenarios below to understand the Gas and Power Widgets: </p>
+  <ol class="Decimal">
+    <li>If the Model contains Power and Gas data, the Simulation Monitoring Dashboard will display both Power and Gas widgets and their corresponding data.<br />
+      <img height="368" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/with data -Power and Gas.gif" width="654" />
+    </li>
+    <li>If the Model contains only Gas data, the Simulation Monitoring Dashboard will still display both Power and Gas widgets. However, the Power Widgets will not show any data for analysis since they only contain Gas data. <br />
+      <img height="368" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Power and Gas.gif" width="654" />
+    </li>
+  </ol>
+  <p> </p>
+  <p>To view the Gas widgets on the Simulation Monitoring Dashboard, please ensure the following settings are in your Model: </p>
+  <ol class="Decimal">
+    <li>The name of the <strong>System Class</strong> should be defined as <strong>System. </strong>Refer to the PLEXOS Desktop screenshot below for an example: <br />
+      <img height="384" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Class Name - System.png" width="655" />
+    </li>
+    <li>The Model should have the<strong> Gas Zone </strong>object defined.<br />
+      <img height="384" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Gas Zone Object.png" width="655" />
+    </li>
+  </ol>
+  <hr />
+  <h2 id="memory">Manage Long Running Simulations with Real-Time CPU, Memory, and Final Gap Widgets</h2>
+  <p>The Simulation Monitoring Dashboard includes additional widgets for <strong>CPU Usage </strong>and <strong>Memory Usage</strong> to provide clearer insights into Virtual Machine (VM) Performance and the <strong>Final Gap</strong> widget for active Simulations. These widgets display the data exclusively when a Simulation is in the “In progress” state, aiding in managing long-running simulations such as for the LT plan where we have single-step simulations. After the June release, users can view these widgets for “Successful” Simulations as well. </p>
+  <p> </p>
+  <p>These widgets are beneficial for executing long LT models, where these long-running models sometimes hang or crash without indicating the cause of the issue. These widgets allow users to track the status of LT simulations and take corrective actions. </p>
+  <p> </p>
+  <p>Example of the Final Gap, CPU Usage and Memory Usage widgets on the Simulation Monitoring Dashboard: </p>
+  <p><img height="349" src="../assets/images/RN_2024/May 2024 Release SS/Team Thunderbird/Memory Widgets/Memory Widgets.png" width="701" /></p>
+  <ul class="Disc">
+    <li><strong>Final Gap:</strong> The Final Gap widget displays the disparity, represented in percentage, between the intended outcome and the actual result of simulations. The X-axis denotes the step start date, while the Y-axis indicates the Final Gap percentage.  </li>
+  </ul>
+  <ul>
+    <li><strong>CPU Usage: </strong>The CPU Usage widget illustrates the utilization of the central processing unit (CPU) over time. The X-axis denotes the time in HH:MM format, while the Y-axis represents the CPU Usage percentage. By monitoring this widget, users can assess the load on the CPU during simulations, aiding in resource optimization and performance management. </li>
+    <li><strong>Memory Usage:</strong> The Memory Usage widget presents the percentage of memory (RAM) utilized over time during simulations. The X-axis represents time in HH:MM format, while the Y-axis indicates the Memory Usage percentage. This visualization enables users to track memory consumption trends, identify potential memory-related issues, and optimize resource allocation for efficient Simulation execution. </li>
+  </ul>
+  <hr />
+  <h2 id="multiple">View multiple Simulations at a time using the Simulation Dashboard</h2>
+  <p>In Simulation Monitoring Dashboard, you can now open upto 5 tabs simultaneously with each tab displaying a different run’s Simulation content. The content of each dashboard displayed in a tab will remain dynamic, allowing you to view the latest update for each widget and each piece of information. If you aren’t happy with the output, you can cancel the Simulation. This feature empowers you to efficiently oversee various aspects of the Simulation without constantly switching between different views.</p>
+  <p> </p>
+  <p><img height="210" src="../assets/images/RN_2023/November Release SS/SimMonDashboard.png" width="681" /></p>
+  <hr />
+  <h2 id="simulations group">Add Models to the Simulation Group</h2>
+  <p>In Simulation Dashboard, you can use the <strong>ADD TO SIMULATION GROUP</strong> button to easily add the Models to a Simulation Group and run all the simulations of that group simultaneously, eliminating manual selection for future runs. </p>
+  <p>Follow the below steps to access the Add to Simulation Group feature:</p>
+  <ol class="Decimal">
+    <li>On the Simulation Dashboard, click on the <strong>ADD TO SIMULATION GROUP</strong> button available on the top right side of the Dashboard. </li>
+    <li>Select an existing Simulation Group or create a new Simulation Group as per your requirements and click on the <strong>ADD </strong>button. </li>
+  </ol>
+  <p>For example:</p>
+  <p><img height="341" src="../assets/images/Simulation Monitoring Dashboard/ADD TO SIMULATION GROUP GIF.gif" width="686" /></p>
+</body>
+</html>

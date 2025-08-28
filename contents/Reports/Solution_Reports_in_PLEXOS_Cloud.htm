@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Solution Reports in PLEXOS Cloud</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1156</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">0848e687-dab9-4cf2-abe8-206006d0cc8b</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1156, TZXE7D2DFWED-1834737786-1156</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="EE Reports,Reports,Solution Reports,Solution Reports in PLEXOS Cloud" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>Solution Reports in PLEXOS Cloud</h1>
+  <p>Users can now create and customize their own reports in PLEXOS Cloud to filter meaningful insights from their solution data. The Solution Reports on PLEXOS Cloud run on configurations that are provided as part of a valid JSON file.<br />
+     </p>
+  <p>You can read more in this article about: <br />
+     </p>
+  <ul>
+    <li><span style="font-size:12pt;"><a href="#Navigating_and_Viewing_Reports">Navigating and Viewing Reports</a></span></li>
+    <li><span style="font-size:12pt;"><a href="#Searching_Reports">Searching Reports</a></span></li>
+    <li><span style="font-size:12pt;"><a href="#Viewing_Charts_and_Exporting_Data1">Viewing Charts and Exporting Data</a></span></li>
+    <li><span style="font-size:12pt;"><a href="#Adding_and_Modifying_Reports">Adding and Modifying Reports</a></span></li>
+    <li><span style="font-size:12pt;"><a href="#Understanding_the_Configuration_JSON_File">Understanding the Configuration JSON File </a></span></li>
+    <li><a href="#User Defined Property Calculation">User Defined Property Calculation</a></li>
+    <li><span style="font-size:12pt;"><a href="#Available_EE_Reports">Available EE Reports</a></span></li>
+    <li><span style="font-size:12pt;"><a href="#Aggregation_and_Transpose">Aggregation and Transpose</a></span></li>
+    <li><span style="font-size:12pt;"><a href="#Auto_Split_Feature">Auto Split Feature</a></span></li>
+    <li><span style="font-size:12pt;"><a href="#Date_Range_Filter">Date Range Filter</a></span></li>
+  </ul>
+  <p> </p>
+  <p><b>NOTE:</b> This feature is applicable only for <strong>Analytics Tier</strong> customers.</p>
+  <hr />
+  <h2>Navigating and Viewing Reports</h2>
+  <h3><strong>[A] Navigating to Reports </strong></h3>
+  <ol class="Decimal">
+    <li>To navigate to reports, go to a successful solution and click on the <strong>Reports</strong> icon.<br />
+      <img alt="" height="399" src="../assets/images/Custom Column Calculations/New/Reports Tab.png" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" width="803" />
+    </li>
+    <li>From there, the Reports panel should be visible to view <strong>EE Reports</strong> and <strong>My Reports</strong> under the dropdowns.<br />
+      <img alt="" src="../assets/images/Solution Reports Menu.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" />
+    </li>
+  </ol>
+  <p style="margin-left: 0.03in"><br />
+    <strong>EE Reports</strong> contains a list of pre-defined Solution output reports. These Reports are built to address common analysis scenarios and are useful as is or as a starting point to build your own Reports. <strong>My Reports</strong> contains a list of custom reports from the configuration files that this user and others in their organization have uploaded.
+  </p>
+  <p> </p>
+  <h3><strong>[B] Viewing a Report </strong></h3>
+  <p>Select any <strong>EE Report</strong> or <strong>My Report </strong>by clicking the checkbox beside it. The Report will then be rendered and displayed on the righthand side as tabs.<br />
+     </p>
+  <p style="margin-left: 0.02in"><img alt="" src="../assets/images/EE Report.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /> <br />
+    <br />
+    <strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> A maximum of 5 Reports can be selected at a time. <br />
+     
+  </p>
+  <h3><strong>[C] Drill Into Functionality</strong></h3>
+  <p>Users can use the Drill Into functionality to gain further insight into Solution Report data. If you are analyzing Generation for Monthly or Daily data and want a better understanding of when the Generation is occurring on a more granular basis, Drill Into can fulfill this purpose.</p>
+  <ol class="Decimal">
+    <li>After selecting a <strong>Report </strong>(from EE Reports or My Reports) from the Reports<img alt="" src="../assets/images/Reports Icon.jpg" /> tab, right-click on a cell and <strong>Drill Into </strong>will appear as an option. <br />
+      <img alt="" src="../assets/images/Drill Into Reports.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" />
+    </li>
+    <li>If you click <strong>Interval</strong>, you go can go down one level and view the daily as well as monthly data. If you click on <strong>Year</strong>, you can go up one level and view data for 2020. <br />
+      <img alt="" src="../assets/images/Drill Into Yearly.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" />
+    </li>
+    <li>After clicking <strong>Year</strong>, you see the data for 2023 summarized in the table. You also have an additional option: <strong>Reset</strong>, which<strong> </strong>will take you to the initial data view for the Report.<br />
+      <img alt="" src="../assets/images/Reports Reset.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /><br />
+      <br />
+      For example, the results below if you click<strong> Day </strong>to view daily<strong> </strong>data for January, It will show all the results for January.<br />
+      <img alt="" src="../assets/images/Drill Into Day.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" />
+    </li>
+  </ol>
+  <hr />
+  <h2>Searching Reports</h2>
+  <p>Reports can be easily searched by clicking the search icon beside <strong>Reports</strong>. This search bar will filter through all <strong>EE Reports</strong> and <strong>My Reports</strong> available based on the search criteria. </p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img alt="" src="../assets/images/Searching Reports.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /> </p>
+  <hr />
+  <h2>Viewing Charts and Exporting Data</h2>
+  <ol class="Decimal">
+    <li>To export the report data, you can click on the cloud icon <img alt="" height="16" src="../assets/images/Download Cloud_32.jpg" style="width: 31.9886px;height: 32.9943px" width="16" />in the top right-hand corner of the screen. All columns and values in the report will be exported, even if the columns are collapsed. You can choose to export the data in either .csv or .xslx format. <br />
+      <img alt="" src="../assets/images/Export as CVS_EXCEL.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" />
+    </li>
+    <li>You can chart your data as shown below. Select the desired data range by clicking cells your clicking and dragging to select a region, then right click and select <strong>Chart Range</strong>. Multiple chart types will appear. From here, you can select the chart format and display your data. <br />
+      <img alt="" src="../assets/images/Chart Range.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" />
+    </li>
+    <li>If you navigate to the right-hand corner of the chart window, you can select one of three options. <br />
+      <img src="../assets/images/Solution Reporting in PLEXOS Cloud/chartoptions.png" />
+    </li>
+    <li>If you click on the three parallel lines <img alt="" height="16" src="../assets/images/Solution Reporting in PLEXOS Cloud/Three Parallel.png" style="width: 31px; height: 32px;" width="16" />, you will be presented with the following tabs. You can modify the chart type under <strong>Settings</strong>, set the data range under<strong> Data</strong>, and change chart formatting under <strong>Format</strong>. You can also use the arrows on the bottom right of the window to change the color scheme. <br />
+      <img src="../assets/images/Solution Reporting in PLEXOS Cloud/chartchange.png" style="cursor: nwse-resize;" />
+    </li>
+    <li>The <span style="font-weight:bold;">chain </span>icon <img alt="" height="16" src="../assets/images/Solution Reporting in PLEXOS Cloud/Chain Icon.png" style="width: 31px; height: 32px;" width="16" /> will link and unlink the chart to the grid. If linked, the highlighted report data will sync with the charted data. The download icon <img alt="" height="32" src="../assets/images/Solution Reporting in PLEXOS Cloud/Download Icon.png" style="width: 31px; height: 32px;" width="32" /> allows you to export the chart in PNG format. This is useful for sharing the chart or embedding it in a presentation or document. </li>
+  </ol>
+  <hr />
+  <h1>Adding and Modifying Reports </h1>
+  <p>Users have three different options for creating a Report. The first option is to export an existing <strong>Report</strong> and modify it. The second option is to start from scratch. The third is to <strong>Save as Report</strong> from the Output Data Grid. The first and third options are recommended since they present the JSON schema for you and are straight forward. </p>
+  <p> </p>
+  <h3><strong>[A] Creating a New Report </strong></h3>
+  <ol class="Decimal">
+    <li>To create a new <strong>Report</strong>, click on the + sign next to the Reports header as shown below. <br />
+      <img alt="Graphical user interface, application  Description automatically generated" src="../assets/images/Solution Reporting in PLEXOS Cloud/newreport.png" style="width: 246.989px; height: 525px;" />
+    </li>
+    <li>A dialog box will appear where you can drag and drop or browse to upload your configuration JSON file. <br />
+      <img alt="Graphical user interface, application  Description automatically generated" src="../assets/images/Solution Reporting in PLEXOS Cloud/uploadandsave.png" style="width: 589.972px; height: 232.997px;" />
+    </li>
+  </ol>
+  <p style="margin-left: 0.03in"> </p>
+  <p><strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> The number of columns per Report is limited to 50. You also cannot upload a report with the same name as an existing report.<br />
+     </p>
+  <h3><strong>[B] Modifying an Existing Report </strong></h3>
+  <p>To modify an existing <strong>EE Report</strong>, right click on it and select either<strong> Export</strong> or <strong>Save As</strong>.<br />
+     </p>
+  <p style="margin-left: 40px;"><img alt="Graphical user interface  Description automatically generated" src="../assets/images/Solution Reporting in PLEXOS Cloud/exportorsave.png" style="width: 340.98px; height: 468.991px;" /> </p>
+  <p><br />
+    <strong>Export</strong> exports the Report to a JSON file where it can be modified. You can then upload the JSON file, which creates a new Report under My Reports. <strong>Save As</strong> immediately creates a new Report under My Reports in PLEXOS Cloud.<br />
+     
+  </p>
+  <p>Reports under EE Reports cannot be edited. They can only be duplicated with <strong>Save As</strong>, or exported and reimported as user reports to be edited. Only reports in the My Reports section can be edited. To edit a Report, right click the report and select the <strong>Edit</strong> option to edit the file. </p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img alt="Graphical user interface, application  Description automatically generated" src="../assets/images/Solution Reporting in PLEXOS Cloud/myreportoptions.png" /> </p>
+  <p> </p>
+  <p>This allows you to edit the JSON file in PLEXOS Cloud itself. After updating the Report, you can either <strong>Update</strong> the Report or<strong> Save As</strong> to generate a new Report. </p>
+  <p> </p>
+  <p style="margin-left: -0.03in"><img alt="Text  Description automatically generated" height="787" src="../assets/images/Solution Reporting in PLEXOS Cloud/editincloud.png" style="width: 567.997px; height: 297.969px;" width="1499" /> <br />
+     </p>
+  <h3><strong>[C] Save as Report from Data Grid</strong></h3>
+  <p>You can save data from the Solutions Data Grid as a Solutions Report through the <strong>Save as Report</strong> function. Navigate to the Data Grid and, query the desired data from your Solution, then click <strong>Apply</strong>. In the top right-hand corner of your window, you can select the button for <strong>Save as Report</strong>.<br />
+     </p>
+  <p><strong><img alt="" src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> This functionality is currently available for only Daily, Weekly, Monthly, Quarterly, and Yearly reported data.<br />
+     </p>
+  <p style="margin-left: -0.02in"><img alt="" src="../assets/images/image.png" /> </p>
+  <p>After clicking <strong>Save as Report</strong>, the window shown below should appear. Here, you can enter the <strong>Report Name</strong> and <strong>Group Name</strong>. The Group Name is the group under which the selected properties will be added. After entering the values, click <strong>Save</strong>. <br />
+     </p>
+  <p><strong><img alt="" src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> The Report name must be unique. The Solution Reports support up to 50 columns of data, which means that the combination of Objects and Properties cannot be more than 50 in the Data Grid. <br />
+     </p>
+  <p style="margin-left: 40px;"><img alt="" src="../assets/images/Solution Reporting in PLEXOS Cloud/Save as Report.png" /> </p>
+  <p><br />
+    After clicking <strong>Save</strong>, the following popup will appear. Click on <strong>View Report</strong> or the <strong>Reports</strong> icon <img alt="" src="images/" /> to be directed to your Report. </p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img alt="Graphical user interface, text  Description automatically generated with medium confidence" src="../assets/images/Solution Reporting in PLEXOS Cloud/View Report.png" /> </p>
+  <p>You should now be able to view your Report as shown below:<br />
+     </p>
+  <p style="margin-left: 40px;"><img alt="Table  Description automatically generated" src="../assets/images/Solution Reporting in PLEXOS Cloud/Report Display.png" style="width: 604px; height: 532px;" /> <br />
+     </p>
+  <hr />
+  <h1 id="fig">Understanding the Configuration JSON File</h1>
+  <p>Users can supply a custom-defined JSON configuration file via the configurator with the following sample schema. A sample configuration file is attached along with this article. Read more to understand the attributes structure of the file. </p>
+  <p>A free third-party tool can be used to edit the JSON file to maintain neater and more consistent formatting. </p>
+  <h4><strong>[A] Components of the JSON file </strong></h4>
+  <p>The following fields explain the JSON schema field by field:<br />
+     </p>
+  <p style="margin-left: 40px;">1. <strong>reportName</strong>: The name you choose for the report.<br />
+     </p>
+  <p style="margin-left: 40px;">2. <strong>filters</strong>: This is where you set the reporting period type and simulation phase.<br />
+     </p>
+  <p style="margin-left: 80px;">a. <strong>periodTypeId</strong>: Day: 1, Week: 2, 3: Month, 4: Year, Quarter: 7.</p>
+  <p style="margin-left: 80px;">b. <strong>phaseId</strong>: 1: LT, 2: PASA, 3: MT, 4: ST. <br />
+     </p>
+  <p style="margin-left: 40px;">3. <strong>propertyGroups</strong>: All the reported groupNames that are rendered in PLEXOS Cloud as expandable and collapsible column groups. <br />
+     </p>
+  <p style="margin-left: 80px;">a. <strong>groupName</strong>: The name of the column group. This category heading is what appears above the group of child property names in PLEXOS Cloud, and can optionally be expanded and collapsed. </p>
+  <p style="margin-left: 80px;">b. <strong>phaseId</strong>: (optional) Allows you to define phase for the Group that is different from the Report level phase.</p>
+  <p style="margin-left: 80px;">c. <strong>children</strong>: Child properties under the column group (groupName). Each child takes information from your Solution data, and is described with the information below:<br />
+     </p>
+  <p style="margin-left: 120px;">i. <strong>name </strong>(string): The property name, which should not exceed 50 characters. This is the column name that appears below the groupName. </p>
+  <p style="margin-left: 120px;">ii. <strong>hidden </strong>(boolean): (optional) A field to define if the property is shown when column group is not expanded. If set to True, the property will be hidden unless the groupName is expanded. If set to False, the property will be displayed when the groupName is not expanded. If not defined, the value will default to False. </p>
+  <p style="margin-left: 120px;">iii. <strong>UoM </strong>(string): (optional) A field to define Unit of Measure (UoM) of the property. If not defined, the UoM is the PLEXOS default for the output property. </p>
+  <p style="margin-left: 120px;">iv. <strong>filters</strong>: (object, each filter property is an array of strings): (optional) A field to define filters. Users can supply category filters or object/unit level filters as arrays. Each array can contain up to 10 filter items.<br />
+     </p>
+  <p style="margin-left: 160px;">1. Object filter: The user can list any object name in the system, such as generator, fuel, region, etc. </p>
+  <p style="margin-left: 160px;">                        &quot;filters&quot;: { </p>
+  <p style="margin-left: 160px;">                            &quot;objects&quot;: [ </p>
+  <p style="margin-left: 160px;">                                &quot;East&quot;, </p>
+  <p style="margin-left: 160px;">                                &quot;North&quot; </p>
+  <p style="margin-left: 160px;">                            ], </p>
+  <p style="margin-left: 160px;">                         }</p>
+  <p> </p>
+  <p style="margin-left: 160px;">2. Category filter: The user needs to follow a specific pattern in defining the categories (ClassName_CategoryName) </p>
+  <p style="margin-left: 160px;">                        &quot;filters&quot;: { </p>
+  <p style="margin-left: 160px;">                            &quot;categories&quot;: [ </p>
+  <p style="margin-left: 160px;">                                &quot;Generator_Coal&quot;, </p>
+  <p style="margin-left: 160px;">                                &quot;Generator_Oil&quot; </p>
+  <p style="margin-left: 160px;">                            ] </p>
+  <p style="margin-left: 160px;">                        }, <br />
+     </p>
+  <p style="margin-left: 120px;">v. <strong>phaseId</strong>: (optional) A field to define phase for the property that is different from the Report or Group level phase (1: LT, 2: PASA, 3: MT, 4: ST). </p>
+  <p style="margin-left: 120px;">vi. <strong>formula </strong>(string): If this value requires computation using multiple properties, such formula can be provided here. To supply a formula the user needs to follow a specific pattern (ChildClassName_CollectionName_PropertyName) to access the property from solution file, combined with arithmetic operators to return computed values reported in the model solution. Currently, addition, subtraction, multiplication, division, and exponentiation are supported. </p>
+  <p style="margin-left: 120px;">vii. <strong>id </strong>(string): (optional) A field to define unique id used to calculate derived children. Derived children are values that are computed in the UI based on the values of child properties. The child id can be defined freely by the user and has nothing to do with the solution data. It is only referred to in the browser in order to compute derived child properties. Below are a few rules that must be followed when supplying values for the column id:<br />
+     </p>
+  <p style="margin-left: 160px;">1. id must be unique </p>
+  <p style="margin-left: 160px;">2. id should start with c. For example, &quot;c1&quot;, &quot;c2&quot;. <br />
+     </p>
+  <p style="margin-left: 80px;">d. <strong>derivedChildren</strong>: Value is computed in the browser, using the child properties’ id as reference and value is computed in UI. <br />
+     </p>
+  <p style="margin-left: 120px;">i. There must be less than 50 columns total of child and derived child properties. </p>
+  <p><br />
+    <br />
+    An example of the JSON file and its formatting is shown below:<br />
+    <br />
+     
+  </p>
+  <p><span style="color:#FFFFE0;"><code>{     </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>    &quot;configType&quot;: &quot;InAppReportingConfig&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>    &quot;schemaVersion&quot;: &quot;v1&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>    &quot;reportName&quot;: &quot;Example Report&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>    &quot;reportConfig&quot;: { </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>        &quot;reportName&quot;: &quot;Example Report&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>        &quot;filters&quot;: { </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>            &quot;periodTypeId&quot;: 4, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>            &quot;phaseId&quot;: 1 </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>        }, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>        &quot;propertyGroups&quot;: [ </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>            { </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                &quot;groupName&quot;: &quot;System Energy Positions&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                &quot;children&quot;: [ </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    { </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;name&quot;: &quot;Generation Coal Oil&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;hidden&quot;: true, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;UoM&quot;: &quot;MWh&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;filters&quot;: { </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                            &quot;categories&quot;: [ </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                                &quot;Generator_Coal&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                                &quot;Generator_Oil&quot; </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                            ] </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        }, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;formula&quot;: &quot;Generator_Generators_Generation&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;id&quot;: &quot;c1&quot; </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    }, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    { </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;name&quot;: &quot;Battery Generation&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;hidden&quot;: true, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;formula&quot;: &quot;Battery_Batteries_Generation&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;id&quot;: &quot;c2&quot; </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    }, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    { </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;name&quot;: &quot;Dump Energy&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;hidden&quot;: true, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;formula&quot;: &quot;Region_Regions_Dump Energy&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;id&quot;: &quot;c3&quot; </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    }, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    { </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;name&quot;: &quot;Unserved Energy&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;hidden&quot;: true, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;formula&quot;: &quot;Region_Regions_Unserved Energy&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;id&quot;: &quot;c4&quot; </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    } </code></span></p>
+  <p><code>                <span style="color:#FFFFE0;">], </span></code></p>
+  <p><span style="color:#FFFFE0;"><code>                &quot;derivedChildren&quot;: [ </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    { </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;name&quot;: &quot;Total Generation&quot;, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;hidden&quot;: false, </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                        &quot;formula&quot;: &quot;c1+c2&quot; </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                    } </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>                ] </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>            } </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>        ] </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>    } </code></span></p>
+  <p><span style="color:#FFFFE0;"><code>} </code></span></p>
+  <h4> </h4>
+  <p>An example how the values defined in your JSON file translate to PLEXOS Cloud is shown below where: (1) reportName (2) groupName and, (3) children:<br />
+     </p>
+  <p style="margin-left: 0.02in"><img alt="" height="568" src="../assets/images/Solution Reporting in PLEXOS Cloud/marking.png" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" width="1213" /></p>
+  <h3><strong>[B] Operators and Global Constants </strong></h3>
+  <p>The table below summarizes the operators that are currently supported. <br />
+     </p>
+  <table border="1">
+    <tbody>
+      <tr>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;"><strong>Operators </strong></p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;"><strong>Example </strong></p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Addition + </p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Generator_Generators_Fuel Cost + Line_Lines_Wheeling Cost </p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Subtraction -  </p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Generator_Generators_Fuel Cost - Line_Lines_Wheeling Cost </p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Multiplication * </p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Generator_Generators_Fuel Cost*1.15 </p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Division / </p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Generator_Generators_Fuel Cost/1.15 </p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Exponentiation ^ (only supported in derived children) </p>
+        </td>
+        <td colspan="1" rowspan="1">
+          <p style="text-align: center;">Generator_Generators_Fuel Cost^2 </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>We also support the following global constants: </p>
+  <p> </p>
+  <p>These global constants can be used in formulas. For example, to calculate the NPV, you can reference derived children and global constants as follows: </p>
+  <p>(c1+c2+c3+c4+c5+c6+c7)/(1+ee.reports.gv.ltdiscountfactor)^(ee.reports.gv.daterangeyear-ee.reports.gv.modelyear)<br />
+     </p>
+  <h3><strong>[C] View Included Output Properties with View Details</strong></h3>
+  <p>You can now gather more information about the properties enabled in your Solution Report (JSON file) and Model. The View Details table will list the properties enabled in your Solution Report. If a specified property from your Solution Report is not present in the properties reported in your Model, the property will appear as red text in the View Details table.  </p>
+  <p> </p>
+  <p>Right-click on a <strong>Report </strong>&gt; <strong>View Details</strong> as shown below: </p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img alt="" src="../assets/images/Solution Reporting in PLEXOS Cloud/View Details.png" /> </p>
+  <p> </p>
+  <p>The values in Red are Properties that have not been Reported in your model. To export these Report Details (the Child Class Name, Collection Name, and Property Name) as a .xlsx file, click <strong>Save</strong>. Using this information you can the enable the missing (red) properties in your Report object, after which they should appear when you run the Model again. </p>
+  <p> </p>
+  <p><img alt="" src="../assets/images/Solution Reporting in PLEXOS Cloud/Report Deails for Energy Balance.png" /></p>
+  <p style="margin-left: 40px;"> </p>
+  <p style="margin-left: 40px;"> </p>
+  <p><strong><img alt="" src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> The .xlsx files will not have properties in red like in the View Details table. The .xlsx file will have the format shown below with the Child Class Name, Collection Name, and Property Name listed for every property enabled in the JSON file. Make sure that all these properties are enabled in Report within PLEXOS.</p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img alt="" src="../assets/images/Solution Reporting in PLEXOS Cloud/xlsx files.png" style="width: 696px; height: 79px; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /></p>
+  <hr />
+  <h1 id="User Defined Property Calculation">User Defined Property Calculation</h1>
+  <p>Custom column calculation is a basic mathematical operation such as multiplication, division, addition, and subtraction that you can perform on the generated Solution Reports under the Solutions page. This article helps you understand how to perform these mathematical calculations on Solution Reports and view them in BI Analytics to see the custom-generated values. </p>
+  <p> </p>
+  <p>You can perform the following custom mathematical calculations in the schema version of the generated Solution Reports file: </p>
+  <ul class="Disc">
+    <li>Multiplication by float </li>
+    <li>Division by float </li>
+    <li>Addition by float </li>
+    <li>Subtract by float </li>
+  </ul>
+  <p> </p>
+  <p>For example, in the screenshot below, the Build Cost is defined with the formula:<br />
+    <strong>&quot;Generator_Generators_Annualized Build Cost + Battery_Batteries_Annualized Build Cost&quot;. </strong>
+  </p>
+  <p> </p>
+  <p><strong></strong>If you wish to convert this cost into <strong>Gigawatt (GW)</strong> units or perform any other custom calculation, you can edit the existing formula to include simple mathematical operations such as multiplication, division, addition, or subtraction. In this scenario, to convert Build Cost to GW units, you can add the division method to obtain the desired value:  <br />
+    <strong>&quot;Generator_Generators_Annualized Build Cost + Battery_Batteries_Annualized Build Cost / 1000&quot;. </strong><br />
+     <br />
+    Refer to the below shown Schema Version of the Report, where we have added another column name as Build Cost in Gigawatt with updated formula (/1000) and unique id number (c6).
+  </p>
+  <p><img src="../assets/images/Custom Column Calculations/New/Example Latest.png" /></p>
+  <p> </p>
+  <p>Follow the below-mentioned steps to perform the Custom column calculations for your Reports and view them in the BI Analytics to see the custom-generated values. </p>
+  <ol class="Decimal">
+    <li>Edit the Report  </li>
+    <li>Run the Model with the customized Report </li>
+    <li>Publish the Solution to BI Analytics </li>
+    <li>View the Simulation Messages  </li>
+  </ol>
+  <h3><strong>Step !: Edit the Report</strong></h3>
+  <h3><strong></strong></h3>
+  <ol class="Decimal">
+    <li>On the <strong>Solutions </strong>page, go to the <strong>Reports </strong>tab and navigate to <strong>My Reports.</strong> </li>
+    <br />
+    <li>Hover over to your desired Report and click on the <strong>Kebab menu </strong>(three-dot option).  </li>
+    <li>Click <strong>Edit. <br />
+        <img height="452" src="../assets/images/Custom Column Calculations/Click Edit.png" width="912" /></strong><br />
+      NOTE: You can view the Schema version of your selected Report with its Group Name, Column Name, Formula, Column ID, etc. In the below screenshot you can view the Emission Cost column with its Column Name as CO2 Cost, Emission Cost Formula, Column ID along with other parameters. <br />
+      <img height="452" src="../assets/images/Custom Column Calculations/Emission Report -Column Callouts.png" width="912" /><strong></strong>
+    </li>
+    <br />
+    <li>Now, let&#39;s assume you want to create another CO2 Cost column with the addition of 1000 to the current CO2 Cost values. You can simply add another Schema parameters as shown in the above screenshot for your new column, with new Column Name, Formula Calculation with + 1000, and a different Column ID.  <br />
+      <br />
+      For example, in the GIF below, you can see we have added a new column as <strong>Custom CO2 Cost,</strong> updated the <strong>Emission Formula with + 1000,</strong> and changed the <strong>Column ID.</strong><br />
+      <img height="452" src="../assets/images/Custom Column Calculations/Calculated Column Calouts.png" width="912" />
+    </li>
+    <br />
+    <li>Click on the <strong>UPDATE</strong> button to update the existing Report after successfully adding these parameters. OR, click on the <strong>SAVE AS</strong> button to save it as a new Report.<br />
+      <img height="452" src="../assets/images/Custom Column Calculations/Click Update.png" width="912" />
+    </li>
+    <br />
+    <li>Once the Report is updated, the newly created column with the applied custom mathematical calculation appears.<br />
+      <img height="452" src="../assets/images/Custom Column Calculations/Custom CO3 Cost.png" width="912" />
+    </li>
+    <br />
+    <li>Verify the values and Run the Model again with your newly created Report.  </li>
+  </ol>
+  <p> </p>
+  <h3>Step II: Run the Model with the customized Report </h3>
+  <p>You can run the Model either from the <strong>Solutions </strong>page or from the <strong>Models </strong>page. Follow the below-mentioned steps to add a Report to your Model from the Run Configuration panel. </p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>On the <strong>Solutions </strong>panel, click on the <strong>Kebab menu </strong>(three-dot option) and click <strong>Run. <br />
+        <img height="466" src="../assets/images/Custom Column Calculations/Click Run.png" width="923" /></strong></li>
+    <br />
+    <li>On the Run Configuration panel, go to Custom <strong>Run Configuration &gt; Advanced Configuration</strong> and select the newly created Report from <strong>Solution Report</strong> dropdown.  <br />
+      <br />
+      Refer to the GIF below for example:<br />
+      <img height="461" src="../assets/images/Custom Column Calculations/Select Report from Run Configuration.gif" width="925" />
+    </li>
+    <br />
+    <li>After all the relevant selections, click <strong>RUN MODEL. </strong></li>
+  </ol>
+  <p><br />
+    Learn more about the Run Configuration Panel in the detailed <a href="../Models/Run_Configuration_Panel.htm">Run Configuration Panel</a> article.</p>
+  <p> </p>
+  <h3>Step III: Publish the Solution to BI Analytics </h3>
+  <p>Follow the below-mentioned steps to publish the Solution to BI Analytics </p>
+  <ol class="Decimal">
+    <li>Click on the <strong>Kebab menu</strong> (three-dot option) and select <strong>Add to BI. </strong>Alternatively, you can add your Solution to <strong>BI Analytics</strong> from the BI Analytics tab. <br />
+      From Kebab Menu:<br />
+      <img height="461" src="../assets/images/Custom Column Calculations/Add to BI.png" width="925" /><br />
+      <br />
+      From the BI Analytics tab:<br />
+      <img height="461" src="../assets/images/Custom Column Calculations/From BI Tab.png" width="925" />
+    </li>
+    <br />
+    <li>After the Solution is successfully added to BI Analytics, click <strong>+ </strong>icon to add a new report.<br />
+      <img height="465" src="../assets/images/Custom Column Calculations/Click + Icon on BI Analytics.png" width="927" />
+    </li>
+    <br />
+    <li>Select the required Data variables, such as Value, Property Name, Collection Type and you can also add Filters to sort the BI Analytics for your newly added Report. <br />
+       <br />
+      Refer to the example below for the BI Analytics dashboard:<br />
+      <img height="464" src="../assets/images/Custom Column Calculations/New/Latest Custom Column Calculation image.png" width="930" /><strong></strong>
+    </li>
+  </ol>
+  <h3>Step IV: View the Simulation Messages </h3>
+  <p> The <strong>Simulation Messages</strong> under the <strong>Simulation </strong>page allows you to verify the Solution Reports, was processed successfully or not. Follow the below-mentioned steps to view the Simulation Messages: </p>
+  <ol class="Decimal">
+    <li>Navigate to the <strong>Simulations</strong> page. </li>
+    <br />
+    <li>Locate the Model for which you performed the custom column calculations. </li>
+    <br />
+    <li>Click on the <strong>Kebab Menu</strong> (three-dot option) and select <strong>Simulation Messages. </strong></li>
+    <br />
+    <li>On the Simulation Messages window, locate the status for your Solution Reports. If the Model has successfully processed your added Report, then you can view the status as<strong> “Info: Solution reports processing was successful.” </strong><br />
+      <br />
+      Refer to the GIF below to view the Simulation Message for Solution Reports:<br />
+      <img height="458" src="../assets/images/Custom Column Calculations/Successful Simulation Message.gif" width="925" />
+    </li>
+  </ol>
+  <h1 id="grape">Available EE Reports</h1>
+  <p>Energy Exemplar provides a library of out of box reports that can be applied in various use cases, such as IRP planning, Generation by Type, Gas planning, System overview etc. Many of the reports contain study specific information, such as Category names and Object names. The properties you’ve chosen to report may not be same as those reported for the report, in which case no results will be show. Users may take the EE reports as templates, save them as their own reports, and then modify the study specific fields to fit their study.<br />
+     </p>
+  <h3><br />
+    <strong><a id="IRP_Report"></a>IRP Report</strong>
+  </h3>
+  <p>The IRP Report provides a yearly overview of system utility costs, capacity positions, build and retirement of units and transmission lines, and load and generation. This provides insights on how you can expect to plan for changes in load and policy over time when allocating resources to expand and operate your system. <br />
+     </p>
+  <p>To properly view the report, make sure you have the following solution data reported: <br />
+     </p>
+  <ul>
+    <li>
+      <p>Generator_Generators_Total System Cost </p>
+    </li>
+    <li>
+      <p>Generator_Generators_Fuel Cost </p>
+    </li>
+    <li>
+      <p>Generator_Generators_Emissions Cost </p>
+    </li>
+    <li>
+      <p>Physical Contract_Physical Contracts_Net Generation Cost </p>
+    </li>
+    <li>
+      <p>Battery_Batteries_VO&amp;M Cost </p>
+    </li>
+    <li>
+      <p>Battery_Batteries_UoS Cost </p>
+    </li>
+    <li>
+      <p>Line_Lines_Wheeling Cost </p>
+    </li>
+    <li>
+      <p>Generator_Generators_FO&amp;M Cost </p>
+    </li>
+    <li>
+      <p>Physical Contract_Physical Contracts_Fixed Cost </p>
+    </li>
+    <li>
+      <p>Battery_Batteries_FO&amp;M Cost </p>
+    </li>
+    <li>
+      <p>Line_Lines_FO&amp;M Cost </p>
+    </li>
+    <li>
+      <p>Generator_Generators_Annualized Build Cost </p>
+    </li>
+    <li>
+      <p>Battery_Batteries_Annualized Build Cost </p>
+    </li>
+    <li>
+      <p>Generator_Generators_Retirement Cost </p>
+    </li>
+    <li>
+      <p>Battery_Batteries_Retirement Cost </p>
+    </li>
+    <li>
+      <p>Line_Lines_Retirement Cost </p>
+    </li>
+    <li>
+      <p>Market_Markets_Net Cost </p>
+    </li>
+    <li>
+      <p>Region_Regions_Planning Peak Load </p>
+    </li>
+    <li>
+      <p>Generator_Generators_Firm Capacity </p>
+    </li>
+    <li>
+      <p>Battery_Batteries_Firm Capacity </p>
+    </li>
+    <li>
+      <p>Physical Contract_Physical Contracts_Generation Capacity </p>
+    </li>
+    <li>
+      <p>Market_Markets_Firm Capacity </p>
+    </li>
+    <li>
+      <p>Generator_Generators_Capacity Built </p>
+    </li>
+    <li>
+      <p>Generator_Generators_Capacity Retired </p>
+    </li>
+    <li>
+      <p>Battery_Batteries_Power Capacity Built </p>
+    </li>
+    <li>
+      <p>Line_Lines_Export Capacity Built </p>
+    </li>
+    <li>
+      <p>Region_Regions_Native Load </p>
+    </li>
+    <li>
+      <p>Region_Regions_Load </p>
+    </li>
+    <li>
+      <p>Generator_Generators_Generation </p>
+    </li>
+    <li>
+      <p>Battery_Batteries_Generation </p>
+    </li>
+    <li>
+      <p>Physical Contract_Physical Contracts_Generation </p>
+    </li>
+    <li>
+      <p>Market_Markets_Net Purchases </p>
+    </li>
+    <li>
+      <p>Region_Regions_Dump Energy </p>
+    </li>
+    <li>
+      <p>Region_Regions_Unserved Energy<br />
+         </p>
+    </li>
+  </ul>
+  <h3><strong><a id="Generation_by_Type"></a>Generation by Type </strong></h3>
+  <p>This report details the yearly and monthly generation in GWh from different energy sources in the LT, and the total summed generation per year. These reports can provide insight on how capacity expansion favors generation sources over time. <br />
+     </p>
+  <p>To properly view the report, make sure you have the following solution data reported: <br />
+     </p>
+  <ul>
+    <li>
+      <p>Generator_Generators_Generation </p>
+    </li>
+  </ul>
+  <h3><br />
+    <strong><a id="Market_Prices_Report"></a>Market Prices Report </strong>
+  </h3>
+  <p>Users looking to assess the profitability of putting a generator on the market can now use the Market Price Report. This report presents the market prices at individual hubs, and reports spark pricing, which considers the carbon pricing on marginal generation resources. <br />
+     </p>
+  <p>To properly view the report, make sure you have the following solution data reported: <br />
+     </p>
+  <ul>
+    <li>
+      <p>Region_Regions_Price </p>
+    </li>
+    <li>
+      <p>Fuel_Fuels_Total Price </p>
+    </li>
+    <li>
+      <p>Emission_Emissions_Price </p>
+    </li>
+    <li>
+      <p>Region_Regions_Generation </p>
+    </li>
+    <li>
+      <p>Region_Regions_Unserved Energy </p>
+    </li>
+  </ul>
+  <p> </p>
+  <h3><strong><a id="Zonal_Summary_Report"></a>Zonal Summary Report</strong> </h3>
+  <p>This report allows users to tell a complete story about price forecasting results by presenting outcomes such as zonal price forecasting, net interchanges between zones, generation per technology and zone, generation capacity per zone, and zonal peak load. The reported data can provide users with an easy way to explain trends in zonal pricing behavior. <br />
+     </p>
+  <p>To properly view the report, make sure you have the following solution data reported: <br />
+     </p>
+  <ul>
+    <li>
+      <p>Generator_Generators_Generation </p>
+    </li>
+    <li>
+      <p>Zone_Zones_Price </p>
+    </li>
+    <li>
+      <p>Zone_Zones_Net Interchange </p>
+    </li>
+    <li>
+      <p>Zone_Zones_Peak Load </p>
+    </li>
+    <li>
+      <p>Zone_Zones_Generation Capacity </p>
+    </li>
+  </ul>
+  <p> </p>
+  <h3><strong><a id="Fuel_Consumption_Report"></a>Fuel Consumption Report </strong></h3>
+  <p>Users looking to understand fuel consumption can now report the amount of fuel burned by fuel category. This can be helpful for understanding fuel usage over time and drawing conclusions based on comparisons with other fuels. <br />
+     </p>
+  <p>To properly view the report, make sure you have the following solution data reported: <br />
+     </p>
+  <ul>
+    <li>
+      <p>Fuel_Fuels_Offtake </p>
+    </li>
+  </ul>
+  <h3><br />
+    <strong><a id="Energy_Balance_Report"></a>Energy Balance Report </strong>
+  </h3>
+  <p>This report provides a high-level overview of how energy is balanced within the system. This report summarizes properties including load, native load, generation, and unserved and dump energy to help users understand how the system is balancing energy constraints. <br />
+     </p>
+  <p>To properly view the report, make sure you have the following solution data reported: <br />
+     </p>
+  <ul>
+    <li>
+      <p>Region_Regions_Native Load </p>
+    </li>
+    <li>
+      <p>Region_Regions_Load </p>
+    </li>
+    <li>
+      <p>Region_Regions_Generation </p>
+    </li>
+    <li>
+      <p>Region_Regions_Net Market Sales </p>
+    </li>
+    <li>
+      <p>Region_Regions_Transmission Losses </p>
+    </li>
+    <li>
+      <p>Region_Regions_Unserved Energy </p>
+    </li>
+    <li>
+      <p>Region_Regions_Dump Energy <br />
+         </p>
+    </li>
+  </ul>
+  <h3><strong><a id="Gas_System_Summary_Report"></a>Gas System Summary Report </strong></h3>
+  <p>This report summarizes key data points from a gas system model. This includes properties such as Gas Demand and Gas Excess for Gas Demand, End Volume for Gas Storage, and Take Quantity for Gas Storage objects. <br />
+     </p>
+  <p>To properly view the report, make sure you have the following solution data reported: <br />
+     </p>
+  <ul>
+    <li>
+      <p>Gas Demand_Gas Demands_Demand </p>
+    </li>
+    <li>
+      <p>Gas Demand_Gas Demands_Excess </p>
+    </li>
+    <li>
+      <p>Gas Demand_Gas Demands_Served Demand </p>
+    </li>
+    <li>
+      <p>Gas Demand_Gas Demands_Shortage </p>
+    </li>
+    <li>
+      <p>Gas Contract_Gas Contracts_Take Quantity </p>
+    </li>
+    <li>
+      <p>Gas Storage_Gas Storages_End Volume </p>
+    </li>
+    <li>
+      <p>Gas Storage_Gas Storages_Net Injection<br />
+         </p>
+    </li>
+  </ul>
+  <h3><strong><a id="Hydrogen_Production_Report"></a>Hydrogen Production Report </strong></h3>
+  <p>Understanding the economics of hydrogen generation is becoming more important as it plays a role in decarbonizing our energy systems. This report summarizes the production and consumption aspects of hydrogen generation. Among other properties, users can report the Load, Production, and Production Cost, and the Demand and Shortage associated with the Gas Demand. <br />
+     </p>
+  <p>To properly view the report, make sure you have the following solution data reported: <br />
+     </p>
+  <ul>
+    <li>
+      <p>Power2X_Power2X_Load </p>
+    </li>
+    <li>
+      <p>Power2X_Power2X_Production Rate </p>
+    </li>
+    <li>
+      <p>Power2X_Power2X_Capacity Factor </p>
+    </li>
+    <li>
+      <p>Power2X_Power2X_Production Cost </p>
+    </li>
+    <li>
+      <p>Power2X_Power2X_Price Paid </p>
+    </li>
+    <li>
+      <p>Gas Demand_Gas Demands_Demand </p>
+    </li>
+    <li>
+      <p>Gas Demand_Gas Demands_Shortage </p>
+    </li>
+    <li>
+      <p>Gas Demand_Gas Demands_Price Paid<br />
+         </p>
+    </li>
+  </ul>
+  <h3><strong>Gas Storage Report </strong></h3>
+  <p>This report provides a high-level summary of gas system Storage parameters. Users can report the Max Volume, Withdrawal, Shadow Price, and more to understand the energy and cost attributes that define gas storage in the system. <br />
+     </p>
+  <p>To properly view the report, make sure you have the following solution data reported:<br />
+     </p>
+  <ul>
+    <li>
+      <p>Gas Storage_Gas Storages_Max Volume </p>
+    </li>
+    <li>
+      <p>Gas Storage_Gas Storages_Initial Volume </p>
+    </li>
+    <li>
+      <p>Gas Storage_Gas Storages_Injection </p>
+    </li>
+    <li>
+      <p>Gas Storage_Gas Storages_Withdrawal </p>
+    </li>
+    <li>
+      <p>Gas Storage_Gas Storages_End Volume </p>
+    </li>
+    <li>
+      <p>Gas Storage_Gas Storages_Production Cost </p>
+    </li>
+    <li>
+      <p>Gas Storage_Gas Storages_Shadow Price </p>
+    </li>
+  </ul>
+  <h1><a id="Aggregation_and_Transpose"></a>Aggregation and Transpose</h1>
+  <h3><br />
+    <strong>Aggregation</strong>
+  </h3>
+  <p>The Aggregation method handles to fulfill the requirement of getting the values for <strong>Sum</strong>, <strong>Average</strong>, <strong>Min</strong>, and <strong>Max</strong>.<br />
+    In this method, we have provided the functionality to edit the “Json” file of the report. In that file, you can add the required Aggregation function (<strong>SUM</strong>, <strong>AVG</strong>, <strong>MIN</strong>, and <strong>MAX</strong>).</p>
+  <p>The reporting for aggregation needs to be flexible enough to handle different aggregation methods. For example, <strong>Generation</strong> output you would want to get the total of all aggregated generators while Market Price you would want to get the average of all aggregated regions. <br />
+    The Aggregation method allows you to fulfill these requirements for getting the values for Sum, Average, Min, and Max in your Reports.</p>
+  <h3><br />
+    <strong>Follow the steps below to use the Aggregation method in your reports:</strong>
+  </h3>
+  <p>1. Open any <strong>Successful Solution</strong><br />
+    2. Go to <strong>Reports</strong><br />
+    3. Check any report to see the data. For example – the <strong>IRP report</strong><br />
+     </p>
+  <div style="margin-left: -0.02in"><img alt="" src="../assets/images/Solution Reporting in PLEXOS Cloud/IRP Report.png" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /></div>
+  <p><br />
+     <br />
+      4. Make a copy of it, if you do not want to alter the data of your original Report.<br />
+      5. Right-click on the selected Report and click <strong>Save As</strong><br />
+     <br />
+     </p>
+  <div style="margin-left: 40px;"><img alt="Graphical user interface, application  Description automatically generated" src="../assets/images/Solution Reporting in PLEXOS Cloud/Save As Right-Click.png" style="width: 352px; height: 196px;" /></div>
+  <p> </p>
+  <p>6. Enter a unique name for this Report and click on <b>Save As </b>once again.<br />
+     </p>
+  <div style="margin-left: 40px;"><img alt="Graphical user interface, text, application  Description automatically generated" src="../assets/images/Solution Reporting in PLEXOS Cloud/Save Report.png" style="width: 454px; height: 346px;" /></div>
+  <p> </p>
+  <p>7. The copy of this Report will be saved under <strong>Custom Reports (My Reports)</strong></p>
+  <p>8. Now to make changes in the JSON file, right-click on the report and click <b>Edit</b><br />
+     </p>
+  <div style="margin-left: 0.03in"><img height="703" src="../assets/images/Solution Reporting in PLEXOS Cloud/editIRPreport.png" width="1234" /></div>
+  <p> </p>
+  <p>8. It will open the JSON file where you can edit the Aggregate function for the required field.</p>
+  <p>9. As shown in the example below, the edit is being done on “Peak Load” and the current value of &quot;aggregateFunction&quot; is set as ‘0’.<br />
+     </p>
+  <div style="margin-left: 40px;"> </div>
+  <p><img alt="" src="../assets/images/Solution Reporting in PLEXOS Cloud/Aggregate Function.png" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /></p>
+  <p>In the example below, you can see we have edited the &quot;aggregateFunction&quot; value as “MAX” to get  the  max value for <b>Peak Load</b><br />
+     </p>
+  <div><img alt="Text  Description automatically generated" src="../assets/images/Solution Reporting in PLEXOS Cloud/Aggregate Function Max.png" style="width: 545px; height: 282px; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /></div>
+  <p> </p>
+  <p>11. Click on <b>Update</b> to save the changes.</p>
+  <p>12. It will return you the data with MAX values for the field, “Peak Load” as you can see in the image below.<br />
+     </p>
+  <div style="margin-left: 0.03in"><img height="668" src="../assets/images/Solution Reporting in PLEXOS Cloud/updatedMAXdata.png" width="1156" /></div>
+  <p> </p>
+  <h3>Transpose</h3>
+  <p>Transposing the data in your Report means swapping the rows and columns. It is very useful when you need to rearrange the data for rows in columns or vice versa.</p>
+  <p><br />
+    In this release, we have introduced this feature so that you can quickly switch data between columns and rows.</p>
+  <p> </p>
+  <p><strong>To Apply Transpose in your report, follow the below steps</strong>:</p>
+  <p>Click on the Transpose icon <img alt="" src="../assets/images/Solution Reporting in PLEXOS Cloud/Transpose.png" /> located at the top left of the report table.</p>
+  <p> </p>
+  <div style="margin-left: -0.2in"><img alt="" src="../assets/images/Solution Reporting in PLEXOS Cloud/Transpose Report.png" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /></div>
+  <p> </p>
+  <p>This action will transpose your data as you can see in the below example, the columns become rows and the rows have become columns.<br />
+    <br />
+    You can click the sign <strong>‘&gt;</strong>’ to expand the row further.<br />
+    Click on the same icon to get back to the original view (default view).
+  </p>
+  <h2 id="Auto_Split_Feature"><br />
+    Auto Split Feature</h2>
+  <p>Auto-Split feature allows to report each individual category or object in the system by just enabling a flag. </p>
+  <p>You no longer needed to hardcode object names in reports. This enables Solution reports to be Study agnostic.</p>
+  <p>In Solutions Reports, alongside “reportByCategory” and “reportByObjects”, you can now retrieve data by Sample Ids by using the flag &quot;reportBySamples&quot;. There is a new flag under &quot;auto populate children&quot; called &quot;reportBySamples&quot;. At once only one of them can be true for one property, others will be false.</p>
+  <p> </p>
+  <p>For instance, consider the following configuration:</p>
+  <p>The Auto sample generation flag in Solution Reports as shown below</p>
+  <p style="margin-left: 8px">{</p>
+  <p style="margin-left: 16px">  &quot;Formula&quot;: &quot;Generator_Generations_Generation&quot;,</p>
+  <p style="margin-left: 12px">   &quot;reportBySamples&quot;: true</p>
+  <p style="margin-left: 12px">}</p>
+  <ul class="Disc">
+    <li>&quot;Formula&quot; corresponds to the formula or data source you want to analyze.</li>
+    <li>&quot;reportBySamples&quot;: “true”, is the flag that enables the auto-generation of sample data.</li>
+  </ul>
+  <h2><img height="367" src="../assets/images/RN_2023/October 2023/ReportBySamples.png" style="padding: 26px;" width="618" /></h2>
+  <p>In the above example, “reportBySample” is set to true then for Monte Carlo studies with 20 samples, in this case, there will be 20 columns generated and with each column will fetch report data against that sample as shown in the below image:</p>
+  <p> </p>
+  <p>Generation (Sample1) Generation(Sample2) ... Generation(SampleN)</p>
+  <p> </p>
+  <p><img height="294" src="../assets/images/RN_2023/October 2023/ResultTable.png" style="padding: 25px;" width="629" /><br />
+    <span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif">This enhancement offers users the ability to create comprehensive reports tailored to their specific needs, ensuring a more versatile and efficient reporting experience.</span></span></span>
+  </p>
+  <p> </p>
+  <h2 id="Date_Range_Filter">Date Range Filter </h2>
+  <p><strong>Date Range</strong> Filter will improve your data analysis and reporting with Solution Reports. This helps in customizing your Reports by specifying start and end dates in the YYYY-MM-DDT00:00:00 format directly in the Report&#39;s JSON file. It is a simple and flexible way to customize your reports. The advantage of this feature is it allows you to filter out any data that is not relevant to the time period of interest.</p>
+  <p> </p>
+  <p>For example, if you wish to retrieve the data for only January 2023, you can set the date range as:</p>
+  <p><br />
+    “date range”: [“2023-01-01T00:00:00”, “2023-01-31T23:59:59”]</p>
+  <p> </p>
+  <p><img height="306" src="../assets/images/RN_2023/November Release SS/DateFilter.png" width="640" /></p>
+  <div id="" style="left: 60px;top: 18547.9px;"> </div>
+  <p> </p>
+</body>
+</html>

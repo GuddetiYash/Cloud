@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <title>March 2023 Release Notes</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/>
+<meta name="robots" content="noindex, nofollow"/></head>
+<body>
+  <h1>March 2023 Release Notes</h1>
+  <h3>Highlights of the March 2023 Release: </h3>
+  <ul>
+    <li><a href="#1one">Save Selected Properties and Format on Solutions Data Grid for Fast Reuse with Layouts</a></li>
+    <li><a href="#2two">Output Data Grid – Faster Performance and Major Interface Improvements</a></li>
+    <li><a href="#3three">Distributed Parallel Models</a></li>
+    <li><a href="#4four">Enhancements in the UI of the Run Configuration Panel</a></li>
+    <li><a href="#5five">Excel Add-In Enhancements</a></li>
+    <li><a href="#6six">Improved User Experience for the Simulations and Solutions Workspaces </a></li>
+    <li><a href="#7seven">Enhancements to BI Analytics Dashboard</a></li>
+    <li><a href="#8eight">Solution Reports - Split a Group by Category</a></li>
+    <li><a href="#9nine">CLI Enhancements</a></li>
+    <li><a href="#10ten">API Updates</a></li>
+    <li><a href="#11eleven">Additional Improvements and Bug Fixes</a></li>
+  </ul>
+  <p> </p>
+  <p>The following video covers the overview of the features in the <strong>March 2023 </strong>release:<br/>
+     </p>
+  <p><iframe allowfullscreen="" height="380" src="https://player.vimeo.com/video/808676152?h=3ce81e907d" width="660"></iframe></p>
+  <p> </p>
+  <p>For more detailed descriptions of the features and improvements available in the <strong>March 2023</strong> release, scroll through the topics below.<br/>
+     </p>
+  <h2 id="1one">Save Selected Properties and Format on Solutions Data Grid for Fast Reuse with Layouts</h2>
+  <p>The Solutions Data Grid page allows you to save the current settings of your ad-hoc query for reuse. You can save the current view as a Layout and store the selected Properties, Objects, Phases, Periods, and more. <br/>
+    <br/>
+    Layouts will save time spent on selecting the same fields every time you evaluate a Solution.<br/>
+    <br/>
+    <img height="344" src="../../assets/images/RN_2023/March/Layouts.jpg" width="703"/><br/>
+    <br/>
+    Learn more about Layouts <a href="../../Solutions/Maps_Tab/Output_Data_Grid_Page.htm" target="_blank">here</a>.<br/>
+     
+  </p>
+  <h2 id="2two">Output Data Grid – Faster Performance and Major interface Improvements</h2>
+  <p>We continued making improvements in the Output Data Grid page under Solutions in this release.</p>
+  <p><br/>
+    We have enhanced the data loading process in the grid. It now supports loading 100k records in just a few seconds. Additionally, we reduced the need for scrolling by adding the <strong>Show More Data</strong> button to load up to 100k more records at a time. The grid now supports up to 1 million records.</p>
+  <p> </p>
+  <p><img src="../../assets/images/RN_2023/March/Output Grid1.jpg"/><br/>
+    <br/>
+    <img height="457" src="../../assets/images/RN_2023/March/Show More Data.jpg" width="748"/><br/>
+    <br/>
+    Learn more <a href="../../Solutions/Maps_Tab/Output_Data_Grid_Page.htm" target="_blank">here</a>.<br/>
+     
+  </p>
+  <h2 id="3three">Distributed Parallel Models</h2>
+  <p>We have introduced the Parallel Models distribution method in the Distributed run type, which supports the running of multiple models simultaneously.</p>
+  <p><br/>
+    Select multiple models with Ctrl + Click or Shift + Click and then select a single VM type that will be used to run these Models. Each Model will be run on its own VM in parallel.</p>
+  <p> </p>
+  <p>This saves clicks and ensures timely execution.<br/>
+    <br/>
+    <img height="568" src="../../assets/images/RN_2023/March/Distibuted.jpg" width="301"/><br/>
+     
+  </p>
+  <h2 id="4four">Enhancements in the UI of the Run Configuration Panel</h2>
+  <p>In this release, we have made some exciting improvements to the <strong>Run Configuration Panel</strong>. We made the options for Run Configuration less complex and easy to use.</p>
+  <p><br/>
+    Now, you don’t need to switch tabs back and forth to see the Advanced Configuration and Input settings. All the settings will be shown in a single window.</p>
+  <p><br/>
+    In addition to that, now Tuning operations can also be performed by selecting various VM configuration types.</p>
+  <p><br/>
+    Next, we also enhanced the visibility of seeing previous run details by segregating the information individually as per the Run types.<br/>
+    <br/>
+    <strong>New Run Configuration Panel with &#39;Inputs&#39; and &#39;Advanced Configuration&#39; in a single pane.</strong><br/>
+    <br/>
+    <img height="497" src="../../assets/images/RN_2023/March/Inputs.jpg" width="261"/><br/>
+    <br/>
+    The example below shows Tuning Virtual Machine Selection operation by selecting various VM types.<br/>
+    <br/>
+    <img height="531" src="../../assets/images/RN_2023/March/VM.jpg" width="277"/><br/>
+    <br/>
+    Learn more about these enhancements <a href="../../Models/Run_Configuration_Panel.htm" target="_blank">here</a>.<br/>
+     
+  </p>
+  <p> </p>
+  <h2 id="5five">Excel Add-in Enhancements</h2>
+  <h3>Editing on Attribute Data</h3>
+  <p>The MS Excel Add-in now allows you to perform editing on attribute data.<br/>
+    To fetch attribute data and perform editing on it, you need to edit the Schema table as highlighted below.<br/>
+    <br/>
+    <img height="65" src="../../assets/images/RN_2023/March/Edit Attribute.jpg" width="724"/><br/>
+    <br/>
+    After you click on<strong> Load Data</strong>, the Attribute value (Horizons) for the mentioned attribute (Step type) will be pulled into a new column with the header name being the columnName from Schema.<br/>
+    Click on <strong>Save Data</strong> once you finish editing and adding attribute values to save the new attribute value.<br/>
+    <br/>
+    <strong>NOTE</strong>: Latitude and Longitude attributes will not be supported for any object.<br/>
+     
+  </p>
+  <h3>Ability to modify Model-Scenario membership, Model-Horizon membership   </h3>
+  <p>Users now can pull data from the Model, Scenario, and Horizon classes and also perform editing on them. <br/>
+    For Model-Scenario membership a different sheet will get created with name = &quot;ModelScenario&quot; where &#39;0&#39; means there is no relationship between the Model and Scenario object and &#39;1&#39; means there is a relationship between them. <br/>
+    If you want to edit these you can choose values from 0 and 1 which will create a relation between them.<br/>
+    <br/>
+    For Model, Scenario, and Horizon there will be no BandId and Scenario columns which were created by default for the rest of the classes.<br/>
+    <br/>
+    <img height="124" src="../../assets/images/RN_2023/March/Model Table.jpg" width="733"/><br/>
+     
+  </p>
+  <h2 id="6six">Improved User Experience for the Simulations and Solutions Workspaces</h2>
+  <p>We have made major improvements in the UI for the Solutions and Simulations tabs.  </p>
+  <p><br/>
+    The Solutions tab now shows only successful Simulations. This keeps users focused on the Simulations where Solution files are created and can be evaluated using the map, output data grid, Solution Reports, and more. <br/>
+    The Simulations tab continues to show Simulations in all states including in progress, failed, or canceled.<br/>
+    <br/>
+    This update will help users easily find successful Solutions without using filters.
+  </p>
+  <div style="left: 20px;top: 3739.62px;"> </div>
+  <div style="left: 20px;top: 3739.62px;"><img height="431" src="../../assets/images/RN_2023/March/Solutions.jpg" width="258"/><br/>
+    <br/>
+    <img height="554" src="../../assets/images/RN_2023/March/Solutions Legend.jpg" width="257"/><br/>
+    <br/>
+    Learn more <a href="../../Solutions/Overview__to_the_Enhanced_Solutions_Pane.htm" target="_blank">here</a>.
+  </div>
+  <p> </p>
+  <h2 id="7seven">Enhancements to BI Analytics Dashboard</h2>
+  <p>We have continued making improvements in the BI Reports. In this release we added some great options for BI Reports users including Save As(Copy), Delete, Rename, and Share BI Reports.<br/>
+    We added a ‘Shared Reports’ folder in addition to My Reports and EE BI Reports folders. The Shared Reports folder will contain all public BI Reports that were created by others.<br/>
+    <br/>
+    Learn more about these options in the dedicated article for <a href="../../Reports/How_BI_Analytics_Dashboard_Enhances_the_Reporting_Experience.htm" target="_blank">BI Reports</a>.<br/>
+     
+  </p>
+  <h2 id="8eight">Solution Reports - Split a Group by Category</h2>
+  <p>In Solutions Reports, with the addition of the Auto-split feature, you can report each individual category or object in the system by just enabling a flag. </p>
+  <p><br/>
+    You no longer needed to hardcode object names in reports. This enables Solution reports to be Study agnostic.<br/>
+    <br/>
+    Previously, with Solutions Reports, users need to manually enter each individual filter name, such as objects, and categories, to create their report. 
+  </p>
+  <p><br/>
+    And for a different study, they may need to change the names manually again. It also makes the OOTB (EE Reports) reports not generally applicable to the user&#39;s study since the filter names are manually entered.<br/>
+     </p>
+  <h2 id="9nine">CLI Enhancements</h2>
+  <h3>&quot;<strong>createDirectory</strong>&quot; <strong>command is no longer necessary</strong></h3>
+  <p>When downloading a solution file, you no longer need to use the &quot;<strong>--createDirectory</strong>&quot; command. Instead, solution data can be directed to be stored in the desired output directory without it having to be instantiated. This removes one more step and improves the workflow when downloading solution data. The command can now be called as shown below:<br/>
+     </p>
+  <div style="margin-left: 40px;"><em>pxc solution files download --solutionId f22937c5-d263-4084-83ca-aa2cbd81ad5b --outputDirectory &quot;PathToOutputDir”</em><br/>
+     </div>
+  <h3><strong>Hybrid to Parquet Conversion Update</strong></h3>
+  <p>Previously, after hybrid files were converted to parquet format, the files in the source parquet directory were deleted. Now, the source files are successfully converted to the destination folder and the files in the source parquet directory are not deleted. To observe this behavior, create a folder to store the output and enter the command below:<br/>
+     </p>
+  <div style="margin-left: 40px;"><em>pxc solution convert hybrid-to-parquet --sqlitePath “DatabaseFilePath” --parquetDir “PathToParquetDir” --outputDirectory “PathToOutputDir”</em></div>
+  <p> </p>
+  <h3><strong>Viewing the Number of Geocoded Objects</strong></h3>
+  <p>You can also now view the number of geocoded objects in a study. This is helpful when trying to determine if you have forgotten to geocode an object in a specific class. Enter the following command to extract this information:<br/>
+     </p>
+  <div style="margin-left: 40px;"><em>pxc study stats geocoded-objects --studyId f22937c5-d263-4084-83ca-aa2cbd81ad5b --changesetId cd437e2d-e84f-4df1-b11c-3927e3b4969c</em><br/>
+     </div>
+  <div><img height="286" src="../../assets/images/RN_2023/March/Geocode Objects.jpg" width="689"/></div>
+  <p><br/>
+    The &quot;<strong>studyId</strong>&quot; and &quot;<strong>changesetId</strong>&quot; are both required input parameters for this command.<br/>
+     </p>
+  <h3><strong>Live Data When Downloading Solution Files</strong></h3>
+  <p>When downloading Solution files, you can now view live status updates as your download progresses. This is helpful in the event that a file size becomes too large while downloading, or if you want to know which file is being downloaded and its size. A sample command is shown below:<br/>
+     </p>
+  <div style="margin-left: 40px;"><em>pxc solution files download --solutionId 64e2498f-7641-4d9f-9041-79fcd2041d68 -d &quot;PathToOutputDir&quot; --type Log</em><br/>
+     </div>
+  <div><img height="112" src="../../assets/images/RN_2023/March/Geocodes2.jpg" width="761"/><br/>
+    <br/>
+    The <strong>solutionId</strong> and <strong>outputDirectory</strong> are both required input parameters for this command.
+  </div>
+  <p> </p>
+  <h3><strong>Return a List of the Studies in a Directory</strong></h3>
+  <p>A new command has been added to return a list of studyIds in a given directory path. This can help improve workflows and reduce confusion when you are working with multiple XML files stored in the same folder. The command can be called as shown below:<br/>
+     </p>
+  <div style="margin-left: 40px;"><em>pxc study list-local-studyIDs --studyDir &quot;PathToStudyDir&quot;</em><br/>
+     </div>
+  <p><img height="75" src="../../assets/images/RN_2023/March/Return List.jpg" width="755"/><br/>
+     </p>
+  <h3><strong>Solution Download Improvements</strong></h3>
+  <p>Previously, if you needed any single file or subset of files in a zipped solution file, you would need to download the entire zip archive to your computer and extract it just to get the files you need. There is now a new option on the `solution files list` CLI command, `--includeArchiveEntries`. This allows us to now expose what files are inside of zip files. For example:<br/>
+     </p>
+  <div style="margin-left: 40px;"><em>pxc solution files list --solutionId 6c5406b9-0a24-4ad8-8a1e-2edea6a7de40 –type Raw –includeArchiveEntries</em></div>
+  <p><br/>
+    <img src="../../assets/images/RN_2023/March/Solution Download.jpg"/><br/>
+    <br/>
+    Using the existing `solution files download` command with the existing --file option, we can now download just a single entry from out of the zip archive by passing the fileName of the entry given back in the above `solution files list --includeArchiveEntries` command. For example, if all I want out of this sizeable Solution.zip file is the small PLEXOS_Param.xml file:<br/>
+     
+  </p>
+  <div style="margin-left: 40px;"><em>pxc solution files download --solutionId 6c5406b9-0a24-4ad8-8a1e-2edea6a7de40 --type Raw --file &quot;Model Stigler Diet Solution.zip/PLEXOS_Param.xml&quot; --outputDirectory . –-automation</em><br/>
+     </div>
+  <div><img height="258" src="../../assets/images/RN_2023/March/Solution Download2.jpg" width="848"/><br/>
+    <br/>
+    For more detailed information on the PLEXOS Cloud Toolkit or CLI, refer to the following <a href="../../CLI/CLI_Toolkit.htm" target="_blank">article</a>.
+  </div>
+  <h2> </h2>
+  <h2 id="10ten">API Updates</h2>
+  <p>When querying simulations through <strong>ODATA</strong>, the expand retries option will return a sub-list of simulations that were the retry attempts for the parent simulation. This allows users to see if there were any related entries and improve troubleshooting workflows.  This option can be added by adding the &quot;<strong>?$expand=Retries</strong>” query parameter to the URL. You can see a sample output below:<br/>
+    <br/>
+    <img height="244" src="../../assets/images/RN_2023/March/API Updates.jpg" width="852"/><br/>
+    <br/>
+    The <strong>id</strong>, <strong>status</strong>, <strong>execution</strong>, and <strong>retryCount</strong> of the retry attempts for the parent simulation are returned.<br/>
+     
+  </p>
+  <h2 id="11eleven">Additional Improvements and Bug Fixes</h2>
+  <p>We have continued to make improvements in the UI and fix bugs affecting user experience, stability, and performance of the PLEXOS Cloud. <br/>
+    <br/>
+    With the continued improvements in Desktop to Cloud Integration, we have now provided the capability to work on multiple tabs while a study upload is in progress. Users can now switch to other open tabs such as Solution, log files, etc. Download PLEXOS 9.2 or newer to access this enhancement.<br/>
+    <br/>
+    If you are using the parquet Solution output with PLEXOS Cloud, please note we have added one additional column in the “<strong>fullKeyInfo</strong>” table that may impact your workflow. The column added is named “<strong>PeriodTypeName</strong>” which denotes period types in PLEXOS and is used by BI Analytics.<br/>
+    <br/>
+    With Excel Add-in, we have enhanced the capability of loading the data in one go. Now, you can be able to pull data from large datasets up to 8000 rows of data at once. <br/>
+    <br/>
+    The Solution Report Details screen now shows user-friendly names instead of just ID numbers.<br/>
+    The Diagnostics feature, accessible from the Solutions card under the kebab menu (three vertical dots) now provides additional details including:<br/>
+     
+  </p>
+  <div style="margin-left: 40px;">•    tenantid<br/>
+    •    environment - URL of the page<br/>
+    •    changesetid<br/>
+    •    studyid<br/>
+    •    timestamp - when was the popup opened/copied to clipboard<br/>
+    •    userid</div>
+  <p><br/>
+    This information is helpful when communicating issues to the Energy Exemplar support team.<br/>
+    <br/>
+    In bug fixes - A bug that changed the study solver from CPLEX to Gurobi when uploading to Cloud has now been resolved.  <br/>
+    The ‘PLEXOS-cloud simulation monitor’ command now correctly reports the status for simulations.<br/>
+    <br/>
+    <strong>NOTE</strong>: You can download the latest version of PLEXOS from <a href="https://portal.energyexemplar.com/?view=software" target="_blank">here</a>.<br/>
+     
+  </p>
+  <p> </p>
+
+</body></html>

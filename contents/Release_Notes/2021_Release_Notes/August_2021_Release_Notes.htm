@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>August 2021 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>August 2021 Release Notes</h1>
+  <h3>In this article:</h3>
+  <ul>
+    <li><a href="#0tempd">Temporarily disabled features</a></li>
+    <li><a href="#0cbversion">Cloud Bridge versioning enhancements</a></li>
+    <li><a href="#0cbproxy">Cloud Bridge proxy authentication</a></li>
+    <li><a href="#3run">AI-based Simulation Configuration recommendations</a></li>
+    <li><a href="#1email">Email preferences</a></li>
+    <li><a href="#2sim">Simulation management</a></li>
+    <li><a href="#4saved">Saved filters for Monte Carlo chart analysis</a></li>
+    <li><a href="#5solution">Improved solution cards</a></li>
+    <li><a href="#6chart">Output trend chart labels</a></li>
+    <li><a href="#7solution">Solution output data grid enhancements</a></li>
+    <li><a href="#8map">Map style options</a></li>
+    <li><a href="#9output">Output data in the object inspector</a></li>
+    <li><a href="#10api">API enhancements</a></li>
+  </ul>
+  <p> </p>
+  <div class="note" id="0tempd">
+    <h3>Temporarily disabled features</h3>
+    <p>The August release contains significant improvements to how Cloud Bridge and PLEXOS Cloud manage changes to studies. Due to these changes, there are two features that are currently disabled.</p>
+    <p> </p>
+    <ul>
+      <li>Editing input values on an object in PLEXOS Cloud</li>
+      <li>Congestion analysis (Analyze Congestion)</li>
+    </ul>
+    <p> </p>
+    <p>To allow our teams time to fully implement related changes to PLEXOS Cloud, we disabled these features temporarily. We will enable them in an upcoming release.</p>
+  </div>
+  <p> </p>
+  <h2 id="0cbversion">Cloud Bridge versioning enhancements</h2>
+  <p>Cloud Bridge now has versioning architecture that improves the ability to detect changes made on PLEXOS desktop and upload them to PLEXOS Cloud.</p>
+  <p> </p>
+  <h2 id="0cbproxy">Cloud Bridge proxy authentication</h2>
+  <p>Cloud Bridge now supports proxy authentication.</p>
+  <p> </p>
+  <h2 id="3run">AI-based Simulation Configuration recommendations</h2>
+  <p>During simulation configuration, PLEXOS Cloud will now recommend settings based on previous successful runs. The simulation recommendation is found in Run Configuration under <strong>Models &gt;&gt; Run</strong>.</p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Recommendation.jpg" style="margin-top: 5px;border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" width="600px" /><br />
+     </p>
+  <h2 id="1email">Email preferences</h2>
+  <p>You can now choose to receive email notifications when your active simulations reach certain statuses and when the publish to reports process completes for a solution.</p>
+  <p>To access Preferences, go to <strong>[User name] &gt;&gt; User Preferences</strong>.</p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/User_Pref.jpg" style="margin-top: 4px; border-style: solid;" width="600px" /><br />
+    <img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/User_Pref_2.jpg" style="border-style: solid;" width="600px" /><br />
+     
+  </p>
+  <h2 id="2sim">Simulation management</h2>
+  <p>To distinguish between administrative and individual user simulation management, simulation management in Administration options is now called “Admin Simulation Management”. Admin Simulation Management shows all simulations for an organization, while Simulation Management shows only a user’s own simulations.</p>
+  <h3>Admin Simulation Management</h3>
+  <p>[Username] &gt;&gt; Administration &gt;&gt; Admin Simulation Management</p>
+  <p> </p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Administration.jpg" style="border-style: solid;" width="600px" /><br />
+    <img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Admin Run Man.jpg" style="border-style: solid;" width="600px" /><br />
+     
+  </p>
+  <h3>Simulation Management</h3>
+  <p>We renamed &quot;Run Management&quot; to &quot;Simulation Management&quot;.</p>
+  <p> </p>
+  <p>[Username] &gt;&gt; Simulation Management</p>
+  <p> </p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Sim Man.jpg" style="border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" width="600px" /><br />
+     </p>
+  <p>We added the following functionality to the Simulation Management page:</p>
+  <ul>
+    <li><strong>Refresh button</strong> – Updates the data cards and table with most recent data</li>
+    <li><strong>Simulation tags column</strong> – Shows tags associated with each run to improve filtering of table data</li>
+    <li><strong>Simulation messages dialog</strong> – Click to open a dialog that shows all messages logged for the simulation</li>
+    <li><strong>Hide columns menu</strong> – Click to open a menu to hide/show which tags are visible</li>
+    <li><strong>Current Core Usage card</strong> – Shows total cores currently in use out of the total available cores</li>
+    <li><strong>Time zone support</strong> - Added Support for time zones in Run Management filters</li>
+  </ul>
+  <p>Also, settings and preferences in Simulation Management now persist when you leave the page and return.</p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Sim_Management.jpg" style="margin-top: 5px;border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" width="700px" /><br />
+    <br />
+     
+  </p>
+  <h2>Monte Carlo Chart Analysis</h2>
+  <h3 id="4saved">Saved Filters</h3>
+  <p>You can now save filters for future use in the Advanced Filters section of the Monte Carlo Chart Analysis page.</p>
+  <p> </p>
+  <p>To get to chart analysis, select a successful Monte Carlo solution, then click the Chart Analysis icon in the top right of Insights.</p>
+  <p> </p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Chart_Analy_Icon.jpg" style="margin-top: 6px; border-style: solid;" width="500px" /></p>
+  <p>To save a filter, on the Chart Analysis screen, open the Advanced Filters section and set your filter settings. Then click Save Filter. Your saved filters will appear under Saved Filters in the Advanced Filters section.</p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Chart_Advanced_Filters.jpg" style="margin-top: 7px; border-style: solid;" width="600px" /><br />
+     </p>
+  <h2>Solutions</h2>
+  <h3 id="5solution">Improved solution cards</h3>
+  <p>Solution cards for in-progress simulations now automatically refresh every five seconds and show the following information:</p>
+  <ul>
+    <li>Status symbol. Learn more about simulation statuses <a href="/articles/KB_Article/Solution-status-descriptions-PLEXOS-Cloud" target="_blank">here</a>.</li>
+    <li>Date and time simulation was triggered</li>
+    <li>Triggered by</li>
+    <li>Configuration settings</li>
+    <li>Engine</li>
+    <li>Solver</li>
+    <li>Artifacts to view and download, including solutions files and simulation logs</li>
+    <li>Real time engine logs</li>
+  </ul>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Solution Card.jpg" style="margin-top: 8px;border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" width="600px" /><br />
+     </p>
+  <h3 id="6charts">Output trend chart labels</h3>
+  <p>Added labels to output trend charts to clearly communicate units.</p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Chart_labels.jpg" style="margin-top: 9px;border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" width="600px" /><br />
+     </p>
+  <h3 id="7solution">Solution output data grid enhancements</h3>
+  <p>We renamed Solution Data Grid to Solution Output Data Grid. Use the Solution Output Data Grid to view output data in a grid format. It supports copying cells and right clicking to export/copy data. You can also do a full export to csv/excel. Additionally:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>We added a drop-down filter called <strong>Pivot</strong> from which you can select a List, Name, or Property
+      <ul>
+        <li><strong>List</strong> – Shows a list view of selected data with the columns Date, Name, Property, Object Type, Value, Unit</li>
+        <li><strong>Name</strong> – Groups selected data by object name</li>
+        <li><strong>Property</strong> – Groups selected data by property</li>
+      </ul>
+    </li>
+    <li>The Solution Output Data Grid supports unlimited objects</li>
+    <li>Choose up to five properties at at time to view in the grid</li>
+    <li>6 hours, 6 days, 6 weeks, 6 months and 6 years worth of data can be displayed at a time</li>
+  </ul>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Pivot_dropdown.jpg" style="margin-top: 10px; border-style: solid;" width="600px" /><br />
+     </p>
+  <h3 id="8map">Map style options</h3>
+  <p>On the map views in Setup and Solutions, we added a drop-down menu for selecting different map styles. Available options are Street, (default), Light, Dark, Outdoors, Satellite, and Canvas. Your last selected map style is saved so it will persist when you navigate away and return.</p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Map Styles.jpg" style="margin: 10px; border-style: solid;" width="600px" /><br />
+     </p>
+  <h3 id="9output">Output data in the object inspector</h3>
+  <p>We added an Output Data tab in the object inspector that shows the selected object’s output properties and values. To access the object inspector, click on an object on the Insights map in Solutions. The object inspector panel will open on the right. The Output Data tab only appears when the selected object has associated solution data.</p>
+  <p><img src="https://portal.energyexemplar.com/help/walkme/SFKB/PLEXOS Cloud Release Notes/Aug2021/Output data tab.jpg" style="margin: 11px; border-style: solid;" width="600px" /><br />
+    <br />
+     
+  </p>
+  <h2 id="10api">API enhancements</h2>
+  <ul>
+    <li>Simulation state and orchestration fixes</li>
+    <li>Newer Azure Scale Set support</li>
+    <li>OData performance enhancements</li>
+    <li>Changed Webhook Runtime Metric values from timespan formatted string to long milliseconds</li>
+    <li>Added new &#39;NewRetryId&#39; property on Failed status webhook requests</li>
+  </ul>
+  <p> </p>
+</body>
+</html>

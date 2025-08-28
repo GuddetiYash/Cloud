@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="gRootRelPath" content=".." />
+  <meta name="gCommonRootRelPath" content=".." />
+  <meta name="gTopicId" content="1" />
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+  <script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css" />
+  <link rel="stylesheet" type="text/css" href="../template/PLEXOS_White_Black_Teal/topicheader.css" />
+  <meta name="topic-status" content="Draft" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>CLI Toolkit</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="rh-authors" content="Karma" />
+  <meta name="topic-comment" content="Created 6/27" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-2595</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">a3c2f026-504a-41c3-8bd8-b0ee053d8a10</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-2595, TZXE7D2DFWED-1834737786-2595</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="CLI,Installing CLI,PLEXOS Cloud CLI Toolkit" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body onload="displayLastModifiedDate()">
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo"> </div>
+    <div class="nav">
+      <div class="title" title="CLI Toolkit"><span>CLI Toolkit</span></div>
+      <div class="gotohome" title="Click here to see this page in full context"><a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a></div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"> </div>
+  <p style="color: white; font-size:10px; text-align: right;">Last updated on: <span data-field="date" data-format="MMMM DD, YYYY" style="color: white; font-size: 10px;">August 22, 2025</span></p>
+  <h1>CLI Toolkit</h1>
+  <h3>In this article:</h3>
+  <ul>
+    <li style="margin-left: 8px;"><a href="#apricot">What is the CLI?</a></li>
+    <li style="margin-left: 8px;"><a href="#bananap">Installation</a></li>
+    <li style="margin-left: 8px;"><a href="#proxy">Using the CLI with a proxy server</a></li>
+    <li style="margin-left: 8px;"><a href="#cameroon">Built-in help</a></li>
+    <li style="margin-left: 8px;"><a href="#diana">Upgrading</a></li>
+    <li style="margin-left: 8px;"><a href="#elephant">Authentication Process</a></li>
+    <li style="margin-left: 8px;"><a href="#frog">Automation</a></li>
+    <li style="margin-left: 8px;"><a href="#gator">Study Management</a></li>
+    <li style="margin-left: 8px;"><a href="#help">Simulation Management</a></li>
+    <li style="margin-left: 8px;"><a href="#illinois">Solution Management</a></li>
+    <li style="margin-left: 8px;"><a href="#insights">Insights</a></li>
+    <li style="margin-left: 8px;"><a href="#views">Executive Views</a></li>
+    <li style="margin-left: 8px;"><a href="#kangaroo">Troubleshooting the CLI</a></li>
+    <li style="margin-bottom: 11px;margin-left: 8px;"><a href="#jelly">Notes on global command options</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="apricot"><strong>What is it?</strong></h2>
+  <p>The PLEXOS Cloud Toolkit (also called the Command Line Interface or CLI) automates the end-to-end simulation workflow. The diagram below provides an overview of the processes that can be automated with the CLI, and how the PLEXOS Cloud Desktop Integration, Excel Add-In, Cloud Bridge, and Reporting applications can function along with your workflow.</p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="263" src="../assets/images/CLI/CLI diagram.png" width="503" /></div>
+  <p> </p>
+  <p>The CLI supports many basic commands, which can be understood further using the built-in help functionality on any command. The CLI can be leveraged from the command line, or also through batch files or scripting in different programming languages.</p>
+  <p> </p>
+  <p>PLEXOS Command Line Interface (CLI) is used for integration with the PLEXOS Cloud environment. The basic areas the CLI supports are:</p>
+  <p> </p>
+  <ul>
+    <li style="margin-left: 8px;">Authentication</li>
+    <li style="margin-left: 8px;">Local user environments</li>
+    <li style="margin-left: 8px;">Simulation</li>
+    <li style="margin-left: 8px;">Solutions</li>
+    <li style="margin-left: 8px;">Study Management</li>
+    <li style="margin-left: 8px;">Self-upgrading</li>
+    <li style="margin-bottom: 11px;margin-left: 8px;">Automation</li>
+  </ul>
+  <p>Read more to learn more about the CLI and its functionalities below.</p>
+  <p> </p>
+  <h2 id="bananap"><strong>Installing the CLI</strong></h2>
+  <p>To install the CLI, perform the following steps:</p>
+  <ol class="Decimal">
+    <li>Click the grid icon located in the top-right corner of the <strong>PLEXOS Cloud</strong> dashboard to open the<strong> Marketplace</strong>.<br />
+      <img src="../assets/images/New folder/Cli Tool kit.png" />
+    </li>
+    <li>
+      <p>Navigate to the <strong>Tools</strong> tab within the Marketplace.</p>
+    </li>
+    <li>
+      <p>Find the <strong>PLEXOS Cloud Toolkit</strong> for your operating system (Windows or Linux).</p>
+    </li>
+    <li>
+      <p>Click the <strong>Download</strong> button to install the<strong> CLI</strong>.<br />
+        <br />
+        <img height="421" src="../assets/images/CLI/Installation/CLI.png" width="878" />
+      </p>
+    </li>
+  </ol>
+  <p> </p>
+  <p> </p>
+  <p>After the installer downloads, navigate to your Downloads and finish installing the application.</p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="228" src="../assets/images/CLI/CLI3.png" width="277" /></div>
+  <p> </p>
+  <p>After installing the CLI, you should follow the steps below to configure your Path environment variable, after which you will be able to open the application from the command line and start automating processes.</p>
+  <p> </p>
+  <h3>Setting a Path Environment Variable</h3>
+  <p><strong></strong>A PATH environment variable tells the command line what directories need to be searched to find a command, in this case those related to &quot;plexos-cloud.&quot; This needs to be set to allow PLEXOS to trigger CLI commands regardless of the install location on your machine. <br />
+    <br />
+    1. From the Windows Search bar enter &quot;Settings&quot; to open the <strong>Windows Settings</strong> screen. Alternatively, you can go to Windows Explorer, right click and click Properties.<br />
+    <br />
+    2. On the Settings screen enter &quot;environment variables&quot; in the Settings Search and select <strong>Edit the system environment variables.</strong>
+  </p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="304" src="../assets/images/CLI/CLI4.png" style="border-style: solid;" width="290" /></div>
+  <p><br />
+    3. A System Properties dialog will appear. In the lower right-hand corner, click on<strong> Environment Variables</strong>. <br />
+    <br />
+    4. From the Environment Variables screen, select Path from the User Variables section and click <strong>Edit</strong>. Alternatively, if multiple users leverage the same machine you can edit the System Variable for Path below.<br />
+     
+  </p>
+  <div style="margin-left: 40px;"><img height="319" src="../assets/images/CLI/CLI5.png" style="border-style: solid;" width="289" /></div>
+  <p><br />
+    5. Click <strong>New </strong>to create an environment variable.<br />
+     </p>
+  <div style="margin-left: 40px;"><img height="317" src="../assets/images/CLI/CLI6.png" style="border-style: solid;" width="286" /></div>
+  <p><br />
+    6. Paste the file path for CLI application, then Click <strong>OK</strong><br />
+     </p>
+  <div style="margin-left: 40px;"><img height="318" src="../assets/images/CLI/CLI7.png" style="border-style: solid;" width="287" /></div>
+  <p><br />
+    7. Click <strong>OK </strong>to exit out of the Windows Settings screen.</p>
+  <p> </p>
+  <h2 id="proxy"><strong>Using the CLI with proxy server</strong></h2>
+  <p>If you have an HTTP or SOCKS5 proxy server on your network between a host running the CLI and your API endpoint, you must set <code>https_proxy</code> with the hostname or IP address of the proxy server. The <code>https_proxy</code> environment variable holds the hostname or IP address of your proxy server.</p>
+  <p>The <code>https_proxy</code> is a standard environment variable. As with any environment variable, the specific steps you use to set it depends on your operating system.</p>
+  <p> </p>
+  <h3>Format of https_proxy</h3>
+  <p>The <code>https_proxy</code> variable is set with hostname or IP address of the proxy server in URL format, as in the following example:</p>
+  <ol class="RoundSquare">
+    <li><code>https_proxy=http://proxy.example.com</code></li>
+  </ol>
+  <p> </p>
+  <p>If the proxy server requires a username and password, you must include the credentials, as in the following example:</p>
+  <ol class="RoundSquare">
+    <li><code>https_proxy=http://username:password@proxy.example.com</code></li>
+  </ol>
+  <p> </p>
+  <p>If the proxy server uses a port other than 80, you must include the port number, as in the following example:</p>
+  <ol class="RoundSquare">
+    <li><code>https_proxy=http://username:password@proxy.example.com:8080</code></li>
+  </ol>
+  <p> </p>
+  <p>If the proxy server is a SOCKS5 proxy, you must specify the SOCKS5 protocol in the URL, as in the following example:</p>
+  <ol class="RoundSquare">
+    <li><code>https_proxy=socks5://socks_proxy.example.com</code></li>
+  </ol>
+  <p> </p>
+  <h3>Set https_proxy in Linux</h3>
+  <p>To set the <code>https proxy</code> environment variable in Linux:</p>
+  <ol class="Decimal" start="1">
+    <li>Use the command specific to your shell. For example, in bash, use the export command, as in the following example:
+      <ol class="RoundSquare" style="margin-left: 10px;">
+        <li><code>export https_proxy=http://my.proxyserver.com:8080</code></li>
+      </ol>
+    </li>
+  </ol>
+  <p> </p>
+  <ol class="Decimal" start="2">
+    <li>To make this change persistent, add the command to the appropriate profile file for the shell. For example, in bash, add a line like the following example to your .bash_profile or .bashrc file
+      <ol class="RoundSquare" style="margin-left: 10px;">
+        <li><code>https_proxy=http://username:password@hostname:port export $https_proxy</code></li>
+      </ol>
+    </li>
+  </ol>
+  <p> </p>
+  <h3>Set https_proxy in Windows</h3>
+  <p><span>Users can configure the https_proxy setting from the Advanced system settings on Windows using various methods, such as the run command, search bar, or Windows button. The steps provided below are specifically for Windows 10 or above. However, you can locate the Advanced system settings on your computer similarly to perform the change.</span></p>
+  <p>To set the https_proxy environment variable in Windows:</p>
+  <ol class="Decimal">
+    <li>Open <strong>File Explorer.</strong></li>
+    <br />
+    <li>Right -click on <strong>This PC</strong> and select<strong> Properties.<br />
+        <br />
+        <img height="346" src="../assets/images/CLI/Using the CLI with proxy server/Properties Latest.png" width="500" /></strong></li>
+    <br />
+    <li>In the right panel of the <strong>System </strong>window, click <strong>Advanced system settings.<br />
+        <br />
+        <img height="353" src="../assets/images/CLI/Using the CLI with proxy server/Advanced System Settings.png" width="658" /></strong></li>
+    <br />
+    <li>In the <strong>System Properties</strong> window, go to <strong>Advanced </strong>tab and select <strong>Enviornment Variables.<br />
+        <br />
+        <img height="423" src="../assets/images/CLI/Using the CLI with proxy server/Enviornment Variables.png" width="404" /></strong></li>
+    <br />
+    <li>Under <strong>User Variables,</strong> clcik <strong>New.<br />
+        <img height="447" src="../assets/images/CLI/Using the CLI with proxy server/Click New.png" width="406" /></strong></li>
+    <br />
+    <li>For <strong>Variable name,</strong> enter <code>https_proxy</code>.</li>
+    <br />
+    <li>For <strong>Variable value,</strong> enter your proxy server information.<br />
+      <br />
+      <img src="../assets/images/CLI/Using the CLI with proxy server/Variable name and Variable Values.png" />
+    </li>
+  </ol>
+  <p> </p>
+  <h2 id="cameroon"><strong>Built-in Help</strong></h2>
+  <p>To gain a better understanding of the CLI and its functionalities, explore the built-in help.<br />
+    To view a list of possible top-level commands enter one of the following in your command line:</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe --help<br />
+    plexos-cloud.exe -h<br />
+    plexos-cloud.exe -?</div>
+  <p> </p>
+  <div>A sample output is displayed below. You can see a list of Options and Commands available for the CLI. 
+    <p> </p>
+    <strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> You can enter plexos-cloud, plexos-cloud.exe, or pxc to specify the CLI application.<br />
+     
+  </div>
+  <div style="margin-left: 40px;"><img height="309" src="../assets/images/CLI/CLI8.png" width="534" /></div>
+  <div><br />
+    <strong>Example:</strong><br />
+    <br />
+    The help can be used to learn more about specific subcommands too. For example, to learn more about environment specific commands, enter:<br />
+     
+  </div>
+  <div style="margin-left: 40px;">plexos-cloud environment --help<br />
+     </div>
+  <div style="margin-left: 40px;"><img height="245" src="../assets/images/CLI/rtaImage.png" width="570" /></div>
+  <div><br />
+    You can learn more about the possible options and arguments associated with each command through the help too. To learn more about the set subcommand enter:</div>
+  <div style="margin-left: 40px;"><br />
+    plexos-cloud environment set --help</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="214" src="../assets/images/CLI/CLI10.jpg" width="568" /></div>
+  <p><br />
+    This tells the user that they can change their current environment using a command that resembles:<br />
+     </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe environment set NA</div>
+  <p><br />
+    In this case, NA is the PLEXOS Cloud environment the user is choosing to set. Users can set their environment to NA, APAC, or EMEA depending on their region.<br />
+    <br />
+    <strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE</strong>: Changing environments will log a user out and require them to log into the new environment.<br />
+     
+  </p>
+  <h2 id="diana"><strong>Upgrading</strong></h2>
+  <p>The CLI can upgrade itself. You can check if an upgrade is available with the following command:<br />
+     </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe upgrade check</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="112" src="../assets/images/CLI/CLI11.jpg" width="550" /></div>
+  <p><br />
+    Make sure to set the correct environment before checking if an upgrade is available. If an upgrade is available, the user will be notified. An upgrade may have occurred due to changes in the PLEXOS Cloud Backend APIs or critical bug fixes. The user has a choice of whether to install the upgrade or not, but upgrade check communicates to the user when PLEXOS Cloud may not function as expected without the upgrade.<br />
+    <br />
+    If there is an upgrade available, the following command will install it:<br />
+     
+  </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe upgrade install</div>
+  <p><br />
+    <strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> We encourage you to run an upgrade check after every release to make sure you have the latest version of the CLI installed.<br />
+     
+  </p>
+  <h3>Disabling Upgrades</h3>
+  <p>If users would like to disable upgrades at a user/system level, set the environment variable &quot;EE_CLI_UPGRADE_DISABLED&quot;. If this environment variable is found, the upgrade command shown above will no longer exist as an available command. <br />
+     </p>
+  <h2 id="elephant"><strong>Authentication Process</strong></h2>
+  <p paraeid="{e1e55c85-3bf0-4ef6-867b-fc72911769b2}{167}" paraid="389122163"><span data-contrast="auto"><span>In the CLI, there are two ways to log in to a specific environment: </span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <p paraeid="{e1e55c85-3bf0-4ef6-867b-fc72911769b2}{181}" paraid="620655315"><span data-contrast="auto"><span></span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <ul role="list">
+    <li aria-setsize="-1" data-aria-level="1" data-aria-posinset="1" data-font="Symbol" data-leveltext="" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" data-listid="1" role="listitem">
+      <p paraeid="{e1e55c85-3bf0-4ef6-867b-fc72911769b2}{185}" paraid="1351073568"><span data-contrast="auto">SSO</span></p>
+    </li>
+    <li aria-setsize="-1" data-aria-level="1" data-aria-posinset="2" data-font="Symbol" data-leveltext="" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" data-listid="1" role="listitem">
+      <p paraeid="{e1e55c85-3bf0-4ef6-867b-fc72911769b2}{192}" paraid="45877886"><span data-contrast="auto"><span>Client Credentials</span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+    </li>
+  </ul>
+  <p><span><br />
+      To see a list of the authentication sub commands enter the following command:</span></p>
+  <p> </p>
+  <p><strong><em><span><span>      plexos-cloud.exe auth --help</span></span></em></strong><br />
+     </p>
+  <p><span>If your requirement is to use the CLI directly without scripts, login via SSO workflow is recommended.Entering the status sub command will notify you where you are currently logged in, and in which environment. When users log in to PLEXOS Cloud through CLI and their email has access to multiple tenants within a single environment, they will receive a prompt to switch to a different tenant. To change the tenant after logging in, users must log out and then log in again to access the tenant selection page.</span></p>
+  <p> </p>
+  <ol class="Decimal">
+    <li><span>To trigger the login via SSO, enter the following command:<br />
+        <br />
+              <em><strong>pxc auth login<br />
+            <br />
+            <img height="418" src="../assets/images/CLI/CLI login command.png" width="742" /></strong></em></span></li>
+    <br />
+    <li>The user will get redirected to the <strong>PLEXOS Cloud Sign In</strong> page.<br />
+      <br />
+      <img height="355" src="../assets/images/CLI/PLEXOS Cloud Sign In page.png" width="746" />
+    </li>
+    <br />
+    <li>Enter the user email and click on the <strong>CONTINUE</strong> button.</li>
+    <br />
+    <li>If the user’s email has access to multiple tenants within a single environment, they will get redirected to the <strong>Select a tenant to continue</strong> page. Users who belong to a single tenant will be logged in to their respective tenant without being prompted to select a tenant.<br />
+      <br />
+        
+    </li>
+    <li>By default, the Primary Tenant is selected but the user can select the desired Tenant from the list and click on the <strong>CONTINUE</strong> button.<br />
+      <br />
+      <strong>NOTE:</strong> When an Admin creates a user in a specific tenant, it will be designated as the <strong>Primary</strong> Tenant for that user. The user will only see the Primary tag associated with their primary tenant name.<br />
+      <br />
+      <img height="359" src="../assets/images/CLI/Select a tenant screen.png" width="755" />
+    </li>
+    <br />
+    <li>After successful login, users will notice a message in the Command Prompt along with the Environment and Tenant Name.<br />
+      <br />
+      <span><span></span></span><img height="365" src="../assets/images/CLI/Tenant Name in CLI.png" width="758" />
+    </li>
+  </ol>
+  <p> </p>
+  <p paraeid="{cfaedcf0-6b17-4418-bb30-16ca85a7d370}{47}" paraid="678584822"><span data-contrast="auto"><span></span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <h4 paraeid="{cfaedcf0-6b17-4418-bb30-16ca85a7d370}{51}" paraid="1193595997"><span data-contrast="auto"><span>Login via Service Principal:</span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></h4>
+  <p paraeid="{cfaedcf0-6b17-4418-bb30-16ca85a7d370}{57}" paraid="1794358755"><span data-contrast="auto"><span>If your requirement is to trigger automatic workflows against the CLI without human interaction during the authentication process, login via Service Principal (OIDC clients) is recommended.</span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"></span></p>
+  <p paraeid="{cfaedcf0-6b17-4418-bb30-16ca85a7d370}{73}" paraid="600350709"> </p>
+  <p paraeid="{cfaedcf0-6b17-4418-bb30-16ca85a7d370}{73}" paraid="600350709"><strong>To obtain the OIDC client credentials, you may reach out to the Energy Exemplar support team. </strong></p>
+  <p paraeid="{cfaedcf0-6b17-4418-bb30-16ca85a7d370}{73}" paraid="600350709"> </p>
+  <p paraeid="{cfaedcf0-6b17-4418-bb30-16ca85a7d370}{73}" paraid="600350709">Once acquired, these credentials can be distributed to the intended users, eliminating the need to individually grant permissions on their respective accounts. These client credentials provide access to various resources, including Studies, Simulations, Changesets for Studies, etc., at the PLEXOS Cloud account level.</p>
+  <p paraeid="{67dd280a-1a1d-4fe5-9c3a-eb41e60a3b3f}{52}" paraid="311097988"><span data-contrast="auto"><span></span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <p lang="EN-US" paraeid="{67dd280a-1a1d-4fe5-9c3a-eb41e60a3b3f}{67}" paraid="1976731914" xml:lang="EN-US"><span data-contrast="auto"><span>Logging into PLEXOS Cloud via Service Principal can be </span><span>accomplished</span><span> with the below command:</span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <p lang="EN-US" paraeid="{cff00baf-2e67-46a2-829e-5772429dc05e}{35}" paraid="1463413128" xml:lang="EN-US"><span data-contrast="auto"><span></span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <p paraeid="{67dd280a-1a1d-4fe5-9c3a-eb41e60a3b3f}{210}" paraid="150275335"><em><span data-contrast="auto">             <strong>plexos</strong><strong>-cloud auth login --service-principal --tenant-id &lt;id&gt; --client-id &lt;id&gt; --client-secret &lt;secret&gt;</strong></span></em><strong><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></strong></p>
+  <p lang="EN-US" paraeid="{6c5b21f3-1ac6-4a48-8895-ae281fadfc39}{225}" paraid="15043570" xml:lang="EN-US"><span data-contrast="auto"><span></span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <p paraeid="{6c5b21f3-1ac6-4a48-8895-ae281fadfc39}{252}" paraid="1385110564"><span data-contrast="auto"><span>The above used fields are described below:</span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <p lang="EN-US" paraeid="{6c5b21f3-1ac6-4a48-8895-ae281fadfc39}{255}" paraid="352811140" xml:lang="EN-US"><span data-contrast="auto"><span></span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <ul role="list">
+    <li aria-setsize="-1" data-aria-level="1" data-aria-posinset="1" data-font="Symbol" data-leveltext="" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" data-listid="2" role="listitem">
+      <p paraeid="{cff00baf-2e67-46a2-829e-5772429dc05e}{3}" paraid="842856709"><strong><span data-contrast="auto"><span>Tenant ID</span></span></strong><span data-contrast="auto"><span>: The tenant ID provided by Energy Exemplar.</span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+    </li>
+    <li aria-setsize="-1" data-aria-level="1" data-aria-posinset="2" data-font="Symbol" data-leveltext="" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" data-listid="2" role="listitem">
+      <p paraeid="{cff00baf-2e67-46a2-829e-5772429dc05e}{7}" paraid="1801297122"><strong><span data-contrast="auto"><span>Client ID</span></span></strong><span data-contrast="auto">: The OIDC client ID (username) generated from the <span>CLM (Central License Manager)</span><span>. </span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+    </li>
+    <li aria-setsize="-1" data-aria-level="1" data-aria-posinset="3" data-font="Symbol" data-leveltext="" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" data-listid="2" role="listitem">
+      <p paraeid="{cff00baf-2e67-46a2-829e-5772429dc05e}{11}" paraid="1353931443"><strong><span data-contrast="auto"><span>Client Secret</span></span></strong><span data-contrast="auto"><span>: The OIDC client secret generated from the CLM. This works </span><span>like</span><span> a password.</span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+    </li>
+    <li aria-setsize="-1" data-aria-level="1" data-aria-posinset="4" data-font="Symbol" data-leveltext="" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" data-listid="2" role="listitem">
+      <p paraeid="{cff00baf-2e67-46a2-829e-5772429dc05e}{15}" paraid="2127313532"><strong><span data-contrast="auto"><span>Service-Principal</span></span></strong><span data-contrast="auto"><span>:  It is the flag in the CLI to use this workflow.</span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+    </li>
+  </ul>
+  <p lang="EN-US" paraeid="{6c5b21f3-1ac6-4a48-8895-ae281fadfc39}{246}" paraid="1451893969" xml:lang="EN-US"><span data-contrast="auto"><span></span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <p paraeid="{cfaedcf0-6b17-4418-bb30-16ca85a7d370}{89}" paraid="489284310"><span data-contrast="auto"><span>It is important to note that these clients are treated like separate user</span><span>s</span><span> themselves, so any resources (Studies, etc.) created by them will be owned by that </span><span>client, </span><span>therefore,</span><span> to </span><span>grant</span><span> access to a user logged into their PLEXOS cloud account, they can </span><span>utilize</span><span> the below mentioned CLI command:</span></span><span data-contrast="auto"><span></span></span></p>
+  <p lang="EN-US" paraeid="{6c5b21f3-1ac6-4a48-8895-ae281fadfc39}{121}" paraid="640063708" xml:lang="EN-US"><span data-contrast="auto"><span></span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <p lang="EN-US" paraeid="{67dd280a-1a1d-4fe5-9c3a-eb41e60a3b3f}{234}" paraid="1769379020" xml:lang="EN-US"><em><span data-contrast="auto">             <strong>plexos</strong><strong>-cloud study grant-user-access --studyId &lt;id&gt; --userEmail &lt;email address&gt;</strong></span><strong><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></strong></em></p>
+  <p paraeid="{cfaedcf0-6b17-4418-bb30-16ca85a7d370}{101}" paraid="1794109382"><span data-contrast="auto"><span></span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:240}"> </span></p>
+  <h2 id="frog"><strong>Automation</strong></h2>
+  <p>The CLI is meant to be used for building integrations and automation. As with most CLIs, all output goes to two separate standard output streams: stdout and stderr. The current documentation only displays examples sent to the stderr stream because we are showing human-readable output meant for interactive use cases.<br />
+    For example, to view the developer-friendly output for the upgrade check, enter the following command:<br />
+     </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe upgrade check -aut</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="245" src="../assets/images/CLI/Automation1.jpg" width="659" /></div>
+  <p><br />
+    The global option can be used on all commands and subcommands to send serializable object-based contracts to the stdout stream to be consumed by any scripting language.<br />
+    <br />
+    All automation messages are wrapped in an object type of MessageNotification. The important properties on the MessageNotification object are:
+  </p>
+  <ul>
+    <li style="margin-left: 8px;">EventType
+      <ul style="list-style-type: circle;">
+        <li style="margin-left: 8px;">CommandResponse: This event type is returned when the command is finished executing and this is the final response.</li>
+        <li style="margin-left: 8px;">ProgressEvent: This event type is returned when the command is in the middle of executing and some progress information is returned.</li>
+      </ul>
+    </li>
+    <li style="margin-left: 8px;">EventData
+      <ul style="list-style-type: circle;">
+        <li style="margin-left: 8px;">This is a serializable object that contains the data contract for this specific command.</li>
+      </ul>
+    </li>
+    <li style="margin-left: 8px;">Message
+      <ul style="list-style-type: circle;">
+        <li style="margin-left: 8px;">This is readable information that can be displayed somewhere if desired</li>
+      </ul>
+    </li>
+    <li style="margin-left: 8px;">Status
+      <ul style="list-style-type: circle;">
+        <li style="margin-left: 8px;margin-bottom: 11px;">The status of the Command can be Success, Failed, or Running.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>In the above example, after checking for an upgrade, we can see that we got back a CommandResponse EventType, meaning that the command is finished executing and this is the final response. Its Status is Success, meaning that the command successfully returned with no errors. On the EventData property, we get the serialized object contract for the upgrade check command, which has a single property, upgrade, telling the user it is checking for an upgrade.<br />
+    <br />
+    Some commands may require multiple steps while giving information back to the user along the way. The next command in this demonstration, the auth login command is a good example. In the web login workflow, the CLI must pop open a browser window and wait for the user to accept authorization permission. In commands that take multiple steps, several ProgressEvent commands may be written before the final CommandResponse is returned. For example, if you enter the following command:<br />
+     
+  </p>
+  <div style="margin-left: 40px;">plexos-cloud auth login --automation</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="328" src="../assets/images/CLI/Automation2.jpg" width="664" /></div>
+  <p> </p>
+  <p>You can see above that the CLI returned two MessageNotification objects, the first of which is an EventType of ProgressEvent, and its Status is Running, meaning that this command has not yet finished command execution but it is still giving information back. After the user allowed authentication, the CLI returned the CommandResponse and Success status. In both messages, the EventData was an object specific to this command, with 3 properties: IsLoggedIn, Environment, and UserName.</p>
+  <h3>Formattable Output</h3>
+  <p>In the above examples, each message is serialized to the console in a formatted manner: multi-line and indented JSON objects. This would require consumers to parse multiple lines being sent to stdout and use scripting logic to determine the end of messages. Instead, the --format global option can be used to make this process easier. Since MessageNotification responses are already JSON objects, the only format option that makes sense for use with the --automation option is the JSONL format. This will print JSON objects on a one-object per-line basis.</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud auth login --automation --format JSONL</div>
+  <p> </p>
+  <p>Each message will be sent as a single line (which wraps around the console window), which allows the user to deserialize each line written to stdout into a separate object instance. Another global option related to automation use cases is the option. This will prevent any interactive messages (not actual error messages) from being written to the stderr stream.</p>
+  <h2 id="gator">Study Management</h2>
+  <p>Study management use cases and their outputs are best understood in the automation output format. Refer to the Automation section for more information.<br />
+    The following options are available for Study management commands by entering the following command:<br />
+     </p>
+  <div style="margin-left: 40px;">plexos-cloud study --help</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="347" src="../assets/images/CLI/Study Management.jpg" width="667" /></div>
+  <div style="margin-left: 40px;"> </div>
+  <p> </p>
+  <p>Many of the commands you see in Study Management are meant to align to those seen in Cloud Bridge or PLEXOS desktop.</p>
+  <p> </p>
+  <h3>Creation</h3>
+  <p>The first step before creating a Study is to first validate the database to make sure that it is in the format we expect for a Cloud upload. </p>
+  <p>The following video covers the process of creating a Study through CLI:</p>
+  <p> </p>
+  <p><iframe allowfullscreen="" height="380" src="https://player.vimeo.com/video/896788324?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="660" style="cursor: nesw-resize;"></iframe></p>
+  <p> </p>
+  <p> </p>
+  <p> Here are the subcommands available for Study validation:<br />
+    <br />
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt; 105a7a176130cf4cea80354b32df0bde490a0772:Getting_Started/Configuration/CLI_Toolkit.htm       plexos-cloud study validate --help
+  </p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="217" src="../assets/images/CLI/Creation.jpg" width="661" /></div>
+  <p> </p>
+  <p> </p>
+  <p>You can see above that the path to the input xml database is a requirement for this command. If you enter the following command, you will see the output screenshot below the command appear in the CLI:<br />
+    <br />
+    plexos-cloud study validate --database “Path to xml file”
+  </p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="108" src="../assets/images/CLI/Creation2.jpg" width="895" /></div>
+  <p> </p>
+  <p>After validating the Study, you can proceed to create the Study with the following command line entry (view the help to understand which commands are required):</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud study create --name &quot;Name of Study&quot; --description &quot;Description for study&quot; --database &quot;Path to xml file&quot; --automation --format JSONL --quiet</div>
+  <p>  </p>
+  <div style="margin-left: 40px;"><img height="445" src="../assets/images/CLI/Creation3.png" width="679" /></div>
+  <p><br />
+    As you can see above, the Study has now been uploaded and the final returns the object contract for this command in its EventData property. This object contains the StudyId of the newly created study. This StudyId will be used for actions against this study, but one could also use the list command to query the studies API for studies.<br />
+    <br />
+    In the event another let us say a Study with the same name already exists, then the following error message would appear in the command line:<br />
+     
+  </p>
+  <div style="margin-left: 40px;"><img height="291" src="../assets/images/CLI/Creation4.png" width="690" /></div>
+  <p> </p>
+  <p>It returns that the Status is Failed along with a high-level error message.</p>
+  <p> </p>
+  <h3>Cloning</h3>
+  <p>If a teammate has access to a Study that they have not uploaded, they could use the clone command to pull down the Study.<br />
+    <br />
+    <strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> The studyId and the path to the local directory to save the Study are both required inputs. Extra options are provided to create the local directory or overwrite files. For example, the command below returns the following from the CLI:<br />
+     
+  </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe study clone --studyId  --“Path to file” --createDirectory</div>
+  <p> </p>
+  <div style="margin-left: 40px;"> <img height="66" src="../assets/images/CLI/Creation5.jpg" width="774" /></div>
+  <p><br />
+    Assuming the user was setup for access to this Study, this command will download and initialize the tracked study in its latest state in the given directory location.</p>
+  <p> </p>
+  <h3>Viewing Study Changesets</h3>
+  <p>For some operations, a changesetId for a study may be required. Users can query the list of available changesets for a Study they have access to with the following command:</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud study changeset list --studyId</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="243" src="../assets/images/CLI/Creation6.jpg" width="773" /></div>
+  <p><br />
+    This will return a list of all commits made to the Study.<br />
+    You can also view the Changeset ID  for only the most recent commit with the following command:<br />
+     </p>
+  <div style="margin-left: 40px;">plexos-cloud study changeset get-latest --studyId</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="62" src="../assets/images/CLI/Creation7.jpg" width="767" /></div>
+  <p> </p>
+  <p>The get-status changeset command will inform the user of the current state of a given Study, if the Study is currently in-sync with changes on the master, or if any pending incoming/outgoing changes need to be pushed or pulled.</p>
+  <p> </p>
+  <h3>Reset a Local Study</h3>
+  <p>With just one command, users can now quickly reset a Study on their local computer and clone the most recent study version from the Cloud. Refer below for the command syntax:</p>
+  <p> </p>
+  <p>          study reset --studyId {uniqueStudyID}<br />
+     </p>
+  <p><img height="309" src="../assets/images/CLI/CLI Reset Command.png" width="630" /></p>
+  <p><br />
+    This provides a more organized and effective way to reset a local folder in the event of Study synchronization issues. Additionally, this eliminates the need for users to execute two separate commands for deleting and fetching the latest study version from the Cloud.</p>
+  <p> </p>
+  <p> </p>
+  <h3>Pushing and Pulling Study Changes</h3>
+  <p>If changes have been made to a local Study, they can be pushed using the command. This command requires a studyId and a message (description of changes). For example:</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe study changeset push --studyId --message &quot;Sample Message&quot;</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="75" src="../assets/images/CLI/Creation8.jpg" width="733" /></div>
+  <p> </p>
+  <p>Users will notice the following error message, if a conflict arises while Pulling or Pushing the Local Study changes through the Command Line Interface (CLI) to the PLEXOS Cloud:<br />
+    <br />
+    <strong>          UNIQUE constraint failed due to conflict when performing study sync operation because at least one field was modified by two users at the same time.</strong>
+  </p>
+  <p>          <img height="289" src="../assets/images/CLI/Constraint error message in CLI.png" width="735" /></p>
+  <p> </p>
+  <p>This error typically occurs due to conflicts, where you might already have some changes, you are trying to pull, or you have upgraded your local XML with a newer/older version of PLEXOS before pulling the changes.</p>
+  <p> </p>
+  <p>Changes since the most recent changeset are required, if there have been no changes you will receive an error message. If there are changes to push then you will only get a successful &quot;Changes Pushed&quot; message at the end of the push operation. You will also be informed of the new ChangesetId as shown below.<br />
+     </p>
+  <div style="margin-left: 40px;"><img height="58" src="../assets/images/CLI/Creation9.jpg" width="704" /></div>
+  <p><br />
+    The new changeset can also be confirmed by using the study changeset list --studyId command. If there are no changes found, the CLI will output &quot;Study has no changes to push.&quot;<br />
+    <br />
+    If there are pending changes on the server that have not yet been pulled down locally, they can be pulled using this command:<br />
+     
+  </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe study changeset pull --studyId</div>
+  <p> </p>
+  <p> </p>
+  <h3>Archive, Unarchive, or Delete a Study</h3>
+  <p>To eliminate the need for manual or batch Study deletions from the <strong>Admin &gt; Storage Management &gt; STUDIES</strong> tab in PLEXOS Cloud, users can Archive, Unarchive, or Delete Studies directly from the Command Line Interface (CLI) using the command below:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>pxc study archive –studyId</li>
+    <li>pxc study unarchive –studyId</li>
+    <li>pxc study delete –studyId</li>
+  </ul>
+  <p> </p>
+  <h4>Archive a Study</h4>
+  <p>Archiving a Study makes it inactive in the PLEXOS Cloud. This prevents users from accessing inactive Studies and helps manage their Tenant Storage.  Only the Study Owner or an Admin can Archive a Study by providing a specific Study ID. Use the command below to Archive the Study via CLI:<br />
+    <br />
+              <strong>pxc study archive –studyId “16a4fcb9-8ee0-4910-89ed-7aae6a4e4487”</strong>
+  </p>
+  <p>          <img height="191" src="../assets/images/CLI/Study Archive from CLI.png" width="664" /></p>
+  <p> </p>
+  <p><strong>NOTE: </strong>The Archived Study will get automatically deleted based on the number of days configured by your Tenant Admin in the <strong>Tenant Preferences &gt; STORAGE</strong> tab.<br />
+     </p>
+  <p><img height="340" src="../assets/images/CLI/Archived study_auto delete schedule.png" width="714" /></p>
+  <p> </p>
+  <p><br />
+    Once Archived, only an Admin can restore the Study via CLI using the command below:<br />
+     <br />
+    <strong>          pxc study unarchive –studyId  ”74e6e1db-xxxx-yyyy-zzzz-341103321b7d”</strong>
+  </p>
+  <p> </p>
+  <p>-OR-<br />
+     <br />
+    From PLEXOS Cloud, navigate to the <strong>Admin &gt; Storage Management &gt; STUDIES</strong> tab. In the Actions column, click on the <strong>Unarchive</strong> icon for the desired Study. Refer to the GIF below for more understanding:</p>
+  <p> </p>
+  <p> </p>
+  <p><img height="308" src="../assets/images/CLI/Unarchive a Study via Cloud.gif" width="647" /></p>
+  <p> </p>
+  <p> </p>
+  <h4>Unarchive a Study</h4>
+  <p>Unarchiving a Study makes the Study available in the PLEXOS Cloud. Only the Study Owner can Unarchive a Study by providing a specific Study ID. Once, Unarchived, the Study can be viewed by all users that have access to it. Use the command below to Unarchive a Study via CLI:</p>
+  <p> </p>
+  <p><strong>          pxc study unarchive –studyId “16a4fcb9-8ee0-4910-7aae6a4e4487”</strong></p>
+  <p> </p>
+  <p>          <img height="169" src="../assets/images/CLI/Unarchive Study from CLI.png" width="619" /></p>
+  <p> </p>
+  <p> </p>
+  <h4>Delete a Study</h4>
+  <p>Deleting a Study removes it from PLEXOS Cloud, freeing up Storage space in your tenant. Before deleting a Study, the user must Archive it first. Only the Tenant Admin can Delete a Study by providing a specific Study ID, if you are not an Admin then contact your Tenant Admin to Delete a Study. Once Deleted, there is no ability to recover a Study. Use the command below to Delete a Study via CLI:</p>
+  <p> </p>
+  <p><strong>          pxc study delete –studyId “16a4fcb9-8ee0-4910-7aae6a4e4487”</strong></p>
+  <p> </p>
+  <p>          <img height="171" src="../assets/images/CLI/Delete Study from CLI.png" width="612" /></p>
+  <p> </p>
+  <h3>Download the XML and Timeseries Files for a Study</h3>
+  <p>Using the Command Line Interface (CLI), you can now retrieve the XML and Timeseries files for a specific Study version. This enhancement allows you to download and use the XML and Timeseries files from the Study Changeset for automation or validation, eliminating the need for a one-time clone. </p>
+  <p> </p>
+  <p>To download the XML and Timeseries files for a Study, you need the following:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Study ID</li>
+    <li>Changeset ID</li>
+    <li>Output Directory (path)</li>
+  </ul>
+  <p> </p>
+  <p>Use the command below to download the XML and Timeseries files for a Study:<br />
+     </p>
+  <ul class="Disc">
+    <li><strong>pxc  study changeset download –studyId</strong> “enter studyId” <strong>–changesetId</strong> “enter changesetId” <strong>-o</strong> “output file path”<br />
+      <br />
+      <img height="741841" src="../assets/images/CLI/Download Timeseries and XML files command.png" width="15119052" />
+    </li>
+  </ul>
+  <p> </p>
+  <h3>Study Stats</h3>
+  <p>You can view the number of geocoded objects in a studyusing the pxc study stats geocoded-objects command. This is helpful when trying to determine if you have forgotten to geocode an object in a specific class. Enter the following command to extract this information:<br />
+     </p>
+  <p style="margin-left: 40px;">pxc study stats geocoded-objects --studyId f22937c5-d263-4084-83ca-aa2cbd81ad5b --changesetId cd437e2d-e84f-4df1-b11c-3927e3b496<br />
+     </p>
+  <p style="margin-left: 40px;"><img height="293" src="../assets/images/CLI/Study Stats.jpg" width="705" /></p>
+  <p> </p>
+  <p>The studyId and changesetId are both required input parameters for this command.</p>
+  <p> </p>
+  <h3>Viewing a list of Studies in a directory</h3>
+  <p>You can view a list of the studies in a given directory path using the study list-local-studyIDs command. This can help improve workflows and reduce confusion when you are working with multiple XML files stored in the same folder. The command can be called as shown below:</p>
+  <p> </p>
+  <p style="margin-left: 40px;">pxc study list-local-studyIDs --studyDir &quot;PathToStudyDir&quot;<br />
+     </p>
+  <p style="margin-left: 40px;"><img height="68" src="../assets/images/CLI/Study List.jpg" width="673" /></p>
+  <p> </p>
+  <h3>Simulation Groups</h3>
+  <p>A Simulation Group is a collection of simulations that can be run in batch. Users can create and edit these groups so that they don&#39;t have to manually select multiple Models each time they want to run them, and can instead simply run a predefined group. You can trigger operations related to Simulation Groups using the pxc study settings command. Currently, the only type enabled in the study settings command is the SimulationGroup type.<br />
+    <br />
+    Users can create, delete, and list Simulation Groups, and add-configurations to existing Simulation Groups. Enter the following command in the CLI and you will be directed to the help options available for the command:
+  </p>
+  <p> </p>
+  <p>pxc study settings -?</p>
+  <p> </p>
+  <p>  <br />
+    The add-configurations command takes the follow required inputs in the format below:<br />
+     </p>
+  <p style="margin-left: 40px;">pxc study settings add-configurations --studyId &quot;studyId&quot; --settingId &quot;settingId&quot; --type SimulationGroup --path &quot;File path to JSON payload file&quot;</p>
+  <p> <br />
+    You can find an example of the JSON file structure with the following command:<br />
+     </p>
+  <p style="margin-left: 40px;">pxc study settings add-configurations --type SimulationGroup --showExample</p>
+  <p> <br />
+    The create command creates a new study setting based on the type and the information specified in the JSON file.</p>
+  <div style="margin-left: 40px;">pxc study settings create --studyId &quot;studyId&quot; --type SimulationGroup --path &quot;File path to JSON payload file&quot;</div>
+  <p> <br />
+    The list command lists the study settings available for a given study. The command can be called as shown below:<br />
+     </p>
+  <p style="margin-left: 40px;">pxc study settings list --studyId &quot;studyId&quot;<br />
+    <br />
+    <img height="133" src="../assets/images/CLI/Study Sim.jpg" width="735" />
+  </p>
+  <p><br />
+    As shown above, the command outputs the Name, groupId, Status, and Type of each setting associcated with the study. The groupId;&quot;&gt; and studyId are required inputs to execute the command above. You can also execute simulation groups via the CLI using the following command:</p>
+  <p style="margin-left: 40px;">pxc simulation run-group --groupId &quot;groupId&quot; and --studyId &quot;studyId&quot;<br />
+     </p>
+  <p style="margin-left: 40px;"> </p>
+  <h2 id="help">Simulation Management</h2>
+  <h3>Simulation Engine</h3>
+  <p>The simulation engine command displays different commands related to the various engines to run simulations against. Currently, the only command available that be executed against engines is the  simulation engine list command. This command simply lists the different engines available in PLEXOS to run simulations against.</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud simulation engine list</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="439" src="../assets/images/CLI/Simulation Engine.jpg" width="744" /></div>
+  <p> </p>
+  <h3>Simulation Capability</h3>
+  <p>The simulation capability  command lists all the available scalesets available to run simulations against. For example, the following command:</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud simulation capability list</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="267" src="../assets/images/CLI/Simulation Capability.jpg" width="744" /></div>
+  <p><br />
+    The data return from the capability oData endpoint for each scale set is the following:</p>
+  <ul>
+    <li style="margin-left: 8px;">Type : Custom Scaleset Name</li>
+    <li style="margin-left: 8px;">Cores : Number of CPU cores</li>
+    <li style="margin-left: 8px;">Memory : Memory size in GB</li>
+    <li style="margin-left: 8px;">BaseClockSpeed : Base clock speed of each CPU core</li>
+    <li style="margin-bottom: 11px;margin-left: 8px;">OperatingSystem : Scale set host operating system. Typically either &#39;Linux&#39; or &#39;Windows&#39;</li>
+  </ul>
+  <p> </p>
+  <h3>List Simulations (and general API list commands)</h3>
+  <p>Several of the command areas for each API (studies, solutions, and simulations) offer a list command, which gives the ability to query the API oData endpoints to search for records.<br />
+    The help command for the simulation list  provides the following outputs:</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud simulation list --help</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="370" src="../assets/images/CLI/List Simulations.jpg" width="732" /></div>
+  <p><br />
+    This allows the user to use not required options to filter the records by important identifying information, such as simulationId , studyId , executionId , or changesetId . One can also order by any of the supported properties using the --orderBy option, and can order in descending order by pairing with the --descending option.</p>
+  <p> </p>
+  <h3>Tracking Simulation Retries</h3>
+  <p>When users enter the command <strong>&quot;pxc simulation list --simulationId &lt;xxxxxxxx&gt;,&quot;</strong> they will notice these additional fields in the response. The <strong>RetryCount</strong> field assist users in tracking the number of retries made for any failed Simulation, while the <strong>Retries </strong>field specifies the Status and Simulation ID for which this retry occurred.</p>
+  <p><img height="470" src="../assets/images/CLI/Track Simulation Retries.png" width="550" /></p>
+  <p> </p>
+  <p>Tracking Simulation Retries allows users to easily determine whether a Failed Simulation has been Retried or not. Additionally, users can quickly identify which specific Simulation prompted the Retry.</p>
+  <p>Please note that if a simulation was retried three times, we only receive RetryCount and Retry details for the initially triggered Simulation ID. The remaining Simulation IDs will have a RetryCount of 0 and no retry details. Refer to the example below, Showing the RetryCount as 3 and Retry details available only for the First Simulation ID, while the other Simulation IDs will have a RetryCount of 0 and no retry details.</p>
+  <p><img height="389" src="../assets/images/CLI/Simulation retries for 1 ID.png" width="348" /></p>
+  <p> </p>
+  <p><img height="306" src="../assets/images/CLI/Retry count 0.png" width="344" /></p>
+  <p><br />
+    <br />
+    Since this is backed by an oData API endpoint, a maximum of 250 results will be returned. One could use the  --top and  --skip options to paginate through results if more than 250 results are required. Note that Odata pagination requires ordering by a property. We are working on a more generic architecture to allow the user to dynamically search for records.<br />
+    <br />
+    For example, to view the last 10 simulations for a Study enter the following command:<br />
+     
+  </p>
+  <div style="margin-left: 40px;">plexos-cloud simulation list --studyId  --orderBy CreatedAt --descending --top 10</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="665" src="../assets/images/CLI/List Simulations22.jpg" width="713" /></div>
+  <p> </p>
+  <p>The list returns slimmed-down information from simulation records.<br />
+    <br />
+    <strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE: </strong>The CreatedAt and LastUpdatedAt times are reported as GMT/UTC times, whereas data exported from PLEXOS Cloud will reflect your Time Zone settings under Preferences.
+  </p>
+  <p> </p>
+  <h3>Building Simulation Requests</h3>
+  <p>PLEXOS CLI has the ability to generate a simulation request based on a previous simulation request. This allows users to mitigate the need to generate a simulation state from scratch. The following command will show you the options available for the build-request-from-previous command:</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud simulation build-request-from-previous --help</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="272" src="../assets/images/CLI/Building1.png" width="695" /></div>
+  <p><br />
+    Required options include the filename, outputDirectory, and the simulationId.<br />
+     </p>
+  <div style="margin-left: 40px;"><img height="472" src="../assets/images/CLI/Building2.jpg" width="913" /></div>
+  <p><br />
+    Re-running a previous simulation exactly as-is is rarely a valuable action without changes. The user can manually make any modifications to the saved JSON file to get desired new behavior, e.g. modifying the model name, changeset id, engine version, etc. However, there are a few helpful options in this command to accomplish changing some of the most common simulation parameters:</p>
+  <ul>
+    <li style="margin-left: 8px;">studyId: The unique identifier of the desired study</li>
+    <li style="margin-left: 8px;">changesetId: The unique identifier of the desired changeset</li>
+    <li style="margin-left: 8px;">modelName: Name of the model to run</li>
+    <li style="margin-left: 8px;">requestedCores: Number of CPU cores required for simulation</li>
+    <li style="margin-bottom: 11px;margin-left: 8px;">requestedMemory: Amount of memory in gigabytes required for simulation</li>
+  </ul>
+  <p> </p>
+  <h3>Enqueuing Simulations</h3>
+  <p>We are actively working on making this easier, but the only current way to enqueue a Smulation through the CLI is by having an example request body JSON file for the API built up.  The easiest way to do this today is by using the above example to build a request using a previously Run Simulation as a starting point. For brand-new Simulations that do not have a good starting point to use as a base template, it is recommended to kick off that first Run using the PLEXOS Cloud interface. Otherwise, a good understanding of the API request structure is required. We will cover a few basics here. Here is a very simple example of the request body for enqueuing a Simulation:</p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img height="324" src="../assets/images/CLI/Enque.jpg" style="border-style: solid;" width="817" /></p>
+  <p> </p>
+  <p>This is a very simple example of Running a single Simulation on Windows for a given checked-in changeset and Model.<br />
+    <br />
+    The following command will output a full list of all available request properties, their formats, and if they are required or not:<br />
+     
+  </p>
+  <p style="margin-left: 40px;">plexos-cloud.exe simulation enqueue --showExample</p>
+  <p> </p>
+  <p>New Enqueue subcommands have been integrated into the CLI, streamlining the process of queuing various types of Simulations. These additions offer users a more straightforward approach to enqueue requests, enabling them to tailor their customization requests. The aim is to simplify the automation of Simulation enqueuing and facilitate the execution of basic Simulations. Many Simulations only necessitate essential information such as Study ID, CPU cores and memory allocation, Model Names, etc. To aid users, default settings have been established, rendering most arguments optional.</p>
+  <p> </p>
+  <p>Enqueueing simulations with JSON files have been left unchanged.</p>
+  <p><br />
+                 plexos-cloud simulation enqueue --file &lt;filePath&gt;</p>
+  <p> </p>
+  <p>However, six new subcommands correlate to simulation types that can be enqueued:</p>
+  <p><br />
+                 plexos-cloud simulation enqueue standard - Simulation type None<br />
+                 plexos-cloud simulation enqueue stochastic<br />
+                 plexos-cloud simulation enqueue monte-carlo - Monte Carlo V2<br />
+                 plexos-cloud simulation enqueue chronological-split<br />
+                 plexos-cloud simulation enqueue gurobi - Gurobi tuning</p>
+  <p>             plexos-cloud simulation enqueue custom-plexos - Standard with ability to pass custom arguments to the PLEXOS</p>
+  <p> </p>
+  <p><strong>Required</strong></p>
+  <p> </p>
+  <ol class="RoundSquare">
+    <li><strong>Study ID -</strong>  --studyId &lt;studyId&gt;</li>
+    <li><strong>Models -</strong>  --models &lt;model name&gt;<br />
+      <br />
+      <strong>NOTE:</strong> For multiple models, use the flag again. For example, --models &lt;model name&gt; --models &lt;model name 2&gt;
+    </li>
+    <li><strong>Engine ID -</strong> --engineId &lt;engineId&gt;</li>
+  </ol>
+  <p> </p>
+  <p><strong>Optional for all simulations</strong></p>
+  <p> </p>
+  <ol class="RoundSquare">
+    <li>Json Only: <strong>--jsonOnly</strong> - Prevents running simulations, prints out the JSON request to the console for the user to copy and customize.</li>
+    <li>Changeset ID: <strong>--changesetID &lt;id&gt;</strong> - Changeset ID, latest from study is default</li>
+    <li>CPU Cores: <strong>--cpuCores &lt;cores&gt; </strong>- appsettings will have default</li>
+    <li>Memory in GB: <strong>--memoryInGb &lt;GB&gt;</strong> -  appsettings will have default</li>
+    <li>Locale: <strong>--locale &lt;locale code&gt;</strong> - 1033 (en-US) is default</li>
+    <li>ParquetVersion: <strong>--parquetVersion &lt;version&gt;</strong> - appsettings will have default</li>
+    <li>SimulationDataTypes: <strong>--simulationDataTypes &lt;type&gt;</strong> - appsettings will have default</li>
+    <li>SimulationRunType: <strong>--simulationRunType &lt;type&gt;</strong> - appsettings will have default</li>
+    <li>EnableSnapshots: <strong>--enableSnapshots</strong> - Enables PLEXOS snapshots.</li>
+    <li>SnapshotInterval: <strong>--snapshotInterval &lt;interval</strong> - Designates the interval in minutes to upload PLEXOS snapshot data if --enableSnapshots is specified.</li>
+    <li>ExportContractPath: <strong>--exportContractPath &lt;directoryPath&gt;</strong> - Exports the built request contract to the desired directory path.</li>
+  </ol>
+  <p> </p>
+  <p><strong>Simulation specific arguments (optional)</strong></p>
+  <p><br />
+    <strong>Custom Plexos</strong> - Desired arguments specifically for the PLEXOS Engine.<br />
+    <br />
+                 <strong>--custom-arguments &quot;&lt;args&gt;&quot;</strong><br />
+    <br />
+    <strong>Stochastic</strong> - How many VM instances/samples to spin up. The default is provided in appsettings.<br />
+    <br />
+                 <strong>--instance-count &lt;count&gt;</strong><br />
+    <br />
+    <strong>Monte Carlo</strong> - Number of divisions, default in appsettings.<br />
+    <br />
+                <strong> --split-divisions &lt;splitCount&gt;</strong><br />
+    <br />
+    <strong>Chronological Splits</strong> - Number of divisions, default in appsettings.<br />
+    <br />
+                 <strong> --split-divisions &lt;splitCount&gt;</strong><br />
+    <br />
+    <strong>Split Step</strong> - The desired chronological step type to split on. Default present in appsettings.
+  </p>
+  <p><br />
+                  <strong> --split-steps &lt;stepType&gt;</strong><br />
+    <br />
+    <strong>Run as Single Instance</strong> -Runs the split in a single instance. The default is false.
+  </p>
+  <p><br />
+                  <strong>--run-as-single-instance</strong><br />
+    <br />
+    <strong>Gurobi Tuning</strong> -Maximum time to spend tuning the model in seconds. <br />
+    <br />
+    <strong>             --max-tune-time &lt;seconds&gt;</strong>
+  </p>
+  <p> </p>
+  <p>Tune trials - Number of trials to run when tuning the model.</p>
+  <p>           <strong>   --tune-trials &lt;trials&gt;</strong></p>
+  <p> </p>
+  <p>MIP gap - Maximum MIP gap.<br />
+    <br />
+                <strong> --mip-gap &lt;gap&gt;</strong><br />
+     
+  </p>
+  <hr />
+  <h2> </h2>
+  <h3>Filter Engine Versions </h3>
+  <p>The <strong>CLI </strong>supports engine version filtering in the <strong>pxe simulation engine list</strong> command. These options allow you to narrow down the list of engine versions, making it easier to view and select only the ones relevant to your simulations.</p>
+  <p> </p>
+  <p><strong>You can filter the results using:</strong></p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>--beta:</strong> Shows only beta versions.</li>
+    <br />
+    <li><strong>--os windows/linux:</strong> Shows only versions for the selected operating system.</li>
+    <br />
+    <li><strong>--available-to-all:</strong> It only shows public builds that are available to all users.</li>
+  </ul>
+  <p> </p>
+  <hr />
+  <h3>Simulation Progress</h3>
+  <p>The simulation progress  command returns the current progress of the simulation. The command accepts a simulationId and queries information about the current state of the simulation. The simulation progress command is structured as follows:</p>
+  <p style="margin-left: 40px;"><br />
+    plexos-cloud simulation progress --simulationId</p>
+  <p><br />
+    The phase and message information displays if and only if the status is Running AND if the phase and message information are available. Otherwise, the command only returns the &quot;Current Status&quot; information if the current simulation status is something other than Running. For example, if the status is AssignedToQueue, then the progress command returns Assigned to Pool.</p>
+  <p> </p>
+  <h3>Solution Stitching</h3>
+  <p>The simulation solution-stitching  command allows you to stitch together solution files from Distributed Run Types that use the Monte Carlo Distrbution Method. The required inputs are the <strong>Parent Simulation </strong>executionId, number of cores, and memory.</p>
+  <p style="margin-left: 40px;"><br />
+    plexos-cloud simulation solution-stitching --executionId &quot;executionId&quot; --cores &quot;cores&quot; --memory &quot;memory&quot;</p>
+  <p> </p>
+  <h2 id="illinois"><strong>Solution Management</strong></h2>
+  <p>Once a simulation has been moved into a &quot;Completed&quot; status (CompletedSuccess, CompletedError, or Failed), there are some commands in the solution area of the CLI to help with accessing the output data produced by that simulation.<br />
+    <br />
+    We can first use the solution list command, which is communicating with an odata API and works in a similar manner to the simulation list and study list of data querying commands covered above. Enter the following command to view your options:<br />
+     
+  </p>
+  <div style="margin-left: 40px;">plexos-cloud solution list --help<br />
+     </div>
+  <p style="margin-left: 40px;"><img height="464" src="../assets/images/CLI/Solution Management.jpg" width="718" /></p>
+  <p><br />
+    For example, to look for any Solutions produced by the Simulation started at the end of the Simulation enqueue command example above, we can Run this command using the --simulationId option.<br />
+     </p>
+  <p style="margin-left: 40px;">plexos-cloud solution list --simulationId.<br />
+     </p>
+  <p style="margin-left: 40px;"><img height="291" src="../assets/images/CLI/Solution Management2.jpg" width="717" /></p>
+  <p> </p>
+  <p>This will list all SolutionType records for all Solutions created by a simulation. A SolutionType is a grouping of output files, for example, the Parquet solution type will contain all parquet files constituting the output database in parquet format. A Solution has a one-to-one mapping with a Model run on a simulation. Because multiple models can be run on a simulation, there may be multiple Solutions tied to a simulationId  , with each Solution having multiple Solution types.</p>
+  <p> </p>
+  <h3>Solution Files Commands</h3>
+  <p>There is a files sub-command under the solution area to gain insight into the files behind each of these solution types. Enter the following command:</p>
+  <p style="margin-left: 40px;"><br />
+    plexos-cloud solution files list --help<br />
+     </p>
+  <p style="margin-left: 40px;"><img height="245" src="../assets/images/CLI/File Commands.jpg" width="698" /></p>
+  <p><br />
+    We can see that only the solutionId is required, and there is an optional option to filter by type, with each (strongly typed) possible value listed. I could pass in just the solutionId and list all files for all solution types:<br />
+     </p>
+  <p style="margin-left: 40px;">plexos-cloud solution files list --solutionId<br />
+     </p>
+  <p style="margin-left: 40px;"><img height="322" src="../assets/images/CLI/File Commands2.jpg" width="685" /></p>
+  <p><br />
+    This will give you a grouping of all files by type, with the size of each file. To learn more about the files stored in a zip file, you can use  the  --IncludeArchiveEntries command. A sample output for the command is shown below:<br />
+     </p>
+  <p style="margin-left: 40px;"><img height="417" src="../assets/images/CLI/File Commands3.jpg" width="675" /></p>
+  <p><br />
+    You can see that within the specified type Raw zip file, there are a number of different files including the PLEXOS_Param.xml file stored. Once the desired solution files are discovered, they can also be downloaded using this command:<br />
+     </p>
+  <p style="margin-left: 40px;">plexos-cloud.exe solution files download --help<br />
+     </p>
+  <p style="margin-left: 40px;"><img height="273" src="../assets/images/CLI/File Commands4.jpg" width="677" /></p>
+  <p><br />
+    <strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE: </strong>The only required options are solutionId and outputDirectory. There are some convenience options related to the output directory to create the directory and overwrite any conflicting local files. The rest of the options are for filtering specific types/files to be downloaded, but they are optional and downloading all files for the entire solution is supported.<br />
+    <br />
+    Using the existing solution files download  command with the existing --file  option, we can also download just a single entry from out of the zip archive by passing the fileName of the entry given back in the above --includeArchiveEntries command. For example, if all I want out of this sizeable Solution.zip file is the small PLEXOS_Param.xml file:<br />
+     
+  </p>
+  <p style="margin-left: 40px;">pxc solution files download --solutionId 6c5406b9-0a24-4ad8-8a1e-2edea6a7de40 --type Raw --file &quot;FilePath&quot; --outputDirectory &quot;PathtoOutputDir&quot; –-automation<br />
+    <br />
+    <img height="245" src="../assets/images/CLI/File Commands5.jpg" width="807" />
+  </p>
+  <p><br />
+    When downloading solution files, you can also view live status updates as your download progresses. This is helpful in the event that a file size becomes too large while downloading, or if you want to know which file is being downloaded and its size. A sample command is shown below:<br />
+     </p>
+  <p style="margin-left: 40px;">pxc solution files download --solutionId 64e2498f-7641-4d9f-9041-79fcd2041d68 -d &quot;PathToOutputDir&quot; --type Log<br />
+     </p>
+  <p style="margin-left: 40px;"><img height="117" src="../assets/images/CLI/File Commands6.png" width="796" /></p>
+  <p><br />
+    The solutionId  and outputDirectory are both required input parameters for this command. The solution functionalities explored in this section can best be leveraged for automation using scripting.<br />
+     </p>
+  <h4>Solution Reports List</h4>
+  <p>Access and view a list of Solution Reports associated with a specific View ID that has been shared with you. This command eliminates your need to navigate through the Executive View interface to view the Solution Reports. It is  beneficial for users who prefer command-line operations or require quick, scriptable access to report data, thereby enhancing productivity and simplifying the process of report management in the PLEXOS Cloud.</p>
+  <p> </p>
+  <p><strong>     pxc solution view list</strong></p>
+  <p> </p>
+  <p><img src="../assets/images/CLI/Solution Reports via CLI.png" /></p>
+  <p> </p>
+  <p> </p>
+  <h3>Upload Solution Reports</h3>
+  <p>Upload your Solution Reports directly from the CLI using the below mentioned command:</p>
+  <p> </p>
+  <p>          <strong>pxc solution solution-report-upload --file &lt;pathtojsonfile&gt; --reportName &lt;reportName&gt;</strong></p>
+  <p>         <img height="172" src="../assets/images/CLI/Solution Reports upload via cli.png" width="1024" /></p>
+  <p> </p>
+  <p>With this enhancement, users can create and upload Solution Reports by specifying the JSON file path and Report Name. Once uploaded, these reports will be readily accessible in the CLI using the command below:</p>
+  <p> </p>
+  <p><strong>          pxc solution list-reports</strong><br />
+     </p>
+  <p>         <img height="148" src="../assets/images/CLI/Solution list via CLI.png" width="418" /></p>
+  <p> </p>
+  <p>You can also view these Reports at this path in the PLEXOS Cloud: <strong>Solutions &gt; Reports &gt; My Reports</strong> dropdown.</p>
+  <p> </p>
+  <p><img height="296" src="../assets/images/CLI/My Reports in PLEXOS Cloud.png" width="623" /></p>
+  <p> </p>
+  <h3>Publish Solutions to BI</h3>
+  <p>You can publish Solutions to Business Intelligence (BI) directly through the Command Line Interface (CLI). By using the following command, you can add Solutions to the BI by specifying the <strong>solutionId </strong>and <strong>changesetId</strong>:</p>
+  <p><strong>solution bi publish --solutionId &lt;solutionId&gt; --changesetId &lt;changesetId&gt;</strong></p>
+  <p> </p>
+  <p><img height="150" src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Publish solution to BI via CLI.png" width="729" /></p>
+  <p>Further, you can check the Solution status in the Solution page &gt; BI Analytics tab as follows:<br />
+    <br />
+    <img height="211" src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/save solution to bi _solutions page.png" width="738" />
+  </p>
+  <p> </p>
+  <h3>Check Solution Status</h3>
+  <p>Quicky check the status of a specific BI Published Solution using its Solution ID with the following command:<br />
+    <br />
+         <strong>pxc solution bi status --solutionId &lt;Enter Solution Id&gt; </strong>
+  </p>
+  <p> </p>
+  <p><strong><img height="163" src="../assets/images/RN_2024/Dec 2024 Release SS/Flamingp/Solution Status.png" width="602" /></strong></p>
+  <h3>List all BI Published Solutions</h3>
+  <p>View all BI Published Solutions under your tenant or filter by a specific Study ID for better organization and tracking with the following commands:</p>
+  <p>     <strong>pxc solution bi list  </strong></p>
+  <p> </p>
+  <p><img height="391" src="../assets/images/RN_2024/Dec 2024 Release SS/Flamingp/Solution bi list.png" width="613" /></p>
+  <p><strong>NOTE:</strong> It fetches BI Published Solutions from all Studies under your tenant, regardless of Study access.</p>
+  <p>-OR-</p>
+  <p><strong>pxc solution bi list --studyId &lt;Enter Study Id</strong>&gt;</p>
+  <p> </p>
+  <p><img height="348" src="../assets/images/RN_2024/Dec 2024 Release SS/Flamingp/Solution list with Study Id.png" width="615" /><br />
+     </p>
+  <h3>Delete BI Published Solutions</h3>
+  <p>Using the Solution ID, you can delete any BI Published Solution across all Studies under your tenant.</p>
+  <p> </p>
+  <p>     <strong>pxc solution bi delete --solutionId &lt;Enter Solution Id&gt;</strong></p>
+  <p><img height="102" src="../assets/images/RN_2024/Dec 2024 Release SS/Flamingp/Delete BI Solution.png" width="632" /></p>
+  <p> </p>
+  <h3>Downloading Solution Reports in CSV Format</h3>
+  <p>With the &quot;<strong><em>pxc solution solution-reports</em></strong>&quot; command, you can now get the list of Solution Reports directly from the command line, streamlining automation processes that involve Solution Reports. Please note that specifying the output directory is mandatory when using this command.</p>
+  <p> </p>
+  <p>In order to utilize this command effectively, users should be aware of the corresponding report ID.</p>
+  <p>To assist with this, the &quot;<strong><em>pxc solution list-reports</em></strong>&quot; command has been implemented to provide you with a list of reports with their names and IDs. This empowers you to easily select the desired report ID from the list and proceed to download the associated solution report in CSV format. </p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img height="447" src="../assets/images/RN_2023/August 2023 Release Screenshots/ListSolutionReports.png" width="515" /></p>
+  <p> </p>
+  <p>This integration aims to enhance your experience and efficiency when working with Solution Reports.</p>
+  <p> </p>
+  <h3>Archive, Unarchive, and Delete Solutions</h3>
+  <p>For better storage management, you can now Archive, Unarchive, or Delete any Solution directly from the CLI. By integrating these capabilities into your automation processes, you can eliminate the need for manual or batch Solution deletion from the <strong>Admin &gt; Storage Management &gt; SOLUTIONS</strong> tab in PLEXOS Cloud. </p>
+  <p> </p>
+  <h4>Archive Solution</h4>
+  <p>Enter the following command to Archive a Solution using its Execution ID:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>pxc solution archive –executionID</strong> “Enter the execution ID available at the Admin &gt; Storage Management &gt; SOLUTIONS &gt; Execution Id column”<br />
+      <br />
+      <img height="42" src="../assets/images/CLI/Solution Archive command.png" width="718" />
+    </li>
+  </ul>
+  <p> </p>
+  <h4>Unarchive Solution</h4>
+  <p>Enter the following command to Unarchive a Solution using its Execution ID:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>pxc solution unarchive –executionID</strong> “Enter the execution ID available at the Admin &gt; Storage Management &gt; SOLUTIONS &gt; Execution Id column”<br />
+      <br />
+      <img height="72" src="../assets/images/CLI/Solution Unarchive command.png" width="726" />
+    </li>
+  </ul>
+  <p> </p>
+  <h4>Delete Solution</h4>
+  <p>Enter the following command to Delete a Solution using its Execution ID:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>pxc solution delete –executionID</strong> “Enter the execution ID available at the Admin &gt; Storage Management &gt; SOLUTIONS &gt; Execution Id column”<br />
+      <br />
+      <img height="69" src="../assets/images/CLI/Delete Solution command.png" width="737" />
+    </li>
+  </ul>
+  <p> </p>
+  <p>Please note that when initiating a batch Run with multiple Models sharing the same execution ID, deleting any single Model using that execution ID will delete all associated Models. Please exercise caution when using execution IDs for deletions.</p>
+  <p> </p>
+  <p><img height="222" src="../assets/images/CLI/Batch Solution Delete.png" width="789" /></p>
+  <p> </p>
+  <h2 id="insights"><strong>Insights</strong></h2>
+  <p>Insights allows you to learn more information about your models.  Enter the following command to view your options:<br />
+     </p>
+  <div style="margin-left: 40px;">plexos-cloud insights --help<br />
+     </div>
+  <p style="margin-left: 40px;"><img height="256" src="../assets/images/CLI/Insights1.jpg" width="641" /></p>
+  <p><br />
+    Insights currently take a single command get-machine-recommendation which provides machine recommendations for a group of models.</p>
+  <p style="margin-left: 40px;">plexos-cloud insights get-machine-recommendation --help<br />
+     </p>
+  <p style="margin-left: 40px;"><img height="228" src="../assets/images/CLI/Insights2.jpg" width="646" /></p>
+  <p><br />
+    The  studyId, changesetId, and  modelName  are requred inputs for the command.</p>
+  <p> </p>
+  <h2 id="views">Executive Views</h2>
+  <h4>a) Command to create and publish Executive Views</h4>
+  <p>Users can now create and publish Executive Views via the Command Line Interface (CLI). This improvement provides several benefits, such as the efficient publishing or automation of Views, making the sharing of critical reporting and data easier. It optimizes resources, streamlines the process, and reduces manual efforts.</p>
+  <p><br />
+    Users can utilize the Command-Line Interface (CLI) to publish Views that incorporate Solution and BI Reports, by using the following CLI command:</p>
+  <p><strong><i>pxc solution view publish --file {filePath}</i></strong></p>
+  <p> </p>
+  <p><img height="136" src="../assets/images/RN_2023/November Release SS/CLIViewpublish.png" width="626" /></p>
+  <p> </p>
+  <p>The above command includes path to a JSON file which contains View name, View Description, tenant ID and Study Id, etc. as shown in the image below -</p>
+  <p> </p>
+  <p><img height="222" src="../assets/images/RN_2023/November Release SS/PublishView.png" width="666" /></p>
+  <p><strong>Definition of the Parameters used in the above shown JSON sample</strong>:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Name</strong>: This is the unique name of the View in the tenant</li>
+    <li><strong>Tenant ID</strong>: This is the company’s tenant Id  </li>
+    <li><strong>Study ID</strong>: This is the Study ID of the Study which is used for publishing the View.</li>
+    <li><strong>ShowCreatedBy</strong> : This is the flag to show or hide the name of the Analyst who created the View.</li>
+    <li><strong>ShowCreatedOn</strong>: This is the flag to show the date on which View is created. It should be ‘True’ always.</li>
+    <li><strong>DatasetID</strong>: This is the Solution ID </li>
+    <li><strong>BIReportDatasetId</strong>: This can be empty. Not required to pass any value in this parameter.</li>
+    <li><strong>DatasetType</strong>: This determines the type of the Dataset.  ‘0’ - Used for Solution, ‘1’ - Solution Comparision; Please use only ‘0’ as the value here, as we currently do not support any other values. </li>
+    <li><strong>Type</strong>: This is the type of report (BI or Solution Report) that you are publishing. ‘0’ is for BI Report and ‘1’ is for Solution Report.</li>
+    <li><strong>Model Name</strong>: Model Name is the Model on which this Solution was triggered.</li>
+    <li><strong>Original Report Name</strong>: Solution/BI Report name that you are using for publishing the View)<br />
+       </li>
+  </ul>
+  <p> </p>
+  <h4>b) Command to get the download details of a Solution Report </h4>
+  <p><br />
+    By executing the following command, users can obtain details about the Solution Report    available for download. This information can then be used to retrieve Solution data and download the Report in .csv format.<br />
+     <br />
+    <strong><em>pxc solution view get-downloadable-report-details --viewId [ ]      </em></strong>
+  </p>
+  <p> </p>
+  <p><img height="225" src="../assets/images/RN_2023/November Release SS/ViewDownload.png" width="659" /></p>
+  <p> </p>
+  <p><em></em></p>
+  <h4>c) Command to fetch the Solution/BI Report Details </h4>
+  <p> </p>
+  <p>This CLI command can be used to fetch the Solution or BI Report details of a View which then can be used to download the Report in .csv format.<br />
+    This command will return ViewID, reportId, name of the View, datasetId and type of Report.</p>
+  <p> </p>
+  <p><em>pxc solution view get-report-data --outputDirectory {DirectoryName} --file {fileName} --reportId {reportId} --solutionId {solutionId} --viewId {viewId}</em></p>
+  <p> </p>
+  <p><em><img height="170" src="../assets/images/RN_2023/November Release SS/CLIGetReport.png" width="707" /></em></p>
+  <h2 id="kangaroo"><strong>Troubleshooting the CLI</strong></h2>
+  <p>The new centralized log collection feature consolidates essential log files and configuration data into a single, user-defined location on your machine to streamline diagnostics and support for the Command Line Interface (CLI). This enhancement simplifies log management and facilitates ease of access and share for support resolution.<br />
+    <br />
+    <img src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Centralized log files.png" />
+  </p>
+  <p>Previously scattered across multiple directories, log files for PLEXOS Desktop, Central License Manager, and CLI are now automatically stored in a single, user defined folder, making retrieval straightforward.<br />
+           </p>
+  <p>To define the destination folder for centralized log collection, run the following command in Command Prompt:</p>
+  <p><strong>     pxc environment diagnostic-information -d &quot;Folder path where the Log Files will be stored&quot;</strong><br />
+    <br />
+    <img height="143" src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Log files collection comand.png" width="736" />
+  </p>
+  <p>Upon completion, a confirmation message will appear. Logs are saved in the &quot;PLEXOS-Logs-&lt;Date of Collection&gt;&quot; folder for easy access.<br />
+     </p>
+  <div><strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> Log files will automatically delete after 30 days. Additionally, if you are facing issues with the CLI, please share your logfile with EE Support so we can help you address the problem.<br />
+     
+    <h3>Study Repair Command</h3>
+    The  study repair-local  command attempts to repair the cloud sync of a local study when the data has been corrupted or the study has been moved. If you enter the command and PLEXOS can find your database in the correct file path and there appears to be no corruption, the following message will be output by the CLI:<br />
+     
+  </div>
+  <div style="margin-left: 40px;"><span style="font-family:&#39;Courier New&#39;;">The local Study folder from Study Id &quot;studyId&quot; was found in location &quot;FilePath&quot;. The Study is an active study in cloud environment and is tied to input project file at location &quot;FilePath&quot;. If study is not working correctly, recommend using the study delete local command and recloning to a new folder, followed by replacing local study data.</span></div>
+  <h2 id="jelly"><strong>Global Command Options</strong></h2>
+  <div>Global command options for --format and --quiet relate to how the console output from the CLI behaves. JSON is the default, but if the data structure is flat the CLI could return the list of records in CSV or Table format too.<br />
+    <br />
+    The --quiet command is important to note for automation use cases. When a user is writing commands against the CLI in an interactive manner some extra context/information may be given for clarity. For example, when using the simulation command, a count of the number of records is given at the very bottom for user convenience.<br />
+    <br />
+    Different commands may print multiple messages to give extra context, but there is a separation between what we consider &quot;output data&quot; and &quot;output messages&quot;. For example, a user may want to parse the JSON of the simulation records returned to do some further in-memory filtering, but these extra messages for context would pose a parsing challenge instead of allowing the user to just take the data directly. For this reason, we have separated the command output streams between all &quot;output data&quot; being sent to stdout and all &quot;output messages&quot; being sent to stderr. If a user wants to tie directly into a command&#39;s output data, they can use the global --quiet option to turn off any messages being written to stderr.
+  </div>
+</body>
+</html>

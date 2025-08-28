@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <title>Frequently Asked Questions - Nodal Analysis</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/>
+</head>
+<body>
+  <h1>Frequently Asked Questions - Nodal Analysis</h1>
+  <h4>Q 1. What is the Nodal Analysis tab used for?</h4>
+  <p><strong>➡️ Answer: </strong>The Nodal Analysis tab is used to analyze congestion across the power system model at both Node and Hub levels. It helps identify where and when congestion occurs and supports operational decisions and system tuning.</p>
+  <hr/>
+  <h4>Q 2. Where can I find the Nodal Analysis tab?</h4>
+  <p><strong>➡️ Answer:</strong> You can access the Nodal Analysis (Beta) tab from the Solutions page in PLEXOS Cloud.</p>
+  <hr/>
+  <h4>Q 3. What is the difference between Node-level and Hub-level congestion?</h4>
+  <p><strong>➡️ Answer:</strong></p>
+  <ul class="Disc">
+    <li>Node-level congestion focuses on specific points in the network, such as generators or loads.</li>
+    <li>Hub-level congestion analyzes groups of Nodes to give broader insights into regional or zonal constraints.</li>
+  </ul>
+  <hr/>
+  <h4>Q 4. How many Nodes or Hubs can I analyze at once?</h4>
+  <p><strong>➡️ Answer:</strong> You can analyze up to 10 objects at a time, including any combination of Nodes and Hubs.</p>
+  <hr/>
+  <h4>Q 5. What do the List, Summary, and Pivot Views show?</h4>
+  <p><strong>➡️ Answer:</strong></p>
+  <ul class="Disc">
+    <li>List View: Time-series details with timestamps.</li>
+    <li>Summary View: Aggregated metrics over the selected period.</li>
+    <li>Pivot View: Fully customizable layout for summarizing and grouping data dynamically.</li>
+  </ul>
+  <hr/>
+  <h4>Q 6. What is a Branch in the Nodal Analysis context?</h4>
+  <p><strong>➡️ Answer</strong>: A Branch represents a transmission element (e.g., line, transformer, interface) affected by flow constraints. Congestion is measured on these branches due to system limits.</p>
+  <hr/>
+  <h4>Q 7. What does Shadow Price mean in the analysis?</h4>
+  <p><strong>➡️ Answer:</strong> Shadow Price ($/MW) indicates the cost of relieving 1 MW of congestion on a branch. A positive value reflects congestion; for example, a value of 1 means that removing 1 MW of flow would reduce system cost by $1.</p>
+  <hr/>
+  <h4>Q 8. What is PTDF, and why is it important?</h4>
+  <p><strong>➡️ Answer:</strong> PTDF (Power Transfer Distribution Factor) shows how a 1 MW injection at a Node affects flow on a specific Branch. Positive or negative PTDF values help assess each Node’s contribution to congestion.</p>
+  <hr/>
+  <h4>Q 9. What is the Induced Flow report?</h4>
+  <p><strong>➡️ Answer:</strong> The Induced Flow (Helpers &amp; Harmers) report shows how different Nodes contribute to congestion on a specific branch based on their injections, withdrawals, and PTDF values.</p>
+  <hr/>
+  <h4>Q 10. How do I access the Induced Flow report?</h4>
+  <p><strong>➡️ Answer: </strong>Click on any Branch name from the List View to open the Induced Flow report for that branch.</p>
+  <hr/>
+  <h4>Q 11. Can I export data from the Nodal Analysis tab?</h4>
+  <p><strong>➡️ Answer: </strong>Yes, you can export data in CSV or Excel format for offline analysis, reporting, or stakeholder sharing.</p>
+  <hr/>
+  <h4>Q 12. What does the “Hours Congested” column represent?</h4>
+  <p><strong>➡️ Answer: </strong>It shows the total number of hours a Node or Hub experienced congestion over the selected timeframe. It’s available in the Summary View.</p>
+  <hr/>
+  <h4>Q 13. What is the Loss Adjustment Factor?</h4>
+  <p><strong>➡️ Answer: </strong>This factor adjusts the PTDF-based contribution to account for transmission losses. It reflects how real power losses affect flow impact from a specific node.</p>
+  <hr/>
+  <h4>Q 14. Can I save my layout or configuration?</h4>
+  <p><strong>➡️ Answer</strong>: Yes. Use the Save Layout feature to preserve your filters, Output Settings, and views, so you can return to them in future sessions.</p>
+  <hr/>
+  <h4>Q 15. Why is my data not appearing after selecting Nodes or Hubs?</h4>
+  <p><strong>➡️ Answer:</strong> Ensure you have clicked Apply after selecting objects in the Properties panel, and that you have valid Output Settings (especially Phase and Period). Also, check if the simulation contains congestion data for the selected scope.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+
+</body></html>

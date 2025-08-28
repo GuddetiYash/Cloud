@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>November 2021 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>November 2021 Release Notes</h1>
+  <h3>In this article:</h3>
+  <ul>
+    <li><a href="#1one">Run Multiple Models in Sequence on a Virtual Machine</a></li>
+    <li><a href="#2two">Compare Output of Two Monte Carlo Runs</a></li>
+    <li><a href="#3three">Simulation Recommendation with New Design and Cloud Burst Support</a></li>
+    <li><a href="#4four">Run a Simulation Directly from Solutions</a></li>
+    <li><a href="#5five">Diagnostic Mode for Sharing Information with Energy Exemplar Support</a></li>
+    <li><a href="#6six">Consolidation of Commodities into Single Publish Reports</a></li>
+    <li><a href="#7seven">Map Enhancements in Setup and Solutions</a></li>
+    <li><a href="#8eight">Global Share Button</a></li>
+    <li><a href="#9nine">New Active Licensed User Login Chart for Administrators</a></li>
+    <li><a href="#10ten">Cloud Bridge Improvements</a></li>
+    <li><a href="#11eleven">Microsoft Excel Plugin - Improved Performance and Ability to Analyze Output (Beta)</a></li>
+    <li><a href="#12twelve">Bug Fixes</a></li>
+  </ul>
+  <p> </p>
+  <div class="note" id="0tempd">
+    <h3 id="000">Temporarily Disabled Feature</h3>
+    <p>The November release continues to enhance the underlying architecture including how Cloud Bridge and PLEXOS Cloud manage changes to studies. To allow our teams time to fully implement related changes to PLEXOS Cloud, we disabled certain features temporarily. We plan to enable them again in future releases.</p>
+  </div>
+  <p> </p>
+  <p><br />
+    The following video is a quick overview of the features in the November release:<br />
+    <br />
+    <iframe allowfullscreen="" height="388" src="https://player.vimeo.com/video/659035546?h=0e49dd2298" width="689"></iframe>
+  </p>
+  <p> </p>
+  <p><br />
+    For more detailed descriptions of the improvements available in the November release, scroll through the topics below.</p>
+  <p> </p>
+  <h2 id="1one">Run Multiple Models in Sequence on a Virtual Machine</h2>
+  <p>Select multiple Models, and then click RUN or right-click and select Run to run your Models in a specific order.<br />
+     </p>
+  <div class="note"><b><img src="../../assets/images/Blue_Book_Closed.gif" /> NOTE</b>: The ability to run multiple Models in-sequence is on a single (one) virtual machine.</div>
+  <p><br />
+    The output of one Model can be used as input for the next Model.  Selecting Models is done by using Ctrl + Click or Shift + Click.<br />
+     <br />
+    <br />
+    <img src="../../assets/images/RN_2021/November/Multiple runs.jpg" style="border-style: solid;" /><br />
+    <br />
+    The Run Order column uses the Execution Order property from PLEXOS. It will be uploaded and shown as the first column in the Models workspace known as &quot;Run Order.&quot; If you don&#39;t have a &quot;Run Order&quot; for your Models, you can use the &quot;Fill Run Order&quot; button. It will put a value from 1 to <i>n</i> based on the current order of your models in the grid. You can change the order by editing the run order cell, and once you save the new order, it will be used going forward. If you don’t care about the order, you can select Models and run them.<br />
+    <br />
+    If you select multiple Models, the Models will run the smallest Run Order first and continue to the largest Run Order. They will run in the order defined in that column. Because this is a group of runs, Recommendations and Previous run details will not be shown. <br />
+    <br />
+    If you want to run multiple Models in parallel, you should continue to select them individually, and then run them one at a time.  A new virtual machine will be used for each simulation.  No parallel runs are supported. Stochastic/Monte Carlo runs will use their Model-specific risk sample count.  <br />
+    <br />
+    Gurobi is the default solver. This can be changed in Advanced Settings. You can select multiple solvers. All runs will complete with one solver and then start with the next solvers and so on.  <br />
+       
+  </p>
+  <div class="note"><b><b><img src="../../assets/images/Blue_Book_Closed.gif" /> </b>NOTE</b>: A select model must have a run order to run. If you select multiple runs with blank or duplicate run order values, you will receive an error.</div>
+  <p> </p>
+  <h2 id="2two">Compare Output of Two Monte Carlo Runs</h2>
+  <p>From the chart analysis page within Solutions, you can now compare the output of two different solutions. These can be two solutions within one model or two solutions in different models within the same study. This allows comparing the metrics for different solvers, input data, scenarios, and more. This functionality is very helpful in risk mitigation.<br />
+     </p>
+  <p><img src="../../assets/images/RN_2021/November/Monte Carlo 88 (1).png" style="border-style: solid;" /><br />
+     </p>
+  <p><img src="../../assets/images/RN_2021/November/Monte Carlo 2.png" style="border-style: solid;" /></p>
+  <p>You can select any successful Solution from any Model in the Study.<br />
+     </p>
+  <p><img src="../../assets/images/RN_2021/November/Monte Carlo 3.png" style="border-style: solid;" /></p>
+  <h2 id="3three"><br />
+    Simulation Recommendations with New Design and Cloud Burst Support</h2>
+  <p>There is an improved look and feel to the Simulation Recommendations and Cloud Burst Support to enable simulation to run on Cloud with one click and to better summarize recommendations.<br />
+     </p>
+  <div><img src="../../assets/images/RN_2021/November/Run Recommendations.jpg" style="border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" /><br />
+    <br />
+     
+  </div>
+  <h2 id="4four">Run a Simulation Directly from Solutions</h2>
+  <p>To improve your workflow, Solutions now lets you run a simulation for a Model that you previously ran. You don&#39;t need to go back to Models.  You can find the model, click RUN directly from the Solutions card, and fill out the configuration.<br />
+    <br />
+    <img src="../../assets/images/RN_2021/November/Run From Solutions.jpg" style="border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" /><br />
+    <br />
+    This feature uses the latest data (including any changes that were made after the run) and defaults to the last configuration.  Recommendations and other features will work the same way as they do in the Models workspace.<br />
+     
+  </p>
+  <h2 id="5five">Diagnostic Mode for Sharing Information with Energy Exemplar support</h2>
+  <p>Diagnostic mode is an easy way to gather key details to share with the Energy Exemplar support team when you have questions about a simulation.  Diagnostic mode is turned off by default and can be turned on or off in User Preferences.<br />
+    <br />
+    The video below briefly explains how to turn on Diagnostics Mode and use it to share data with Energy Exemplar.<br />
+    <br />
+    <iframe allowfullscreen="" height="314" src="https://player.vimeo.com/video/651293041?h=c3e2b3eea1" width="640"></iframe>
+  </p>
+  <p>   </p>
+  <h2 id="6six">Consolidation of Commodities into Single Publish Reports</h2>
+  <p>Now you can do a single click to trigger &quot;Publish to Reports&quot; for all commodities (such as electricity, gas, etc.). To simplify the process of publishing Solution data to reports, we have combined these different workflows into one.  <br />
+    <br />
+    <img src="../../assets/images/RN_2021/November/Publish to Reports.jpg" style="border-style: solid;" /><br />
+    <br />
+    <img src="../../assets/images/RN_2021/November/Publish to Reports 2.jpg" style="border-style: solid;" />
+  </p>
+  <h2 id="7seven">Map Enhancements in Setup and Solutions</h2>
+  <h3>Support for Regions and Pools</h3>
+  <p>Setup and Solution maps now support Regions and Pools in the same way as Zones. In Setup, you can create polygons to visually represent PLEXOS Region and Pools on the map.  Region and Pool outputs can be displayed in Solutions as well.<br />
+     </p>
+  <p><img src="../../assets/images/RN_2021/November/Solutions Polygons.jpg" style="border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" /></p>
+  <p> </p>
+  <h3>Delete Geocodes for an Object Including Zones, Regions, and Pools</h3>
+  <p>From Setup, to remove geocodes for an object, you can click on an object hit the delete key and the geocode will be deleted without deleting the object.  After clicking SAVE, you can find the object under non-geocoded in the filter panel.<br />
+    <br />
+    <img src="../../assets/images/RN_2021/November/deleting Geocodes.jpg" style="border-style: solid;" /><br />
+    <br />
+    You can also delete the geocoded polygon for a Zone, Region, or Pool. Delete either just a point in the polygon or the whole polygon.  Currently, polygon delete functionality is not currently supported through the csv export/import.<br />
+     
+  </p>
+  <h3>Improved Generation Output</h3>
+  <p>We have optimized the Generation Output feature in Solutions by updating the bars to reduce the width and it now supports the ability to hover your mouse over objects to see detail.<br />
+    <br />
+    <img src="../../assets/images/RN_2021/November/Generators Output 2.jpg" style="border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" /><br />
+    <br />
+    You can zoom out to aggregate data and zoom in to see details. <br />
+     
+  </p>
+  <p><img src="../../assets/images/RN_2021/November/Zoom 4.jpg" style="border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" /><br />
+    <br />
+    When generators are at the exact same geocode (latitude and longitude), the bar will show <i>+n</i> when <i>n</i> is the number of generators.  You can use Previous/Next to move through generators using the object inspector.
+  </p>
+  <h2 id="8eight"><br />
+    Global Share Button</h2>
+  <p>The Share button enables you to easily share a link to PLEXOS Cloud.  The button shares a link directly to that page in the study. Security is enabled, so if a user is not licensed to view PLEXOS Cloud or that part of the application; or if they don&#39;t have access to the study, they will receive an &quot;access denied&quot; message.</p>
+  <p><br />
+    <img src="../../assets/images/RN_2021/November/Share button.jpg" style="border-left-style: solid;border-top-style: solid;border-right-style: solid;border-bottom-style: solid" />
+  </p>
+  <p> </p>
+  <h2 id="9nine">New Active Licensed Users Login Chart for Administrators</h2>
+  <p>In Administration-Subscriptions an Administrator can view a chart to see unique users that have logged into PLEXOS Cloud over the last 7 or 30 days broken down by license (Modeler, Report viewer, Read-only, Report Designer).<br />
+    <br />
+    <img src="../../assets/images/RN_2021/November/Administrators.jpg" style="border-style: solid;" /><br />
+     
+  </p>
+  <div class="note"><b><b><img src="../../assets/images/Blue_Book_Closed.gif" /> </b>NOTE</b>: Report Designer is an add-on license. A user that logs in that is a Modeler and a Report Designer will show as 1 Modeler and 1 Report Designer on the chart as they are actively using two types of licenses.</div>
+  <p> </p>
+  <h2 id="10ten">Cloud Bridge Improvements</h2>
+  <p>With every release, we continue to improve Cloud Bridge to make getting data back and forth to PLEXOS Cloud easier and faster. In this release, we made the following enhancements:</p>
+  <ul>
+    <li>Improved validation flow to prioritize errors that would cause the upload to fail earlier in the validation process.</li>
+    <li>Adjusted file referential integrity so a user can upload only needed time series files for the Models they plan to run versus all the required files for the study. </li>
+    <li>Improved upload progress reporting that shows both completed steps upcoming stages in order.</li>
+    <li>Enhanced performance and memory usage.</li>
+  </ul>
+  <h2 id="11eleven"><br />
+    Microsoft Excel Plugin - Improved Performance and Ability to Analyze Output (Beta)</h2>
+  <p>Performance improvements of up to 50% when pulling input data, and up to 80% when pushing times series changes. You can analyze output directly in Excel, and with a click of a button, you can load output data into Excel to analyze and leverage it using Excel tools and charts.  </p>
+  <h2 id="12twelve"><br />
+    Bug Fixes</h2>
+  <p>We have made many bug fixes that affect stability, performance, and user experience, including fixes related to Cloud Bridge.  Additionally, failed simulation run will now show the log file from the Solution card.<br />
+    <br />
+     
+  </p>
+  <p> </p>
+</body>
+</html>

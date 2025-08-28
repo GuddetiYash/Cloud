@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>January 2022 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-2280</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">8b4be5b3-e64b-4313-a7e6-4e15c055032b</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-2280, TZXE7D2DFWED-1834737786-2280</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>January 2022 Release Notes</h1>
+  <h3>In this article:</h3>
+  <ul>
+    <li><a href="#1one">Category Available in Models Workspace</a></li>
+    <li><a href="#2two">Congestion Analysis </a> </li>
+    <li><a href="#3three">Performance Improvements for Publish to Reports Process</a></li>
+    <li><a href="#4four">Excel Plugin Enhancements</a></li>
+    <li><a href="#5five">Bug Fixes</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="1one">Category Available in Models Workspace </h2>
+  <p>The Model Category is now available within the Models Workspace. This enables you to sort and filter your Models based on categories. By default, the Category column isn&#39;t visible from the Models Workspace. Click on the right arrow to view the Category column. <br />
+     </p>
+  <p style="margin-left: 40px;"><img height="346" src="../../assets/images/RN_2022/January/January 1.jpg" width="865" /><br />
+     </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/January/January 2.jpg" /></p>
+  <p> <br />
+    <br />
+    When you Transform the view, the focus becomes Class and Scenarios on the right columns and the Categories will not be shown. This is by design so that when you switch mode, the classes become rows instead of columns and models become columns. Hence, adding categories to columns can be difficult. <br />
+     
+  </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/January/January 3.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /></p>
+  <p><br />
+    <br />
+    Clicking on the &#39;Lines&#39; icon, as shown in the image below, provides additional options for Categories:
+  </p>
+  <ul>
+    <li>You can filter by Category or Hide certain Categories</li>
+    <li>You can manipulate the columns using Autosize, Pin Column, and/or Reset Columns</li>
+    <li>You can search for Categories and select the ones you want to use</li>
+    <li>You can also Sort Order on the Category column</li>
+  </ul>
+  <p style="margin-left: 40px;"><br />
+    <img src="../../assets/images/RN_2022/January/January 4.jpg" /><br />
+     
+  </p>
+  <p style="margin-left: 40px;"><img alt="Tools for Category.png" src="../../assets/images/RN_2022/January/January 5.jpg" style="width: 240px; height: 206px;" /><img alt="Tools for Category2.png" src="../../assets/images/RN_2022/January/January 6.jpg" /><br />
+     </p>
+  <p>You can create a Category, name it anything you want, and then click on <b>Add</b> and then <b>Save</b>.<br />
+     </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/January/January 7.jpg" /></p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/January/January 8.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /><br />
+     </p>
+  <p>Other users can select any Category from created categories as shown below.  There will be &quot;-&quot; as the default Category.</p>
+  <p style="margin-left: 40px;"><img height="167" src="../../assets/images/RN_2022/January/January 9.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" width="453" /></p>
+  <h2 id="2two"><br />
+    Congestion Analysis </h2>
+  <p>This tool helps you understand why congestion occurs on the system and how it impacts nodal pricing. You can drill down into a specific hourly (or sub-hourly) solution and query the data to show the sources and/or sinks that contribute to the loading on a given line.  Additionally, the contingency events that cause congestion can be highlighted, if needed.<br />
+    <br />
+    After determining the causes of congestion, you can see how each congested component impacts the Locational Marginal Price (LMP) via the marginal cost of congestion at any desired node.<br />
+    <br />
+    Enabling <b>Cache Congestion Insight</b> will inform the engine to create and store the data needed to support the <b>Congestion Insight </b>features.<br />
+     
+  </p>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/January/Congestion 1.jpg" /></div>
+  <p><br />
+    After a successful run, you can see an icon highlighted in yellow (as shown below) to launch the<b> Congestion Insight</b> page. The Lightning Bolt icon highlighted in red indicates that this Solution has Congestion Analysis on it.<br />
+     </p>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/January/Congestion 2.jpg" /></div>
+  <p><br />
+    Once you click on the icon highlighted in yellow, you will be redirected to the <b>Congestion Insight</b> page, there will be three tabs: INDUCED FLOW DECOMPOSITION, CONGESTION CHARGE DECOMPOSITION, and NODE FLOW REPORT. On each tab, you can select a date, hour, and line object from the given drop-down list to view the reason behind the congestion. <br />
+     </p>
+  <div style="margin-left: 0.02in"><img src="../../assets/images/RN_2022/January/Congestion 3.jpg" /></div>
+  <p> </p>
+  <h2 id="3three">Performance Improvements for Publish to Reports Process </h2>
+  <p>We continue to enhance the runtime performance for the <b>Publish to Reports</b> processes. <br />
+     </p>
+  <h2 id="4four">Excel Plugin Enhancements </h2>
+  <p>Recently, we introduced the Microsoft Excel Plugin utility that allows leveraging Excel&#39;s many advanced tools for bulk editing. You can download the Excel Plugin directly from TOOLS in PLEXOS Cloud.<br />
+    In this release, we continue to enhance the editing experience by adding new features, such as Scenario data editing and multi-banded editing.<br />
+    Multi-banded variables are often used to model other variables that need multi-point data or to define a shape, such as &#39;offer quantity/price pairs&#39; or a &#39;heat rate curve&#39;. Similar to the PLEXOS desktop, the bands are displayed as a column of numbers in the data grid with the heading &#39;BandID&#39;.<br />
+    <br />
+    In the feature &#39;Scenario data edits&#39;, a new column named Scenario will be available in the data grid.  <br />
+    The value in this column will be blank for base data. It will display the scenario name if it has the associated values for the variable. At this time, we do not support the creation of scenarios directly using the Excel editing grid.  <br />
+    The priority order of scenario data is alphabetical unless overridden by using the Scenario priority attribute in the model setup. <br />
+    <br />
+    <br />
+    <img src="../../assets/images/RN_2022/January/Plugin.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" /><br />
+    <br />
+    We also ironed out some bugs, performance issues, and improved the &#39;UI&#39; to make the user experience more flexible, fluent, and familiar. For more details see <a href="/articles/KB_Article/Edit-Input-Data-Directly-in-Excel-with-Tools-Plugin" target="_blank">Edit Input Data Directly in Excel with Tools Plugin</a>.<br />
+       
+  </p>
+  <h2 id="5five">Bug Fixes </h2>
+  <p>We continue to fix bugs affecting user experience, stability, and performance, including fixes related to Cloud Bridge. Additionally, a &#39;Failed&#39; Simulation run will now show in the log file from the Solutions card.</p>
+  <p> </p>
+  <p> </p>
+</body>
+</html>

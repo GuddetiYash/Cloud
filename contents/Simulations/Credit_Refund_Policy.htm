@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Credit Refund Policy</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="rh-authors" content="Pankaj" />
+  <meta name="rh-index-keywords" content="Credit Calculation,Sub Hourly Credit Calculation in PLEXOS Cloud,Usage base" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <h1>Credit Refund Policy</h1>
+  <p>Table of Contents</p>
+  <ol class="AlphaNumeric">
+    <li><a href="#1">Overview</a></li>
+    <li><a href="#2">Scenarios Where a Credit Refund Will Be Issued</a></li>
+    <li><a href="#3">Scenarios Where a Credit Refund Will Not Be Issued</a></li>
+    <li><a href="#4">Credit Refund Process</a>
+      <ul class="Disc">
+        <li><a href="#4.1">Before Raising the Support Ticket</a></li>
+        <li><a href="#4.2">Support Ticket Information</a></li>
+        <li><a href="#4.3">investigation and Refund Process</a></li>
+        <li><a href="#4.4">Examples of Issues Resulting in Refund or Non-Refund</a></li>
+      </ul>
+    </li>
+    <li><a href="#5">Best Practices to Avoid Non-Refundable Failures</a></li>
+    <li><a href="#6">Disclaimer</a></li>
+  </ol>
+  <p> </p>
+  <h2 id="1">1. Overview</h2>
+  <p>Credits are consumed when you Run Models and the amount consumed depends on the selected Virtual Machine (VM) configuration and the resources required for the Simulation.<br />
+    <br />
+    The Credit Refund Policy outlines the specific conditions under which Energy Exemplar will issue Credit refunds, and it also provides clarity on the circumstances where Credit refunds will not be granted. When eligible, you will receive refunds for the Credits consumed during failed Simulations due to PLEXOS bugs or engine issues. By following these guidelines, you can prevent avoidable failures and optimize your Simulation configurations.
+  </p>
+  <p> </p>
+  <hr />
+  <h2 id="2">2. Scenarios Where a Credit Refund Will Be Issued </h2>
+  <p>Energy Exemplar offers Credit refunds in the following scenarios: </p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>System Failure Scenarios:</strong> If the Virtual Machines (VMs) running the Simulations become unavailable due to failures in hardware, networking, or other cloud infrastructure issues, the system will automatically re-run the Simulation on a new VM. In this case, the system will automatically refund the Credits consumed for the failed Simulation to your tenant. </li>
+    <br />
+    <li><strong>PLEXOS Cloud Bugs or Engine Issues:</strong> If any Simulation fails due to a PLEXOS Cloud bug or an engine issue, Energy Exemplar will refund the Credits consumed for that Simulation upon confirmation of the issue through the Energy Exemplar support team. </li>
+    <br />
+    <li><strong>Refunds for First-Time Failures:</strong> If you are aware of or notified about a PLEXOS Cloud bug or an engine issue, have an open support ticket, or continue running a Simulation after multiple failures on the same configuration, a Credit refund will only be issued for the first failed Simulation. Any additional attempts to Run the Simulation with the same or a different Model using the same configuration, without addressing the known issue, will not qualify for a refund. </li>
+    <br />
+    <li><strong>ETL Failures and Data Issues: </strong>If a <strong>Simulation completes successfully</strong> but fails during the <strong>ETL (Extract, Transform, Load) </strong>process due to <strong>data issues </strong>or <strong>ETL-related failures, </strong>a <strong>partial credit refund </strong>will be issued for the<strong> ETL step only, </strong>not for the entire Simulation.
+      <ul><br />
+        <li><strong>ETL is an optional step </strong>and can be re-executed using CLI without running the full simulation again.</li>
+        <br />
+        <li>Since <strong>ETL is a post-processing step,</strong> it is recommended to<strong> Run a single Simulation first, </strong>validate the Parquet file, and ensure all configurations are correct before executing additional simulations.</li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <p>For the Credit Refund process, you must raise a support ticket and contact the Energy Exemplar support team with details on the impacted Simulation, except in first scenario 2.1, where the Credits are automatically refunded by the system. </p>
+  <hr />
+  <h2 id="3">3. Scenarios Where a Credit Refund Will Not Be Issued </h2>
+  <p>Energy Exemplar will not issue a Credit Refund in the following cases: <br />
+     <br />
+    The errors that caused the Simulation failure are generally listed in the respective <strong>Log Files</strong> or <strong>Simulation Messages</strong> of the failed Simulation. Refer to section 4.B.2 for the steps for accessing the Simulation Messages and Log Files. <br />
+     </p>
+  <ol class="RoundSquare">
+    <li><strong>Out-of-Memory Issues: </strong>If a Simulation fails due to insufficient memory, such as running a high-memory Model on a low-memory VM, the failure is a configuration issue. Energy Exemplar will not issue a Credit Refund in this case. </li>
+    <br />
+    <li><strong>Insufficient Core Allocation: </strong>If a Simulation fails due to insufficient cores allocated to the VM, Energy Exemplar will not issue a Credit Refund. This issue stems from misconfiguration rather than a fault with the system. </li>
+    <br />
+    <li><strong>Low Disk Space:</strong> If a Simulation fails due to Low Disk space, such as running a Model with a Low Disk VM, the failure is a configuration issue. Energy Exemplar will not issue a Credit Refund in this case. </li>
+    <br />
+    <li><strong>Infeasibility Issues:</strong> If a Simulation fails due to Modeling-related issues such as incorrect inputs or conflicting constraints, etc., which may cause infeasibility in your Simulation. Energy Exemplar will not issue a Credit Refund in this case.</li>
+    <br />
+    <li><strong>Validation Issues: </strong>If the Simulation fails due to Modeling issues such as mismatches between the planning and chronological horizon, duplicate data, missing supporting data files, or other validation errors, Energy Exemplar will not issue a Credit refund.  These failures result from configuration or data errors within the Model and fall outside the scope of refundable scenarios. </li>
+    <br />
+    <li><strong>Known Engine Issues or Multiple Failures: </strong> If you continue to Run a Simulation on the same configuration after multiple failures or if there is an open support ticket related to an engine issue, Energy Exemplar will not issue a Credit refund for these subsequent failed Simulations. A refund will only be provided for the first failed Simulation, and further failures due to repeated attempts on the same configuration will not qualify for the Credit refund. </li>
+    <br />
+    <li><strong>Version Mismatch: </strong>If a bug has been fixed in the latest version of PLEXOS but you are running an older version of the software and encounter the same issue, Energy Exemplar will not issue a Credit refund. It is important to update to the latest version of PLEXOS to avoid known issues that have already been resolved.</li>
+  </ol>
+  <hr />
+  <h2 id="4">4. Credit Refund Process </h2>
+  <p>Before proceeding with a refund request, it’s essential to follow a clear process to ensure the issue qualifies for a refund.</p>
+  <h3 id="4.1">[A] Before Raising the Support Ticket </h3>
+  <p> Before creating a support ticket, follow these steps to identify whether your issue qualifies for a refund or not: </p>
+  <p> </p>
+  <ol class="RoundSquare">
+    <li><strong>Check the Log file or Simulation Messages: </strong>Review the log file or error messages to identify the cause of the failure. Ensure the issue aligns with scenarios that qualify for a refund. </li>
+    <br />
+    <li><strong>Review the known refund scenarios:</strong> Compare your issues with the scenarios listed in this policy to determine whether the failure qualifies for a refund or not. </li>
+    <br />
+    <li><strong>Ensure proper resource allocation:</strong> Confirm that the configuration used for the Simulation was allocated with sufficient memory, CPU cores, and disk space to avoid issues related to out-of-memory errors, insufficient core allocation, or low disk space, which are non-refundable scenarios. </li>
+  </ol>
+  <p> </p>
+  <p>Once you’ve completed this checklist, you can proceed with raising a support ticket if the issue qualifies for a refund. </p>
+  <p> </p>
+  <h3 id="4.2">[B] Support Ticket Information</h3>
+  <p>To initiate the refund process, you must raise a support ticket and provide the following information:</p>
+  <p> </p>
+  <p> Before creating a support ticket, follow these steps to identify whether your issue qualifies for a refund or not: </p>
+  <p> </p>
+  <ol class="Decimal">
+    <li><strong>Model Name:</strong> Model name of the Failed Simulation. </li>
+    <br />
+    <li><strong>A brief description of the issue:</strong> Include a clear and concise summary of the problem encountered during the Simulation. The errors that caused the Simulation failure are generally listed in the respective Log Files or Simulation Messages of the failed Simulation. <br />
+       
+      <p>Refer to the following steps to view the Log Files or Simulation Messages: </p>
+       
+      <ol class="LowerAlpha" start="a">
+        <li start="a">Navigate to the <strong>Simulations</strong> page. </li>
+        <br />
+        <li start="a">Go to the <strong>Simulation History</strong> table and locate the failed Simulation.  </li>
+        <br />
+        <li>Click on the <strong>Kebab Menu</strong> (three-dot option) and select <strong>Simulation Messages.</strong>  OR  Click on the <strong>Kebab Menu</strong> (three-dot option) and select <strong>Download Artifacts </strong>to view and download the Solution Log file. <br />
+          <br />
+          Refer to the following GIF for an example of the <strong>Simulation Messages:</strong><br />
+          <img height="461" src="../assets/images/Credit Refund Policy/Simulation Messages.gif" width="934" /><br />
+          <br />
+          Refer to the following screenshot for an example of the<strong> </strong><strong><strong>Log File:</strong><br />
+            <img height="465" src="../assets/images/Credit Refund Policy/Log Files.png" width="933" /></strong>
+        </li>
+      </ol>
+    </li>
+    <br />
+    <li>
+      <p><strong>The log file for the impacted Simulation: </strong>The log file containing the error details from the failed simulation. Refer to the above point 1 to download the Log Files for the failed Simulation. <br />
+         </p>
+    </li>
+    <li>
+      <p><strong>Simulation Diagnostics:</strong> Include the Study ID, Simulation ID, Execution ID, Changeset ID, and other relevant details present in the Simulation Diagnostic.  <br />
+         <br />
+        First, ensure that you have enabled <strong>Diagnostic</strong> from the <strong>Preferences </strong>page. If not, follow these steps to enable the Diagnostic for your Simulations: <br />
+        <br />
+        Refer to the following steps to view the Log Files or Simulation Messages: 
+      </p>
+       
+      <ol class="LowerAlpha">
+        <li>Go to your <strong>Profile Name</strong> and select <strong>Preferences. </strong></li>
+        <br />
+        <li>Scroll down and locate the <strong>Diagnostic</strong> section. </li>
+        <br />
+        <li>Set the <strong>Diagnostic</strong> option to <strong>Yes.</strong><br />
+          <br />
+          <img height="465" src="../assets/images/Credit Refund Policy/Preferences.png" width="933" />
+        </li>
+      </ol>
+    </li>
+  </ol>
+  <p> </p>
+  <p style="margin-left: 36px">After enabling Diagnostic, follow these steps to view the Diagnostic for your failed Simulations.</p>
+  <p> </p>
+  <ol class="LowerAlpha" style="margin-left: 40px;">
+    <li>Navigate to the <strong>Simulations</strong> page.</li>
+    <br />
+    <li>Go to the <strong>Simulation History </strong>table and locate the failed Simulation.</li>
+    <br />
+    <li> Click on the <strong>Kebab Menu</strong> (three-dot option) and select <strong>Diagnostic.</strong><br />
+      <br />
+      <img height="436" src="../assets/images/Credit Refund Policy/Viewing Dignostic.gif" style="cursor: nwse-resize;" width="888" />
+    </li>
+  </ol>
+  <p> </p>
+  <ol class="Decimal" start="5">
+    <li>
+      <p><strong> Database details: </strong>Provide information about the database associated with the Simulation, such as the XML and supporting CSV files, to help recreate the issue. These files can be found in your local directory where the Study is located. Ensure that you attach these files when submitting your support ticket to facilitate the investigation.</p>
+    </li>
+    <br />
+    <li>
+      <p><strong>Virtual Machine details: </strong>The specifications and configuration of the VM used to Run the Simulation, such as <strong>Engine Version</strong> and <strong>VM Type </strong>[2 Core - 16 GB - 120 GB Disk]. You can view these details in the Simulation History table on the Simulations page as shown in the screenshot below:<br />
+        <br />
+        <img height="480" src="../assets/images/Credit Refund Policy/CPU and Version Details.png" width="981" />
+      </p>
+    </li>
+  </ol>
+  <h3 id="4.3">[C] Investigation and Refund Process</h3>
+  <p>Once the support ticket is raised, the following process will take place:</p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>The Support Representative will coordinate with Energy Exemplar&#39;s Development team to investigate the issue.</li>
+    <br />
+    <li>If the Development team confirms that the issue is related to a PLEXOS Engine bug, or a PLEXOS Cloud bug, Energy Exemplar will refund the Credits consumed for that Simulation.</li>
+    <br />
+    <li>If the Development team determines that the issue is related to Modeling errors and not a PLEXOS Engine or PLEXOS Cloud issue, no refund will be provided.</li>
+  </ol>
+  <p> </p>
+  <h3 id="4.4">[D] Examples of Issues Resulting in Refund or Non-Refund</h3>
+  <p>This section provides a typical example of scenarios where Credits were refunded or not refunded after investigation. The error details will be mentioned in the Simulation Messages or the Log Files of the failed Simulation. Refer to section 4.2.2 for the steps for accessing the Simulation Messages and Log Files.</p>
+  <p> </p>
+  <ol class="Decimal">
+    <li><strong>Example: Stack Trace Issue [Credits Refunded Upon Investigation]</strong><br />
+      <br />
+      In this case, a refund was issued because the failure was caused by a PLEXOS engine bug. After investigation, the root cause of the error was identified, and the Credits consumed were refunded to the tenant.<br />
+      <br />
+      Refer to the following Log File screenshot for an example of the stack trace issue:<br />
+      <img height="492" src="../assets/images/Credit Refund Policy/Stack Trace Error 2.png" width="954" />
+    </li>
+    <br />
+    <li>
+      <p><strong>Example: Out-of-Memory Issue [Credits Not Refunded Upon Investigation]</strong></p>
+      <p><br />
+        The simulation failed due to insufficient memory allocation. The User used a low-memory VM to Run a high-memory Model, resulting in a non-refundable failure.</p>
+      <p>Refer to the following screenshot from the Simulation Messages for an example of the out-of-memory issue:<br />
+        <img height="492" src="../assets/images/Credit Refund Policy/Out of Memory Issue.png" style="cursor: nwse-resize;" width="954" />
+      </p>
+    </li>
+    <br />
+    <li>
+      <p><strong>Example: Validation Issue [Credits Not Refunded Upon Investigation]</strong></p>
+      <p><br />
+        In this case, the Simulation failed due to validation error.  After investigation, the root cause of the error was identified as Local setting mismatch, hence this case falls under the non-refundable scenario.<br />
+        <img height="492" src="../assets/images/Credit Refund Policy/Validation Error - Local Setting Mismatch.png" width="954" />
+      </p>
+    </li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h2 id="5">5. Best Practices to Avoid Non-Refundable Failures </h2>
+  <p>Refer to the following best practices to minimize the Simulation failures that are not eligible for Credit refunds:</p>
+  <p> </p>
+  <ol class="RoundSquare">
+    <li><strong>Ensure Adequate Resource Allocation:</strong> Before running a Simulation, analyze the Model and select the correct engine version and VM type with sufficient memory, CPU cores, and disk space. By choosing resources that meet your Model’s requirements, you can avoid common issues such as out-of-memory errors or insufficient core allocation.</li>
+    <br />
+    <li><strong>Avoid Configuration Errors:</strong> Review the Model configuration carefully to avoid infeasibility and validation errors. Double-check all inputs, constraints, and settings to ensure that they are aligned with the Simulation&#39;s requirements. Proper configuration reduces the risk of errors that lead to non-refundable Simulation failures.</li>
+    <br />
+    <li><strong>Run a Small Test Simulation:</strong> As a best practice, Run a small test Simulation before enqueuing a large one. This allows you to understand the memory usage and potential issues before committing to a larger Run. By doing so, you can reduce the risk of consuming excessive Credits due to configuration errors or resource limitations.</li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h2 id="6">6. Disclaimer</h2>
+  <p>The scenarios outlined in this Credit Refund Policy are not exhaustive. Energy Exemplar reserves the right to evaluate each case on an individual basis. Refund eligibility for Simulations not explicitly covered in this policy will depend on further investigation and the specific circumstances surrounding the failure. </p>
+  <p> </p>
+  <p>The final decision regarding the Credit refunds will be determined after a thorough review by the Energy Exemplar support and development teams.<br />
+     </p>
+  <hr />
+</body>
+</html>

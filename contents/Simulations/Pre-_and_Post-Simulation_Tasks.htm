@@ -1,0 +1,2512 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Pre and Post Simulation Tasks</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+</head>
+<body>
+  <h1>Pre and Post-Simulation Tasks</h1>
+  <p><strong>Table of Contents</strong></p>
+  <ol class="Decimal">
+    <li><a href="#1">Overview</a></li>
+    <li><a href="#2">Pre-requisites</a></li>
+    <li><a href="#3">Script Environment</a></li>
+    <li><a href="#4">Executing Tasks on the Cloud</a></li>
+    <li><a href="#5">Using Energy Exemplar Cloud CLI or Cloud Python SDK</a></li>
+    <li><a href="#6">Accessing or Querying Model Data</a></li>
+    <li><a href="#7">Script Examples</a></li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h2 id="1">Overview</h2>
+  <p><strong>Pre- and Post-Simulation Tasks</strong> enable users to execute arbitrary logic on Energy Exemplar&#39;s compute infrastructure before or after a simulation. This significantly reduces run times by eliminating file transfers and leveraging cloud computing at scale. Pre- and post-simulation tasks are currently supported only on Linux environments. Multiple pre- and post-simulation tasks can be executed simultaneously, and several valuable tasks are already available on the Energy Exemplar Marketplace.<br />
+    All tasks are executed independently, ensuring a secure Energy Exemplar infrastructure and maintaining a consistent user environment. Tasks are executed according to the Execution Order property and can be configured to be skipped if the simulation fails or if any errors occur.</p>
+  <p> </p>
+  <hr />
+  <h2 id="2">Pre-requisites</h2>
+  <p>Before setting up and executing scripts, users must familiarize themselves with essential tools and environment concepts that ensure scripts function consistently across simulations. Energy Exemplar supports standalone Linux binaries or Python scripts as long as all required dependencies are explicitly listed in a <strong>requirements.txt</strong> file.</p>
+  <p> </p>
+  <h3>Suggested Tools and Resources</h3>
+  <ol class="Decimal">
+    <li><strong><a href="../CLI/CLI_Toolkit.htm">Cloud CLI</a></strong><br />
+      The <strong>Energy Exemplar Cloud CLI</strong> is pre-configured with the <strong>Energy Exemplar Python API</strong>. Users do not need to configure environment variables or enter credentials manually, as these steps are pre-configured within the Cloud CLI setup. However, they should verify dependencies are correctly loaded before execution.</li>
+    <li><strong>Datahub</strong><br />
+      <strong>Energy Exemplar Datahub</strong> is the primary storage system for simulation-related files and artifacts in the cloud. All task-related data must be stored and referenced within <strong>Datahub</strong> to ensure seamless access and retrieval during script execution. Familiarity with<strong> Datahub</strong> is essential for the effective use of cloud-based workflows.
+    </li>
+    <li><a href="https://duckdb.org/"><strong>DuckDB</strong></a><br />
+      <strong>DuckDB</strong> and its <a href="https://duckdb.org/docs/stable/clients/python/overview.html">DuckDB Python library</a> enable high-performance querying and aggregation of structured data. <strong>DuckDB</strong> supports multiple tabular file formats, including Parquet, SQLite, and CSV, making it a powerful tool for analyzing and processing simulation data.
+    </li>
+  </ol>
+  <p> </p>
+  <h3>Requirements.txt</h3>
+  <p>For Python-based scripts, users must create a requirements.txt file listing all additional dependencies required for execution. Only one requirements.txt file is allowed per Simulation, meaning dependencies from multiple scripts must be consolidated into a single file.<br />
+    <br />
+    <strong>Example Requirements File:</strong>
+  </p>
+  <p><strong></strong></p>
+  <p>
+    <style type="text/css">
+      /*<![CDATA[*/
+      /* Code Container */
+      .code-container {
+        position: relative;
+        background: #2B2B2B;
+        /* light background */
+        border-radius: 8px;
+        padding: 0px;
+        font-family: "Courier New", monospace;
+        color: #E0E0E0;
+        /* Off-white font color */
+        overflow-x: auto;
+        border: 1px solid #444;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      /* Copy Button */
+      .copy-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        color: #E0E0E0;
+        /* Off-white */
+      }
+      .copy-btn:hover {
+        color: #00BFFF;
+        /* Light blue hover effect */
+      }
+      pre {
+        margin: 0;
+        padding: 0;
+        white-space: pre-wrap;
+      }
+      code {
+        font-size: 14px;
+        display: block;
+      }
+      /* Python Syntax Highlighting */
+      .keyword {
+        color: #569CD6;
+        font-weight: bold;
+      }
+      /* Light Blue for Keywords */
+      .comment {
+        color: #6A9955;
+        font-style: italic;
+      }
+      /* Green for Comments */
+      .string {
+        color: #CE9178;
+      }
+      /* Light Red for Strings */
+      .function {
+        color: #DCDCAA;
+        font-weight: bold;
+      }
+      /* Yellow for Function Names */
+      /*]]>*/
+    </style>
+  </p>
+  <div class="code-container"><button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><code>
+duckdb
+pandas
+matplotlib
+    </code></pre>
+  </div>
+  <script>
+    //<![CDATA[
+    ...{
+      "Name": "DESCRIPTIVE NAME OF YOUR TASK",
+      "TaskType": "Post",
+      "Files": [{
+          "Path": "Path/SubPath/My_Python_File.py",
+          "Version": 1
+        },
+        {
+          "Path": "Path/OtherPath/**",
+          "SnapshotDate": '2025-01-01'
+        },
+        {
+          "Path": "Path/SubPath/requirements.txt",
+          "Version": null
+        }
+      ],
+      "Arguments": "python3 My_Python_File.py arg1 arg2",
+      "ContinueOnError": true,
+      "ExecutionOrder": 0
+    }
+    ...
+    //]]>
+  </script>
+  <p> </p>
+  <p>These dependencies ensure necessary Python libraries are available throughout the script execution process.</p>
+  <hr />
+  <h2 id="3">Script Environment</h2>
+  <p>Scripts are executed in a virtual environment based on <strong>Ubuntu Linux 24.01 LTS</strong>, with <strong>Python 3.11</strong>, <strong>Pip</strong>, and <strong>Wheel</strong> preinstalled. Including Python dependencies in a requirements.txt file ensures they are available for scripts. A single requirements.txt file is supported per simulation, so if multiple scripts require different dependencies, they must be combined into one file.<br />
+    Each task runs in a separate container image but shares the same virtual disk mounts.</p>
+  <h3>File System</h3>
+  <p>The Linux container consists of two key directories:</p>
+  <ol class="AlphaNumeric">
+    <li><strong>/simulation</strong>
+      <ol>
+        <li>This serves as the root directory for study data, including XML files, time-series data, and other artifacts. </li>
+        <li>It is Read/Write for pre-simulation tasks but is Read-Only for post-simulation tasks to maintain data integrity.</li>
+      </ol>
+    </li>
+    <li><strong>/output</strong>
+      <ol>
+        <li>This is designated for user-generated data. </li>
+        <li>Any files remaining in this directory at the end of the simulation are automatically uploaded as part of the solution.</li>
+      </ol>
+    </li>
+  </ol>
+  <p> </p>
+  <h3>Environment Variables</h3>
+  <p>The following environment variables set up system paths and values that assist tasks during execution:</p>
+  <table border="1" cellpadding="1" cellspacing="1" class="borderonly" style="border-collapse:collapse; width:100%">
+    <colgroup>
+      <col style="width: 229px;" />
+      <col style="width: 783px;" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td><strong>Environment Variable Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>tenant_id</td>
+        <td>Stores your Tenant ID.</td>
+      </tr>
+      <tr>
+        <td>simulation_id</td>
+        <td>Stores the current Simulation ID.</td>
+      </tr>
+      <tr>
+        <td>study_id</td>
+        <td>Represents the current study ID.</td>
+      </tr>
+      <tr>
+        <td>execution_id</td>
+        <td>Represents the current Execution ID.</td>
+      </tr>
+      <tr>
+        <td>simulation_path</td>
+        <td>Specifies the root path for PLEXOS XML and study files (Read-Only in post-simulation tasks).</td>
+      </tr>
+      <tr>
+        <td>output_path</td>
+        <td>Defines the working directory for scripts (Read/Write). Files left here are uploaded automatically.</td>
+      </tr>
+      <tr>
+        <td>cloud_cli_path</td>
+        <td>Stores the full path to the PLEXOS Cloud CLI tool, which is also used by the Python SDK Cloud Toolkit.</td>
+      </tr>
+      <tr>
+        <td>auth_path</td>
+        <td>Represents a file containing the raw user access token. This is useful for automating workflows.</td>
+      </tr>
+      <tr>
+        <td>duck_db_path</td>
+        <td>Defines the default DuckDB project path, simplifying solution data queries.</td>
+      </tr>
+      <tr>
+        <td>directory_map_path</td>
+        <td>It contains a JSON manifest that shows the directory structure for input and solution folders, including IDs.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Using standard formatting, common variables like <strong>tenant_id</strong>, <strong>simulation_id</strong>,<strong> study_id</strong>, and<strong> execution_id</strong> can also be used in command parameters. They are resolved at script runtime.</p>
+  <p> </p>
+  <h4>Examples</h4>
+  <ol class="Decimal">
+    <li><strong>Logging Environment Variables</strong><br />
+      <br />
+      <style type="text/css">
+        /*<![CDATA[*/
+        /* Code Container - Adjust Size */
+        .code-container {
+          position: relative;
+          background: #282c34;
+          border-radius: 8px;
+          padding: 12px;
+          font-family: "Courier New", monospace;
+          color: #E0E0E0;
+          /* Off-white text */
+          overflow-x: auto;
+          border: 1px solid #444;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          /* 🔽 Adjust Width and Height */
+          width: 600px;
+          /* Fixed width */
+          max-height: 300px;
+          /* Limits height */
+          overflow-y: auto;
+          /* Scrollbar if needed */
+        }
+        /* Copy Button (Word Only) */
+        .copy-btn {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 14px;
+          color: #E0E0E0;
+          /* Off-white text */
+          font-weight: bold;
+        }
+        .copy-btn:hover {
+          color: #00BFFF;
+          /* Light blue hover effect */
+        }
+        pre {
+          margin: 0;
+          padding: 0;
+          white-space: pre-wrap;
+        }
+        code {
+          font-size: 14px;
+          display: block;
+        }
+        /* Python Syntax Highlighting */
+        .keyword {
+          color: #569CD6;
+          font-weight: bold;
+        }
+        /* Light Blue for Keywords */
+        .comment {
+          color: #6A9955;
+          font-style: italic;
+        }
+        /* Green for Comments */
+        .string {
+          color: #CE9178;
+        }
+        /* Light Red for Strings */
+        .function {
+          color: #DCDCAA;
+          font-weight: bold;
+        }
+        /* Yellow for Function Names */
+        /* JSON Syntax Highlighting */
+        .json-key {
+          color: #9CDCFE;
+        }
+        /* Light Blue for JSON Keys */
+        .json-string {
+          color: #CE9178;
+        }
+        /* Light Red for JSON Strings */
+        .json-number {
+          color: #B5CEA8;
+        }
+        /* Light Green for Numbers */
+        .json-boolean {
+          color: #569CD6;
+          font-weight: bold;
+        }
+        /* Blue for True/False */
+        /*]]>*/
+      </style>
+      <div class="code-container"><button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+{
+    <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Printing variables to log&quot;</span>,
+    <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Post&quot;</span>,
+    <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;echo Tenant: {tenant_id} Simulation: {simulation_id} Study: {study_id} Execution: {execution_id}&quot;</span>,
+    <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">true</span>,
+    <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">1</span>
+}
+    </code></pre>
+      </div>
+    </li>
+    <br />
+    <li><strong>Retrieving Environment Variables in Python</strong><br />
+      <br />
+      <style type="text/css">
+        /*<![CDATA[*/
+        /* Code Container - Adjust Size */
+        .code-container {
+          position: relative;
+          background: #282c34;
+          border-radius: 8px;
+          padding: 12px;
+          font-family: "Courier New", monospace;
+          color: #E0E0E0;
+          /* Off-white text */
+          overflow-x: auto;
+          border: 1px solid #444;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          /* 🔽 Adjust Width and Height */
+          width: 600px;
+          /* Fixed width */
+          max-height: 300px;
+          /* Limits height */
+          overflow-y: auto;
+          /* Scrollbar if needed */
+        }
+        /* Copy Button (Word Only) */
+        .copy-btn {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 14px;
+          color: #E0E0E0;
+          /* Off-white text */
+          font-weight: bold;
+        }
+        .copy-btn:hover {
+          color: #00BFFF;
+          /* Light blue hover effect */
+        }
+        pre {
+          margin: 0;
+          padding: 0;
+          white-space: pre-wrap;
+        }
+        code {
+          font-size: 14px;
+          display: block;
+        }
+        /* Python Syntax Highlighting */
+        .keyword {
+          color: #569CD6;
+          font-weight: bold;
+        }
+        /* Light Blue for Keywords */
+        .comment {
+          color: #6A9955;
+          font-style: italic;
+        }
+        /* Green for Comments */
+        .string {
+          color: #CE9178;
+        }
+        /* Light Red for Strings */
+        .function {
+          color: #DCDCAA;
+          font-weight: bold;
+        }
+        /* Yellow for Function Names */
+        .variable {
+          color: #9CDCFE;
+        }
+        /* Light Blue for Variables */
+        /* JSON Syntax Highlighting */
+        .json-key {
+          color: #9CDCFE;
+        }
+        /* Light Blue for JSON Keys */
+        .json-string {
+          color: #CE9178;
+        }
+        /* Light Red for JSON Strings */
+        .json-number {
+          color: #B5CEA8;
+        }
+        /* Light Green for Numbers */
+        .json-boolean {
+          color: #569CD6;
+          font-weight: bold;
+        }
+        /* Blue for True/False */
+        /*]]>*/
+      </style>
+      <div class="code-container"><button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+<span class="keyword">import</span> os
+<span class="comment"># Get environment variables for simulation, output, and duckdb file paths.</span>
+<span class="variable">simulation_path</span> = os.environ.get(<span class="string">&#39;simulation_path&#39;</span>, <span class="string">&quot;/simulation&quot;</span>)
+<span class="variable">output_path</span> = os.environ.get(<span class="string">&#39;output_path&#39;</span>, <span class="string">&quot;/output&quot;</span>)
+    </code></pre>
+      </div>
+      <script>
+        //<![CDATA[
+        function copyCode(btn) {
+          let codeText = btn.nextElementSibling.textContent.trim();
+          navigator.clipboard.writeText(codeText).then(() => {
+            btn.innerText = "Copied!";
+            setTimeout(() => btn.innerText = "Copy", 2000);
+          }).catch(err => console.error('Failed to copy:', err));
+        }
+        //]]>
+      </script>
+    </li>
+  </ol>
+  <h4>
+    <style type="text/css">
+      /*<![CDATA[*/
+      /*<![CDATA[*/
+      /*<![CDATA[*/
+      /* Code Container - Adjust Size */
+      .code-container {
+        position: relative;
+        background: #282c34;
+        border-radius: 8px;
+        padding: 12px;
+        font-family: "Courier New", monospace;
+        color: #E0E0E0;
+        /* Off-white text */
+        overflow-x: auto;
+        border: 1px solid #444;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* 🔽 Adjust Width and Height */
+        width: 800px;
+        /* Fixed width */
+        max-height: 400px;
+        /* Limits height */
+        overflow-y: auto;
+        /* Scrollbar if needed */
+      }
+      /* Copy Button (Word Only) */
+      .copy-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        color: #E0E0E0;
+        /* Off-white text */
+        font-weight: bold;
+      }
+      .copy-btn:hover {
+        color: #00BFFF;
+        /* Light blue hover effect */
+      }
+      pre {
+        margin: 0;
+        padding: 0;
+        white-space: pre-wrap;
+      }
+      code {
+        font-size: 14px;
+        display: block;
+      }
+      /* Python Syntax Highlighting */
+      .keyword {
+        color: #569CD6;
+        font-weight: bold;
+      }
+      /* Light Blue for Keywords */
+      .comment {
+        color: #6A9955;
+        font-style: italic;
+      }
+      /* Green for Comments */
+      .string {
+        color: #CE9178;
+      }
+      /* Light Red for Strings */
+      .function {
+        color: #DCDCAA;
+        font-weight: bold;
+      }
+      /* Yellow for Function Names */
+      /*]]>*/
+      /*]]>*/
+      /*]]>*/
+    </style>
+    <button class="copy-btn" onclick="copyCode(this)"><br />
+    </button>
+  </h4>
+  <script>
+    //<![CDATA[
+    function copyCode(btn) {
+      let codeText = btn.nextElementSibling.textContent.trim();
+      navigator.clipboard.writeText(codeText).then(() => {
+        btn.innerText = "Copied!";
+        setTimeout(() => btn.innerText = "Copy", 2000);
+      }).catch(err => console.error('Failed to copy:', err));
+    }
+    //]]>
+  </script>
+  <p style="color: #FFFFFF"> </p>
+  <h3 style="color: rgb(255, 255, 255);">Task Output</h3>
+  <p>Any files remaining in the<strong> /output</strong> directory are automatically uploaded at the end of the simulation. These artifacts can be downloaded using the CLI as they will not appear on Cloud Web. </p>
+  <h4>Examples</h4>
+  <ol class="Decimal">
+    <li><strong>Listing Solution Files Using CLI<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 600px;
+            /* Fixed width */
+            max-height: 350px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* Python Syntax Highlighting */
+          .keyword {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Light Blue for Keywords */
+          .comment {
+            color: #6A9955;
+            font-style: italic;
+          }
+          /* Green for Comments */
+          .string {
+            color: #CE9178;
+          }
+          /* Light Red for Strings */
+          .function {
+            color: #DCDCAA;
+            font-weight: bold;
+          }
+          /* Yellow for Function Names */
+          .variable {
+            color: #9CDCFE;
+          }
+          /* Light Blue for Variables */
+          /* JSON Syntax Highlighting */
+          .json-key {
+            color: #9CDCFE;
+          }
+          /* Light Blue for JSON Keys */
+          .json-string {
+            color: #CE9178;
+          }
+          /* Light Red for JSON Strings */
+          .json-number {
+            color: #B5CEA8;
+          }
+          /* Light Green for Numbers */
+          .json-boolean {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Blue for True/False */
+          /* Shell Command Styling */
+          .shell-command {
+            color: #FFD700;
+            font-weight: bold;
+          }
+          /* Gold for Commands */
+          .shell-flag {
+            color: #00FFFF;
+          }
+          /* Cyan for Flags */
+          .shell-path {
+            color: #CE9178;
+          }
+          /* Light Red for Paths */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+<span class="shell-command">plexos-cloud</span> solution files list <span class="shell-flag">--solutionId</span> b8737512-0375-439f-9260-9db7f8d77ec0 <span class="shell-flag">--type</span> TaskArtifacts
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+    </li>
+    <br />
+    <li><strong>Downloading Files Using CLI<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 600px;
+            /* Fixed width */
+            max-height: 350px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* Python Syntax Highlighting */
+          .keyword {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Light Blue for Keywords */
+          .comment {
+            color: #6A9955;
+            font-style: italic;
+          }
+          /* Green for Comments */
+          .string {
+            color: #CE9178;
+          }
+          /* Light Red for Strings */
+          .function {
+            color: #DCDCAA;
+            font-weight: bold;
+          }
+          /* Yellow for Function Names */
+          .variable {
+            color: #9CDCFE;
+          }
+          /* Light Blue for Variables */
+          /* JSON Syntax Highlighting */
+          .json-key {
+            color: #9CDCFE;
+          }
+          /* Light Blue for JSON Keys */
+          .json-string {
+            color: #CE9178;
+          }
+          /* Light Red for JSON Strings */
+          .json-number {
+            color: #B5CEA8;
+          }
+          /* Light Green for Numbers */
+          .json-boolean {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Blue for True/False */
+          /* Shell Command Styling */
+          .shell-command {
+            color: #FFD700;
+            font-weight: bold;
+          }
+          /* Gold for Commands */
+          .shell-flag {
+            color: #00FFFF;
+          }
+          /* Cyan for Flags */
+          .shell-path {
+            color: #CE9178;
+          }
+          /* Light Red for Paths */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+<span class="shell-command">pxc</span> solution files download <span class="shell-flag">--solutionId</span> b8737512-0375-439f-9260-9db7f8d77ec0 <span class="shell-flag">--type</span> TaskArtifacts <span class="shell-flag">-d</span> <span class="shell-path">c:\Path\</span> <span class="shell-flag">--overwrite</span>
+    </code></strong></pre>
+      </div>
+    </li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h2 id="4">Executing Tasks on the Cloud</h2>
+  <p>The CLI supports enqueuing simulations with tasks by providing paths to Datahub artifacts and passing arguments in the JSON body.</p>
+  <p>The <strong>SimulationTasks</strong> property in the JSON request defines tasks. Each task includes the following properties:</p>
+  <ol class="AlphaNumeric">
+    <li><strong>Name:</strong> A descrip tive name for the task. This appears in logs and on the Cloud Web after the simulation.</li>
+    <li><strong>TaskType:</strong> Pre or Post - Pre executes before the simulation engine, while Post executes after the engine and ETL processes.</li>
+    <li><strong>Files:</strong> Defines the input files for the task.
+      <ol>
+        <li><strong>Path:</strong>
+          <ol>
+            <li><strong>Explicit:</strong> Full path to the required file.</li>
+            <li><strong>Wildcard:</strong> A globbing pattern to download one or more files.</li>
+          </ol>
+        </li>
+        <li><strong>Version:</strong>
+          <ol>
+            <li><strong>Null:</strong> Downloads the latest available version.</li>
+            <li><strong>Explicit:</strong> Downloads a specific numeric version.</li>
+            <li><strong>SnapshotDate: </strong>Downloads files matching the path as of a specified date.</li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><strong>Arguments: </strong>The command-line argument for executing the script. When using Python, python3 must precede the script name. Additional arguments are supported.</li>
+    <li><strong>ExecutionOrder:</strong> The order in which tasks are executed. Users must specify an explicit and unique order to avoid ambiguity.</li>
+  </ol>
+  <p> </p>
+  <h4>Examples</h4>
+  <ol class="Decimal">
+    <li><strong>Configuring Files and Running a Python Script<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 600px;
+            /* Fixed width */
+            max-height: 350px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* JSON Syntax Highlighting */
+          .json-key {
+            color: #9CDCFE;
+          }
+          /* Light Blue for JSON Keys */
+          .json-string {
+            color: #CE9178;
+          }
+          /* Light Red for JSON Strings */
+          .json-number {
+            color: #B5CEA8;
+          }
+          /* Light Green for Numbers */
+          .json-boolean {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Blue for True/False */
+          .json-null {
+            color: #D4D4D4;
+            font-style: italic;
+          }
+          /* Gray for null */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+{
+    <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;DESCRIPTIVE NAME OF YOUR TASK&quot;</span>,
+    <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Post&quot;</span>,
+    <span class="json-key">&quot;Files&quot;</span>: [
+        {
+            <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;Path/SubPath/My_Python_File.py&quot;</span>,
+            <span class="json-key">&quot;Version&quot;</span>: <span class="json-number">1</span>
+        },
+        {
+            <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;Path/OtherPath/**&quot;</span>,
+            <span class="json-key">&quot;SnapshotDate&quot;</span>: <span class="json-string">&#39;2025-01-01&#39;</span>
+        },
+        {
+            <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;Path/SubPath/requirements.txt&quot;</span>,
+            <span class="json-key">&quot;Version&quot;</span>: <span class="json-null">null</span>
+        }
+    ],
+    <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;python3 My_Python_File.py arg1 arg2&quot;</span>,
+    <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">true</span>,
+    <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">0</span>
+}
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+      <strong>
+        <script>
+          //<![CDATA[
+          function copyCode(btn) {
+            let codeText = btn.nextElementSibling.textContent.trim();
+            navigator.clipboard.writeText(codeText).then(() => {
+              btn.innerText = "Copied!";
+              setTimeout(() => btn.innerText = "Copy", 2000);
+            }).catch(err => console.error('Failed to copy:', err));
+          }
+          //]]>
+        </script>
+      </strong><br />
+       
+    </li>
+    <li><strong>Defining Multiple Simulation Tasks<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 600px;
+            /* Fixed width */
+            max-height: 400px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* JSON Syntax Highlighting */
+          .json-key {
+            color: #9CDCFE;
+          }
+          /* Light Blue for JSON Keys */
+          .json-string {
+            color: #CE9178;
+          }
+          /* Light Red for JSON Strings */
+          .json-number {
+            color: #B5CEA8;
+          }
+          /* Light Green for Numbers */
+          .json-boolean {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Blue for True/False */
+          .json-null {
+            color: #D4D4D4;
+            font-style: italic;
+          }
+          /* Gray for null */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+{
+    <span class="json-key">&quot;StudyId&quot;</span>: <span class="json-string">&quot;5ec77945-2b44-496d-8e0e-57fb68402a6a&quot;</span>,
+    <span class="json-key">&quot;ChangeSetId&quot;</span>: <span class="json-string">&quot;5ec77945-2b44-496d-8e0e-57fb68402a6a&quot;</span>,
+    <span class="json-key">&quot;Models&quot;</span>: [<span class="json-string">&quot;YOUR MODEL NAME&quot;</span>],
+    <span class="json-key">&quot;SimulationOptions&quot;</span>: {
+        <span class="json-key">&quot;Locale&quot;</span>: <span class="json-number">1033</span>,
+        <span class="json-key">&quot;SimulationTasks&quot;</span>: [
+            {
+                <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Writing membership data to disk for post simulation analysis&quot;</span>,
+                <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Pre&quot;</span>,
+                <span class="json-key">&quot;Files&quot;</span>: [
+                    {
+                        <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;Team/User/query_write_memberships.py&quot;</span>,
+                        <span class="json-key">&quot;Version&quot;</span>: <span class="json-number">1</span>
+                    },
+                    {
+                        <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;Team/User/**&quot;</span>,
+                        <span class="json-key">&quot;Version&quot;</span>: <span class="json-null">null</span>
+                    }
+                ],
+                <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;python3 query_write_memberships.py&quot;</span>,
+                <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">true</span>,
+                <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">1</span>
+            },
+            {
+                <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Setting query context using CloudCLI&quot;</span>,
+                <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Post&quot;</span>,
+                <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;plexos-cloud solution query configure-views --model-name &#39;YOUR MODEL NAME&#39;&quot;</span>,
+                <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">true</span>,
+                <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">2</span>
+            },
+            {
+                <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Post Simulation querying of parquet data&quot;</span>,
+                <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Post&quot;</span>,
+                <span class="json-key">&quot;Files&quot;</span>: [
+                    {
+                        <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;Team/User/**&quot;</span>,
+                        <span class="json-key">&quot;Version&quot;</span>: <span class="json-null">null</span>
+                    }
+                ],
+                <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;python3 query_lmp_data.py&quot;</span>,
+                <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">true</span>,
+                <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">3</span>
+            },
+            {
+                <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Delete Post simulation script artifacts&quot;</span>,
+                <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Post&quot;</span>,
+                <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;python3 clean_workflow_files.py&quot;</span>,
+                <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">true</span>,
+                <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">4</span>
+            }
+        ]
+    },
+    <span class="json-key">&quot;SimulationData&quot;</span>: [
+        {
+            <span class="json-key">&quot;Uri&quot;</span>: <span class="json-string">&quot;Https://studies-api-aquila.energyexemplar.com/1.0/downloads/studies/5ec77945-2b44-496d-8e0e-57fb68402a6a/changesets/5ec77945-2b44-496d-8e0e-57fb68402a6a/input-data&quot;</span>,
+            <span class="json-key">&quot;Type&quot;</span>: <span class="json-string">&quot;ChangesetDatabase&quot;</span>
+        }
+    ],
+    <span class="json-key">&quot;SimulationEngine&quot;</span>: {
+        <span class="json-key">&quot;EngineId&quot;</span>: <span class="json-string">&quot;52b42700-3d98-46ca-8ed6-a544d9129281&quot;</span>,
+        <span class="json-key">&quot;Version&quot;</span>: <span class="json-string">&quot;10.000.003.20515&quot;</span>
+    },
+    <span class="json-key">&quot;Source&quot;</span>: <span class="json-string">&quot;Automation&quot;</span>,
+    <span class="json-key">&quot;Priority&quot;</span>: <span class="json-number">1</span>,
+    <span class="json-key">&quot;RequestedCpuCores&quot;</span>: <span class="json-number">1</span>,
+    <span class="json-key">&quot;MinimumMemoryInGb&quot;</span>: <span class="json-number">4.00</span>
+}
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+      <strong>
+        <script>
+          //<![CDATA[
+          function copyCode(btn) {
+            let codeText = btn.nextElementSibling.textContent.trim();
+            navigator.clipboard.writeText(codeText).then(() => {
+              btn.innerText = "Copied!";
+              setTimeout(() => btn.innerText = "Copy", 2000);
+            }).catch(err => console.error('Failed to copy:', err));
+          }
+          //]]>
+        </script>
+      </strong><br />
+       
+    </li>
+    <li><strong>Querying SQLite Data Using DuckDB in Python<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 650px;
+            /* Fixed width */
+            max-height: 400px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* Python Syntax Highlighting */
+          .keyword {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Light Blue for Keywords */
+          .comment {
+            color: #6A9955;
+            font-style: italic;
+          }
+          /* Green for Comments */
+          .string {
+            color: #CE9178;
+          }
+          /* Light Red for Strings */
+          .function {
+            color: #DCDCAA;
+            font-weight: bold;
+          }
+          /* Yellow for Function Names */
+          .variable {
+            color: #9CDCFE;
+          }
+          /* Light Blue for Variables */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+<span class="comment"># Import required modules</span>
+<span class="keyword">import</span> duckdb
+<span class="keyword">import</span> os
+<span class="keyword">def</span> <span class="function">export_sqlite_query_to_csv</span>() -&gt; <span class="keyword">None</span>:
+    <span class="keyword">try</span>:
+        <span class="variable">simulation_path</span> = os.environ.get(<span class="string">&#39;simulation_path&#39;</span>, <span class="string">&quot;/simulation&quot;</span>)
+        <span class="variable">output_path</span> = os.environ.get(<span class="string">&#39;output_path&#39;</span>, <span class="string">&quot;/output&quot;</span>)
+        <span class="variable">database_file_path</span> = os.path.join(simulation_path, <span class="string">&quot;reference.db&quot;</span>)
+        <span class="variable">memberships_file_path</span> = os.path.join(output_path, <span class="string">&quot;memberships_data.csv&quot;</span>)
+        <span class="keyword">with</span> duckdb.connect(database_file_path) <span class="keyword">as</span> con: <span class="comment"># No file locks</span>
+            con.execute(<span class="string">&quot;INSTALL sqlite;&quot;</span>)
+            con.execute(<span class="string">&quot;LOAD sqlite;&quot;</span>)
+            <span class="keyword">print</span>(<span class="string">f&quot;Configuring Duck to look at existing sqlite database: {database_file_path}&quot;</span>)
+            con.execute(<span class="string">f&quot;ATTACH &#39;{database_file_path}&#39; (TYPE SQLITE);&quot;</span>)
+            con.execute(<span class="string">&quot;USE reference;&quot;</span>)
+            <span class="keyword">print</span>(<span class="string">f&quot;Reading membership data from {database_file_path}&quot;</span>)
+            <span class="variable">query_text</span> = <span class="string">&quot;&quot;&quot;
+                SELECT
+                    cl1.Name AS parent_class,
+                    cl2.Name AS child_class,
+                    col.Name AS collection,
+                    obj1.Name AS parent_object,
+                    obj2.Name AS child_object,
+                    &#39;&#39; AS subcollection_name
+                FROM t_membership mem
+                INNER JOIN t_object obj1 ON obj1.object_id = mem.parent_object_id
+                INNER JOIN t_object obj2 ON obj2.object_id = mem.child_object_id
+                INNER JOIN t_collection col ON col.collection_id = mem.collection_id
+                INNER JOIN t_class cl1 ON cl1.class_id = mem.parent_class_id
+                INNER JOIN t_class cl2 ON cl2.class_id = mem.child_class_id
+            &quot;&quot;&quot;</span>
+            con.execute(<span class="string">f&quot;COPY ({query_text}) TO &#39;{memberships_file_path}&#39; WITH (HEADER, DELIMITER &#39;,&#39;);&quot;</span>)
+            <span class="keyword">print</span>(<span class="string">f&quot;Membership information written to {memberships_file_path}&quot;</span>)
+    <span class="keyword">except</span> <span class="keyword">Exception</span> <span class="keyword">as</span> e:
+        <span class="keyword">print</span>(<span class="string">&#39;Exporting Sqlite data to csv failed due to an exception:&#39;</span>)
+        <span class="keyword">print</span>(e)
+<span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:
+    export_sqlite_query_to_csv()
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+      <strong>
+        <script>
+          //<![CDATA[
+          function copyCode(btn) {
+            let codeText = btn.nextElementSibling.textContent.trim();
+            navigator.clipboard.writeText(codeText).then(() => {
+              btn.innerText = "Copied!";
+              setTimeout(() => btn.innerText = "Copy", 2000);
+            }).catch(err => console.error('Failed to copy:', err));
+          }
+          //]]>
+        </script>
+      </strong>
+    </li>
+  </ol>
+  <p> </p>
+  <p> </p>
+  <hr />
+  <h2 id="5">Using Energy Exemplar Cloud CLI or Cloud Python SDK</h2>
+  <p>The latest Cloud CLI is available by default for all tasks. The CLI binary is configured in <strong>/usr/local/bin</strong>, allowing users to run commands without specifying a full path. If the <strong>Cloud Python SDK</strong> is used, no additional setup is required.</p>
+  <p> </p>
+  <h3>Authentication</h3>
+  <p>The user credentials that enqueue a simulation is automatically used for all CLI commands. Authentication against the current environment is already handled.</p>
+  <h4>Example</h4>
+  <ol class="Decimal">
+    <li><strong>Listing Recent Simulations Using CLI</strong><br />
+      <br />
+      <style type="text/css">
+        /*<![CDATA[*/
+        /* Code Container - Adjust Size */
+        .code-container {
+          position: relative;
+          background: #282c34;
+          border-radius: 8px;
+          padding: 12px;
+          font-family: "Courier New", monospace;
+          color: #E0E0E0;
+          /* Off-white text */
+          overflow-x: auto;
+          border: 1px solid #444;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          /* 🔽 Adjust Width and Height */
+          width: 650px;
+          /* Fixed width */
+          max-height: 300px;
+          /* Limits height */
+          overflow-y: auto;
+          /* Scrollbar if needed */
+        }
+        /* Copy Button (Word Only) */
+        .copy-btn {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 14px;
+          color: #E0E0E0;
+          /* Off-white text */
+          font-weight: bold;
+        }
+        .copy-btn:hover {
+          color: #00BFFF;
+          /* Light blue hover effect */
+        }
+        pre {
+          margin: 0;
+          padding: 0;
+          white-space: pre-wrap;
+        }
+        code {
+          font-size: 14px;
+          display: block;
+        }
+        /* JSON Syntax Highlighting */
+        .json-key {
+          color: #9CDCFE;
+        }
+        /* Light Blue for JSON Keys */
+        .json-string {
+          color: #CE9178;
+        }
+        /* Light Red for JSON Strings */
+        .json-number {
+          color: #B5CEA8;
+        }
+        /* Light Green for Numbers */
+        .json-boolean {
+          color: #569CD6;
+          font-weight: bold;
+        }
+        /* Blue for True/False */
+        .json-comment {
+          color: #6A9955;
+          font-style: italic;
+        }
+        /* Green for Comments */
+        /*]]>*/
+      </style>
+      <div class="code-container"><button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+{
+    <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;List last 10 simulations&quot;</span>, <span class="json-comment"># Descriptive name for this task</span>
+    <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Post&quot;</span>, <span class="json-comment"># Pre and Post currently allowed</span>
+    <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;plexos-cloud simulation list --top 10 --orderBy LastUpdatedAt --descending&quot;</span>, <span class="json-comment"># CLI command</span>
+    <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">true</span>, <span class="json-comment"># Setting this to false will result in any failure of a script failing the simulation</span>
+    <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">0</span> <span class="json-comment"># Order is important to ensure tasks run in sequence</span>
+}
+    </code></pre>
+      </div>
+      <script>
+        //<![CDATA[
+        function copyCode(btn) {
+          let codeText = btn.nextElementSibling.textContent.trim();
+          navigator.clipboard.writeText(codeText).then(() => {
+            btn.innerText = "Copied!";
+            setTimeout(() => btn.innerText = "Copy", 2000);
+          }).catch(err => console.error('Failed to copy:', err));
+        }
+        //]]>
+      </script>
+    </li>
+  </ol>
+  <p> </p>
+  <p> </p>
+  <hr />
+  <h2 id="6">Accessing or Querying Model Data</h2>
+  <p><strong>DuckDB </strong>enables users to generate views, making it easier to query Parquet files on disk. To simplify this process, a new CLI command extends this functionality, reducing the need for users to locate files on the disk manually.</p>
+  <p> </p>
+  <h3>Directory Mapping File</h3>
+  <p>A special directory mapping file stores paths to commonly used files, eliminating the need for manual directory inspection. This JSON-based file contains model names and well-defined paths to the Simulation Root (solution directory) and Output paths. The file location persists in the <strong>directory_map_path</strong> variable.</p>
+  <p> </p>
+  <h4>Examples</h4>
+  <ol class="Decimal">
+    <li><strong>Directory Mapping JSON File<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 650px;
+            /* Fixed width */
+            max-height: 300px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* JSON Syntax Highlighting */
+          .json-key {
+            color: #9CDCFE;
+          }
+          /* Light Blue for JSON Keys */
+          .json-string {
+            color: #CE9178;
+          }
+          /* Light Red for JSON Strings */
+          .json-number {
+            color: #B5CEA8;
+          }
+          /* Light Green for Numbers */
+          .json-null {
+            color: #D4D4D4;
+            font-style: italic;
+          }
+          /* Gray for null */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+[
+    {
+        <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Simulation&quot;</span>,
+        <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;/simulation&quot;</span>,
+        <span class="json-key">&quot;Id&quot;</span>: <span class="json-string">&quot;a3457ef3-4b7a-4312-81a5-8cae550b9de2&quot;</span>
+    },
+    {
+        <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Output&quot;</span>,
+        <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;/output&quot;</span>
+    },
+    {
+        <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;MODEL NAME&quot;</span>,
+        <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;/simulation/Model MODEL NAME Solution&quot;</span>,
+        <span class="json-key">&quot;ParquetPath&quot;</span>: <span class="json-string">&quot;/simulation/Model MODEL NAME Solution/version2/ParquetUploads&quot;</span>,
+        <span class="json-key">&quot;Id&quot;</span>: <span class="json-string">&quot;8d28ee05-8618-489b-b38a-52ed00dba4ab&quot;</span>
+    }
+]
+    </code></strong></pre>
+      </div>
+    </li>
+    <br />
+    <li><strong>Configuring SQL Views Using CLI<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 650px;
+            /* Fixed width */
+            max-height: 200px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* Shell Command Syntax Highlighting */
+          .shell-comment {
+            color: #6A9955;
+            font-style: italic;
+          }
+          /* Green for Comments */
+          .shell-command {
+            color: #FFD700;
+            font-weight: bold;
+          }
+          /* Gold for Commands */
+          .shell-flag {
+            color: #00FFFF;
+          }
+          /* Cyan for Flags */
+          .shell-string {
+            color: #CE9178;
+          }
+          /* Light Red for Strings */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+<span class="shell-comment"># Use CLI to create or update SQL views that look at solution data present on the file system.</span>
+<span class="shell-command">plexos-cloud</span> solution query configure-views <span class="shell-flag">--name</span> <span class="shell-string">&#39;YOUR MODEL NAME&#39;</span>
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+    </li>
+    <br />
+    <li><strong>JSON Task Definition for Configuring Views<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 650px;
+            /* Fixed width */
+            max-height: 250px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* JSON Syntax Highlighting */
+          .json-key {
+            color: #9CDCFE;
+          }
+          /* Light Blue for JSON Keys */
+          .json-string {
+            color: #CE9178;
+          }
+          /* Light Red for JSON Strings */
+          .json-number {
+            color: #B5CEA8;
+          }
+          /* Light Green for Numbers */
+          .json-boolean {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Blue for True/False */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+{
+    <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Configure query views for YOUR MODEL NAME&quot;</span>,
+    <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Post&quot;</span>,
+    <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;python3 configure_duck.py &#39;YOUR MODEL NAME&#39; False&quot;</span>,
+    <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">false</span>,
+    <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">3</span>
+}
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+    </li>
+    <br />
+    <li><strong>Script to parse the directorymapping.json file produced on every run</strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+<span class="comment"># Import required modules</span>
+<span class="keyword">import</span> os
+<span class="keyword">import</span> sys
+<span class="keyword">import</span> json
+<span class="keyword">import</span> duckdb <span class="keyword">as</span> duckdb
+<span class="keyword">def</span> <span class="function">read_path_from_mapping_file</span>(mapping_file_path: <span class="keyword">str</span>, model_name: <span class="keyword">str</span>) -&gt; <span class="keyword">str</span>:
+    <span class="string">&quot;&quot;&quot;
+    Read the ParquetPath for the given model_name from the mapping file.
+    &quot;&quot;&quot;</span>
+    <span class="keyword">with</span> <span class="keyword">open</span>(mapping_file_path, <span class="string">&#39;r&#39;</span>) <span class="keyword">as</span> file: <span class="comment"># No file locks</span>
+        data = json.load(file)
+        <span class="keyword">for</span> item <span class="keyword">in</span> data:
+            <span class="keyword">if</span> item.get(<span class="string">&#39;Name&#39;</span>) == model_name:
+                <span class="keyword">return</span> item.get(<span class="string">&#39;ParquetPath&#39;</span>)
+<span class="keyword">def</span> <span class="function">find_subdirectories</span>(root_dir: <span class="keyword">str</span>) -&gt; <span class="keyword">list</span>[<span class="keyword">str</span>]:
+    <span class="string">&quot;&quot;&quot;
+    Find all subdirectories of the given root directory.
+    &quot;&quot;&quot;</span>
+    subdirectories = []
+    <span class="keyword">for</span> dirpath, dirnames, filenames <span class="keyword">in</span> os.walk(root_dir):
+        <span class="keyword">for</span> dirname <span class="keyword">in</span> dirnames:
+            subdirectories.append(os.path.join(dirpath, dirname))
+    <span class="keyword">return</span> subdirectories
+<span class="keyword">def</span> <span class="function">configure_duck_views</span>(model_name: <span class="keyword">str</span>, verbose_log: <span class="keyword">bool</span> = <span class="keyword">False</span>) -&gt; <span class="keyword">None</span>:
+    <span class="string">&quot;&quot;&quot;
+    Configure DUCK views for the given model_name.
+    &quot;&quot;&quot;</span>
+    <span class="keyword">try</span>:
+        duckFilePath: <span class="keyword">str</span> = os.environ.get(<span class="string">&#39;duck_db_path&#39;</span>, <span class="string">&quot;/output/solution_views.ddb&quot;</span>)
+        <span class="keyword">print</span>(f&#39;Setting up DUCK Views - using {duckFilePath}&#39;)
+        mapping_file_path = os.environ.get(<span class="string">&#39;directory_map_path&#39;</span>, <span class="string">&quot;/simulation/directorymapping.json&quot;</span>)
+        model_directory = read_path_from_mapping_file(mapping_file_path, model_name)
+        <span class="keyword">if</span> model_directory <span class="keyword">is</span> <span class="keyword">None</span>:
+            <span class="keyword">raise</span> Exception(f&quot;Unable to find output for model name provided {model_name}&quot;)
+        <span class="keyword">else</span>:
+            <span class="keyword">print</span>(f&quot;Solution data found for {model_name}: {model_directory}&quot;)
+        directories = find_subdirectories(model_directory)
+        <span class="keyword">with</span> duckdb.connect(duckFilePath) <span class="keyword">as</span> con: <span class="comment"># No file locks</span>
+            <span class="keyword">for</span> item <span class="keyword">in</span> directories:
+                view_name = item.replace(model_directory, <span class="string">&#39;&#39;</span>).replace(<span class="string">&#39;/&#39;</span>, <span class="string">&#39;&#39;</span>).replace(<span class="string">&#39;\\&#39;</span>, <span class="string">&#39;&#39;</span>)
+                path = os.path.join(item, <span class="string">&quot;**&quot;</span>, <span class="string">&quot;*.parquet&quot;</span>)
+                <span class="keyword">if</span> <span class="string">&quot;datadataFileId=&quot;</span> <span class="keyword">in</span> view_name:
+                    <span class="keyword">break</span>
+                view_command = f&quot;CREATE OR REPLACE VIEW {view_name} AS SELECT * FROM &#39;{path}&#39;;&quot;
+                
+                <span class="keyword">if</span> verbose_log:
+                    <span class="keyword">print</span>(view_command)
+                    con.execute(view_command)
+                    con.sql(f&quot;SELECT * FROM {view_name} LIMIT 2;&quot;).show()
+                <span class="keyword">else</span>:
+                    con.execute(view_command)
+    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:
+        <span class="keyword">print</span>(<span class="string">&#39;Configuring DUCK Views failed due to an exception:&#39;</span>)
+        <span class="keyword">print</span>(e)
+<span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:
+    <span class="keyword">if</span> <span class="keyword">len</span>(sys.argv) &gt; 1:
+        model_name = sys.argv[1]
+        verbose_log = <span class="keyword">len</span>(sys.argv) &gt; 2 <span class="keyword">and</span> sys.argv[2].lower() <span class="keyword">in</span> [<span class="string">&#39;1&#39;</span>, <span class="string">&#39;true&#39;</span>]
+        configure_duck_views(model_name, verbose_log)
+    <span class="keyword">else</span>:
+        <span class="keyword">print</span>(<span class="string">&quot;Model Name parameter is required.&quot;</span>)
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+    </li>
+    <br />
+    <li><strong>File Paths must be specified in the required directorymapping.json file</strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+[
+    {
+        <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Your Model Name&quot;</span>,
+        <span class="json-key">&quot;Path&quot;</span>: <span class="json-string">&quot;C:\\Sim\\Model YOUR MODEL NAME Solution&quot;</span>,
+        <span class="json-comment"># This is the path that the script above would configure your views for.</span>
+        <span class="json-key">&quot;ParquetPath&quot;</span>: <span class="json-string">&quot;C:\\Sim\\Model YOUR MODEL NAME Solution\\version2\\ParquetUploads&quot;</span>
+    }
+]
+    </code></strong></pre>
+      </div>
+    </li>
+    <br />
+    <li>The following views are created or replaced. If multiple models are executed, you must run the script above with the model name parameter, configuring the paths to the model solution data again.<br />
+      <br />
+      <style type="text/css">
+        /*<![CDATA[*/
+        /* Code Container - Adjust Size */
+        .code-container {
+          position: relative;
+          background: #282c34;
+          border-radius: 8px;
+          padding: 12px;
+          font-family: "Courier New", monospace;
+          color: #E0E0E0;
+          /* Off-white text */
+          overflow-x: auto;
+          border: 1px solid #444;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          /* 🔽 Adjust Width and Height */
+          width: 750px;
+          /* Fixed width */
+          max-height: 400px;
+          /* Limits height */
+          overflow-y: auto;
+          /* Scrollbar if needed */
+        }
+        /* Copy Button (Word Only) */
+        .copy-btn {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 14px;
+          color: #E0E0E0;
+          /* Off-white text */
+          font-weight: bold;
+        }
+        .copy-btn:hover {
+          color: #00BFFF;
+          /* Light blue hover effect */
+        }
+        pre {
+          margin: 0;
+          padding: 0;
+          white-space: pre-wrap;
+        }
+        code {
+          font-size: 14px;
+          display: block;
+        }
+        /* SQL Syntax Highlighting */
+        .sql-keyword {
+          color: #569CD6;
+          font-weight: bold;
+        }
+        /* Light Blue for Keywords */
+        .sql-string {
+          color: #CE9178;
+        }
+        /* Light Red for Strings */
+        /*]]>*/
+      </style>
+      <div class="code-container"><button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> aggregatedseries <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Aggregatedseries\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> attribute <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Attribute\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> attributedata <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Attributedata\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> category <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Category\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> class <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Class\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> classgroup <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Classgroup\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> collection <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Collection\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> config <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Config\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> customcolumn <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Customcolumn\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> data <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Data\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> fullkeyinfo <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Fullkeyinfo\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> membershipinfo <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Membershipinfo\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> memoobject <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Memoobject\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> object <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Object\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> objectmeta <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Objectmeta\**\*.parquet&quot;&#39;</span>;
+<span class="sql-keyword">CREATE OR REPLACE VIEW</span> period <span class="sql-keyword">AS SELECT *</span> <span class="sql-keyword">FROM</span> <span class="sql-string">&#39;C:\Sim\Model YOUR MODEL NAME Solution\version2\ParquetUploads\Period\**\*.parquet&quot;&#39;</span>;
+    </code></pre>
+      </div>
+      <script>
+        //<![CDATA[
+        function copyCode(btn) {
+          let codeText = btn.nextElementSibling.textContent.trim();
+          navigator.clipboard.writeText(codeText).then(() => {
+            btn.innerText = "Copied!";
+            setTimeout(() => btn.innerText = "Copy", 2000);
+          }).catch(err => console.error('Failed to copy:', err));
+        }
+        //]]>
+      </script>
+    </li>
+  </ol>
+  <h3>Task Examples</h3>
+  <ol class="Decimal">
+    <li><strong>Uploading Files to Datahub Using CLI<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 650px;
+            /* Fixed width */
+            max-height: 250px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* JSON Syntax Highlighting */
+          .json-key {
+            color: #9CDCFE;
+          }
+          /* Light Blue for JSON Keys */
+          .json-string {
+            color: #CE9178;
+          }
+          /* Light Red for JSON Strings */
+          .json-number {
+            color: #B5CEA8;
+          }
+          /* Light Green for Numbers */
+          .json-boolean {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Blue for True/False */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+{
+    <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Uploading report files via CLI&quot;</span>,
+    <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Post&quot;</span>,
+    <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;plexos-cloud datahub upload --local-folder /output --remote-folder Team/User/Reports --pattern Report_*.csv&quot;</span>,
+    <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">true</span>,
+    <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">5</span>
+}
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+    </li>
+    <br />
+    <li><strong>Enqueuing a New Simulation Using CLI<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 650px;
+            /* Fixed width */
+            max-height: 250px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* JSON Syntax Highlighting */
+          .json-key {
+            color: #9CDCFE;
+          }
+          /* Light Blue for JSON Keys */
+          .json-string {
+            color: #CE9178;
+          }
+          /* Light Red for JSON Strings */
+          .json-number {
+            color: #B5CEA8;
+          }
+          /* Light Green for Numbers */
+          .json-boolean {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Blue for True/False */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+{
+    <span class="json-key">&quot;Name&quot;</span>: <span class="json-string">&quot;Enqueue new simulation&quot;</span>,
+    <span class="json-key">&quot;TaskType&quot;</span>: <span class="json-string">&quot;Post&quot;</span>,
+    <span class="json-key">&quot;Arguments&quot;</span>: <span class="json-string">&quot;plexos-cloud simulation enqueue --file /simulation/newsim.json -f table&quot;</span>,
+    <span class="json-key">&quot;ContinueOnError&quot;</span>: <span class="json-boolean">true</span>,
+    <span class="json-key">&quot;ExecutionOrder&quot;</span>: <span class="json-number">6</span>
+}
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+      <strong>
+        <script>
+          //<![CDATA[
+          function copyCode(btn) {
+            let codeText = btn.nextElementSibling.textContent.trim();
+            navigator.clipboard.writeText(codeText).then(() => {
+              btn.innerText = "Copied!";
+              setTimeout(() => btn.innerText = "Copy", 2000);
+            }).catch(err => console.error('Failed to copy:', err));
+          }
+          //]]>
+        </script>
+      </strong>
+    </li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h2 id="7">Script Examples</h2>
+  <ol class="Decimal">
+    <li><strong>Querying Parquet Data Using DuckDB<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 650px;
+            /* Fixed width */
+            max-height: 350px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* Python Syntax Highlighting */
+          .keyword {
+            color: #569CD6;
+            font-weight: bold;
+          }
+          /* Light Blue for Keywords */
+          .comment {
+            color: #6A9955;
+            font-style: italic;
+          }
+          /* Green for Comments */
+          .string {
+            color: #CE9178;
+          }
+          /* Light Red for Strings */
+          .function {
+            color: #DCDCAA;
+            font-weight: bold;
+          }
+          /* Yellow for Function Names */
+          .variable {
+            color: #9CDCFE;
+          }
+          /* Light Blue for Variables */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+<span class="comment"># Import required modules</span>
+<span class="keyword">import</span> duckdb
+<span class="keyword">import</span> os
+<span class="keyword">def</span> <span class="function">export_parquet_to_csv</span>(output_csv: <span class="keyword">str</span>) -&gt; <span class="keyword">None</span>:
+    <span class="string">&quot;&quot;&quot;
+    Queries Parquet views and writes data to specified CSV file
+    Args:
+        output_csv (str): Path to the CSV file
+    &quot;&quot;&quot;</span>
+    <span class="keyword">try</span>:
+        duckFilePath = os.environ.get(<span class="string">&#39;duck_db_path&#39;</span>, os.path.join(output_path, <span class="string">&#39;solution_views.ddb&#39;</span>))
+        <span class="keyword">print</span>(<span class="string">&#39;Starting DUCK&#39;</span>)
+        
+        <span class="keyword">with</span> duckdb.connect(duckFilePath) <span class="keyword">as</span> con: <span class="comment"># No file locks</span>
+            membership_info_data = <span class="string">&quot;SELECT * FROM membershipinfo&quot;</span>
+            con.execute(f<span class="string">&quot;COPY ({membership_info_data}) TO &#39;{output_csv}&#39; WITH (HEADER, DELIMITER &#39;,&#39;);&quot;</span>)
+            con.sql(f<span class="string">&quot;{membership_info_data}&quot;</span>).show()
+    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:
+        <span class="keyword">print</span>(<span class="string">&#39;Exporting Parquet data to CSV failed due to an exception:&#39;</span>)
+        <span class="keyword">print</span>(e)
+<span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:
+    output_path = os.environ.get(<span class="string">&#39;output_path&#39;</span>, <span class="string">&quot;/output&quot;</span>)
+    output_csv = os.path.join(output_path, <span class="string">&quot;my_data.csv&quot;</span>)
+    export_parquet_to_csv(output_csv)
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+    </li>
+    <br />
+    <li><strong>Uploading Solution Data to Datahub Manually<br />
+        <br />
+        <style type="text/css">
+          /*<![CDATA[*/
+          /* Code Container - Adjust Size */
+          .code-container {
+            position: relative;
+            background: #282c34;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            color: #E0E0E0;
+            /* Off-white text */
+            overflow-x: auto;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 🔽 Adjust Width and Height */
+            width: 650px;
+            /* Fixed width */
+            max-height: 150px;
+            /* Limits height */
+            overflow-y: auto;
+            /* Scrollbar if needed */
+          }
+          /* Copy Button (Word Only) */
+          .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E0E0E0;
+            /* Off-white text */
+            font-weight: bold;
+          }
+          .copy-btn:hover {
+            color: #00BFFF;
+            /* Light blue hover effect */
+          }
+          pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+          }
+          code {
+            font-size: 14px;
+            display: block;
+          }
+          /* Shell Command Syntax Highlighting */
+          .shell-command {
+            color: #FFD700;
+            font-weight: bold;
+          }
+          /* Gold for Commands */
+          .shell-arg {
+            color: #CE9178;
+          }
+          /* Light Red for Arguments */
+          /*]]>*/
+        </style>
+      </strong>
+      <div class="code-container"><strong><button class="copy-btn" onclick="copyCode(this)">Copy</button> </strong>
+        <pre><strong><code>
+<span class="shell-command">python3</span> upload_to_datahub.py <span class="shell-arg">&#39;No Carbon Price or Flow Constraint&#39;</span>
+    </code></strong></pre>
+        <strong> </strong>
+      </div>
+      <strong>
+        <script>
+          //<![CDATA[
+          function copyCode(btn) {
+            let codeText = btn.nextElementSibling.textContent.trim();
+            navigator.clipboard.writeText(codeText).then(() => {
+              btn.innerText = "Copied!";
+              setTimeout(() => btn.innerText = "Copy", 2000);
+            }).catch(err => console.error('Failed to copy:', err));
+          }
+          //]]>
+        </script>
+      </strong><br />
+      <br />
+      <style type="text/css">
+        /*<![CDATA[*/
+        /* Code Container - Adjust Size */
+        .code-container {
+          position: relative;
+          background: #282c34;
+          border-radius: 8px;
+          padding: 12px;
+          font-family: "Courier New", monospace;
+          color: #E0E0E0;
+          /* Off-white text */
+          overflow-x: auto;
+          border: 1px solid #444;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          /* 🔽 Adjust Width and Height */
+          width: 700px;
+          /* Fixed width */
+          max-height: 450px;
+          /* Limits height */
+          overflow-y: auto;
+          /* Scrollbar if needed */
+        }
+        /* Copy Button (Word Only) */
+        .copy-btn {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 14px;
+          color: #E0E0E0;
+          /* Off-white text */
+          font-weight: bold;
+        }
+        .copy-btn:hover {
+          color: #00BFFF;
+          /* Light blue hover effect */
+        }
+        pre {
+          margin: 0;
+          padding: 0;
+          white-space: pre-wrap;
+        }
+        code {
+          font-size: 14px;
+          display: block;
+        }
+        /* Python Syntax Highlighting */
+        .keyword {
+          color: #569CD6;
+          font-weight: bold;
+        }
+        /* Light Blue for Keywords */
+        .comment {
+          color: #6A9955;
+          font-style: italic;
+        }
+        /* Green for Comments */
+        .string {
+          color: #CE9178;
+        }
+        /* Light Red for Strings */
+        .function {
+          color: #DCDCAA;
+          font-weight: bold;
+        }
+        /* Yellow for Function Names */
+        .variable {
+          color: #9CDCFE;
+        }
+        /* Light Blue for Variables */
+        /*]]>*/
+      </style>
+      <div class="code-container"><button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code>
+<span class="comment"># Import required modules</span>
+<span class="keyword">import</span> os
+<span class="keyword">import</span> sys
+<span class="keyword">import</span> json
+<span class="keyword">from</span> eecloud.cloudsdk <span class="keyword">import</span> CloudSDK
+<span class="keyword">from</span> eecloud.models <span class="keyword">import</span> *
+<span class="keyword">class</span> <span class="function">ModelData</span>:
+    <span class="keyword">def</span> __init__(self, id: <span class="keyword">str</span>, parquet_path: <span class="keyword">str</span>):
+        self.id = id
+        self.parquet_path = parquet_path
+<span class="keyword">def</span> <span class="function">read_path_from_mapping_file</span>(mapping_file_path: <span class="keyword">str</span>, model_name: <span class="keyword">str</span>) -&gt; ModelData:
+    <span class="keyword">with</span> <span class="keyword">open</span>(mapping_file_path, <span class="string">&#39;r&#39;</span>) <span class="keyword">as</span> file:
+        data = json.load(file)
+        <span class="keyword">for</span> item <span class="keyword">in</span> data:
+            <span class="keyword">if</span> item.get(<span class="string">&#39;Name&#39;</span>) == model_name:
+                <span class="keyword">return</span> ModelData(item.get(<span class="string">&#39;Id&#39;</span>), item.get(<span class="string">&#39;ParquetPath&#39;</span>))
+<span class="keyword">def</span> <span class="function">main</span>():
+    <span class="keyword">try</span>:
+        cli_path = os.environ.get(<span class="string">&quot;cloud_cli_path&quot;</span>)
+        pxc = CloudSDK(cli_path=cli_path)
+        model_name = <span class="string">&#39;&#39;</span>
+        <span class="keyword">if</span> <span class="keyword">len</span>(sys.argv) &gt; 1:
+            model_name = sys.argv[1]
+        <span class="keyword">if</span> model_name <span class="keyword">is</span> <span class="keyword">None</span>:
+            <span class="keyword">raise</span> Exception(<span class="string">&quot;Model Name parameter is required.&quot;</span>)
+        mapping_file_path: <span class="keyword">str</span> = os.environ.get(<span class="string">&#39;directory_map_path&#39;</span>, <span class="string">&#39;/simulation/directorymapping.json&#39;</span>)
+        map_data: ModelData = read_path_from_mapping_file(mapping_file_path=mapping_file_path, model_name=model_name)
+        simulation_id = os.environ.get(<span class="string">&#39;simulation_id&#39;</span>)
+        execution_id = os.environ.get(<span class="string">&#39;execution_id&#39;</span>)
+        remote_path = f<span class="string">&quot;Eagles/Solutions/{execution_id}/{map_data.id}&quot;</span>
+        <span class="keyword">print</span>(f<span class="string">&quot;Uploading Solution: {map_data.id} for Simulation: {simulation_id} using SDK&quot;</span>)
+        upload_response: <span class="keyword">list</span>[CommandResponse[Contracts_DatahubCommandResponse]] = pxc.datahub.upload(
+            local_folder=map_data.parquet_path,
+            remote_folder=remote_path,
+            glob_patterns=[<span class="string">&quot;**/*.parquet&quot;</span>],
+            is_versioned=<span class="keyword">False</span>,
+            print_message=<span class="keyword">True</span>
+        )
+    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:
+        <span class="keyword">print</span>(<span class="string">&#39;Uploading Solution Data using CLI Failed:&#39;</span>)
+        <span class="keyword">print</span>(e)
+    <span class="keyword">finally</span>:
+        <span class="keyword">print</span>(<span class="string">&quot;done&quot;</span>)
+<span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:
+    main()
+    </code></pre>
+      </div>
+      <script>
+        //<![CDATA[
+        function copyCode(btn) {
+          let codeText = btn.nextElementSibling.textContent.trim();
+          navigator.clipboard.writeText(codeText).then(() => {
+            btn.innerText = "Copied!";
+            setTimeout(() => btn.innerText = "Copy", 2000);
+          }).catch(err => console.error('Failed to copy:', err));
+        }
+        //]]>
+      </script><br />
+      <br />
+      <strong>
+        <script>
+          //<![CDATA[
+          function copyCode(btn) {
+            let codeText = btn.nextElementSibling.textContent.trim();
+            navigator.clipboard.writeText(codeText).then(() => {
+              btn.innerText = "Copied!";
+              setTimeout(() => btn.innerText = "Copy", 2000);
+            }).catch(err => console.error('Failed to copy:', err));
+          }
+          //]]>
+        </script>
+      </strong>
+    </li>
+  </ol>
+  <p><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nwse-resize;" width="17" /></strong><strong>NOTE: </strong></strong><span>The examples and commands provided in this document </span><span>are subject to change</span><span>. Please refer to the latest Energy Exemplar documentation or CLI updates for any modifications or enhancements</span><strong><strong></strong></strong>.</p>
+  <p> </p>
+  <style type="text/css">
+    /*<![CDATA[*/
+    /* Code Container - Adjust Size */
+    .code-container {
+      position: relative;
+      background: #282c34;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: "Courier New", monospace;
+      color: #E0E0E0;
+      /* Off-white text */
+      overflow-x: auto;
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* 🔽 Adjust Width and Height */
+      width: 650px;
+      /* Fixed width */
+      max-height: 450px;
+      /* Limits height */
+      overflow-y: auto;
+      /* Scrollbar if needed */
+    }
+    /* Copy Button (Word Only) */
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      color: #E0E0E0;
+      /* Off-white text */
+      font-weight: bold;
+    }
+    .copy-btn:hover {
+      color: #00BFFF;
+      /* Light blue hover effect */
+    }
+    pre {
+      margin: 0;
+      padding: 0;
+      white-space: pre-wrap;
+    }
+    code {
+      font-size: 14px;
+      display: block;
+    }
+    /* Python Syntax Highlighting */
+    .keyword {
+      color: #569CD6;
+      font-weight: bold;
+    }
+    /* Light Blue for Keywords */
+    .comment {
+      color: #6A9955;
+      font-style: italic;
+    }
+    /* Green for Comments */
+    .string {
+      color: #CE9178;
+    }
+    /* Light Red for Strings */
+    .function {
+      color: #DCDCAA;
+      font-weight: bold;
+    }
+    /* Yellow for Function Names */
+    .variable {
+      color: #9CDCFE;
+    }
+    /* Light Blue for Variables */
+    /*]]>*/
+  </style>
+  <style type="text/css">
+    /*<![CDATA[*/
+    /* Code Container - Adjust Size */
+    .code-container {
+      position: relative;
+      background: #282c34;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: "Courier New", monospace;
+      color: #E0E0E0;
+      /* Off-white text */
+      overflow-x: auto;
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* 🔽 Adjust Width and Height */
+      width: 650px;
+      /* Fixed width */
+      max-height: 250px;
+      /* Limits height */
+      overflow-y: auto;
+      /* Scrollbar if needed */
+    }
+    /* Copy Button (Word Only) */
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      color: #E0E0E0;
+      /* Off-white text */
+      font-weight: bold;
+    }
+    .copy-btn:hover {
+      color: #00BFFF;
+      /* Light blue hover effect */
+    }
+    pre {
+      margin: 0;
+      padding: 0;
+      white-space: pre-wrap;
+    }
+    code {
+      font-size: 14px;
+      display: block;
+    }
+    /* JSON Syntax Highlighting */
+    .json-key {
+      color: #9CDCFE;
+    }
+    /* Light Blue for JSON Keys */
+    .json-string {
+      color: #CE9178;
+    }
+    /* Light Red for JSON Strings */
+    .json-comment {
+      color: #6A9955;
+      font-style: italic;
+    }
+    /* Green for Comments */
+    /*]]>*/
+  </style>
+  <style type="text/css">
+    /*<![CDATA[*/
+    /* Code Container - Adjust Size */
+    .code-container {
+      position: relative;
+      background: #282c34;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: "Courier New", monospace;
+      color: #E0E0E0;
+      /* Off-white text */
+      overflow-x: auto;
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* 🔽 Adjust Width and Height */
+      width: 650px;
+      /* Fixed width */
+      max-height: 150px;
+      /* Limits height */
+      overflow-y: auto;
+      /* Scrollbar if needed */
+    }
+    /* Copy Button (Word Only) */
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      color: #E0E0E0;
+      /* Off-white text */
+      font-weight: bold;
+    }
+    .copy-btn:hover {
+      color: #00BFFF;
+      /* Light blue hover effect */
+    }
+    pre {
+      margin: 0;
+      padding: 0;
+      white-space: pre-wrap;
+    }
+    code {
+      font-size: 14px;
+      display: block;
+    }
+    /* Shell Command Syntax Highlighting */
+    .shell-command {
+      color: #FFD700;
+      font-weight: bold;
+    }
+    /* Gold for Commands */
+    .shell-arg {
+      color: #CE9178;
+    }
+    /* Light Red for Arguments */
+    /*]]>*/
+  </style>
+</body>
+</html>

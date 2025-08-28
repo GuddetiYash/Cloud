@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Study Level Permission</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1213</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">496dd0c3-8a6e-47d3-a78b-e12e79a4fa87</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1213, TZXE7D2DFWED-1834737786-1213</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="Permissions,Study level Permissions" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body onload="displayLastModifiedDate()">
+  <p style="color: white; font-size:10px; text-align: right;">Last updated on: <span data-field="date" data-format="MMMM DD, YYYY" style="color: white; font-size: 10px;">March 28, 2025</span></p>
+  <h1>Study Level Permission</h1>
+  <h2>In this article</h2>
+  <ul>
+    <li><a href="#1">Provide Study Acces to other users</a> </li>
+    <li><a href="#2">Pushing and Pulling Study Changes through CLI</a> </li>
+    <li><a href="#3">Remove yourself from a Private Study</a></li>
+  </ul>
+  <p> </p>
+  <p>Prior to the February 2022 release, Studies were by default public and could be viewed by all users in the PLEXOS Cloud interface but only visible to the user who uploaded it in Cloud Bridge and the Excel Plugin. With this new release, Studies are now by default private, and only the user who uploads them (the creator) can view it. The creator can add other users to their study, thus permitting them to access it in the PLEXOS Cloud interface, CLI, and Excel Add-In.</p>
+  <p><br />
+    <strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE:</strong> Only the Study Owner and Admin can Archive, Rename, and edit the description of a Study. Previously, all members of a Study would be able to perform these actions.<br />
+     
+  </p>
+  <p style="margin-left: 0.03in"><img height="318" src="../assets/images/Study Level Permissions/Overview page.png" width="825" /><br />
+    <br />
+     
+  </p>
+  <p>Users with a <b>Modeler license</b>, who are part of the team for a Study, can access the Study through Cloud Bridge to view and edit directly on their desktop using PLEXOS. They can also use the MS Excel Add-In to edit data for the same Studies. </p>
+  <h2 id="1"><br />
+    <b>Provide Study Access  to other users</b>
+  </h2>
+  <p>You can add members to a study from the <b>Study Overview page</b>. Only active users can be added to a Study. Inactive users cannot be added. </p>
+  <p> </p>
+  <ol>
+    <li>Navigate to the <strong>Overview </strong>page.</li>
+    <br />
+    <li>Click on the <strong>MANAGE TEAM</strong> option in the top right corner of the Study Overview page<b></b>.<br />
+       
+      <p><img height="280" src="../assets/images/Study Level Permissions/Manage Team button.png" width="701" /><br />
+         </p>
+    </li>
+    <li>Select the user from the drop-down, and click on the <b>ADD </b>button.
+      <p style="margin-left: -0.02in"><img height="290" src="../assets/images/Study Level Permissions/Add button.png" width="704" /><br />
+         </p>
+    </li>
+    <li>Access to your study is granted to the users you have added.<br />
+      <br />
+      <img height="276" src="../assets/images/Study Level Permissions/Members option.png" width="707" />
+    </li>
+  </ol>
+  <p><b><strong><img src="../assets/images/Blue_Book_Closed.gif" /> </strong>NOTE</b>: Only active users can be added to a Study. </p>
+  <p> </p>
+  <h2 id="2">Pushing and Pulling Study Changes through CLI</h2>
+  <p>If changes have been made to a local Study, they can be pushed using the command. This command requires a studyId and a message (description of changes). For example:</p>
+  <p> </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe study changeset push --studyId --message &quot;Sample Message&quot;</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="75" src="../assets/images/CLI/Creation8.jpg" width="733" /></div>
+  <p><br />
+    Changes since the most recent changeset are required, if there have been no changes you will receive an error message. If there are changes to push then you will only get a successful &quot;Changes Pushed&quot; message at the end of the push operation. You will also be informed of the new ChangesetId as shown below.<br />
+     </p>
+  <div style="margin-left: 40px;"><img height="58" src="../assets/images/CLI/Creation9.jpg" width="704" /></div>
+  <p><br />
+    The new changeset can also be confirmed by using the study changeset list --studyId command. If there are no changes found, the CLI will output &quot;Study has no changes to push.&quot;<br />
+    <br />
+    If there are pending changes on the server that have not yet been pulled down locally, they can be pulled using this command:<br />
+     
+  </p>
+  <div style="margin-left: 40px;">plexos-cloud.exe study changeset pull --studyId</div>
+  <p> </p>
+  <h2 id="3">Remove yourself from a Private Study</h2>
+  <p><strong>NOTE:</strong> This change is applicable for both <strong>Simulate </strong>and <strong>Analytics </strong>tier customers.</p>
+  <p><br />
+    Users can now leave a <strong>Private Study</strong> if they no longer want to be part of it or receive any notifications (notifications can be managed from the Preferences page). This will help users better focus on the Studies they are working on and avoid distractions by being added to unnecessary Studies.</p>
+  <p> </p>
+  <p><img height="218" src="../assets/images/Study Level Permissions/Leave Study button.png" width="332" /></p>
+  <p> </p>
+  <p>If you are the Owner of a Private Study, you can leave a Study only after you assign someone else as the <strong>Owner</strong> of that Study. Please note that users cannot leave a <strong>Public</strong> Study. </p>
+  <p><br />
+    <strong>NOTE: </strong>If you leave a Study marked as <strong>Favorite</strong>, that Study will be removed from the Favorites section of the Study dropdown.
+  </p>
+  <p> </p>
+  <p><strong>To change an Owner of a Study:</strong></p>
+  <p><br />
+    <strong>NOTE:</strong> The steps below are applicable only for the Study Owner. Only the current Study Owner can assign someone as a new Owner. An Admin or Read-Only user cannot view these options if they are not the Owner of that Study.
+  </p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Navigate to the <strong>Overview </strong>page and select the Study for which you want to change the Owner from the Study dropdown. <br />
+       </li>
+    <li>Click on the <strong>MANAGE TEAM </strong>option in the top right corner of the Study Overview page.<br />
+      <br />
+      <img height="269" src="../assets/images/Study Level Permissions/Members section.png" width="287" />
+    </li>
+    <br />
+    <li>Click on the kebab menu next to the Member Name you want to add as an Owner and select the <strong>Make Owner</strong> option.<br />
+      <br />
+      <img height="272" src="../assets/images/Study Level Permissions/Make Owner button.png" width="287" />
+    </li>
+    <br />
+    <li>You will see the confirmation pop-up as shown:<br />
+      <br />
+      <img height="104" src="../assets/images/Study Level Permissions/Confirmation pop up.png" width="363" />
+    </li>
+    <br />
+    <li>Click on the <strong>CONFIRM</strong> button to add the selected user as a new Study Owner.</li>
+  </ol>
+  <p> </p>
+  <p><strong>To Leave a Private Study:</strong></p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Navigate to the <strong>Overview</strong> page and select the Study for which you want to change the Owner from the Study dropdown. </li>
+    <br />
+    <li>Click on the <strong>MANAGE TEAM</strong> option in the top right corner of the Study Overview page.<br />
+      <br />
+      <img height="257" src="../assets/images/Study Level Permissions/Members section.png" width="274" />
+    </li>
+    <br />
+    <li>Click on the kebab menu next to your name and click on the <strong>Leave Study</strong> option.<br />
+      <br />
+      <img height="182" src="../assets/images/Study Level Permissions/Leave Study button.png" width="278" />
+    </li>
+    <br />
+    <li>You will see a confirmation pop-up as shown:<br />
+      <br />
+      <img height="101" src="../assets/images/Study Level Permissions/Leave Study confirmation pop up.png" width="475" /><br />
+      <br />
+      <strong>NOTE: </strong>Once you Leave a Study, you will not have access to that Study, this includes from the PLEXOS Cloud interface, PLEXOS desktop, the CLI, or the Excel Add-In.
+    </li>
+    <br />
+    <li>Click on the <strong>CONFIRM </strong>button to continue.</li>
+    <br />
+    <li>The following pop-up will appear to confirm that you have successfully left the Study. <br />
+      <br />
+      <img height="48" src="../assets/images/Study Level Permissions/Successfully left pop up.png" width="364" />
+    </li>
+    <br />
+    <li>You will then be re-directed to the first Study in the Study dropdown. If you don’t have access to any other Study, a message <strong>“There are no studies to show in this tenant, Clone a Playbook from Marketplace to start using PLEXOS Cloud”</strong> will appear.</li>
+  </ol>
+  <p> </p>
+</body>
+</html>

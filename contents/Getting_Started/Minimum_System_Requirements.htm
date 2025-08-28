@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Minimum System Requirements</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body onload="displayLastModifiedDate()">
+  <p style="color: white; font-size:10px; text-align: right;">Last updated on: <span data-field="date" data-format="MMMM DD, YYYY" style="color: white; font-size: 10px;">April 24, 2025</span></p>
+  <h1>Minimum System Requirements</h1>
+  <h2>Introduction</h2>
+  <p>This System Requirements Document for PLEXOS product is a comprehensive guide outlining the minimum hardware, software, and network specifications necessary to use the PLEXOS product effectively. PLEXOS Cloud is a cloud-based energy market simulation and optimization platform designed for the energy domain. </p>
+  <p> </p>
+  <h2>Hardware Requirements</h2>
+  <p>Below are the minimum hardware configurations needed to run the PLEXOS product effectively:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Processor:</strong> 8th Generation Intel® Core i5-8350U Processor (Core i5-8350U)</li>
+    <br />
+    <li><strong>RAM:</strong> 8GB DDR4-2400</li>
+    <br />
+    <li><strong>Storage: </strong>256 GB   <br />
+      <br />
+      <strong>NOTE:</strong> The above-mentioned Hardware Requirements are specifically for PLEXOS Desktop. 
+    </li>
+  </ul>
+  <p><br />
+    Learn more about the System Requirements for the <a href="https://portal.energyexemplar.com/unified-help/plexos-desktop/#t=Main.Prerequisites.html&amp;rhsearch=system%20requirements">PLEXOS Desktop</a> and <a href="https://portal.energyexemplar.com/unified-help/aurora/#t=Introduction%2FComputer_Requirements.htm">Aurora Desktop</a>.</p>
+  <p> </p>
+  <h2>Software Requirements</h2>
+  <p>Below are the supported web browsers for optimal user experience with PLEXOS Cloud:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Chrome:</strong> Version 83 and above</li>
+    <br />
+    <li><strong>Edge:</strong> Version 83 and above</li>
+    <br />
+    <li><strong>.NET Core/Framework:</strong> Version 6.0 and above <br />
+      <br />
+      <strong>NOTE:</strong> .NET Core applies to versions 5.X and later, and .NET Framework applies to versions 4.X and earlier.
+    </li>
+    <br />
+    <li><strong>Safari:</strong> Not supported</li>
+    <br />
+    <li><strong>Internet Explorer:</strong> Not supported</li>
+    <br />
+    <li><strong>Firefox: </strong>Not Supported</li>
+    <br />
+     
+  </ul>
+  <h2>Network Bandwidth Requirements</h2>
+  <p>Below are the Network Requirements for accessing PLEXOS Cloud and utilizing the Command Line Interface (CLI) and the Microsoft Excel Add-In:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Ingress and Egress Port Configuration:</strong> Enable both the Inbound (ingress) and outbound (egress) traffic on port 443 for HTTPS to ensure that the network configuration permits inbound and outbound traffic on port 443 for HTTPS.</li>
+    <br />
+    <li><strong>Whitelisting Domain:</strong> Whitelist *.energyexemplar.com to allow access to any subdomain under energyexemplar.com.</li>
+    <br />
+    <li><strong>Handling a Company Proxy (if Applicable):</strong> If your organization uses a company proxy, configure it to permit traffic to and from *.energyexemplar.com on port 443.  <br />
+      <br />
+      Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Troubleshooting%2FProxy_Settings_for_PLEXOS_Cloud.htm">Proxy Settings for using PLEXOS Cloud</a>.
+    </li>
+  </ul>
+  <p> </p>
+  <h2>Known Limitations</h2>
+  <p>Known Limitations for Pushing Data from PLEXOS Desktop to PLEXOS Cloud  are:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Creating/Adding New Study:</strong> Uncompressed study size of up to 12 GB is supported. </li>
+    <br />
+    <li><strong>Creating/uploading a new version:</strong>
+      <ul><br />
+        <li><strong>XML Changes: </strong>500,000   records (there should not be more than 500,000 changes in the XML. By changes, includes add, removes &amp; modifies.)</li>
+        <br />
+        <li><strong>CSV/TimeSeries: </strong>No more than 3 GB of total timeseries changes can be pushed. For example, if 5 files change, the sum of their change (diff) size should not be more than 3 GB.</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>

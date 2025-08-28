@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <title>October 2023 Release Notes</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/>
+  <meta name="rh-authors" content="Jigyasa"/>
+<meta name="rh-index-keywords" content="October 2023 Release Notes"/><meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>October 2023 Release Notes</h1>
+  <h1>Highlights of the October 2023 release:</h1>
+  <ul>
+    <li><a href="#1one">Solution Output Analysis (Map, Grid and Solution Reports)</a>
+      <ul>
+        <li>Retrieve Data for All Sample IDs in Solution Reports</li>
+        <li>Executive View:Edit and Save As Options in View Management</li>
+        <li>Reviewers now have access to the View Management Grid</li>
+        <li>Views now accessible by all the Analysts.</li>
+      </ul>
+    </li>
+    <li><a href="#2two">Model Execution </a>
+      <ul>
+        <li>Allow Output to be added as an Input to the other Simulations</li>
+      </ul>
+    </li>
+    <li><a href="#3three">Model Building and Editing (Desktop Integration and Excel) </a>
+      <ul>
+        <li>Quick and easy configuration of Template and Schema using the new Template Builder in Excel Add-In</li>
+      </ul>
+    </li>
+    <li><a href="#4four">Integration and Automation - CLI/API</a></li>
+    <li><a href="#5five">Additional Improvements and Bug Fixes</a></li>
+    <li><a href="#6six">Announcements</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="1one">Solution Output Analysis (Map, Grid and Reports) </h2>
+  <h3>Retrieve Data for All Sample IDs in Solution Reports</h3>
+  <p>In Solutions Reports, alongside “reportByCategory” and “reportByObjects”, users can now retrieve data by Sample Ids by using the flag &quot;reportBySamples&quot;. There is a new flag under &quot;auto populate children&quot; called &quot;reportBySamples&quot;. At once only one of them can be true for one property, others will be false.</p>
+  <p>For instance, consider the following configuration:</p>
+  <p>The Auto sample generation flag in Solution Reports as shown below</p>
+  <p style="margin-left: 8px">{</p>
+  <p style="margin-left: 16px">  &quot;Formula&quot;: &quot;Generator_Generations_Generation&quot;,</p>
+  <p style="margin-left: 12px">   &quot;reportBySamples&quot;: true</p>
+  <p style="margin-left: 12px">}</p>
+  <ul class="Disc">
+    <li>&quot;Formula&quot; corresponds to the formula or data source you want to analyze.</li>
+    <li>&quot;reportBySamples&quot;: “true”, is the flag that enables the auto-generation of sample data.</li>
+  </ul>
+  <h2><img height="367" src="../../assets/images/RN_2023/October 2023/ReportBySamples.png" style="padding: 26px;" width="618"/></h2>
+  <p>In the above example, “reportBySample” is set to true then for Monte Carlo studies with 20 samples, in this case, there will be 20 columns generated and with each column will fetch report data against that sample as shown in the below image:</p>
+  <p> </p>
+  <p>Generation (Sample1) Generation(Sample2) ... Generation(SampleN)</p>
+  <p> </p>
+  <p><img height="294" src="../../assets/images/RN_2023/October 2023/ResultTable.png" style="padding: 25px;" width="629"/><br/>
+    <span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif">This enhancement offers users the ability to create comprehensive reports tailored to their specific needs, ensuring a more versatile and efficient reporting experience.</span></span></span>
+  </p>
+  <p>Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Reports%2FSolution_Reports_in_PLEXOS_Cloud.htm">Solution Reports in PLEXOS Cloud</a>.</p>
+  <h3>Executive View: Edit and Save As Options in View Management</h3>
+  <p>From the Overview Page, Analysts can create tailored Views of output data for managers, executives, and Decision Makers. The View Management grid displays all the Views for the currently selected Study. The Action menu in the View Managements grid has two new options alongside the existing &quot;Delete&quot; option. Users can now &quot;Edit&quot; or &quot;Save As (Copy)” a View, providing enhanced flexibility to Analysts for customizing their Views.</p>
+  <p> </p>
+  <p><b>Edit:</b></p>
+  <p><b></b><br/>
+    The &quot;Edit&quot; action opens a wizard for the selected view. With Edit, users can update the following fields: Report Name, Report Description, View Name, View Description and update the list of shared users. It is important to note that, under specific circumstances, such as when a user unpublishes a Solution used in a View or deletes an original BI Report, some of the Reports may become unavailable within that View. When this scenario arises, a popup/dialogue will appear informing the user about the unavailability of the reports, then they can proceed with the Edit action by clicking <b>CONTINUE WITH EDIT</b>.</p>
+  <p> </p>
+  <p><img height="421" src="../../assets/images/RN_2023/October 2023/Reports Unavailable.png" style="padding: 17px;" width="553"/></p>
+  <p> </p>
+  <p><strong>Save As (Copy)</strong>:</p>
+  <p> </p>
+  <p>When clicked, the action &quot;Save As (Copy)&quot; launches the wizard with the latest published Solutions for the Study in the existing View template.  A new View will be created with the name &#39;copy of previous name.&#39; (This name can be changed.)</p>
+  <p>This new View includes all previously selected reports and details from the source View, along with the list of pre-populated users. Analysts  have the flexibility to edit any of the pre-populated fields according to their requirements.  </p>
+  <p> </p>
+  <p><img height="194" src="../../assets/images/RN_2023/October 2023/ViewActionMenu.png" style="padding: 21px;" width="222"/></p>
+  <p> </p>
+  <p><strong>NOTE:</strong></p>
+  <p><strong></strong><br/>
+    The View Management grid has been updated to sort entries by “Created On” field, ensuring that the most recently shared View is displayed at the top of the list.<br/>
+    Please note that the &#39;Edit&#39; and &#39;Save As&#39; options are exclusively available for new Views only. These options will be disabled for the Views created before this release. <br/>
+     </p>
+  <p>Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Reports%2FExecutive_View_in_PLEXOS_Cloud.htm&amp;rhsearch=solutions%20comparison">Executive View in PLEXOS Cloud</a></p>
+  <h3><br/>
+    Reviewers now have access to the View Management Grid</h3>
+  <p><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"><b>Reviewers </b>now have access to the View Management Grid, providing them visibility into existing Views. Since Reviewers have read-only privileges in PLEXOS Cloud, they do not have access to the Action menu options within the View Management Grid<span class="msoIns" style="text-decoration:underline"><span style="color:teal"><ins cite="mailto:Rich%20Graves" datetime="2023-10-14T19:34">.</ins></span></span></span></span></span></p>
+  <p> </p>
+  <h3>Views now accessible by all the Analysts</h3>
+  <p>Views can now be accessed by all the Analyst irrespective whether they have access to the View or not. From the View Management Grid, click the <b>View Name </b> to open the View in a new tab. Analysts can perform all the actions in the View such as Edit, Save As and Delete.</p>
+  <p> </p>
+  <h3>Show or Hide the Analyst’s name that Created the Executive View</h3>
+  <p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif">Analysts now have the option to hide the &#39;View Created By&#39; field from users accessing the View, allowing users to concentrate more on the content rather than additional details. While these details will still be recorded and displayed in the View Management Grid, by default they will remain hidden from users accessing the View from the simplified Executive View interface. </span></span></span></p>
+  <p style="margin-bottom:11px"> </p>
+  <p style="margin-bottom:11px"><img height="392" src="../../assets/images/RN_2023/October 2023/ViewCreatedByToggle.png" width="296"/></p>
+  <p>Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Reports%2FExecutive_View_in_PLEXOS_Cloud.htm&amp;rhsearch=solutions%20comparison">Executive View in PLEXOS Cloud</a></p>
+  <h2 id="2two">Model Execution</h2>
+  <h3>Allow Output to be added as an Input to the other Simulations</h3>
+  <p>Users can now select the output of a previous Simulation as the input for the current Simulation. That means you can select a Simulation by choosing the associated Study, Model, and Solutions under ADD INPUT option.<br/>
+    You can add multiple outputs from various sources as input to a single Simulation, saving time by streamlining the data integration process, ensuring data continuity, and maintaining accuracy.</p>
+  <p> </p>
+  <p><img height="524" src="../../assets/images/RN_2023/October 2023/AddInputMain.png" style="padding: 16px; border-style: none;" width="298"/></p>
+  <p> </p>
+  <p>For detailed step-by-step instructions, please refer to the article <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Models%2FRun_Configuration_Panel.htm&amp;rhsearch=solutions%20comparison">Run Configuration Panel</a>.</p>
+  <p> </p>
+  <h2 id="3three">Model Building and Editing (Desktop Integration and Excel)</h2>
+  <h3>Quick and easy configuration of Template and Schema using the new Template Builder in Excel Add-In</h3>
+  <p>The Template Builder feature enables users to interactively create or modify a Template, defining various Classes and Properties to be synchronized for editing/updating within the Excel workbook. </p>
+  <p>This feature offers a user-friendly interface for constructing or editing Templates, given the extensive range of Classes and Properties that can be edited in a PLEXOS Model. Users can browse Classes, and select their Properties, Categories, and Membership Classes to construct a Template that specifies the properties synchronized via the Excel Add-In.</p>
+  <p> </p>
+  <p>Utilizing the Template Editor enhances the process of finding and selecting the correct properties to include in a schema, eliminating the potential for manual data input errors that can occur when manually editing the Template. This saves time and minimizes errors for users creating Templates for themselves or sharing them with their team.</p>
+  <p> </p>
+  <p><img height="395" src="../../assets/images/RN_2023/October 2023/Template Editor homescreen.png" width="530"/><br/>
+     </p>
+  <p>Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Data%2FMicrosoft_Excel_Add-In.htm" target="_blank">Microsoft Excel Add-in</a></p>
+  <h2> </h2>
+  <h2 id="4four">Integration and Automation - CLI/API</h2>
+  <h3 style="margin-bottom: 11px;">Introducing Version 2 of the Parquet Solution Output Schema</h3>
+  <p>In this release, we have introduced the option to request a new Output schema version for Cloud queryable Parquet Output Files. Version 2 builds upon the existing Parquet Output Schema, ensuring backward compatibility for all querying use-cases. </p>
+  <p> </p>
+  <p><strong>There are several advantages of this which are listed below</strong>:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Compatibility with PLEXOS 10</strong>: Version 2 allows you to open a Parquet database just like the native PLEXOS zip Solution in PLEXOS desktop, enhancing interoperability between desktop and cloud.</li>
+  </ul>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Support for Block Reporting Querying:</strong> It introduces a phase table that links reporting blocks to interval periods, facilitating block reporting querying use-cases.</li>
+  </ul>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Expanded Information</strong>: Version 2 includes additional data from the PLEXOS Solution ZIP file to support more querying use-cases. This encompasses membership information beyond reported properties, extra tables, and columns for master schema data. This reduces the need to join output data with input data to gain a comprehensive system view.</li>
+    <br/>
+    <li><strong>Enhanced Compression</strong>: Version 2 supports newer Parquet compression encodings, notably ZSTD compression combined with Parquet delta encoding. This results in significant storage size reductions for Parquet data with longer period horizons and improves the Simulation time spent creating Parquet files.<br/>
+       </li>
+  </ul>
+  <p> </p>
+  <p>Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Data%2FParquet_V2_Overview.htm">Parquet Version 2</a>.</p>
+  <p> </p>
+  <h3>Additional Changes in PLEXOS Cloud Toolkit (CLI) Simulation Enqueue Request</h3>
+  <p>The ability to enqueue Monte Carlo Simulations set up to automatically stitch all sample databases after the execution is completed has now been added to request JSON for the Command Line Interface (CLI). This can be utilized with an optional property called <strong>“IsAutoStitchEnabled”</strong> placed on the existing<strong> ParallelizationOptions</strong> object, with a value of &#39;True&#39; or &#39;False&#39; as shown below:<br/>
+     <br style="margin-left: 4px"/>
+    <span style="margin-left:4px;">  <em><span style="padding-bottom:1px;padding-left:1px;padding-right:1px;padding-top:1px;">&quot;SimulationOptions&quot;:</span></em><span style="padding-bottom:1px;padding-left:1px;padding-right:1px;padding-top:1px;"> {</span></span><em><span style="padding-bottom:1px;padding-left:1px;padding-right:1px;padding-top:1px;"><span style="margin-left:4px;"><br style="margin-left: 4px"/>
+              &quot;Locale&quot;: 1033,<br style="margin-left: 4px"/>
+              &quot;EnableRealTimeLog&quot;: true,<br style="margin-left: 4px"/>
+              &quot;SimulationRunType&quot;: &quot;Stochastic&quot;,<br style="margin-left: 4px"/>
+            },<br style="margin-left: 4px"/>
+            &quot;ParallelizationOptions&quot;: {<br style="margin-left: 4px"/>
+              &quot;InstanceCount&quot;: 5,<br style="margin-left: 4px"/>
+              &quot;IsAutoStitchEnabled&quot;: true</span></span></em><br style="margin-left: 4px"/>
+    <span style="padding-bottom:1px;padding-left:1px;padding-right:1px;padding-top:1px;"><span style="margin-left:4px;">  }</span></span><em></em><br/>
+     
+  </p>
+  <h3>Support for running “CustomPlexos” Simulations using the CLI </h3>
+  <p>For Simulations using the PLEXOS engine, the Simulation platform now supports enqueuing Simulations with custom arguments, which are executed using PlexosLauncher with those specified arguments.</p>
+  <p> </p>
+  <p><strong>Example JSON Changes for Enqueuing</strong>: <br/>
+    { <br/>
+     <em>     ... <br/>
+         &quot;SimulationType&quot;: &quot;CustomPlexos&quot;, <br/>
+          &quot;simulationOptions&quot;: { <br/>
+              &quot;customArguments&quot;: &quot;-s P,6,3&quot;, <br/>
+               ... </em><br/>
+        }, <br/>
+       … <br/>
+    } </p>
+  <p> </p>
+  <p><strong>CustomPlexos Limitations</strong>: </p>
+  <p> </p>
+  <p>The following PlexosLauncher options are not supported directly by custom arguments as shown below: </p>
+  <p> </p>
+  <p>     <img height="343" src="../../assets/images/RN_2023/October 2023/SimulationType.png" width="461"/>           </p>
+  <p> </p>
+  <ul class="Disc">
+    <li>This type of Simulation does not explicitly account for the various configurations possible with PLEXOS Launcher and does not impose additional constraints beyond the already mentioned validated options (above). </li>
+    <li>CustomPlexos Simulations will run on a single machine and are not designed for distributed environments.</li>
+    <li>If the Simulation or defined models require parallelism, the VM size should be chosen appropriately to accommodate the desired workflow. </li>
+    <li>Simulations will not perform ETL on solution data; only raw Solution data and logs will be available as uploaded artifacts. </li>
+    <li>Success is not guaranteed, and Simulations may fail if the command-line arguments are invalid or misconfigured for the model.&quot; </li>
+  </ul>
+  <p> </p>
+  <h2 id="5five">Additional Improvements and Bug Fixes</h2>
+  <h4><strong>Show categories icons on Map (Setup and Solutions)</strong>:</h4>
+  <p>Class category icons now appear on the map in both the Setup and Solutions pages unless the user has customized category icons.</p>
+  <p> </p>
+  <h4><strong>Enhanced Admin Control with Refunded Credits KPI Card</strong>: </h4>
+  <p>Now, Users with Admin access can easily access the total number of Refunded Credits within their Tenant. This enhancement ensures that Administrators remain informed about the number of credits refunded and empowers them to promptly request refunds for any missed simulation failures.</p>
+  <p> </p>
+  <h4>Enhanced Study Name visibility in dropdown to prevent truncation</h4>
+  <p>To improve the user experience when viewing Study Name in the Study dropdown, we have extended the truncation limit that allows you to view a larger Study Name before it truncates. This will reduce your effort to hover over a Study Name to view its full name. See the image below for more understanding:</p>
+  <p><b>NOTE:</b> This improvement also applies to the <b>Owner</b> name and <b>Updated</b> details.</p>
+  <p> </p>
+  <p style="margin-bottom:11px"><img height="257" src="../../assets/images/RN_2023/October 2023/Truncated Study name_Before.png" width="305"/>           <img height="259" src="../../assets/images/RN_2023/October 2023/Truncated Study name_After.png" width="309"/></p>
+  <p> </p>
+  <h2 id="6six">Announcements</h2>
+  <h3>Important Update: Retirement of the Compare Option</h3>
+  <p>Starting with this release, the Solution Panel&#39;s &quot;<strong>Compare</strong>&quot; option has been substituted with the enhanced <strong>BI Solution Compare</strong> feature. The new Compare feature empowers users to comprehensively analyze and compare results among various Solutions. Explore further details about the <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Reports%2FBI_Solution_Comparison.htm&amp;rhsearch=solutions%20comparison&amp;rhhlterm=solution%20solutions%20comparison">BI Solution Comparison</a>.</p>
+  <h4>Cloud Bridge End of Support</h4>
+  <p>Starting January 2024, Energy Exemplar will no longer support Cloud Bridge. This means the end of technical support, security updates, and ensured compatibility of Cloud Bridge with new releases of PLEXOS Cloud and related products.<br/>
+    To facilitate a smooth transition, we encourage you to leverage the PLEXOS Cloud toolkit (CLI) with the Desktop-To-Cloud Integration. This offers a seamless experience for users to build and edit their models on the PLEXOS desktop while running simulations and analyzing output in the PLEXOS Cloud.<br/>
+     <br/>
+    Click to learn more about the <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Cloud_Integration_with_PLEXOS_Desktop%2FPLEXOS_Cloud_Integration_with_PLEXOS_Desktop.htm&amp;rhsearch=parquet">PLEXOS Desktop to Cloud integration</a>.<br/>
+     </p>
+
+</body></html>

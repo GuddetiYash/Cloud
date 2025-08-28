@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Usage Page</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1217</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">6f1d0e96-0cef-4f04-8d41-089547c1f7b0</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1217, TZXE7D2DFWED-1834737786-1217</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="User Management,User management in PLEXOS Cloud" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="rh-authors" content="Nageshwar" />
+</head>
+<body>
+  <h1>Usage Page</h1>
+  <h2>In this article</h2>
+  <ul class="Disc">
+    <li><a href="#1">Overview</a></li>
+    <li><a href="#2">Credit Usage Metrics</a></li>
+    <li><a href="#3">Usage Trend Tab</a></li>
+    <li><a href="#4">Transactions Tab</a></li>
+    <li><a href="#5">Export Data</a><br />
+       </li>
+  </ul>
+  <h2 id="1">Overview</h2>
+  <p><span style="line-height: 107%;">The <strong>Administration &gt; Usage</strong> page provides a structured and insightful view of <strong>Core or Credit usage</strong>, helping Admins manage resources proactively and make informed decisions. This update offers a clear overview of allocation, consumption, and balance, enabling better optimization and planning for future needs.</span><span style="line-height: 107%;"></span></p>
+  <p> </p>
+  <p><img height="331" src="../assets/images/Usage Page/Credit Tracking/Usage Page_Transaction tab overview.png" width="785" /></p>
+  <h2 id="2"><strong>Credit Usage Metrics</strong></h2>
+  <p>The top section of the <strong>Usage </strong>page features key metrics that give Admins immediate visibility into Credit allocation and consumption details, empowering better monitoring and forecasting.</p>
+  <p> </p>
+  <p><img height="113" src="../assets/images/Usage Page/Credit Tracking/Usage Metrics.png" width="783" /></p>
+  <p> </p>
+  <p>Refer to the following details about each metric:</p>
+  <ul class="Disc">
+    <li><strong>Credit Start Date:</strong> Displays the date of the earliest Credit purchase transaction (active), helping to identify when Credits first became active. If multiple transactions are present, the oldest transaction date is shown. <br />
+      <br />
+      For example, if you have two Credit Purchase Start dates, 1 Jan and 1 Feb, 01 Jan will be considered the Credit Start Date.<br />
+      <br />
+      <strong>NOTE:</strong> The date format follows user preferences set under the <strong>Profile Name &gt; Preferences</strong> page.<br />
+       
+    </li>
+    <li><strong>Credit Expiry Date:</strong> Displays the date of the most recent Credit purchase, reflecting when Credits will expire if they are unused. If multiple transactions are recorded, the latest transaction date is shown. <br />
+      <br />
+      For example, if you have 2 Credit Purchase End Date made respectively on 1 Oct and 1 Dec, the n 01 Dec will be considered the Credit End Date.<br />
+      <br />
+      <strong>NOTE:</strong> The date format follows user preferences set under the <strong>Profile Name &gt; Preferences</strong> page.
+    </li>
+    <li><strong>Purchased Credits:</strong> Displays the total Credits purchased by the tenant during the current Credit tenure.<br />
+       </li>
+    <li><strong>Consumed Credits:</strong> Displays the total Credits used, including both Purchased and Overage Credits to provide a clear breakdown of consumption and coverage:
+      <ul>
+        <li><strong>Purchased Credits</strong> (displayed as positive values).</li>
+        <li><strong>Overage Credits</strong> (displayed as negative values in red).<br />
+           </li>
+      </ul>
+    </li>
+    <li><strong>Credit Balance:</strong> Displays the remaining Credits based on the following logic:
+      <ul>
+        <li>If the <strong>Consumed Credits</strong> are lesser than <strong>Purchased Credits</strong>, the Credit Balance shows as positive value.<br />
+          <br />
+          <img height="65" src="../assets/images/Usage Page/Positive Credit Balance.png" width="566" />
+        </li>
+        <li>If the <strong>Consumed Credits</strong> are greater than <strong>Purchased Credits</strong>, the <strong>Credit Balance</strong> shows as negative value  in red.<br />
+          <br />
+          <img height="67" src="../assets/images/Usage Page/Negative Credit Balance.png" width="570" />
+        </li>
+        <li>If your <strong>Credit Balance</strong> is negative and you buy new Credits, it will be reflected as positive value under <strong>Credit Balance</strong> and the previous negative Credit Balance value will move under <strong>Overage Credits</strong> that you need to settle separately.<br />
+          <br />
+          <img height="57" src="../assets/images/Usage Page/Overage Credits.png" width="573" /><br />
+           
+        </li>
+      </ul>
+    </li>
+    <li><strong>Overage Credits:</strong> Overage Credits represent the Credit deficit incurred when Consumed Credits exceed Purchased Credits. These are recorded separately after the purchase of new Credits and is marked red with a &quot;-&quot; sign for easy identification.<br />
+       </li>
+  </ul>
+  <p> </p>
+  <h2 id="3">Usage Trend Tab</h2>
+  <h3>For <strong>Credit-based</strong> customers:</h3>
+  <p>The <strong>Usage Trend</strong> tab in the <strong>Admin &gt; Usage</strong> page provides a comprehensive view of <strong>Credit Usage</strong> and <strong>Credit Balance</strong> over time, offering a clearer picture of your tenant’s credit activity. This tab includes interactive tools to enhance data visualization and trend analysis.<br />
+    <br />
+    To further enhance your experience, the chart view includes new tools as follows:
+  </p>
+  <ul class="Disc">
+    <li><strong>Markers –</strong> Enable or disable data point markers for better trend identification.</li>
+    <li><strong>Grid Lines –</strong> Toggle grid lines for improved readability of the trend graph.</li>
+    <li><strong>Legends –</strong> Show or hide the legend to clarify different data series.</li>
+  </ul>
+  <p> </p>
+  <p><img height="288" src="../assets/images/Usage Page/Usage page overview.png" width="671" /><br />
+     </p>
+  <p>Additionally, you can select a <strong>custom date range</strong> (up to one year) to analyze your usage trend data, allowing for greater flexibility in monitoring Credit consumption over time. </p>
+  <p><img height="291" src="../assets/images/Usage Page/Custom Date Range.png" width="678" /></p>
+  <p> </p>
+  <h4>Chart Customization Options</h4>
+  <p>These Chart Customization Options allows you to download the chart in PNG format, incorporate shapes onto the chart, implement zooming and autoscaling functionalities, and more. </p>
+  <p><br />
+    <img height="267" src="../assets/images/Usage Page/Usage trend chart customization options.png" width="686" /><br />
+     
+  </p>
+  <ul class="Disc">
+    <li><strong>Download plot as a PNG</strong><br />
+      This option allows you to download the chart in PNG format. You can utilize this option to easily download and share their customized charts with colleagues and clients, or integrate them into presentations, reports, or documents, facilitating seamless collaboration and communication.  <br />
+      <br />
+      Click on the <strong>Camera </strong>icon to download the <strong>Chart in PNG format</strong>.<br />
+      <br />
+      <img height="72" src="../assets/images/Usage Page/Download as pnd_credit.png" width="277" /><br />
+       
+    </li>
+    <li><strong>Zoom Button </strong><br />
+      This option allows you to zoom in to the desired area of the Chart. You can utilize this option to focus on specific data subsets for deeper analysis.   <br />
+      <br />
+      To zoom in on a particular area of the chart: 
+      <ul class="Circle">
+        <li>Click on the <strong>Zoom </strong>icon and select the area you wish to zoom in on the chart. </li>
+        <li>To return to the original view, double-click anywhere on the chart.   <br />
+          <br />
+          <img height="202" src="../assets/images/Usage Page/Zoom In icon_Credit.gif" width="518" /><br />
+           
+        </li>
+      </ul>
+    </li>
+    <li><strong>Pan Button </strong><br />
+      This option allows you to move or scroll across the chart horizontally or vertically.  <br />
+      <br />
+      To pan across the chart: 
+      <ul>
+        <li>Click on the <strong>Pan </strong>icon and click and hold your mouse to explore the data on the chart. </li>
+        <li>To return to the original view, double-click anywhere on the chart. <br />
+          <br />
+          <img height="219" src="../assets/images/Usage Page/Pan icon_Credits.gif" width="565" /><br />
+           
+        </li>
+      </ul>
+    </li>
+    <li><strong>Box Select </strong><br />
+      This option allows you to select a specific range or subset of data points within the chart for further analysis of the data. This is particularly useful when dealing with large datasets or complex visualizations where isolating specific data points or regions is necessary for deeper analysis. <br />
+      <br />
+      <img height="80" src="../assets/images/Usage Page/Box select_credits.png" width="198" /><br />
+       
+    </li>
+    <li><strong>Lasso Select </strong><br />
+      This option is another way like box selection to select a specific range or subset of data points within the chart for further analysis of the data. Instead of drawing a box to select data points, you can use the lasso tool to draw a freehand shape around the desired data points. This is particularly useful for selecting non-linear or irregularly distributed data points.  <br />
+      <br />
+      Lasso select is beneficial when dealing with complex data structures, such as scatter plots with overlapping points or line charts with multiple series, where traditional box selection may not be sufficient. <br />
+      <br />
+      <img height="91" src="../assets/images/Usage Page/Lasso icon_Credits.png" width="207" /><br />
+       
+    </li>
+    <li><strong>Zoom In/Out </strong><br />
+      These options allow you to zoom in or out on specific areas of the chart to focus on details or to get a broader view of the data. <br />
+      <br />
+      <img height="264" src="../assets/images/Usage Page/Zoom In zoom out_credits.gif" width="682" /><br />
+       
+    </li>
+    <li><strong>Autoscale </strong><br />
+      This option automatically adjusts the axes of the chart to fit the range of the data being displayed. It ensures that all data points are visible within the chart&#39;s boundaries, optimizing the visualization for better clarity and readability. You can use this option to quickly adjust the scale of the chart without manually adjusting the axes, especially when dealing with datasets with varying ranges or outliers. <br />
+      <br />
+      <img height="84" src="../assets/images/Usage Page/Autoscale.png" width="207" /><br />
+       
+    </li>
+    <li><strong>Reset Axes </strong><br />
+      This option resets the axes of the chart to their default scales and positions. It provides you with a convenient way to revert any changes made to the axes, such as manual adjustments or zooming, and return the chart to its original state. You can use this option to reset the chart for a fresh analysis or to restore the initial view after exploring specific regions or subsets of data.<br />
+      <br />
+      <img height="81" src="../assets/images/Usage Page/Reset Axes.png" width="219" />
+    </li>
+  </ul>
+  <p> </p>
+  <h3>For Core-based customers:</h3>
+  <p>The <strong>Cloud Burst Usage</strong> chart in the <strong>Admin &gt; Usage</strong> page provides improved visibility into resource consumption for core-based customers. The enhanced <strong>Cloud Burst Burndown</strong> chart now displays both <strong>Burndown</strong> and <strong>Actual Usage</strong>, enabling a clearer comparison of allocated vs. consumed resources over time.<br />
+    <br />
+    <img height="324" src="../assets/images/Usage Page/Cloud Burst Brundown chart.png" width="753" />
+  </p>
+  <p> </p>
+  <p>Additional tools have been introduced to enhance the data visualization:</p>
+  <ul class="Disc">
+    <li><strong>Markers –</strong> Highlight data points for easier trend analysis.</li>
+    <li><strong>Grid Lines – </strong>Improve readability by toggling grid lines.</li>
+    <li><strong>Legends –</strong> Enable or disable the legend for better clarity.<br />
+       </li>
+  </ul>
+  <p><img height="294" src="../assets/images/Usage Page/Burndown tools.png" width="760" /></p>
+  <p> </p>
+  <p> </p>
+  <p>These updates help you to track resource depletion more effectively, ensuring better planning and optimization of cloud burst capacity.</p>
+  <p> </p>
+  <h4>Chart Customization Options</h4>
+  <p>The Chart customization options allow you to download the chart in PNG format, incorporate shapes onto the chart, implement zooming and autoscaling functionalities, and more.   </p>
+  <p> </p>
+  <p><img height="249" src="../assets/images/Usage Page/Chart Customization Options.png" width="757" /></p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Download plot as a PNG</strong><br />
+      This option allows you to download the chart in PNG format. You can utilize this option to easily download and share their customized charts with colleagues and clients, or integrate them into presentations, reports, or documents, facilitating seamless collaboration and communication.  <br />
+      <br />
+      Click on the Camera Icon to download the Chart in PNG format.<br />
+      <br />
+      <img height="73" src="../assets/images/Usage Page/Download as png.png" width="330" />
+    </li>
+    <li><strong>Zoom Button</strong> <br />
+      This option allows you to zoom in to the desired area of the Chart. You can utilize this option to focus on specific data subsets for deeper analysis.   <br />
+      <br />
+      To zoom in on a particular area of the chart: 
+      <ul>
+        <li>Click on the <strong>Zoom </strong>icon and select the area you wish to zoom in on the chart. </li>
+        <li>To return to the original view, double-click anywhere on the chart. <br />
+          <br />
+          <img height="220" src="../assets/images/Usage Page/Zoom In icon.gif" width="521" /><br />
+           
+        </li>
+      </ul>
+    </li>
+    <li><strong>Pan Button</strong> <br />
+      This option allows You to move or scroll across the chart horizontally or vertically.  <br />
+      <br />
+      To pan across the chart: 
+      <ul>
+        <li>Click on the <strong>Pan </strong>icon and click and hold your mouse to explore the data on the chart. </li>
+        <li>To return to the original view, double-click anywhere on the chart. <br />
+          <br />
+          <img height="224" src="../assets/images/Usage Page/Pan icon.gif" width="529" /><br />
+           
+        </li>
+      </ul>
+    </li>
+    <li><strong>Box Select</strong> <br />
+      Box selection allows you to select a specific range or subset of data points within the chart for further analysis of the data. This option is particularly useful when dealing with large datasets or complex visualizations where isolating specific data points or regions is necessary for deeper analysis. <br />
+      <br />
+      <img height="86" src="../assets/images/Usage Page/box select icon.png" width="245" /><br />
+       
+    </li>
+    <li><strong>Lasso Select </strong><br />
+      Lasso selection is another way like box selection to select a specific range or subset of data points within the chart for further analysis of the data. Instead of drawing a box to select data points, you can use the lasso tool to draw a freehand shape around the desired data points. This option is particularly useful for selecting non-linear or irregularly distributed data points.  <br />
+      <br />
+      Lasso select is beneficial when dealing with complex data structures, such as scatter plots with overlapping points or line charts with multiple series, where traditional box selection may not be sufficient. <br />
+      <br />
+      <img height="88" src="../assets/images/Usage Page/Lasso icon.png" width="256" />
+    </li>
+    <li><strong>Zoom In/Out </strong><br />
+      These options allow You to zoom in or out on specific areas of the chart to focus on particular details or to get a broader view of the data. <br />
+      <br />
+      <img height="267" src="../assets/images/Usage Page/zoom in zoom out.gif" width="571" /><br />
+       
+    </li>
+    <li><strong>Autoscale</strong> <br />
+      The Autoscale option automatically adjusts the axes of the chart to fit the range of the data being displayed. It ensures that all data points are visible within the chart&#39;s boundaries, optimizing the visualization for better clarity and readability. You can use this option to quickly adjust the scale of the chart without manually adjusting the axes, especially when dealing with datasets with varying ranges or outliers.<br />
+      <br />
+      <img height="98" src="../assets/images/Usage Page/Autoscale.png" width="243" />
+    </li>
+    <li><strong>Reset Axes </strong><br />
+      This option resets the axes of the chart to their default scales and positions. It provides You with a convenient way to revert any changes made to the axes, such as manual adjustments or zooming, and return the chart to its original state. You can use this option to reset the chart for a fresh analysis or to restore the initial view after exploring specific regions or subsets of data.<br />
+      <br />
+      <img height="92" src="../assets/images/Usage Page/Reset Axes.png" width="249" />
+    </li>
+  </ul>
+  <p> </p>
+  <h2 id="4">Transactions Tab</h2>
+  <p>The <strong>USAGE </strong>and <strong>TRANSACTION HISTORY</strong> tabs have been merged and renamed <strong>TRANSACTIONS</strong>. This new tab provides you with the Credit usage and transaction-related details in one place, making it easier to track current transaction activity.</p>
+  <p><br />
+    <img height="269" src="../assets/images/Usage Page/Credit Tracking/Updated Transactions tab.png" width="687" />
+  </p>
+  <p> </p>
+  <p> </p>
+  <p>Refer the following description of each column:</p>
+  <table class="MsoTable15Grid4Accent2" style="border-collapse: collapse; border: none; width: 692px;">
+    <colgroup>
+      <col />
+      <col />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td style="border-bottom:2px solid #4163e2; padding:0in 7px 0in 7px; height:45px; background-color:#4163e2; border-top:2px solid #4163e2; border-right:none; border-left:2px solid #4163e2" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="font-size:13.0pt"><span style="color:white">Column Name</span></span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(65, 99, 226); padding: 0in 7px; height: 45px; background-color: rgb(65, 99, 226); border-top: 2px solid rgb(65, 99, 226); border-right: 2px solid rgb(65, 99, 226); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="font-size:13.0pt"><span style="color:white">Description</span></span></b></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; height:40px; background-color:#d8dff9; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b>Study Name</b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; height: 40px; background-color: rgb(216, 223, 249); border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446">Displays the name of the study associated with the transaction.</span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="color:white">Models</span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><span style="color:white">Indicates the model type used in the transaction (e.g., High, Low, Base).</span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; background-color:#d8dff9; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b>User</b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; background-color: rgb(216, 223, 249); border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446">Shows the name of the user who executed the transaction.</span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="color:white">Transaction Date</span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><span style="color:white">The date and time when the transaction was recorded.</span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; background-color:#d8dff9; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b>Transaction Type</b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; background-color: rgb(216, 223, 249); border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446">Displays the type of transaction. Only active transaction types are shown: <b>Purchased, Refunded, Simulation</b>.</span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="color:white">Simulation Type</span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><span style="color:white">Specifies whether the simulation was <b>Single</b> or <b>another type</b>.</span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; background-color:#d8dff9; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b>Start Time</b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; background-color: rgb(216, 223, 249); border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446">The timestamp when the simulation or transaction started.</span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="color:white">End Time</span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><span style="color:white">The timestamp when the simulation or transaction ended.</span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; background-color:#d8dff9; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b>Simulation Status</b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; background-color: rgb(216, 223, 249); border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446">Indicates the completion status of the simulation (For example, <span style="font-family:&quot;Segoe UI Emoji&quot;,sans-serif">✅</span> for successful completion).</span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="color:white">Credits</span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><span style="color:white">Shows the number of credits consumed for the transaction.</span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; background-color:#d8dff9; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b>Execution Time (Mins)</b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; background-color: rgb(216, 223, 249); border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446">Displays the actual time (in minutes) taken by the <b>Virtual Machine (VM)</b> to complete the simulation.</span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="color:white">CPU (Core)</span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><span style="color:white">Shows the number of cores selected for the simulation, as configured in the <b>Run Configuration panel</b>.</span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; background-color:#d8dff9; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b>Memory (GB)</b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; background-color: rgb(216, 223, 249); border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446">Displays the memory allocation chosen in the <b>Run Configuration panel</b> for the simulation.</span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="color:white">Description</span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><span style="color:white">Provides details for <b>Purchased</b> and <b>Refunded</b> transactions. This field remains blank for simulations.</span></span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; background-color:#d8dff9; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b>Simulation ID</b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; background-color: rgb(216, 223, 249); border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446">Displays the <b>unique ID</b> for each simulation executed within the tenant. This remains blank for <b>Purchased</b> transactions.</span></span></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:2px solid #8ca0ed; padding:0in 7px 0in 7px; height:58px; border-top:none; border-right:2px solid #8ca0ed; border-left:2px solid #8ca0ed" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><b><span style="color:white">Transaction ID</span></b></span></span></span></p>
+        </td>
+        <td style="border-bottom: 2px solid rgb(140, 160, 237); padding: 0in 7px; height: 58px; border-top: none; border-right: 2px solid rgb(140, 160, 237); border-left: none;" valign="top">
+          <p style="margin-top:16px; margin-bottom:16px"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#333446"><span style="color:white">Displays the unique <b>ID assigned to each transaction</b>, helping in tracking and referencing.</span></span></span></span></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h3 id="5">Export Data</h3>
+  <p>You can <strong>export historical credit utilization data</strong> for your tenant using the <strong>Export </strong>icon. This feature allows you to select predefined date ranges <strong>(3 months, 6 months, 9 months, or the past year)</strong> or specify a custom range (up to <strong>one year</strong>) for retrieval. Exporting data in <strong>.CSV</strong> format enables easier tracking, analysis, and reporting of credit usage, helping you make informed decisions and optimize resource allocation.<br />
+    <br />
+    <img height="183" src="../assets/images/Usage Page/Export Data.png" width="556" />
+  </p>
+  <p> </p>
+  <p> </p>
+</body>
+</html>

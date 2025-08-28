@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Viewing the Chart Analysis Dashboard</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1210</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">96092819-d853-433d-b55d-8639e54cd6c5</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1210, TZXE7D2DFWED-1834737786-1210</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="Chart Analysis,Chart Analysis Dashboard" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>Viewing the Chart Analysis Dashboard</h1>
+  <p>To view chart analysis, you must first run a Monte Carlo model using the Distributed setting in run configuration.</p>
+  <h2>Run a Monte Carlo Model</h2>
+  <ol>
+    <li>Go to <strong>Models</strong>.</li>
+    <li>Select the desired Monte Carlo model.</li>
+    <li>Click <strong>Run</strong>.<img src="../assets/images/Viewing the chart analysis dashboard/runmodel.png" /></li>
+    <li>Configure run settings and select the <b>Distributed</b> option. </li>
+    <li>In the Distribution Method, select <strong>Monte Carlo Samples</strong>.<br />
+      <img alt="Distributed Run.png" height="728" src="../assets/images/Viewing the chart analysis dashboard/distributedandautosetting.png" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" width="401" />
+      <p class="note"><strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE</strong>: See the <a href="../Models/Distributed_(Monte_Carlo_Chronological_Split_Execution)_Runs.htm" target="_blank">Distributed Runs</a> article for more information on how the sample amount is allocated to the virtual machines.</p>
+    </li>
+    <li>Run the model.</li>
+    <li>The solution will be queued on the Solutions page.</li>
+  </ol>
+  <p> </p>
+  <h2>Generate Summary CSV Data</h2>
+  <ol>
+    <li>Go to <strong>Solutions</strong>.</li>
+    <li>Find the solution and click on it to reveal more actions.
+      <p class="note"><strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE</strong>: The solution must have a status of ‘Completed Successfully’ before you can complete the following steps.</p>
+    </li>
+    <li>Click the Published to Reports icon <img alt="" src="http://portal.energyexemplar.com/help/walkme/SFKB/Chart analysis/data automation icon.png" />.<br />
+      <img alt="" src="http://portal.energyexemplar.com/help/walkme/SFKB/Chart analysis/expand solution.png" style="margin-top: 5px; margin-bottom: 5px; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" width="500" />
+    </li>
+    <li>Locate the ‘Generate Summary CSV Data for Analysis’ pipeline and click the play icon <img alt="" src="http://portal.energyexemplar.com/help/walkme/SFKB/Chart analysis/play.png" width="25" /> in the Action column.<br />
+      <img alt="" src="http://portal.energyexemplar.com/help/walkme/SFKB/Chart analysis/generate csv.png" style="margin-top: 10px; margin-bottom: 6px;" width="600" />
+      <p class="note"><strong><img src="../assets/images/Blue_Book_Closed.gif" /> NOTE</strong>: Data automation is complete with the Pipeline Run Status is ‘Succeeded’ in the Data Automation window.</p>
+    </li>
+  </ol>
+  <p> </p>
+  <h2>View Chart Analysis</h2>
+  <ol>
+    <li>Wait for data automation to complete.</li>
+    <li>Make sure the solution you generated summary CSV data for is selected in the solutions list.</li>
+    <li>In the Insights pane, click the chart analysis icon <img alt="" height="22" src="http://portal.energyexemplar.com/help/walkme/SFKB/Chart analysis/chart analysis icon.png" style="margin-top: 1px;margin-bottom: -1px" width="23" /> above the map.<br />
+      <img alt="" height="303" src="http://portal.energyexemplar.com/help/walkme/SFKB/Chart analysis/chart analysis on map.png" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); margin-top: 13px; margin-bottom: 6px;" width="698" /><br />
+      <img alt="" height="419" src="../assets/images/Viewing the chart analysis dashboard/chartanalysis.png" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" width="698" />
+    </li>
+  </ol>
+  <div id="" style="left: 60px;top: 1455.38px;"> </div>
+</body>
+</html>

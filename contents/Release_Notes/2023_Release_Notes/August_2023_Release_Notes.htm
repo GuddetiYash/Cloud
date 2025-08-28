@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <title>August 2023 Release Notes</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/>
+  <meta name="rh-authors" content="Jigyasa Kumari"/>
+  <meta name="topic-comment" content="In the August release of PLEXOS Cloud, we are thrilled to introduce the exciting standout feature: Executive View, a streamlined interface crafted within PLEXOS Cloud to empower analysts in effectively communicating with decision-makers. This release also brings along a host of additional improvements and enhancements, enriching the existing features and user experience."/>
+  <meta name="rh-index-keywords" content="PLEXOS Cloud,PLEXOS Cloud August 2023 release,PLEXOS Cloud recent releases,Release Notes"/>
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>August 2023 Release Notes</h1>
+  <p> </p>
+  <h1>Highlights of the August 2023 Release: </h1>
+  <ul>
+    <li><a href="#1one">Solution Output Analysis (Map, Grid and Reports)</a>
+      <ul>
+        <li>Executive View – Communicate easily with decision makers directly from PLEXOS Cloud</li>
+      </ul>
+    </li>
+    <li><a href="#2two">Model Building and Editing (Desktop Integration and Excel)</a>
+      <ul>
+        <li>Introducing PLEXOS Desktop 9.2 R06: Empowering Your Models with Next-Level Desktop-to-Cloud Integration</li>
+        <li>View the progress of the background activities when downloading and uploading data</li>
+        <li>View Environment Information after logging into Excel Add-In</li>
+      </ul>
+    </li>
+    <li><a href="#3three">Marketplace</a></li>
+    <li><a href="#4four">Administration (Simulation Management and Storage Management)</a>
+      <ul>
+        <li>View Consumed Compute Credits of your tenant</li>
+        <li>View the transactions of Compute Credits of your Tenant</li>
+        <li>Admin can assign the new Executive license to tenant users</li>
+      </ul>
+    </li>
+    <li><a href="#5five">Integration and Automation - CLI/API</a></li>
+    <li><a href="#6six">Additional Improvements and Bug Fixes</a></li>
+    <li><a href="#7seven">Known Issues</a></li>
+  </ul>
+  <p> </p>
+  <p>The following video covers the overview of the features from <strong>June</strong>,<strong>July</strong> and <strong>August 2023</strong> releases:<br/>
+     </p>
+  <p><iframe allowfullscreen="" height="380" src="https://player.vimeo.com/video/856412235?h=58479" width="660" style="cursor: nesw-resize;"></iframe></p>
+  <p> </p>
+  <p>For more detailed descriptions of the features and improvements available in the <strong>August 2023</strong> release, scroll through the topics below.</p>
+  <p> </p>
+  <h2 id="1one">Solution Output Analysis (Map, Grid and Reports) </h2>
+  <h3>Executive View – Communicate easily with decision makers directly from PLEXOS Cloud</h3>
+  <p>Executive View has been introduced in PLEXOS Cloud, it offers a user-friendly interface specifically tailored for managers and executives. This interface allows decision makers to conveniently review reports that are shared by Analysts within their tenant. The Executive View provides Analysts with a way to collaborate with the decision makers within their Tenant. This way they can focus more on modeling and take help from Executives on important decisions. The Executive View is included in the Analytics bundle of PLEXOS Cloud, it is not available with the Simulate bundle. There are two distinct flows for the Executive View – Publish and View (Review). In the Publish Flow, users with an Analyst license type are able to publish their work specifically for decision makers (Executives). The View Flow presents Reports shared by Analysts, which are accessible by the decision makers (Executives, Reviewers and Analysts) that they can utilize to make informed decisions.</p>
+  <p> </p>
+  <h4>Publish View</h4>
+  <p><img height="455" src="../../assets/images/RN_2023/August 2023 Release Screenshots/PublishView.png" width="908"/></p>
+  <p> </p>
+  <h4>View</h4>
+  <p><img height="446" src="../../assets/images/RN_2023/August 2023 Release Screenshots/ViewSS.png" style="cursor: nesw-resize;" width="911"/></p>
+  <p> </p>
+  <p>Learn more about <a href="../../Reports/Executive_View_in_PLEXOS_Cloud.htm" target="_blank">Executive View in PLEXOS Cloud</a></p>
+  <p> </p>
+  <h2 id="2two">Model Building and Editing (Desktop Integration and Excel)</h2>
+  <h3>Introducing PLEXOS Desktop 9.2 R06: Empowering Your Models with Next-Level Desktop-to-Cloud Integration</h3>
+  <p>We are delighted to announce that the PLEXOS Desktop 9.2 R06 is now live for our valuable customers. This latest version introduces several new Desktop-to-Cloud Integration enhancements that seamlessly bridge the gap between your local environment and the expansive capabilities of the PLEXOS Cloud. Please find the details of the enhancements mentioned below:</p>
+  <p><br/>
+    Click here to download the <a href="https://portal.energyexemplar.com/?view=software#19">PLEXOS Desktop 9.2 R06</a>.</p>
+  <p> </p>
+  <p><img height="459" src="../../assets/images/RN_2023/August 2023 Release Screenshots/Desktop 9.2 R06 release announcement.png" width="594"/></p>
+  <p> </p>
+  <ul>
+    <li>Version Information when Syncing Study</li>
+    <li>Cloud Sign-In button visible on PLEXOS Desktop app load</li>
+    <li>Search Studies by Name</li>
+    <li>Enter Personalized Commit message while pushing changes from PLEXOS Desktop</li>
+    <li>View the Environment name in the Sign In button</li>
+  </ul>
+  <p style="margin-left: 24px; margin-bottom: 11px;"> </p>
+  <p>To view these enhancements in detail, check <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Getting_Started%2FPLEXOS_Cloud_Integration_with_PLEXOS_Desktop.htm">PLEXOS Cloud Integration with PLEXOS Desktop</a>.</p>
+  <p> </p>
+  <p> </p>
+  <h3>View the progress of the background activities when downloading and uploading data</h3>
+  <p>The Excel Add-In now provides an indication of progress for the tasks running in the background. Users can now view the different statuses of the process such as Push and Pull of Input Data, Download and Upload of Output Data. This will help the user understand the progress of the process taking place in the background along with the sheet name for which the data is being downloaded or uploaded. </p>
+  <p> </p>
+  <p><img height="357" src="../../assets/images/RN_2023/August 2023 Release Screenshots/Progress Indicator.gif" width="453"/></p>
+  <p> </p>
+  <p> </p>
+  <p style="left: 20px;top: 749.693px;">Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Data%2FMicrosoft_Excel_Add-In.htm" target="_blank">PLEXOS Cloud Microsoft Excel Add-in</a></p>
+  <p> </p>
+  <p> </p>
+  <h3>View Environment Information after logging into Excel Add-In</h3>
+  <p>After logging in, Excel Add-In users can now see the PLEXOS Cloud Environment Name and Excel Add-In Version Number at the bottom of the pane. This will help users identify the Cloud environment they are currently connected to when working with multiple environments.</p>
+  <p><img height="464" src="../../assets/images/RN_2023/August 2023 Release Screenshots/Excel Add-in Add env. info..png" width="429"/></p>
+  <p> </p>
+  <p> </p>
+  <p style="left: 20px;top: 749.693px;">Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Data%2FMicrosoft_Excel_Add-In.htm" target="_blank">PLEXOS Cloud Microsoft Excel Add-in</a></p>
+  <p> </p>
+  <h2 id="3three">Marketplace</h2>
+  <h3>Marketplace Now Offers Access to Studies</h3>
+  <p>Studies are now available in the Marketplace. It is a compilation of pre-configured models, encompassing all components associated with the Model. The Study in Marketplace doesn&#39;t merely offer models; it extends to include a lot of additional content which includes output data as well. Rather than being limited to datasets alone, it can encompass a variety of elements—such as BI Reports, Solution Reports, Solutions, and more. The objective is to guide users deeper into the modeling process by providing packaged studies that offer more than just input data.</p>
+  <p> </p>
+  <p><img height="353" src="../../assets/images/RN_2023/August 2023 Release Screenshots/MarketplaceStudy.png" width="702"/></p>
+  <p> </p>
+  <p><img height="361" src="../../assets/images/RN_2023/August 2023 Release Screenshots/MarketplaceLearnmore.png" width="707"/></p>
+  <p> </p>
+  <p>Learn More about <a href="../../Marketplace/PLEXOS_Cloud_Marketplace.htm">PLEXOS Cloud Marketplace</a></p>
+  <h2 id="4four">Administration (Simulation Management and Storage Management)</h2>
+  <h3>View Consumed Compute Credits of your tenant</h3>
+  <p>We upgraded the Subscription Details section under the ADMIN page to show the key metrics for your Subscription with the addition of <strong>Tenant Name, Purchased Compute Credits (Referred to as Owned Compute Credits previously), and Consumed Compute Credits</strong>. These metrics will help Tenant Admin to have better clarity on the number of Credits available in their tenant, so they can plan to order or purchase additional Credits in advance.</p>
+  <p> </p>
+  <ul>
+    <li><strong>Tenant Name</strong>: Shows the name of the environment you are currently logged in.</li>
+    <li><strong>Purchased Compute Credits</strong>: Shows the total number of Compute Credits purchased for the current license duration (For Compute Credits).</li>
+    <li><strong>Consumed Compute Credits</strong>: Shows the total number of Compute Credits consumed till today&#39;s date from the start date of the current license duration (For Compute Credits).</li>
+  </ul>
+  <p> </p>
+  <p><img height="209" src="../../assets/images/RN_2023/August 2023 Release Screenshots/Add Consumed Credits/updated key metrics.png" width="785"/></p>
+  <p> </p>
+  <h4>NOTE</h4>
+  <ul>
+    <li>Credits deducted for any Simulation Run would be deducted from the Available Credits and added to the Consumed Credits.</li>
+    <li>Credits refunded for any Simulation Run would be deducted from the Consumed Credits and added to Available Credits.</li>
+  </ul>
+  <p> </p>
+  <h3>View the Transactions of Compute Credits of your Tenant</h3>
+  <p>NOTE: This section is only visible to Admin users.</p>
+  <p> </p>
+  <p>To improve visibility into Compute Credits usage, we integrated the TRANSACTION HISTORY, USAGE, and USAGE TREND tabs under the Compute Credits Summary section of the Subscription page. This will help users better understand the usage of the Credits in their Tenant. Previously, these sections were separated, and users had to navigate to different areas to view the Compute Credits Data.</p>
+  <p> </p>
+  <p><img height="298" src="../../assets/images/RN_2023/August 2023 Release Screenshots/Add Field in Compute Credit Transaction History/Compute Credit Summary.png" width="791"/></p>
+  <p> </p>
+  <p>We have also added new columns in the grid and an Export feature to export the data in either CSV or Excel format. Please find the details as mentioned below:<br/>
+     </p>
+  <ul>
+    <li>Transaction Date:Shows the date when the Compute Credits were Purchased or Refunded.<br/>
+       </li>
+    <li><b>Start Date: </b>Shows the date when the Compute Credits transaction would come into effect.<br/>
+      <br/>
+      <b></b>
+    </li>
+    <li><b>Expiry Date: </b>Shows the date that the Compute Credits will end and no longer be valid for use.<br/>
+      <br/>
+      <b></b>
+    </li>
+    <li><b>Type:</b> Shows the type of transaction made such as Expired, Purchased, or Refunded. (Use the Column action to filter or sort)</li>
+  </ul>
+  <p> </p>
+  <p><img src="../../assets/images/RN_2023/August 2023 Release Screenshots/Add Field in Compute Credit Transaction History/Column Filters.png"/></p>
+  <p> </p>
+  <p><b>NOTE</b>:</p>
+  <p>If you have unused Compute Credits remaining after the Expiry Date, they are regarded as Expired Credits. These Expired Credits are treated as Expired transactions and showcased in the grid. For these “Expired” transactions, the <b>Start Date</b> and <b>End Date</b> columns will not show any dates. You can consider the <b>Transaction Date</b> as the <b>Expiry Date</b> in this case.</p>
+  <p> </p>
+  <p><img height="257" src="../../assets/images/RN_2023/August 2023 Release Screenshots/Add Field in Compute Credit Transaction History/Expired transaction type.png" width="785"/></p>
+  <ul>
+    <li><b>Transaction ID</b>:  Shows the unique ID generated automatically for the specific transaction or a Support Ticket Number you raised with the Support team.</li>
+  </ul>
+  <p> </p>
+  <ul>
+    <li><b>Export</b>:  Click on the Export button in the top right corner of the Compute Credit Summary section to extract the data in either CSV or Excel format. You can use this data to share amongst your organization for analytics or historical reference.</li>
+  </ul>
+  <p> </p>
+  <p><img height="170" src="../../assets/images/RN_2023/August 2023 Release Screenshots/Add Field in Compute Credit Transaction History/Export button.png" width="761"/></p>
+  <p> </p>
+  <h3>Admin can assign the new Executive license to tenant users</h3>
+  <p><br/>
+    <b>NOTE:</b> The Executive license is visible to customers on the <b>Analytics Bundle</b> only. Simulate Bundle users will not have access to this license type.<br/>
+    <br/>
+    The Executive stakeholders have non-execution licenses available in blocks of five, with pricing tailored accordingly. Executives with this license cannot perform Simulations but have access to view all Output Data and Reports. However, Executives are unable to Edit the Input Data, Run Simulations, or Generate Reports.<br/>
+    <br/>
+    A new <b>Executive</b> license is available in the <b>Add License dropdown</b> under the <b>ADMIN &gt; Users &gt; Add Users</b> pane. This new license type empowers Managers and Executives to assess and offer input on the reports that the Analyst shares directly through the Cloud platform. Users with the Executive license can now look at the shared reports with them, review and work with Analysts to improve them. This license further extends the capability for Managers and Executives to actively participate within the Cloud environment.<br/>
+    <br/>
+    Currently, 5 Executive licenses are included with the Analytics bundle subscription.
+  </p>
+  <p> </p>
+  <p><img height="326" src="../../assets/images/RN_2023/August 2023 Release Screenshots/Add user with Executive License/Add user with Executive License.png" width="670"/><br/>
+    <br/>
+     
+  </p>
+  <h2 id="5five">Integration and Automation - CLI/API</h2>
+  <h3>Timeseries Changes to Support Large CSVs</h3>
+  <p>The tracking and application of changes in timeseries files have undergone enhancements, resulting in a significant improvement in the efficiency of pushing and pulling changes from the cloud, especially when dealing with large timeseries files. Due to this, Studies created from Cloud Bridge or before CLI version 1.0.752 will go through an upgrade process when accessed through the August CLI release (version 1.5.417) which will render them inaccessible to older Cloud Bridge and CLI versions. Due to this upgrade process, Timeseries CSV changes that were pushed before the August release of the CLI will not be available for viewing change details on the website. If multiple team members are working on a study that was created before April 1st, it is recommended that all team members upgrade to the latest CLI version before continuing their work on the study.</p>
+  <h3> </h3>
+  <h3>Detailed Solution Metadata</h3>
+  <p>The solution files download command has been improved to provide more data including the Study name, User, Simulation run details, and more associated with a specific solution. A sample output from the command is shown below.</p>
+  <p> </p>
+  <p><img src="../../assets/images/RN_2023/August 2023 Release Screenshots/DetailedSolMetaData.png" style="border-style: solid;"/></p>
+  <p> </p>
+  <h3> </h3>
+  <h3>New Command for Retrieving List of Solution Reports with Report IDs</h3>
+  <p>A new command is now available to obtain a list of solution reports along with their corresponding report IDs.<br/>
+    To utilize this functionality, simply use the following command:</p>
+  <p> </p>
+  <p><em><span style="padding-bottom:16px;padding-left:16px;padding-right:16px;padding-top:16px">pxc solution list-reports</span></em></p>
+  <p> </p>
+  <p><img height="455" src="../../assets/images/RN_2023/August 2023 Release Screenshots/ListSolutionReports.png" width="524"/></p>
+  <p> </p>
+  <p>This command fetches the comprehensive list of solution reports, each accompanied by its unique Report ID and Report Name.</p>
+  <p>To learn more about this command and using the CLI, refer to the detailed article Introduction to the <a href="../../CLI/CLI_Toolkit.htm" target="_blank">Introduction to PLEXOS Cloud Toolkit (CLI)</a>.</p>
+  <h2 id="6six">Additional Improvements and Bug Fixes</h2>
+  <ul>
+    <li><b>PLEXOS Cloud updated interface</b>: The left navigation panel has undergone a revamp to create additional space for your data. The overall design has been improved, and the icons have been updated to provide a more enhanced appearance. GIF below illustrating the  new navigation panel.</li>
+  </ul>
+  <p> </p>
+  <p><img height="385" src="../../assets/images/RN_2023/August 2023 Release Screenshots/PLEXOSCloudNewUIgif.gif" width="684"/></p>
+  <p>    </p>
+  <ul>
+    <li><b>BI: Remove modification option for shared reports:</b> The capability to modify shared reports will no longer be available. Instead, shared reports will only offer the &quot;Save As&quot; option, allowing users to create copies of the reports for their use and further modification.</li>
+  </ul>
+  <p> </p>
+  <ul>
+    <li><b>Simulation Group Enhancements: </b>Within the Simulation Group, if a model encounters a failure during the current run, it will now retrieve the results from the most recent successful run. In the below image the expanded  Simulation Group (highlighted) is showing  the results for  last successful run.</li>
+  </ul>
+  <p> </p>
+  <p><img height="303" src="../../assets/images/RN_2023/August 2023 Release Screenshots/SimGrplastsuccessfullRun.png" width="705"/></p>
+  <p> </p>
+  <p> </p>
+  <ul>
+    <li><b>Simulation Group added to BI in Solution List Screen:</b>Now, the added Solutions in the BI will also list the BI Solutions added to the Simulation Group.</li>
+  </ul>
+  <p> </p>
+  <p><img height="413" src="../../assets/images/RN_2023/August 2023 Release Screenshots/BISolList.png" width="699"/></p>
+  <h2 id="7seven">Known Issues</h2>
+  <p> </p>
+  <p>Below is the list of Known Issues that the users may encounter with the August-2023 release, we are working to fix these issues and provide you with a seamless experience:</p>
+  <p> </p>
+  <ul>
+    <li>Simulation Group not appearing in Comparison</li>
+    <li>Incorrect text in Simulation Status change email</li>
+    <li>Certain Category icons for some Classes remain unchanged despite Successful Save.</li>
+    <li>Failed child runs provide no feedback on failures.</li>
+    <li>Simulation Dashboard- Few metrics for the In-progress Simulations are showing as Undefined</li>
+    <li>Unable to stitch the solution when the user opens it for the first time; it will function properly when the user closes it and initiates the stitching process again.</li>
+    <li>Simulation group not expanding when the last successful run of the model in it is a Parquet Solution Stitch.</li>
+  </ul>
+  <p><br/>
+       </p>
+  <p> </p>
+
+</body></html>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Managing Study Versions</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1196</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">5288d359-6b58-427f-825e-b2fb28abe593</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1196, TZXE7D2DFWED-1834737786-1196</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="Managing Study versions in PLEXOS Cloud,Study Version" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>Managing Study Versions in PLEXOS Cloud</h1>
+  <p>Users can now save any version of a Study as a new Study. This action allows users to take a specific state, or version, of their Study and create a new one from it. This is useful if many changes were made that users aren’t happy with, and they want to revert to an earlier state. This functionality previously only existed in Cloud Bridge.</p>
+  <p> </p>
+  <p>Note that the existing Study will not be changed, this creates a brand-new Study from an existing version. If the existing Study is no longer needed, be sure to Archive or Delete it. Follow the steps below to perform the <b>Save as New Study</b> action:</p>
+  <p><br />
+    1.  Select a Study and navigate to the <strong>DATA &gt; VERSIONS tab.</strong><br />
+    <br />
+    2.  Select the desired Version from the list and click the <strong>Actions</strong> button (Kebab menu).
+  </p>
+  <p> </p>
+  <p>       <img height="231" src="../assets/images/Save As New Study option.png" width="327" /><br />
+    <br />
+    3.  Click on <strong>Save as New Study.</strong>
+  </p>
+  <p> </p>
+  <p>4.  By default, the new Study name appears as <strong>&quot;copy of {Studyname, current version}&quot;. </strong>You can change the name per your requirement.</p>
+  <p> </p>
+  <p><br />
+           <img height="156" src="../assets/images/Managing Study version in Cloud/Confirmation pop up.png" width="235" /></p>
+  <p><br />
+    <b>NOTE:</b> If you enter an existing or duplicate name, an error message, <strong>“Enter valid name”</strong> displays and the <strong>CONFIRM </strong>button gets disabled.
+  </p>
+  <p> </p>
+  <p>        <img height="158" src="../assets/images/Invalid name pop up.png" width="240" /></p>
+  <p><br />
+    5.  Click on the <strong>CONFIRM </strong>button and a pop-up appears at the top of the screen to notify users that the Study creation process has started successfully.</p>
+  <p><br />
+            <img height="64" src="../assets/images/Study creation pop up.png" width="452" /></p>
+  <p><br />
+    6.  After the successful creation of a new study, another pop-up appears to notify users that the new Study is created successfully even if the user is currently in a different study or tab within the same study.</p>
+  <p><br />
+           <img height="129" src="../assets/images/Managing Study version in Cloud/New Study cretaed successfully pop up.jpg" width="561" /><br />
+     </p>
+  <div>7.  Also, users will now receive email notifications indicating the <strong>Successful -OR- Failed</strong> completion status of the Study creation process. Additionally, users can view the activity change mentioned in the Activity History panel in the Overview tab. Please refer to the image below for a better understanding:</div>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="379" src="../assets/images/Email notification for New Study.png" width="567" /></div>
+  <p> </p>
+  <p>8.  To view the new Study, refresh the browser -OR- click the <strong>Refresh </strong>icon in the Study dropdown. The saved Study will appear in the Study dropdown list.</p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img height="250" src="../assets/images/Managing Study version in Cloud/Study copy in Study dropdown.png" style="cursor: nesw-resize;" width="240" /></div>
+  <p> </p>
+  <p> </p>
+  <h3>Rollback to a prior Study Version</h3>
+  <p>The <strong>Rollback </strong>feature allows users to undo no longer required changes and avoid proceeding with them. Users can Rollback on any Study Version to revert the changes from that Version as a new Version, using the new <strong>Rollback</strong> option in the <strong>VERSIONS </strong>tab of the <strong>Data </strong>page. </p>
+  <p><br />
+    Executing a Rollback action will create a new Version that shows the desired state with detailed information about the Rollback process, including username, date, and the changes. </p>
+  <p><br />
+    For Example, if the Study has a total of 10 Versions for the Study and the user performs a Rollback on Version 4. A new Version 11 will be created that reverts all the changes that were done in Versions 5 through 10 and returns the study to the state it was in with the original Version 4. All the Versions between 4-10 will still be available in the list.   <br />
+     </p>
+  <p><img height="352" src="../assets/images/Managing Study version in Cloud/Rollback option_Versions tab.png" width="739" /></p>
+  <p> </p>
+  <p><strong>NOTE:</strong> If a Rollback is performed on a Study Version having no changes to revert from the latest Version. The Rollback will fail, and the message, <strong>No changes found between versions</strong> will be displayed.</p>
+  <p> </p>
+  <p>For example, if a Study has 10 Versions and you performed a Rollback on Version 7. But if there are not any changes found between Version 10 and 7, the Rollback will fail with an error as below:</p>
+  <p> </p>
+  <p><img height="42" src="../assets/images/Managing Study version in Cloud/No changes found_error message.png" width="379" /></p>
+  <p> </p>
+  <h3>Key Scenarios Where Rollback Option Appears Disabled</h3>
+  <p>Under specific circumstances, the Rollback option is disabled for users to maintain Data Integrity. Refer to the scenarios&#39; details mentioned below and how they optimize your experience with version control in PLEXOS.</p>
+  <p> </p>
+  <p>The Rollback option will be disabled in the following scenarios:<br />
+     </p>
+  <ul class="Disc">
+    <li><strong>Version Rollback in Progress: </strong>When a user initiates the Rollback on any Study Version from the VERSIONS tab of the Data page, the Rollback option remains disabled with a tooltip message stating, “Version rollback is in progress.” This remains disabled until the ongoing Rollback process is complete, ensuring no conflicts and seamless collaboration. After the process is complete, the Rollback option will be enabled for the user again. <br />
+      <br />
+      <img height="337" src="../assets/images/Managing Study version in Cloud/Version rollback is in progress.gif" width="615" />
+    </li>
+  </ul>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>New Version Creation:</strong> When a user makes any changes to the Study and saves it, a new version is created in the VERSIONS tab. In this case, the Rollback option remains disabled with a tooltip message stating, “A new version is being created for the study.” The Rollback option becomes available once the creation process is finished.<br />
+      <br />
+      <img height="294" src="../assets/images/Managing Study version in Cloud/A new version is being created.gif" width="618" />
+    </li>
+  </ul>
+  <p> </p>
+  <p>Follow the steps below to perform a Rollback your Study:<br />
+     </p>
+  <ol class="Decimal">
+    <li>Select the desired Study from the Study dropdown and navigate to the <strong>VERSIONS </strong>tab under the <strong>Data</strong> page.</li>
+    <br />
+    <li>Select the desired Study Version card and click on the kebab menu (three vertical dots).</li>
+    <br />
+    <li>Click on the <strong>Rollback </strong>option.<br />
+      <br />
+      <img height="304" src="../assets/images/Managing Study version in Cloud/Rollback option_Versions tab.png" width="639" />
+    </li>
+    <br />
+    <li>A confirmation pop-up appears as shown below. Click on the <strong>YES, ROLLBACK</strong> button to continue.<br />
+      <br />
+      <img height="139" src="../assets/images/Managing Study version in Cloud/Rollback confirmation dialog.png" width="339" />
+    </li>
+    <br />
+    <li>While the Rollback is in progress, you can continue with other tasks or log out of PLEXOS Cloud. An email notification is sent to you upon successful completion or failure of the Rollback process.<br />
+       </li>
+    <li>After the Rollback process is successful, a toast message appears at the top center of your screen (If you are still active on the <strong>Data</strong> page.)<br />
+      <br />
+      <strong>NOTE:</strong> If a Rollback fails a message, <strong>“Rollback is failed”</strong> appears and users can trigger a Rollback again.
+    </li>
+    <br />
+    <li>Also, a new Version appears in the list that shows the details of the rollback.</li>
+  </ol>
+  <p> </p>
+  <h3>Rollback Commit Message</h3>
+  <p>Use the new <strong>Commit Message</strong> field to input a message explaining the purpose of the Rollback. A well-structured commit message increases transparency and traceability to your Study Rollback history, especially when multiple users participate in a single Study.<br />
+     </p>
+  <p>This enables all collaborators to understand the reason for the Rollback, including the identity of the person who made the changes. By default, the following Commit Message is displayed, <strong>“Changes from version {Next version in the queue on which the Rollback is performed-Latest version available for the Study before the Rollback} undone.”</strong> Users can also enter their custom message for Rollback commit. <br />
+     </p>
+  <p><strong>Example:</strong> If a user performs a Rollback on version 1, the default Commit Message, <strong>“Changes from version 02 - 03 undone”</strong> is displayed. So, the latest version 4 is created that reverts the changes of versions 02 and 03.</p>
+  <p> </p>
+  <p><img height="380" src="../assets/images/Managing Study version in Cloud/Rolback Commit Message_full overview.gif" width="753" /></p>
+  <p> </p>
+</body>
+</html>

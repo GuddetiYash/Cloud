@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>June 2022 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-2597</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">10065556-c44d-4c2b-8a4e-ffd1159edaa9</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-2597, TZXE7D2DFWED-1834737786-2597</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>June 2022 Release Notes</h1>
+  <h3>In this article:</h3>
+  <ul>
+    <li><a href="#1one">In-App Reporting</a></li>
+    <li><a href="#7seven">Study Management</a></li>
+    <li><a href="#4four">SAML 2.0 Support</a></li>
+    <li><a href="#5five">Event Detection (Beta Release)</a></li>
+    <li><a href="#6six">Additional Bug Fixes and Improvements</a></li>
+  </ul>
+  <p> </p>
+  <p>For more detailed descriptions of the improvements available in the June release, scroll through the topics below.</p>
+  <p> </p>
+  <h2 id="1one"><b>In-App Reporting</b></h2>
+  <p><b>Calculating Net Present Value (NPV)  </b><br />
+     </p>
+  <p style="margin-left: 40px;">This new feature carries NPV calculation capabilities over to the IRP report.<br />
+     </p>
+  <p style="margin-left: 40px;">With this setting, the report is able to support the formula for NPV calculation, Cost/(1+DF)^(Year – FY), where DF is the Discount Factor, Cost is the costs incurred in a given year, and FY is the first year in the study. Note: Eventually users may be allowed to specify the CY year.</p>
+  <p style="margin-left: 40px;">To go to the NPV report, from the Solutions tab, click on the <b>Reports</b> icon displayed in the top right corner of the screenshot. It displays the NPV for years in the Study&#39;s horizon.<br />
+     </p>
+  <p style="margin-left: 40px;"> <img src="../../assets/images/RN_2022/June/NPV.jpg" /></p>
+  <p> </p>
+  <p><strong>Reporting by Category  </strong><br />
+     </p>
+  <p>This new feature allows you to report the generation by category in the LT in the IRP report.</p>
+  <p>To report by Category, from the Solutions tab, click on the <b>Reports</b> icon displayed in the top right corner of the screenshot. You can then select <strong>Generation by Category - LT Monthly</strong> and/or <strong>Generation by Category - LT Yearly</strong> from under EE Reports to view the generation in MW by category.</p>
+  <p> </p>
+  <p style="margin-left: -0.02in"><img src="../../assets/images/RN_2022/June/ByCateg.jpg" /><br />
+     </p>
+  <p>  </p>
+  <h2 id="7seven"><strong>Study Management  </strong> </h2>
+  <p>Administrators can manage access to Studies, as well as manage storage by archiving and deleting Studies. In the new Study Management page, an Admin can view all Studies along with their owners, members, and archival status. Archived Studies can be restored or deleted. Once deleted they are permanently removed from the system with no ability to undo this action.<br />
+    <br />
+    To change an owner of a Study, double-click on the <strong>Owner</strong> of the desired study. A dropdown menu will then appear where you can then select the <strong>Owner</strong> of the Study.
+  </p>
+  <p style="margin-left: 0.02in"><img src="../../assets/images/RN_2022/June/OwnerChange.jpg" /><br />
+     </p>
+  <p>To Archive a Study, find the study in the dropdown list and click the <strong>Archive</strong> button as shown below.<br />
+     </p>
+  <p style="margin-left: 0.07in"><img src="../../assets/images/RN_2022/June/Archive.jpg" /><br />
+     </p>
+  <p>To delete a Study first archive it. You can then can go to the <b>Study Management</b> page under Administration and click to <strong>Delete</strong> under Action. You can also find the Study by filtering the Action column to find Archived studies.<br />
+     </p>
+  <p style="margin-left: 0.02in"><img src="../../assets/images/RN_2022/June/Delete.jpg" /></p>
+  <h2 id="4four"><br />
+    <strong>SAML 2.0 Support</strong>
+  </h2>
+  <p>SAML is a standard protocol that allows integration with an authentication provider for Single Sign-On. This supports Okta and other tools that leverage SAML.</p>
+  <p> </p>
+  <p>Refer to the following article for more information on <u><a href="/articles/KB_Article/SAML-2-0-Integration" target="_self"><span style="color: #3498db;">SAML 2.0 Integration</span></a></u> for PLEXOS Cloud. You can also find more detail on<u><span style="color: #3498db;"> </span><a href="/articles/KB_Article/Okta-Integration" target="_self"><span style="color: #3498db;">Okta Integration for SAML 2.0 id</span></a></u>  here.</p>
+  <h2 id="5five"><br />
+    <strong>Event Detection (Beta Release)</strong>
+  </h2>
+  <p>Event detection aims to reduce the manual efforts of users to identify any event/data issues and to reduce iteration to reach desirable simulation results. Periods of typical output data are called Events. Ideally, after a successful simulation, the user wants to quickly validate the outputs.<br />
+     </p>
+  <p>Event Detection can speed up this process by identifying and prioritizing time periods that may be of interest for further confirmation. We want to make it easier and faster to identify periods of time where output data falls outside of the normal range.<br />
+     </p>
+  <p>Using Artificial Intelligence and Machine Learning (AI/ML) techniques, PLEXOS Cloud supports Event Detection. From the Solution Summary on any successful Solution, you can view a heat map of Events and drill into them. This allows you to identify interesting events that may need further study such as Price Spikes, Price Drops, and Unserved and Dump Energy.  </p>
+  <p> </p>
+  <h3>Event Detection View</h3>
+  <p>To go to Event detection view, from Solutions tab, click on the <b>Event detection icon</b> in the top far right as displayed in the screenshot below. It will show you the list of events detected along with all the possible streams together like variations in Price, Dump Energy and Unserved Energy.<br />
+     </p>
+  <p style="margin-left: 40px;"><img alt="" src="../../assets/images/RN_2022/June/EventDetectionMain.jpg" /><br />
+     </p>
+  <h3><br />
+    <b>Solution Summary view</b>
+  </h3>
+  <p>To see the solution summary, from the Solutions tab, click on the <b>Solution Summary icon</b> in the top right as shown in the screenshot below (highlighted icon).</p>
+  <p><br />
+    It will show you the color-coded tabular view of the number of events detected, where a &#39;reddish-pink&#39; color denotes the highest number of events, &#39;yellow&#39; denotes a smaller number of events, and grey (no color) denotes there are no events detected during that period of time.<br />
+     </p>
+  <p style="margin-left: 40px;"><img alt="" src="../../assets/images/RN_2022/June/EventDetection3.jpg" /><br />
+     </p>
+  <p><br />
+    <b>Navigating from the Solution Summary to view selected properties:</b><br />
+     
+  </p>
+  <p>To see the events associated with a selected property and month, you can click on any color-coded cell from the Solution Summary view. As you can see in the example below, it only displays from the selected month of August.<br />
+     </p>
+  <p style="margin-left: 40px;"><img alt="" src="../../assets/images/RN_2022/June/Navigating.jpg" /></p>
+  <p> </p>
+  <h3>Available Properties</h3>
+  <p>The following is a list of properties for which you can use Event Detection:</p>
+  <ul>
+    <li style="margin-left: 40px;">Region.UnservedEnergy</li>
+    <li style="margin-left: 40px;">Region.DumpEnergy</li>
+    <li style="margin-left: 40px;">Region.Price</li>
+    <li style="margin-left: 40px;">Region.GenerationCapacityCurtailed</li>
+    <li style="margin-left: 40px;">Region.ShadowPrice</li>
+    <li style="margin-left: 40px;">Region.ForcedOutage</li>
+    <li style="margin-left: 40px;">Region.Maintenance</li>
+    <li style="margin-left: 40px;">Region.CapacityReserveMargin</li>
+    <li style="margin-left: 40px;">Region.Generation</li>
+    <li style="margin-left: 40px;">Region.Load</li>
+    <li style="margin-left: 40px;">Fuel.Price</li>
+  </ul>
+  <p><br />
+    <strong><strong><b><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;" />  </b></strong>NOTE:</strong> The Event Detection feature is still in the beta phase. Please feel free to reach out to EE support with any questions or feedback.
+  </p>
+  <h2> </h2>
+  <h2 id="6six"><b><b>Additional Bug Fixes and Improvements</b></b></h2>
+  <p>We have continued to fix bugs affecting user experience, stability, and performance, including fixes related to Cloud Bridge. We have also continued to make improvements to Congestion Analysis within this release.<br />
+    <br />
+    <strong><strong><b><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;" />  </b></strong>NOTE:</strong> The Admin Integrations page has been removed. This feature will be replaced with new integration options in upcoming releases.
+  </p>
+  <p><b><b> </b></b></p>
+</body>
+</html>

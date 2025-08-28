@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Credit Calculation Method</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="rh-authors" content="Pankaj" />
+  <meta name="rh-index-keywords" content="Credit Calculation,Sub Hourly Credit Calculation in PLEXOS Cloud,Usage base" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <h1>Credit Calculation Method</h1>
+  <p>Table of Contents</p>
+  <ul class="Disc">
+    <li><a href="#O">Overview</a></li>
+    <li><a href="#UC">Use Case</a></li>
+    <li><a href="#CCT">Credit Calculation Table</a></li>
+    <li><a href="#HM">Credit Calculation for High Memory VMs</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="O">Overview</h2>
+  <p><strong><img height="13" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" width="18" /> NOTE</strong>: This applies to both <strong>Simulate</strong> and <strong>Analytics </strong>Tier customers with Credit-Based Subscriptions. </p>
+  <p> </p>
+  <p>The Credit Calculation method for Simulation Runs uses a 5-minute interval block structure. Credits are deducted in 5-minute blocks throughout the entire Simulation, enhancing Credit utilization efficiency. This method is especially beneficial for Models with shorter execution times, allowing you to Run these Models using fewer Credits.</p>
+  <p><img height="492" src="../assets/images/Credit Refund Policy/Credit Calculation Method/Simulations Page.png" width="1021" /></p>
+  <hr />
+  <h2 id="UC">Use Case</h2>
+  <p>Refer to the example and formula below to understand the 5- minute interval Credit Calculation Method:</p>
+  <p> </p>
+  <p>If the Simulation Run time is <strong>less than 5 minutes </strong>on a<strong> 2 Core Machine,</strong> the system will deduct <strong>0.17 Credits</strong> for that Simulation. Similarly, if the Simulation Run time is 10 minutes on a 2 Core Machine, the system will deduct 0.17 Credits for the first 5 minutes and continue adding for each subsequent 5-minute interval until the Simulation is completed. For instance, for a <strong>10-minute Simulation,</strong> the system will deduct approximately <strong>0.34 Credits (0.17 +0.17).   </strong></p>
+  <p><img height="476" src="../assets/images/Credit Refund Policy/Credit Calculation Method/Credit Calculation Method.png" width="996" /></p>
+  <hr />
+  <h2 id="CCT">Credit Calculation Table<strong></strong></h2>
+  <p>Refer to the table below for Credit usage as per the VM cores used for the first 5-minute interval. </p>
+  <p> </p>
+  <table class="MsoTableGrid evenrows" style="border-collapse:collapse; border:none">
+    <colgroup>
+      <col />
+      <col />
+      <col />
+    </colgroup>
+    <tbody>
+      <tr style="text-align: center">
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; border-top:1px solid black; border-right:1px solid black; border-left:1px solid black" valign="top">
+          <p><strong><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">VM Specifications</span></span></span></span></span></strong></p>
+        </td>
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; border-top:1px solid black; border-right:1px solid black; border-left:none" valign="top">
+          <p><strong><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Credits Consumed for 5-minute interval</span></span></span></span></span></strong></p>
+        </td>
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; border-top:1px solid black; border-right:1px solid black; border-left:none" valign="top">
+          <p><strong><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Credits Consumed for 1 Hour</span></span></span></span></span></strong></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:1px solid black;text-align:center" valign="top">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">2 Core - 16 GB RAM - 75 GB Disk</span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:none;text-align:center" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">0.17</span></font>
+          </p>
+        </td>
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; text-align:center; border-top:none; border-right:1px solid black; border-left:none" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">2.04</span></font>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:1px solid black;text-align:center" valign="top">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">4 Core - 32 GB RAM - 150 GB Disk</span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:none;text-align:center" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">0.33</span></font>
+          </p>
+        </td>
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; text-align:center; border-top:none; border-right:1px solid black; border-left:none" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">3.96</span></font>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:1px solid black;text-align:center" valign="top">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">8 <span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Core - 64 GB RAM - 300 GB Disk</span></span></span></span></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:none;text-align:center" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">0.67</span></font>
+          </p>
+        </td>
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; text-align:center; border-top:none; border-right:1px solid black; border-left:none" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size:16px">8.04</span></font>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:1px solid black;text-align:center" valign="top">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">16 <span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Core - 128 GB RAM - 600 GB Disk</span></span></span></span></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:none;text-align:center" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">1.33</span></font>
+          </p>
+        </td>
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; text-align:center; border-top:none; border-right:1px solid black; border-left:none" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size:16px">15.96</span></font>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:1px solid black;text-align:center" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">32 </span></font><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Core - 256 GB RAM - 1200 GB Disk</span></span></span></span></span>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;"></span></font>
+          </p>
+        </td>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:none;text-align:center" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">2.67</span></font>
+          </p>
+        </td>
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; text-align:center; border-top:none; border-right:1px solid black; border-left:none" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size:16px">32.04</span></font>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:1px solid black;text-align:center" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">48 </span></font><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Core - 384 GB RAM - 1800 GB Disk</span></span></span></span></span>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;"></span></font>
+          </p>
+        </td>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:none;text-align:center" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">4.00</span></font>
+          </p>
+        </td>
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; text-align:center; border-top:none; border-right:1px solid black; border-left:none" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">48.00</span></font>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:1px solid black;text-align:center" valign="top">
+          <p><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">64 <span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif">Core - 512 GB RAM - 2400 GB Disk</span></span></span></span></span></span></span></span></span></span></p>
+        </td>
+        <td style="border-bottom:1px solid black;padding:0cm 7px 0cm 7px;border-top:none;border-right:1px solid black;border-left:none;text-align:center" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size: 16px;">5.33</span></font>
+          </p>
+        </td>
+        <td style="border-bottom:1px solid black; padding:0cm 7px 0cm 7px; text-align:center; border-top:none; border-right:1px solid black; border-left:none" valign="top">
+          <p>
+            <font face="Times New Roman, serif"><span style="font-size:16px">63.96</span></font>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <h2 id="HM">Credit Calculation for High Memory VMs</h2>
+  <p><strong><strong><img height="13" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nwse-resize;" width="18" /> NOTE</strong>: </strong>Please reach out to your Customer Success Manager to request high-memory Virtual Machines (VMs) if needed.  </p>
+  <p> </p>
+  <p>The high-memory VMs provide more RAM on specific core configurations, offering extra power for your Simulations. This allows you to Run long and memory-intensive Models smoothly without being limited by the memory constraints of standard VMs.  <strong></strong></p>
+  <p> </p>
+  <p><strong>The high-memory VMs have a higher Credit rate than standard VMs and are available upon request.</strong> In the Run Configuration panel, they are labeled as <strong>1.5X, 2X, 3X,</strong> and so on, allowing you to distinguish between standard VMs and high-memory VMs.</p>
+  <p> </p>
+  <p>For example, if an 8-core Virtual Machine is labeled as 2X in the Run Configuration panel, it will consume twice the normal Credits for that Simulation. Generally, a standard 8-core Virtual Machine consumes 0.67 Credits (as shown in the table above) for the first 5 minutes of a Simulation. If it is labeled as a high-memory VM with 2X, it will consume 1.34 Credits for the first 5 minutes of the Simulation. </p>
+  <p><img height="371" src="../assets/images/5 Minute Credit Calculation Mehod/2X New New.png" width="732" /></p>
+  <p><br />
+     </p>
+</body>
+</html>

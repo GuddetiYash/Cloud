@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>PLEXOS Cloud Excel Add-In</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1208</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">a135f945-0b82-41af-89df-4c0a2c9982b7</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1208, TZXE7D2DFWED-1834737786-1208</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-authors" content="Nageshwar" />
+  <meta name="topic-comment" content="This was currently in RoboHelp and I started to revise" />
+  <meta name="rh-index-keywords" content="MS Excel Add in,Microsoft Excel Add-In,PLEXOS Cloud MS Excel Add-in" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <h1>PLEXOS Cloud Excel Add-In</h1>
+  <h2>In this article</h2>
+  <ul>
+    <li><a href="#1">Introduction</a> </li>
+    <li><a href="#2">Installation </a></li>
+    <li><a href="#4">Sign-In to PLEXOS Cloud</a></li>
+    <li><a href="#20">Licensing</a></li>
+    <li><a href="#21">Select and Initiate Template</a></li>
+    <li><a href="#5">Limitations</a></li>
+    <li><a href="#6">Selecting PLEXOS Cloud Study</a></li>
+    <li><a href="#MEF">Managing Excel Files from the PLEXOS Cloud Interface</a></li>
+    <li><a href="#7">Querying and Editing Data from the INPUT DATA tab</a></li>
+    <li><a href="#BOTL">Bulk and One-Time Load for Input Data</a></li>
+    <li><a href="#ETDL">Error Tracking and Data Load Validation in the Excel Add-In </a></li>
+    <li><a href="#9">Persistence of Study and Datafiles connection</a></li>
+    <li><a href="#9">Configure and Manage Multiple Timeseries Files with New Data File Query Configuration Sheet</a></li>
+    <li><a href="#10">Run a Simulation</a></li>
+    <li><a href="#11">Steps to remove the older version of Excel Plug-In</a></li>
+    <li><a href="#12">Output Data Query</a></li>
+    <li><a href="#BOTE">Bulk and One-Time Extract for Output Data</a></li>
+    <li><a href="#VSV">Viewing Study Version and Commit Information in Excel</a></li>
+    <li><a href="#13">Create or Modify Categories</a></li>
+    <li><a href="#14">Tag Scenarios to Properties</a>  </li>
+    <li><a href="#15">Timeslice support for Timeslice Files</a></li>
+    <li><a href="#16">View and Edit Dynamic Properties</a></li>
+    <li><a href="#17">Configure Template and Schema using the Template Builder</a></li>
+    <li><a href="#18">Edit Property and Membership for one-to-many Relationships</a></li>
+    <li><a href="#ESHSD">Edit Simulation Horizon Start Dates (<strong>DateFrom</strong> and <strong>ChronoDateFrom)</strong></a></li>
+    <li><a href="#SFBD">Stay Focused with Background Data Loading in Excel Add-In </a> </li>
+    <li><a href="#EAIV">Excel Add-In Validations and Restrictions</a></li>
+    <li><a href="#PAF">Predefined Attribute Selection in Excel Add-In</a></li>
+  </ul>
+  <p> </p>
+  <hr />
+  <h2 id="1">Introduction</h2>
+  <p>The <strong>Microsoft Excel Add-in</strong> allows you to review and edit Model Input Data and synchronize changes to <strong> PLEXOS Cloud</strong> directly from Excel. Also, you can fetch the Output Data for analysis and sharing purposes. The Microsoft Excel Add-In replaces the now deprecated Excel Plugin. The Add-In is lightweight and supports both Model Data and the Data Files associated with the Study. Small, targeted changes or complex bulk changes based on formulas can be done easily and saved back to the PLEXOS Cloud with just a few clicks.</p>
+  <p> </p>
+  <p><strong><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong>NOTE:</strong> This applies to <strong>Analytics </strong>Tier customers only.</p>
+  <p> </p>
+  <p><img height="357" src="../assets/images/Microsoft Excel Add-In/New UI/Overview.png" width="1000" /></p>
+  <hr />
+  <h2>Installation</h2>
+  <p><span style="line-height: 107%;">Perform the following steps to download the<strong> Excel Add-In</strong> tool from <strong>PLEXOS Cloud</strong>:</span><br />
+     </p>
+  <div style="margin-left: 8px;"><span style="line-height: 107%;"></span>
+    <ol class="Decimal">
+      <li><span style="line-height: 107%;">Click on the <strong>Candy Box</strong><span style="line-height: 107%;"> located at the top-right of the screen and select <strong>Marketplace</strong> from the drop-down.<br />
+            <br />
+            <img height="431" src="../assets/images/RN_2025/July 2025/Team Flamingo/Candy box.png" width="900" /></span></span><br />
+         </li>
+      <li><span style="line-height: 107%;">You will be redirected to the <strong>Marketplace</strong> page. Switch to the <strong>Tools </strong>tab and click on the <strong>DOWNLOAD </strong>button for Microsoft Excel Add-In.</span><br />
+        <br />
+        <img height="408" src="../assets/images/Microsoft Excel Add-In/New UI/Installation.png" width="900" /><br />
+         
+      </li>
+      <li><span style="line-height: 107%;">After the download is successful, follow the installation steps as below to install the Microsoft Excel Add-In to your desktop.</span></li>
+    </ol>
+  </div>
+  <div style="margin-bottom: 11px;margin-left: 8px;">
+    <p> </p>
+    <p><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong>NOTE:</b> You can also find these installation steps in the <b>excelwebaddin-installation- steps</b> file (Open the downloaded zip file &gt; click <b>excelwebaddin-installation-steps</b> file).</p>
+    <p> </p>
+  </div>
+  <hr />
+  <h2>Installation steps for the Web or Desktop version of Microsoft Excel</h2>
+  <p>Users have the convenience of adding the Excel Add-In to their Excel web or Excel desktop versions directly through the Microsoft Store. This installation is fully automated and offers users a fast and easy way to install the Excel Add-In in one click on their machine. This eliminates the need for manual downloads and configuration, enabling integration of PLEXOS Cloud functionalities directly within the user&#39;s Excel environment. </p>
+  <p> </p>
+  <p><img height="405" src="../assets/images/Microsoft Excel Add-In/Install Excel Add-In from Microsoft Store.gif" width="825" /></p>
+  <p> </p>
+  <p>Follow the steps below to add the PLEXOS Cloud Excel Add-In on your machine:<br />
+     </p>
+  <ol class="Decimal">
+    <li>Open the Excel web or desktop application.<br />
+       </li>
+    <li>Navigate to the <strong>Home</strong> tab and click on the <strong>Add-ins</strong> menu.<br />
+      <br />
+      <img src="../assets/images/Microsoft Excel Add-In/Add-in option in Home tab.png" /><br />
+       
+    </li>
+    <li>Click on the <strong>More Add-ins</strong> button.<br />
+      <br />
+      <img height="332" src="../assets/images/Microsoft Excel Add-In/More Add-ins button.png" width="206" /><br />
+       
+    </li>
+    <li>By default, you will land in the <strong>STORE </strong>tab. If not, you need to switch to the STORE tab manually.<br />
+       </li>
+    <li>Type <strong>PLEXOS Cloud</strong> in the search bar and click on the <strong>Search </strong>icon.<br />
+      <br />
+      <img height="170" src="../assets/images/Microsoft Excel Add-In/Search PLEXOS Cloud in the search bar.png" width="456" /><br />
+       
+    </li>
+    <li>Click on the <strong>Add </strong>button for PLEXOS Cloud Add-In as shown below:<br />
+      <br />
+      <img height="189" src="../assets/images/Microsoft Excel Add-In/Add button.png" width="459" /><br />
+       
+    </li>
+    <li>A confirmation dialog appears, click on the <strong>CONTINUE </strong>button to proceed.<br />
+      <br />
+      <img height="185" src="../assets/images/Microsoft Excel Add-In/Add-In confirmation dialog.png" width="353" /><br />
+       
+    </li>
+    <li>The Add-In gets installed automatically and you will notice a <strong>Launch </strong>button in the Data tab. The Launch button gets updated automatically with new versions.<br />
+      <br />
+      <img src="../assets/images/Microsoft Excel Add-In/Launch button.png" /><br />
+       
+    </li>
+    <li>Click on the <strong>Launch </strong>button to log in with your Cloud credentials.</li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h2 id="4"><b><span>Sign-In to PLEXOS Cloud</span></b></h2>
+  <div style="margin-left: 8px;">
+    <ol class="Decimal">
+      <li>After the installation is successful, you will be automatically re-directed to the <b>DATA </b>tab.</li>
+      <br />
+      <li>Click on the <b>PLEXOS</b> button to open the PLEXOS Cloud Sign In page.<br />
+        <br />
+        <span style="line-height: 107%;"><img height="71" src="../assets/images/Microsoft Excel Add-In/Data tab_PLEXOS button.png" width="519" /></span>
+      </li>
+      <br />
+      <li>Login with your credentials (Enter your Email and click on the Continue button).</li>
+    </ol>
+  </div>
+  <div style="margin-left: 8px;"><span style="line-height: 107%;"><br />
+            <img height="317" src="../assets/images/Microsoft Excel Add-In/PLEXOS Cloud Sign In page.png" width="666" /></span><br />
+    <br />
+    <strong><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong>NOTE: </strong>This section only applies to users who have access to multiple tenants within a single environment. Users who belong to a single Tenant will not be able to access the tenant switching screen during the log in process.
+    <p> </p>
+  </div>
+  <div style="margin-left: 8px;">
+    <ol class="Decimal" start="4">
+      <li>If your email has access to multiple tenants within a single environment, you will be redirected to the <strong>Select a tenant to continue</strong> page. Users who belong to a single tenant will be logged in to their respective tenant without being prompted to select a tenant.<br />
+        <br />
+        <img height="283" src="../assets/images/Microsoft Excel Add-In/Select different tenant page.png" width="595" />
+      </li>
+      <br />
+      <li>By default, the <strong>Primary Tenant</strong> is selected but you can select the desired Tenant from the list and click on the <strong>CONTINUE </strong>button.<br />
+        <br />
+        <strong><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong>NOTE:</strong> When an Admin creates a user in a specific tenant, it will be designated as the <strong>Primary </strong>Tenant for that user. The user will only see the Primary tag associated with their primary tenant name.    
+      </li>
+    </ol>
+    <p> </p>
+     
+    <ol class="Decimal" start="6">
+      <li>After successful authentication, you will get logged in to the Excel Add-In showing the newly selected Tenant Name, Environment Name, and Excel Add-In Version Number at the bottom right of the interface. <span style="line-height: 107%;">This will help you identify the Tenant and Cloud environment you are currently connected to when working with multiple environments.</span><span style="line-height: 107%;"></span><span style="line-height: 107%;"></span><br />
+        <br />
+        <img height="400" src="../assets/images/Microsoft Excel Add-In/New UI/Sign in Tenant.png" width="287" /><span style="line-height: 107%;"></span>
+      </li>
+    </ol>
+    <p>     </p>
+    <p> </p>
+    <hr />
+    <h2 id="20">Licensing</h2>
+    <p>The Excel Add-In is accessible with both the <strong>Simulate and Analytics tier license</strong>. This licensing allows you to access key Excel Add-In features based on your assigned roles, enabling more flexibility and control in managing and analyzing your data within Excel. Whether you&#39;re working in Analytics or Simulate, you can integrate your PLEXOS data directly into your workflows, streamlining operations and improving efficiency.</p>
+    <p><br />
+      Please note that, you will not have access to any features of the Excel Add-In with<strong> No Cloud tier</strong> license, regardless of any role assignment.</p>
+    <p><br />
+      Refer to the following key features of the Expanded Access to Excel Add-In for Simulate tier:</p>
+    <h3>★ Key Features</h3>
+    <ul class="Disc">
+      <li><strong>Tier-Specific Access:</strong> Input and output functionality now aligns with each customer’s subscription level (Simulate, Analytics, or No Cloud), allowing tailored access to features.</li>
+      <br />
+      <li><strong>Input Modification and Output Viewing:</strong> Modify model inputs and view outputs directly within Excel based on your licensing tier, offering greater convenience and flexibility.</li>
+      <br />
+      <li><strong>Simulate Tier Access Expansion:</strong> Newly expanded editing capabilities to the Simulate tier customers in the Excel Add-In.  </li>
+      <br />
+      <li><strong>Streamlined User Workflow:</strong> Opens the door for broader integration with PLEXOS Cloud, enabling you to leverage Excel Add-In as a part of your day-to-day workflow. <br />
+        <br />
+        <img height="404" src="../assets/images/Microsoft Excel Add-In/Licensing in Excel Add-In.png" width="847" />
+      </li>
+    </ul>
+    <p> </p>
+    <hr />
+    <h2 id="21">Select and Initiate Template     </h2>
+  </div>
+  <div style="margin-left: 8px;">
+    <ol class="Decimal">
+      <li><span style="line-height: 107%;">If you are using an Excel file with an existing template, the </span><strong>Use existing file as template </strong>option will appear automatically in the Select &amp; Initiate Template drodpown.  otherwise, click on the <strong>Select &amp; Initiate Template</strong> dropdown and choose either <strong>Electric Template</strong> or <strong>Gas Template</strong> to get started.<br />
+        <br />
+        <img height="400" src="../assets/images/Microsoft Excel Add-In/New UI/Initiate Template.png" width="277" />
+      </li>
+    </ol>
+    <p> </p>
+  </div>
+  <div style="margin-left: 8px;"><span style="line-height: 107%;"></span>
+    <ol class="Decimal" start="2">
+      <li><span style="line-height: 107%;">The basic template consists of two sheets:</span>
+        <ol><br />
+          <li><span style="line-height: 107%;"></span><b style="margin-left: 4px;">Template </b>- It contains sheet-tables info. required for data editing.<span style="line-height: 107%;"><b></b></span>
+            <ol><br />
+              <li><span style="line-height: 107%;"><b>SheetName</b>: Name of the sheet where you want the table to be created.</span></li>
+              <br />
+              <li><span style="line-height: 107%;"></span><span style="line-height: 107%;"><b>TableName</b>: Unique name for the respective table.</span></li>
+              <br />
+              <li><span style="line-height: 107%;"></span><span style="line-height: 107%;"><b>ClassName</b>: Name of the PLEXOS Class</span><span style="line-height: 107%;"><b></b></span></li>
+              <br />
+              <li><span style="line-height: 107%;"><b>Category</b>: Name of the category</span><strong></strong></li>
+              <br />
+              <li><strong>AllDynamic:</strong> If entered the value <strong>YES</strong>, all the Input Properties will be treated as Dynamic and will appear in the Properties sheet.<br />
+                <br />
+                <strong><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong>N</strong><strong>OTE: </strong>You need to manually add this column in the Template sheet to get all the Properties in a single sheet.<br />
+                <img height="91" src="../assets/images/Microsoft Excel Add-In/Template Sheet columns.png" width="547" /><br />
+                <br />
+                <br />
+                <b></b>
+              </li>
+            </ol>
+          </li>
+          <li><b>Schema </b>- It contains the column schema of each table mentioned in the template sheet.<span style="line-height: 107%;"><b></b></span>
+            <ol><br />
+              <li><span style="line-height: 107%;"><b>SheetName</b>: Name of the sheet where you want the table to be created.</span></li>
+              <br />
+              <li><span style="line-height: 107%;"></span><span style="line-height: 107%;"><b>TableName</b>: Unique name for the respective table.</span></li>
+              <br />
+              <li><b>ColumnName</b>: Name of the PLEXOS Class.</li>
+              <br />
+              <li><span style="line-height: 107%;"><b>PlexosEquivalent</b>: Name of the class/property as per PLEXOS.</span><span style="line-height: 107%;"><b></b></span></li>
+              <br />
+              <li><span style="line-height: 107%;"><b>Type</b>: It can be</span><span style="line-height: 107%;"><strong></strong></span>
+                <ol><br />
+                  <li><span style="line-height: 107%;"><strong>Name:</strong> If the column contains the Object&#39;s Name</span></li>
+                  <br />
+                  <li><span style="line-height: 107%;"></span><span style="line-height: 107%;"><strong>Class:</strong> If the column will contain a child member name.</span><span style="line-height: 107%;"><strong></strong></span></li>
+                  <br />
+                  <li><span style="line-height: 107%;"><strong>Property:</strong> If the column will contain the property values.</span><strong></strong></li>
+                  <br />
+                  <li><strong>Attribute:</strong> If the column will contain the Attribute value.<strong></strong></li>
+                  <br />
+                  <li><strong>CustomColumn:</strong> If the column will contain the Custom Column name.<span style="line-height: 107%;"><b></b></span></li>
+                  <br />
+                  <li><span style="line-height: 107%;"><b>Parent</b>: Parent Class</span></li>
+                  <br />
+                  <li><span style="line-height: 107%;"></span><span style="line-height: 107%;"><b>Collection</b>: Collection Name</span><span style="line-height: 107%;"><b></b></span></li>
+                  <br />
+                  <li><span style="line-height: 107%;"><b>KeyType</b>: The KeyType can be decided based on the value for “Type”. Refer the table below:<br />
+                      <br />
+                      <img height="137" src="../assets/images/Microsoft Excel Add-In/KeyType Menu.jpg" width="139" /></span><span style="line-height: 107%;"></span></li>
+                  <br />
+                  <li> </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+  <p><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong>N</b><b>OTE:</b> Leave a row empty after each table’s column schema.</p>
+  <hr />
+  <h2>Retaining Field Selections in Edit Template Tab</h2>
+  <p>The<strong> Excel Add-In</strong> retains your previous field selections when editing an existing file, so you don’t need to reselect fields each time. This is available within the <strong>Edit Template</strong> section of the <strong>Excel Add-In</strong> and ensures that selections are automatically loaded when the file is opened again.</p>
+  <p>This applies to all field types, such as:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Properties</li>
+    <li>Memberships</li>
+    <li>Custom Columns</li>
+    <li>Object Classes and Categories</li>
+  </ul>
+  <p> </p>
+  <p>After refreshing or reopening the file, all selections remain intact, reducing the need to reselect fields every time.<br />
+     </p>
+  <p><img height="380" src="../assets/images/RN_2025/August 2025/Team Flamingo/Persisting field selections.gif" width="1020" /></p>
+  <hr />
+  <h2>Add Custom Columns from UI in Template Schema</h2>
+  <p>When building or editing a <strong>Template Schema</strong>, you can add Custom Columns directly from the <strong>Excel Add-In</strong> interface.</p>
+  <p> </p>
+  <p>The <strong>Custom Columns</strong> option appears below other field types like <strong>Properties</strong>, <strong>Memberships</strong>, and <strong>Attributes</strong> (when applicable). These selections are automatically loaded into the schema and reflected in the data sheet.</p>
+  <p> </p>
+  <p>Refer the following GIF for example:</p>
+  <p> </p>
+  <p><img height="334" src="../assets/images/RN_2025/August 2025/Team Flamingo/Add Custom Columns.gif" width="900" /></p>
+  <p> </p>
+  <p><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /> </strong></strong><strong>NOTE: </strong>The <strong>Custom Columns</strong> section appears only for object types that support custom columns at the class level. It will be visible only if custom column inputs have been defined.</p>
+  <hr />
+  <h2 id="6">Selecting the PLEXOS Cloud Study</h2>
+  <div style="margin-left: 40px;">1.  Select the desired Study from the <b>Select Study</b> dropdown.<br />
+    <b><br />
+      <b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong></b>NOTE</b>: A Select Study dropdown displays all the user-specific and Public Studies for the user.
+  </div>
+  <div> </div>
+  <div style="margin-left: 80px;"><img height="257" src="../assets/images/Microsoft Excel Add-In/Select Study dropdown.png" width="402" /></div>
+  <div style="margin-left: 80px;"> </div>
+  <div style="margin-left: 40px;">2.  Based on your selection, there are 3  tabs available for the selected Study:<br />
+    <br />
+           <img height="400" src="../assets/images/Microsoft Excel Add-In/New UI/3 tabs.png" width="277" /><br />
+     
+  </div>
+  <div style="margin-left: 40px;"><strong></strong>
+    <p><strong>A. INPUT DATA </strong></p>
+    <p> </p>
+  </div>
+  <div style="margin-left: 80px;"><b>a.  DATABASE</b>: Allows you to Load Data from the selected Study and Save Data after making the necessary changes.<br />
+    <br />
+    <b>b.  DATA FILES</b>: Allows you to select Timeseries
+    <p>File based on the selected Study.</p>
+  </div>
+  <p>            <strong style="margin-left: 0px"> B. Run </strong></p>
+  <p style="margin-left: 60px">This tab allows you to <strong>Run</strong> the <strong>Simulation</strong> with your preferred settings.</p>
+  <p> </p>
+  <p><strong>              C.  OUTPUT DATA</strong></p>
+  <p><strong></strong>                    This tab allows you to load Output Data for a successful Simulations.</p>
+  <p> </p>
+  <hr />
+  <h2 id="MEF">Managing Excel Files from the PLEXOS Cloud Interface</h2>
+  <p>The <strong>Excel Files</strong> tab on the PLEXOS Cloud Overview page allows you to manage <strong>Study-linked Excel</strong> files directly through the web interface. This integration streamlines collaboration and version handling between the Excel Add-In and the PLEXOS Cloud platform.</p>
+  <p> </p>
+  <p>You can <strong>duplicate</strong>, <strong>rename</strong>, or <strong>delete</strong> Excel files directly from the interface, eliminating the need for manual downloads or reuploads.</p>
+  <p> </p>
+  <ol class="AlphaNumeric">
+    <li><strong>Duplicate Excel File: </strong>The Duplicate action allows you to create a copy of an existing Excel file within the same Study or in a different Study that is accessible to you.
+      <ol><br />
+        <li><strong>This Study: </strong>Selected by default. Creates a copy of the file in the current Study for immediate use. This is especially useful when you want to create a personal version or backup of an existing file. Since versioning is not currently supported within Excel files, duplicating the file allows you to retain an earlier version for future reference or local backup, ensuring you don’t lose access to previous configurations or changes.</li>
+        <br />
+        <li><strong>Other Study:</strong> Opens a dropdown menu with all Studies that you can access. Once selected, the file is duplicated in the chosen study. To ensure file name uniqueness and prevent conflicts, the copied file is automatically suffixed with a unique random number<br />
+          <br />
+          <img src="../assets/images/RN_2025/May 2025/Team Flamingo/Duplicate file.gif" />
+        </li>
+      </ol>
+    </li>
+    <br />
+    <li>
+      <p><strong>Rename Excel File</strong>: You can rename Excel files by clicking the pencil icon next to the file name.<br />
+        <br />
+        <img height="473" src="../assets/images/RN_2025/May 2025/Team Flamingo/Rename File.gif" width="989" />
+      </p>
+    </li>
+    <br />
+    <li>
+      <p><strong>Delete Excel File</strong>: The delete icon allows you to remove Excel files that are no longer needed from the selected Study. This helps keep the Study file lists clean and organized.<br />
+         </p>
+      <img height="487" src="../assets/images/RN_2025/May 2025/Team Flamingo/Delete File.gif" width="988" />
+    </li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h2><span style="line-height: 107%;"><b>Querying and Editing Data from the INPUT DATA tab </b></span></h2>
+  <div style="margin-bottom: 11px;margin-left: 40px;">
+    <p>1. In the <b>INPUT DATA</b> tab, click on the <b>LOAD DATA</b> button to fetch all the data from the selected Study.</p>
+    <p>     <img height="385" src="../assets/images/Microsoft Excel Add-In/New UI/Load Data.png" width="900" /></p>
+    <p> </p>
+    <p><strong><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong></b>NOTE:</strong> To prevent <strong>Data load failed</strong> error when clicking the <strong>LOAD DATA</strong> button, a message <strong>&quot; Aviod editing the spreadsheet while data is loading.&quot; </strong>This message advises users to not click any spreadsheet cells until the data loading is complete and remains visible during the process.</p>
+    <p> </p>
+    <p>2.  You can now view an indication of progress for the tasks running in the background. This will help the user understand the progress of the process taking place in the background along with the sheet name for which the data is being downloaded or uploaded.</p>
+    <p> </p>
+    <p>    <img height="400" src="../assets/images/Microsoft Excel Add-In/New UI/Progress.gif" width="298" /></p>
+    <p> </p>
+    <p>3. Navigate through different tabs,  to update data for your Study per your requirement. You can leverage the power of Excel including formulas to make your updates.<span style="line-height: 107%;"></span></p>
+    <p> </p>
+    <p><span style="line-height: 107%;">    <img height="120" src="../assets/images/Microsoft Excel Add-In/Querying fromand Editing Data.png" width="328" /></span><br />
+       </p>
+  </div>
+  <div style="margin-top: 4px;margin-bottom: 8px;margin-left: 40px;">4. Click on the <b>Save Data</b>
+    <p>button.</p>
+  </div>
+  <div style="margin-left: 40px;"><span style="line-height: 107%;"></span>
+    <p><b><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong></b>NOTE:</b>The <b>Save Data</b> button will enable after you make any changes to the data.</p>
+    <p> </p>
+  </div>
+  <div style="margin-top: 4px;margin-bottom: 8px;margin-left: 40px;">5. The <b>Enter Commit Message</b> pop-up will appear. This allows you to enter details on the changes you made to be added to the Version history. You can enter a custom message or take the default and click <b>Confirm </b>to save your changes.<b></b><br />
+    <br />
+        <img alt="" height="227" src="../assets/images/Microsoft Excel Add-In/Commit message confirmation pop up.png" width="151" />
+  </div>
+  <hr />
+  <h3 id="BOTL"><strong>Bulk and One-Time Load for Input Data</strong></h3>
+  <p>The <strong>Input Data</strong> tab supports both <strong>Database </strong>and <strong>Datafile </strong>inputs. This offers two distinct options for loading timeseries files efficiently:<br />
+     </p>
+  <ul class="Disc">
+    <li><strong>One-Time Load:</strong> Add and load individual timeseries files as needed, ideal for selective, file-by-file loading. </li>
+    <br />
+    <li><strong>Bulk Load: </strong>Use the <strong>Data File Query Configuration </strong>sheet to save a set of timeseries files that require frequent or iterative loading. The Bulk Load functionality allows you to load all added timeseries files from the Data File Query Configuration table to an Excel sheet in a single action, saving time and simplifying setup when working with multiple files. </li>
+  </ul>
+  <p> </p>
+  <p>These options streamline the data loading process, <strong>boosting analyst productivity </strong>and enabling faster model setup by supporting bulk actions directly from a centralized configuration table.</p>
+  <p> </p>
+  <p><img height="399" src="../assets/images/RN_2025/June 2025/Team Flamingo/Input Data.gif" width="1029" /></p>
+  <p> </p>
+  <p> </p>
+  <hr />
+  <h3 id="ETDL">Error Tracking and Data Load Validation in the Excel Add-In </h3>
+  <p>The <strong>Logs </strong>sheet in the <strong>PLEXOS Cloud Excel Add-In</strong> provides clearer insights into input/output operations and helping you troubleshoot issues more efficiently. </p>
+  <h4>➤ Validation Messages for Input and Output Data Loading </h4>
+  <p>When loading data using the Input or Output tabs, the Add-In logs specific status messages to help you quickly assess the result of the operation: </p>
+  <p> </p>
+  <p>✅ Success </p>
+  <ul class="Disc">
+    <li><strong>Message:</strong> <strong><em>Output Data loaded successfully. </em></strong></li>
+    <li>Indicates that the data was loaded completely without any issues. </li>
+  </ul>
+  <p> </p>
+  <p>⚠️ No Data Loaded </p>
+  <ul class="Disc">
+    <li><strong>Message:</strong> <strong><em>No Data loaded. Check the Logs sheet for more details. </em></strong></li>
+    <li>Triggered when the data could not be loaded due to a configuration or connection issue. </li>
+  </ul>
+  <p> </p>
+  <p>⚠️ Partial Load </p>
+  <ul class="Disc">
+    <li><strong>Message:</strong> <strong><em>Output Data loaded partially. Check the Logs sheet for more details. </em></strong></li>
+    <li>Indicates that only some of the data was loaded into the Excel sheet, and further investigation is needed. </li>
+  </ul>
+  <p> </p>
+  <h4>➤ Logs for Study-Agnostic Output Query Errors </h4>
+  <p><b>T</b>he Output Query Configuration sheet supports Study-Agnostic behavior, allowing you to retain diagnostic settings when switching between Studies.</p>
+  <p> </p>
+  <p>To support this functionality, the <strong>Logs </strong>sheet displays validation messages when invalid or unmatched configurations are detected during a Study switch. <br />
+     <br />
+    <strong>Example: </strong><br />
+     <br />
+    If you previously added a Solution from <strong>Model A, </strong>and upon switching to a new Study,<strong> Model A</strong> does not exist: 
+  </p>
+  <p> </p>
+  <ul class="Disc">
+    <li>The <strong>Model </strong>and <strong>Solution </strong>columns in the Output Query Configuration sheet will be left blank. </li>
+    <br />
+    <li>The Logs sheet will display the following error message: 
+      <ul>
+        <li><em><strong>&quot;Model Name &#39;X&#39; from the previous Study was not found in the selected Study. It has been left blank. Please fill in the correct details.&quot; </strong></em></li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <p><img height="431" src="../assets/images/RN_2025/June 2025/Team Flamingo/Study Agnostic Logs.gif" width="1029" /></p>
+  <p> </p>
+  <p>These validations help ensure you’re always aware of data load status and potential mismatches when working across multiple Studies, reducing confusion and improving overall reliability within your Excel-based workflows.</p>
+  <p> </p>
+  <hr />
+  <h3>Refresh the Data in Excel Add-In</h3>
+  <p>The <strong>Refresh </strong>button in the Excel Add-In interface allows you to easily refresh the data on the page whenever required without restarting the application or manually refreshing the entire worksheet, even if the Excel Add-In comes under any error loop. This will improve your data reloading experience and reduces the page loading time for you.   <br />
+         <br />
+    Clicking the Refresh button starts reloading the current page data. Once refreshed successfully, the page shows the updated data from connected sources, ensuring that unsaved changes remain intact.</p>
+  <p><img height="400" src="../assets/images/Microsoft Excel Add-In/New UI/Refresh Button.png" width="277" /></p>
+  <p> </p>
+  <hr />
+  <h2 id="5">Limitations</h2>
+  <p>While creating new Objects, the Memberships can be created only with already existing Objects.</p>
+  <p><strong>For example:</strong> If I try to create a new Line A running from Node1 to Node2 cannot be new Nodes that are being added in the same version. So to create Line A, first create Node1 and Node2 and push your changes, then pull the latest data and create Line A and push your changes again.</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Only Child Memberships can be created for new Objects.</li>
+    <br />
+    <li>Object deletion is not supported.</li>
+    <br />
+    <li>Property data addition to multiple bands is not supported.</li>
+    <br />
+    <li>For Attribute Data, Longitude and Latitude will not be pulled. The template sheet will have <strong>includeGeocode </strong>column use this.</li>
+  </ul>
+  <p> </p>
+  <p>After pulling data, the following tables will be created according to the template. Primary table will be created in sheet named <strong>${sheetname}</strong> as per the Schema.</p>
+  <p> </p>
+  <p>  <img alt="" height="348" src="../assets/images/Microsoft Excel Add-In/Schema.jpg" width="426" /></p>
+  <p> </p>
+  <p>For the Dynamic properties or if you have entered <strong>Yes </strong>in the <strong>AllDynamic </strong>column for any template, a new table will be created in a sheet named <strong>{sheetName}Property</strong>.</p>
+  <p> </p>
+  <p>   <img height="428" src="../assets/images/Microsoft Excel Add-In/Limitations_Property sheet.png" width="644" /></p>
+  <p> </p>
+  <p>While the Excel Add-In loads any Data, users are recommended to not click on any cell as it may interrupt the loading process and the data will not load. In this case, you must click on the <strong>PLEXOS </strong>icon under the <strong>Data </strong>tab to load the data again.</p>
+  <p> </p>
+  <p> </p>
+  <p><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" />NOTE: </strong></strong></b>Your offer does not work on Microsoft 365 versions earlier than 16.0.11629 on Windows 10.<br />
+     <br />
+    <b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" />NOTE: </strong></strong></b>Your offer does not work in Microsoft 365 version 16.0.11629 or later without Edge WebView2 (Chromium-based) installed on Windows 10.
+  </p>
+  <p> </p>
+  <hr />
+  <h2><span style="line-height: 107%;"><b>Querying and Editing Datafiles</b></span></h2>
+  <div style="margin-left: 40px;"><span style="line-height: 107%;">1. Navigate to <strong>INPUT DATA &gt;</strong> <b>Datafiles</b> and select the required Timeseries file from the <strong>Select Timeseries Files</strong> dropdown.</span></div>
+  <p style="margin-left: 80px;"> </p>
+  <div style="margin-left: 40px;"><span style="line-height: 107%;">2. Click on the <b>OPEN FILE(S)</b> button to view the corresponding Timeseries file details on the left hand-hand side of the screen.</span></div>
+  <p style="margin-left: 0.65in"> </p>
+  <p style="margin-left: 0.65in"><img height="400" src="../assets/images/Microsoft Excel Add-In/New UI/Load Data files.gif" width="277" /></p>
+  <p style="margin-left: 40px;"> </p>
+  <p><b><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong></b>NOTE:</b> The Timeseries File name will be set as the Sheet Name for easy identification. For duplicated names, you will see a suffix added after Sheet Name.</p>
+  <p> </p>
+  <p style="margin-left: 0.64in"><img height="262" src="../assets/images/Microsoft Excel Add-In/Timeseries file name.png" width="310" /></p>
+  <div style="margin-left: 40px;"><span style="line-height: 107%;">3. Double-click on any cell to edit the values or insert a new row or column per your requirement.</span><br />
+     </div>
+  <div style="margin-bottom: 11px;margin-left: 40px;"><span style="line-height: 107%;">4. Click on the <b>Save Data</b> button and select <b>Confirm</b> in the <b>Enter Commit Message</b> pop-up.</span></div>
+  <p> </p>
+  <hr />
+  <h2 id="9"><strong>Persistence of Study and DataFiles Connection</strong></h2>
+  <p><span style="line-height: 107%;">Previously, the changes made to the Data Files had to be pushed before closing the Excel but the Persistent Data File functionality eliminate this effort by allowing the Data File to load automatically with the recent changes saved when you save the Data File and re-open it again. It will select the associated Study and Data Files by reading the data from the Config sheet. The MS Excel Add-In preserve the connection to the last study used, as well as any data files that was open during the last editing session. When the user re-opens the Excel editing template file, the Study selection will be populated automatically, and any data file tabs will be re-opened.</span><br />
+    <br />
+    <span style="line-height: 107%;">Perform the following steps to use this feature:</span><br />
+    <br />
+    <span style="margin-left:16px;"><span style="line-height: 107%;">1.  Select the desired Study from the <strong>Select Study </strong>dropdown.</span></span><br />
+     
+  </p>
+  <div style="margin-left: 40px;"><span style="margin-left:16px;"><img height="294" src="../assets/images/Microsoft Excel Add-In/Persistence of Study_Select Study dropdown.png" width="379" /></span></div>
+  <p><span style="margin-left:16px;"><br />
+      <span style="line-height: 107%;margin-left: 16px">2.  The Datafiles associated with the Study will show in the <b>Select Timeseries File </b>dropdown.<span style="line-height: 107%;margin-left: 12px">Browse and select the desired Timeseries File.</span></span></span></p>
+  <p><span style="margin-left:16px;"><br />
+      <span style="line-height: 107%;margin-left: 16px">3.  Click on the </span><b style="font-family: Calibri, sans-serif;font-size: 11pt;">OPEN FILE(S)</b><span style="font-family: Calibri, sans-serif;font-size: 11pt;"> button to view and edit the data.</span></span></p>
+  <div style="margin-left: 40px;"><span style="margin-left:16px;"></span></div>
+  <div style="margin-left: 40px;"><span style="margin-left:16px;"><b><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong></b>NOTE:</b> All columns in the <strong>Timeseries File</strong> are editable.</span><span style="margin-left:16px;"></span></div>
+  <p><span style="margin-left:16px;"><br />
+      <span style="line-height: 107%;margin-left: 16px">4.  A new sheet called </span><b><span style="line-height: 107%;">Configs</span></b><span style="line-height: 107%;"> gets created. This sheet shows Study ID and Study Name for the currently selected Study. Do not delete this sheet or change the data, it will be used by the Add-In and API to communicate with PLEXOS Cloud.</span></span><br />
+     </p>
+  <div style="margin-left: 40px;"><span style="margin-left:16px;"><img height="320" src="../assets/images/Microsoft Excel Add-In/Persistence study_Config sheet.png" width="178" /></span></div>
+  <p><span style="margin-left:16px;"><br />
+      <span style="line-height: 107%;margin-left: 16px">5.  Make the necessary changes in the data file and click on <strong>File menu &gt; Save As</strong> to save the Data File in .xlsx format. So, next time when you open the Data File, you will see the previously saved changes.</span></span><br />
+     </p>
+  <div style="margin-left: 40px;"><span style="margin-left:16px;"><img height="185" src="../assets/images/Microsoft Excel Add-In/Persistence study_Save As dialog.png" width="461" /></span></div>
+  <p><span style="margin-left:32px"><br />
+      <span style="margin-left:16px;">6.  Close the Excel Workbook and re-open it from the path where you have saved it earlier.<br />
+        <br />
+        <span style="line-height: 107%;margin-left: 16px">7.  Navigate to the <strong>Data </strong>tab and click on the <strong>PLEXOS </strong>icon (Energy Exemplar).</span></span></span><br />
+     </p>
+  <div style="margin-left: 40px;"><span style="margin-left:16px;"><img height="66" src="../assets/images/Microsoft Excel Add-In/Data tab_PLEXOS button.png" width="480" /></span></div>
+  <p><span style="margin-left:16px;"><br />
+      <span style="line-height: 107%;margin-left: 16px">8.  PLEXOS Cloud automatically reads the data from the Config. sheet (Study ID, Name) and loads the associated Study and Data File.</span></span><br />
+     </p>
+  <p><span style="margin-left:16px">9.  Make the necessary changes to the values of the Datafile.</span></p>
+  <div style="margin-left: 8px;"><span style="margin-left:16px;"></span></div>
+  <p><span style="margin-left:16px;"><span style="line-height: 107%;">10.  Click on the <strong>Save </strong>Data button to save your changes.</span></span><br />
+     </p>
+  <div style="margin-left: 40px;"><img height="300" src="../assets/images/Microsoft Excel Add-In/New UI/Save Data.png" width="208" /></div>
+  <hr />
+  <h2>Configure and Manage Multiple Timeseries Files with New Data File Query Configuration Sheet</h2>
+  <p>The <strong>PLEXOS Cloud Excel Add-In</strong> includes <strong>Data File Query Configuration</strong> sheet that enables you to manage and extract multiple timeseries files within the same Study more efficiently. </p>
+  <p> </p>
+  <p><img height="511" src="../assets/images/RN_2025/June 2025/Team Flamingo/Data File Query Configuration Sheet Image.png" width="1022" /><br />
+     <br />
+    This configuration table streamlines how you work with timeseries files by allowing you to add and manage multiple files in a single, centralized view. It enables you to selectively extract specific files or load all of them at once into Excel using the Bulk Load functionality, removing the need to process each timeseries file individually. </p>
+  <h4><br />
+    ➤ What It Does?</h4>
+  <p>The <strong>Data File Query Configuration</strong> sheet lists your timeseries files in a structured, editable table and works seamlessly with the <strong>Bulk Load </strong>functionality.  </p>
+  <p><img height="446" src="../assets/images/RN_2025/June 2025/Team Flamingo/Data File Query Configuration Sheet.gif" width="1032" /><br />
+     <br />
+    The table consists of the following columns: </p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Row ID:</strong> Auto-generated row number for tracking individual file entries. </li>
+    <br />
+    <li><strong>Timeseries:</strong> Name of the selected timeseries file from your Study. </li>
+    <br />
+    <li><strong>Sheet Name: </strong>The target Excel sheet where data from the timeseries file will be loaded. </li>
+    <br />
+    <li><strong>Extract: </strong>Set to YES or NO to determine whether the file should be loaded when using the <strong>Load All</strong> option in the <strong>Bulk Load</strong> section. </li>
+  </ul>
+  <p> </p>
+  <hr />
+  <h2><span style="line-height: 107%;"><b><span style="line-height: 107%;">Run a Simulation</span></b></span></h2>
+  <p>Perform the following steps to Run a Model: </p>
+  <p> </p>
+  <div style="margin-left: 40px;"><span style="line-height: 107%;">1. Click on the <b>Select Model</b> dropdown to view the list of Models based on your Study selection.</span><br />
+     </div>
+  <div style="margin-left: 40px;"><span style="line-height: 107%;"> 2. Select a <b>Model</b>.</span><br />
+    <br />
+        <img height="400" src="../assets/images/Microsoft Excel Add-In/New UI/Run Dropdown.png" width="277" /><br />
+     
+  </div>
+  <div style="margin-left: 40px;"><span style="line-height: 107%;">3. Choose the configuration type as below:</span><br />
+     </div>
+  <ul>
+    <li style="margin-left: 16px;">
+      <div><span style="line-height: 107%;"><b>Previous Configuration (Selected by default)</b>:  Selecting this option will proceed with the configuration used in the previous Run. This applies to the Model that have Previous Run executed but if there was no Previous Run found for the selected Model, the Run will continue as Configure New Run.</span></div>
+    </li>
+    <li style="list-style-type: none;">
+      <div> </div>
+    </li>
+    <li style="margin-left: 16px;">
+      <div><span style="line-height: 107%;"><b>Configure New</b>: Selecting this option will redirect you to the Run Configuration page of PLEXOS Cloud in a browser where you can select your preferred Engine Type, Machine Type, and more per your requirement.</span></div>
+    </li>
+  </ul>
+  <div style="margin-left: 40px;"> </div>
+  <div style="margin-left: 40px;"><span style="line-height: 107%;">4. Click on the <b>Run</b> button to Run the Simulation. It will redirect you to the PLEXOS Cloud where you can check the status of your Run and view Output Data after the Run is successful.</span><br />
+    <br />
+      <img height="200" src="../assets/images/Microsoft Excel Add-In/New UI/Run Button.png" width="255" />
+  </div>
+  <div style="margin-bottom: 11px;margin-left: 8px;"><span style="line-height: 107%;"></span>
+    <p><span style="line-height: 107%;">           </span></p>
+    <p><span style="line-height: 107%;">          5. Click on the <b>LOG OUT</b> button anytime to end your session.</span></p>
+    <p> </p>
+    <hr />
+    <h2 id="11"><span style="line-height: 107%;">Steps to remove the older version of the Excel Plug-In</span></h2>
+    <p>Perform the following steps to remove the older VSTO version of the Excel Plug-In.</p>
+    <p> </p>
+    <ol>
+      <li style="margin-left: 8px;">
+        <div><span style="font-size: 11pt;"><span style="line-height: 107%;">In Excel, click on the <b>File &gt; Options &gt; Add-ins.</b></span></span></div>
+      </li>
+      <br />
+      <li style="margin-left: 8px;"><span style="line-height: 107%;">Click on the <b>Manage dropdown &gt; select COM Add-ins &gt; Click Go.</b></span></li>
+      <br />
+      <li style="margin-left: 8px;"><span style="line-height: 107%;"><b></b></span>
+        <p><span style="line-height: 107%;"><b>Clear the checkbox next to the Plug-In that you want to inactivate and click on the Remove button.</b></span></p>
+      </li>
+    </ol>
+  </div>
+  <p> </p>
+  <hr />
+  <h2 id="12"><strong>Output Data Query</strong></h2>
+  <p>Perform the following steps too fetch the Output Data in Excel Add-In: <br />
+     </p>
+  <ol>
+    <li>
+      <p>Select the desired Study from the <strong>Select Study</strong> dropdown.</p>
+    </li>
+  </ol>
+  <div style="margin-left: 40px;"><img height="280" src="../assets/images/Microsoft Excel Add-In/Output data query_select study dropdown.png" width="257" /> </div>
+  <p> </p>
+  <ol start="2">
+    <li style="margin-bottom: 11px;margin-left: 8px;">
+      <p>Navigate to the OUTPUT DATA tab.</p>
+    </li>
+  </ol>
+  <div style="margin-left: 40px;">  <img height="400" src="../assets/images/Microsoft Excel Add-In/New UI/Output Tab.png" width="277" /></div>
+  <p> </p>
+  <ol start="3">
+    <li style="margin-bottom: 11px;margin-left: 8px;">
+      <p>Select the Model from the dropdown.</p>
+    </li>
+    <br />
+    <li style="margin-bottom: 11px;margin-left: 8px;">
+      <p>Select the desired layout from the drop-down.</p>
+    </li>
+  </ol>
+  <div style="margin-left: 40px;"><span style="line-height: 107%;">  <img height="400" src="../assets/images/Microsoft Excel Add-In/New UI/Output Layout.png" width="277" /></span></div>
+  <p> </p>
+  <ol start="4">
+    <li style="margin-left: 0.08in">
+      <p>Select the Model and Solution under the Export From option.</p>
+    </li>
+  </ol>
+  <div style="margin-left: 40px;">
+    <p><b><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong></b>NOTE:</b> Make sure you have a successful Solution in the study.</p>
+  </div>
+  <p> </p>
+  <ol start="5">
+    <li style="margin-left: 0.08in">
+      <p style="margin-left: 0.1in">Provide the sheet name in the <strong>Export To</strong> section.</p>
+    </li>
+    <br />
+    <li style="margin-left: 0.08in">
+      <p style="margin-left: 0.1in">Click on the <strong>Extract</strong> button.</p>
+    </li>
+  </ol>
+  <p> </p>
+  <ol start="7">
+    <li style="margin-bottom: 11px;margin-left: 8px;">
+      <p>Note that if a user refreshes a page or closes and re-opens the Excel File and Runs the Output Data Query, the latest Solution file will be automatically rendered to show you the updated Solution data.</p>
+    </li>
+    <br />
+    <li style="margin-bottom: 11px;margin-left: 8px;">
+      <p>You can see the data loaded in the sheet along with the latest Solution file rendered automatically and the Output Query Details.</p>
+    </li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h3><strong>Bulk and One-Time Extract for Output Data</strong></h3>
+  <p>The Output Data tab includes separate options to extract Solution data: <br />
+     </p>
+  <ul class="Disc">
+    <li><strong>One-Time Extract: </strong>Select and extract individual Solution Layouts to the Output Query Configuration table and Excel sheet. This is helpful for reviewing specific outputs and extracting a single sheet at a time. </li>
+    <br />
+    <li><strong>Bulk Extract:</strong> Load all added layouts from the Solution Output Query Configuration sheet in one click, automatically exporting each layout to a dedicated Excel sheet. This method saves time by eliminating the need to extract each layout individually and processes all added sheets in the background. </li>
+  </ul>
+  <p> </p>
+  <p><img height="399" src="../assets/images/RN_2025/June 2025/Team Flamingo/Output Data.gif" width="1029" /></p>
+  <p> </p>
+  <p> </p>
+  <hr />
+  <h2 id="VSV">Viewing Study Version and Commit Information in Excel</h2>
+  <p>The Excel Add-In enables you to view the <strong>Study Version</strong> and <strong>Commit Message</strong> associated with each <strong>Simulation Output</strong> directly within the spreadsheet interface. This information provides enhanced traceability and helps contextualize simulation results without needing to refer back to PLEXOS Cloud or configuration logs.</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Version Number:</strong> Indicates the Study change set version used to run the simulation, helping you identify which version of the Study was executed.</li>
+    <br />
+    <li><strong>Commit Message:</strong> A custom description provided by the user when changes are pushed to a Study. This message helps explain what updates or modifications were made in that specific change set.</li>
+  </ul>
+  <p> </p>
+  <p>This visibility allows you to <strong>track version history</strong> and understand <strong>model changes directly</strong> within the Excel interface,  without switching to PLEXOS Cloud or inspecting configuration logs. It simplifies auditing, debugging, and collaboration by surfacing this important data alongside your output data.</p>
+  <p> </p>
+  <p><img src="../assets/images/RN_2025/May 2025/Team Flamingo/Version and Commit message.png" /></p>
+  <h4>➤ Key Benefits</h4>
+  <ul class="Disc">
+    <li><strong></strong>
+      <p>Improves traceability by clearly showing version and change context alongside each Solution.</p>
+    </li>
+    <li>
+      <p>Saves time by reducing the need to trace back changes from the PLEXOS Cloud manually. </p>
+    </li>
+    <li>
+      <p>Supports version comparison across multiple Solutions or Studies.</p>
+    </li>
+  </ul>
+  <p> </p>
+  <hr />
+  <h2 id="13"><strong>Create or Modify Categories</strong></h2>
+  <p>Excel Add-In allows users to edit the Category of a PLEXOS Object within a Model Database. Users can now also create new Categories to assign Objects to via the Add-in. The new Category column available in any Class sheet now shows a list of all Categories that are available for the ClassName you selected in the Template. This will make the data more precise for users and they can see the particular category data as required. Users can modify the Category values as required or create a new Category if it is not available in the dropdown list.</p>
+  <h3>  <img height="374" src="../assets/images/Category column.png" width="654" /></h3>
+  <p><strong>To create a new Category, follow the steps below:</strong><br />
+    <br />
+    1.  In the Excel Add-In, navigate to the Template sheet and fill in the values below in a new row:<br />
+     
+  </p>
+  <ul>
+    <li><strong>sheetName:</strong> <strong>sheetName </strong>is the name of the sheet where you want the table to be created. For example, we have entered <strong>Categories </strong>as sheetName in the screenshot below.<br />
+       </li>
+    <li><strong>tableName:</strong> The tableName is the combination of <strong>sheetName and tableName</strong>. This is the unique name and will be helpful for easy identification of the respective table.<br />
+       </li>
+    <li><strong>IncludeGeocode:</strong> Enter the value <strong>“No”</strong>. IncludeGeocode is not required as Category column is not dependent on Location Data (Latitude or Longitude).<br />
+       </li>
+    <li><strong>enablePullData:</strong> Enter the value <strong>“Yes”</strong>. <strong>enablePullData </strong>will allow you to fetch the data specific to sheetName+tableName table selected in the template.</li>
+  </ul>
+  <p> </p>
+  <p><strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong></b>NOTE: </strong>You don’t have to enter anything in the <strong>className </strong>and <strong>category </strong>columns because the Category column is not dependent on any Class and its categories to fetch the data.</p>
+  <p> </p>
+  <p>     <img src="../assets/images/Template sheet values.png" style="cursor: nesw-resize;" /></p>
+  <p> </p>
+  <p>2.  Switch to the Schema sheet and enter the values as shown below:<br />
+     </p>
+  <ul>
+    <li><strong>sheetName:</strong> <strong>sheetName </strong>is the name of the sheet where you want the table to be created.</li>
+  </ul>
+  <p> </p>
+  <ul>
+    <li><strong>tableName:</strong> The tableName is the combination of <strong>sheetName and tableName</strong>. This is the unique name and will be helpful for easy identification of the respective table.</li>
+  </ul>
+  <p> </p>
+  <ul>
+    <li><strong>columnName:</strong> The <strong>columnName </strong>is the name of the PLEXOS Class. </li>
+  </ul>
+  <p> </p>
+  <ul>
+    <li><strong>plexosEquivalent:</strong> Enter the value <strong>“Category”</strong>. plexosEquivalent is the Class or Property name in the PLEXOS input database. </li>
+  </ul>
+  <p> </p>
+  <ul>
+    <li><strong>type:</strong> Enter the value <strong>“Name”</strong>. type is the type of element, for example, Class, Property, Name, Attribute, CustomColumn, etc.</li>
+  </ul>
+  <p> </p>
+  <ul>
+    <li><strong>keyType:</strong> Enter the value <strong>“Category”</strong>. keyType can be decided based on the value for “Type”. For example, Object, Category, Membership, Data, AttributeData, etc.</li>
+  </ul>
+  <p> </p>
+  <p>            <img height="407" src="../assets/images/Microsoft Excel Add-In/Schema sheet columns.png" width="805" /></p>
+  <p> </p>
+  <p>3.  Select the desired Study from the <strong>Select Study</strong> dropdown and click on the <strong>LOAD DATA</strong> button.<br />
+     </p>
+  <p> </p>
+  <p>4. A new sheet is created with the sheetName you entered in the Template. “Category” for example in the screenshot below. It shows a list of Categories and ClassNames that have already been created for the selected Study.<strong><strong style="margin-left: 12px"><b><strong><strong></strong></strong></b></strong></strong><strong><strong style="margin-left: 12px"><b><strong><strong></strong></strong></b></strong></strong></p>
+  <p> </p>
+  <p><strong><strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong></strong></b></strong>NOTE: </strong>You cannot make any edits to the existing values in both Category and ClassName Columns but you can add a new category.</p>
+  <p> </p>
+  <p>     <img height="388" src="../assets/images/Categories sheet.png" width="330" /></p>
+  <p> </p>
+  <p>5.  Add a new row and enter the desired Category name in the Category column.</p>
+  <p> </p>
+  <p>    <img height="406" src="../assets/images/Category column entry.png" width="335" /></p>
+  <p> </p>
+  <p>6.  Click on the <strong>ClassName </strong>column dropdown and select the required Class from the available list.  Click on the <strong>SAVE DATA</strong> button to continue.<br />
+    <strong><strong style="margin-left: 12px"><b><strong><strong></strong></strong></b></strong></strong>
+  </p>
+  <p><strong><strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="15" /></strong></strong></b></strong>NOTE:</strong> The <strong>ClassName </strong>needs to match with the PLEXOS Classes and the drop-down helps the user in this scenario.</p>
+  <p>       <img height="422" src="../assets/images/Select ClassName.png" width="348" /></p>
+  <p> </p>
+  <p>7.  The <strong>Save As?</strong> dialog appears, you can enter the details of the change (short description) in the Commit message field.  Click on the <strong>YES, SAVE</strong> button to continue.</p>
+  <p> </p>
+  <p>      <img height="170" src="../assets/images/Save As dialog.png" width="249" /></p>
+  <p> </p>
+  <p>8.  You will see a new Category added to the Categories sheet.</p>
+  <p> </p>
+  <p>      <img height="185" src="../assets/images/New category created.png" width="272" /></p>
+  <p> </p>
+  <p>9.  The newly created Category will be available in any ClassName sheet under the <strong>Category </strong>column dropdown for your selection.</p>
+  <p> </p>
+  <p>      <img height="443" src="../assets/images/saved new category in the column.png" width="495" /></p>
+  <p> </p>
+  <hr />
+  <h2>Create and Manage Dynamic Proeprties</h2>
+  <p>The Excel Add-In supports you to add new<strong> Dynamic Properties</strong> to Studies directly within the interface. This simplifies Property management by allowing you to easily create and manage Dynamic Properties that vary over time directly in Excel. Thus, you eliminate the need to rely solely on the PLEXOS Desktop interface for variable demand or fuel prices. Refer the following sections to learn more about adding Dynamic Properties to an existing Object or new Object:</p>
+  <h3>Add New Properties to Existing Objects</h3>
+  <p>To add new dynamic Properties to your study using the <strong>ClassName {Property}</strong> sheet, perform the following steps:</p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Navigate to the <strong>ClassName {Property}</strong> sheet where you intend to add the new Property.</li>
+    <br />
+    <li>Expand the table by dragging the corner of the last row or copy and paste a row to create space for the new entry.<br />
+      <br />
+      <img height="341" src="../assets/images/Microsoft Excel Add-In/Drag and expand step.gif" width="593" />
+    </li>
+    <br />
+    <li>In the <strong>Property </strong>column, enter the new Property&#39;s name. Ensure this Property is listed in the <strong>plexosEquivalent</strong> column of the <strong>Schema </strong>sheet. If it is unavailable, you must add it to the <strong>Schema </strong>sheet first to make it a valid Property.<br />
+      <br />
+      <img height="344" src="../assets/images/Microsoft Excel Add-In/New Added Property for Existing Object.png" width="597" />
+    </li>
+    <br />
+    <li>Fill in all relevant fields, such as <strong>Parent Object, Value, Scenario, BandId</strong>, and other applicable columns.<br />
+      <br />
+      <img height="157" src="../assets/images/Microsoft Excel Add-In/Fill other columns for existing Objects.png" style="" width="599" />
+    </li>
+    <br />
+    <li>Click <strong>Save Data</strong> button upon entering all necessary values.<br />
+      <br />
+      <strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong></b></strong><strong>NOTE:</strong> A confirmation dialog box appears. You can add a <strong>Commit Message</strong> describing the change.  
+    </li>
+    <br />
+    <li>Click <strong>YES, SAVE</strong> button to confirm and save the Property addition.<br />
+      <br />
+      <img height="175" src="../assets/images/Microsoft Excel Add-In/Save dialog box.png" style="" width="295" />
+    </li>
+  </ol>
+  <p> </p>
+  <p>After saving the changes, the updated <strong>ClassName {Property}</strong> sheet reloads automatically.  Refer to the following <strong>Errors </strong>section to identify different validation errors you may see while saving your changes.</p>
+  <p> </p>
+  <hr />
+  <h3>Add Properties to New Created Objects</h3>
+  <p>You can create an <strong>Object </strong>using the <strong>ClassName </strong>sheet and add new Dynamic Properties for those Objects in the <strong>ClassName {Property}</strong> sheet using the following steps:</p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>Navigate to the <strong>ClassName </strong>sheet where you intend to add the new Object.</li>
+    <br />
+    <li>In the <strong>ClassName </strong>column, input the new Object&#39;s name.<br />
+      <br />
+      <img height="305" src="../assets/images/Microsoft Excel Add-In/New Object addition.png" width="263" /><br />
+      <br />
+      <strong><strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong></b></strong>NOTE:</strong> Currently, the Excel Add-In only supports adding new Child Objects. For Parent Objects, select from the existing database.
+      <p> </p>
+    </li>
+    <br />
+    <li>Switch to the <strong>ClassName {Property} </strong>sheet to add new Dynamic Properties for this new Object.</li>
+    <br />
+    <li>Expand the table by dragging the corner of the last row or copy and paste a row to create space for the new entry. </li>
+    <br />
+    <li>Add a new Object’s name in the <strong>ClassName </strong>column.<br />
+      <br />
+      <img height="353" src="../assets/images/Microsoft Excel Add-In/Add New Object with drag and expand.gif" width="612" />
+    </li>
+    <br />
+    <li>In the <strong>Property </strong>column, enter the new Property&#39;s name. <br />
+      <br />
+      <strong><strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong></b></strong>NOTE:</strong> Ensure this Property is listed in the <strong>plexosEquivalent </strong>column of the <strong>Schema </strong>sheet. If it is unavailable, you must add it to the <strong>Schema </strong>sheet first to make it a valid Property.  <br />
+      <br />
+      <img height="359" src="../assets/images/Microsoft Excel Add-In/New Added Proeprty.png" width="623" />
+    </li>
+    <br />
+    <li>Fill in all relevant fields, such as <strong>Parent Object, Value, Scenario, BandId</strong>, and other applicable columns.<br />
+      <br />
+      <img height="187" src="../assets/images/Microsoft Excel Add-In/Fill other columns.png" width="628" />
+    </li>
+    <br />
+    <li>Click <strong>Save Data</strong> button.   <br />
+      <br />
+      <strong><strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong></b></strong>NOTE: </strong>A confirmation dialog box will appear, prompting you to add a <strong>Commit Message</strong> to describe the changes made.
+    </li>
+    <br />
+    <li>Click <strong>YES, SAVE</strong> button to confirm and save the Property addition.<br />
+      <br />
+      <img height="187" src="../assets/images/Microsoft Excel Add-In/Save dialog box.png" width="315" />
+    </li>
+  </ol>
+  <p> </p>
+  <p>After saving the changes, the updated <strong>ClassName {Property}</strong> sheet reloads automatically. </p>
+  <p> </p>
+  <hr />
+  <h2 id="14"><strong>Tag Scenarios to Properties</strong></h2>
+  <p>The Excel Add-In now provides support for tagging <strong>Scenario </strong>Objects to any Property data. The Scenario column in the {<strong>ClassName}Property</strong> sheet allows user-friendly editing of Scenarios, by providing a drop-down input with the list of available Scenarios.<br />
+    <br />
+    Using the drop-down, the users can browse the available Scenario names and select, avoiding the need to remember names or accidentally enter an invalid name. Users previously had to enter Scenario Object names manually, so this improvement reduces the required keystrokes for users. 
+  </p>
+  <p> </p>
+  <p><img height="458" src="../assets/images/Scenarios column.png" width="626" /></p>
+  <p> </p>
+  <hr />
+  <h2 id="15">Timeslice support for Timeslice Files</h2>
+  <p>The Excel Add-In now provides Timeslice support for Timeslice Files for a Class property. The two new columns get created when data is loaded. Users can attach the Timeslice tag to any property in the Timeslice Tag column to identify variations and add the Timeslice path in the Timeslice Text column.<br />
+    <br />
+    The Timeslice reference can be defined for a property using the Timeslice Tag and Timeslice Text columns. These columns are editable. Refer to the description of the columns below:<br />
+    <br />
+    <strong></strong>
+  </p>
+  <ul class="Disc">
+    <li><strong>Timeslice Tag:</strong> Users can Add, Edit, and Delete Object Names from the Timeslice Class.</li>
+    <li><strong>Timeslice Text:</strong> Users can Add, Edit, and Delete any existing file path (For example, data, values, .csv, etc.)</li>
+  </ul>
+  <p> </p>
+  <p>            <img height="95" src="../assets/images/Microsoft Excel Add-In/Timeslice support.png" width="650" /></p>
+  <p> </p>
+  <hr />
+  <h2>Datafiles support</h2>
+  <p>The Excel Add-In now provides Datafiles support for a Class property. The two new columns get created when data is loaded. Users can attach the Datafile tag to any property in the Datafile Tag column to identify variations and add the Datafile path in the Datafile Text column.<br />
+    <br />
+    The Datafile reference can be defined for a Property using the Datafile Tag and Datafile Text columns. These columns are editable. Refer to the description of the columns below:<br />
+    <br />
+    <strong></strong>
+  </p>
+  <ul class="Disc">
+    <li><strong>Datafile Tag:</strong> Users can Add, Edit, and Delete Object Names from the Datafile Class.</li>
+    <li><strong>Datafile Text:</strong> Users can Add, Edit, and Delete any existing file path (For example, data, values, .csv, etc.)</li>
+  </ul>
+  <p> </p>
+  <hr />
+  <h2 id="16">View and Edit Dynamic Properties</h2>
+  <p>The updated Template format in the Excel Add-In allows users to view Dynamic properties along with Static properties in any [ClassName] Property Sheet. This will eliminate the need for users to specify Dynamic properties (those Properties with a Datafile, DateFrom, DateTo, Timeslice, or Scenario), as these will be automatically determined based on the PLEXOS input database.</p>
+  <p>Static and dynamic properties will be imported into tables in separate worksheets. Like PLEXOS Desktop, users can choose to specify the <strong>&quot;allDynamic&quot;</strong> flag in the Template configuration table, which will import all properties into a single worksheet using the dynamic property schema.</p>
+  <p><img height="391" src="../assets/images/View and Edit Dynamic properties in Excel Add-In/Dynamic Properties sheet.png" width="310" /></p>
+  <p> </p>
+  <p><strong>To view Dynamic Properties:</strong></p>
+  <p> </p>
+  <p><strong><strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong></b></strong>NOTE: </strong>The user can specify the Property only in the Schema, and the property will be treated as Static or Dynamic based on:</p>
+  <ul class="Disc"><br />
+    <li>Property setting in the database XML</li>
+    <br />
+    <li>The flag &quot;All Dynamic&quot; is set to True in the database XML, meaning that all attributes/properties are treated as Dynamic</li>
+  </ul>
+  <p> </p>
+  <ol class="Decimal"><br />
+    <li>Open MS Excel and Log into the Excel Add-In. Select the desired Template to load.</li>
+    <br />
+    <li>Navigate to the Template sheet and add a new column with a header name <strong>allDynamic</strong>.</li>
+    <br />
+    <li>Enter the value <strong>Yes</strong> in the allDynamic column against the desired sheetName(s). This will fetch all the dynamic properties associated with that Class.<br />
+      <br />
+      <img src="../assets/images/View and Edit Dynamic properties in Excel Add-In/Add addDynamic column manually.gif" />
+    </li>
+    <br />
+    <li>Note that, if a user enters any value other than <strong>Yes</strong>, it will be considered as <strong>No.<br />
+        <br />
+        <strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong></b></strong>NOTE: </strong>By default all the Dynamic Properties will be loaded in a {ClassName} Property sheet and the Static Properties in a ClassName sheet.</li>
+    <br />
+    <li>Click on the <strong>LOAD DATA</strong> button to view the ClassName Property sheet.</li>
+    <br />
+    <li>You can now view the properties in the <strong>Property </strong>column of the {ClassName} Property sheet for which you entered the value <strong>Yes </strong>in the <strong>Template sheet</strong>.<br />
+      <br />
+      <img height="380" src="../assets/images/View and Edit Dynamic properties in Excel Add-In/View Dynamic proeprties column.png" width="524" />
+    </li>
+    <br />
+    <li> </li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h2 id="17">Configure Template and Schema using the Template Builder</h2>
+  <p>The Template Builder feature enables users to interactively create or modify a Template, defining various Classes and Properties to be synchronized for editing/updating within the Excel workbook.</p>
+  <p><br />
+    This feature offers a user-friendly interface for constructing or editing Templates, given the extensive range of Classes and Properties that can be edited in a PLEXOS Model. Users can browse Classes, and select their Properties, Categories, Memberships, and Attributes to construct a Template that specifies the properties synchronized via the Excel Add-In.</p>
+  <p><br />
+    Utilizing the Template Editor enhances the process of filtering, finding, and selecting the correct properties to include in a Schema, eliminating the potential for manual data input errors that can occur when manually editing the Template. This saves time and minimizes errors for users creating Templates for themselves or sharing them with their team. </p>
+  <p><img height="388" src="../assets/images/Microsoft Excel Add-In/Template Editor homescreen.png" width="520" /></p>
+  <p> </p>
+  <p>Follow the steps below to Create or Modify a Template and Schema using the Template Builder:</p>
+  <p> </p>
+  <ol class="Decimal">
+    <li>In the Excel Add-In, navigate to the <strong>INPUT DATA</strong> tab and click on the <strong>EDIT </strong>button.</li>
+    <br />
+    <li>The <strong>SYSTEM</strong> and <strong>SIMULATION </strong>tab will get loaded showing the list of Classes, Categories, Properties, and Memberships in a similar format as available in PLEXOS Desktop.<br />
+      <br />
+      <br />
+      <img height="322" src="../assets/images/Microsoft Excel Add-In/Configure Template_Edit Template screen.png" width="771" />
+    </li>
+    <br />
+    <li>In the <strong>SYSTEM </strong>tab, select the desired <strong>Library (ClassGroup, Class, and Category)</strong> from the given list; you will see the <strong>Attributes, Properties, and Memberships</strong> data for the selected Class Name on the right-hand side of the screen.<br />
+      <br />
+      <strong><strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong></b></strong>NOTE: </strong>A <strong>Search </strong>bar is available below the <strong>SYSTEM </strong>&amp; <strong>SIMULATION </strong>tabs to perform a specific search for the lowest level elements such as Categories, Properties, Memberships, and Attributes.
+    </li>
+    <br />
+    <li>Check/uncheck to select the desired Properties, Memberships, and Attributes from the currently selected Class.<br />
+      <br />
+      <img height="417" src="../assets/images/Microsoft Excel Add-In/Configure Template_check_uncheck.png" width="362" /><br />
+      <strong><br />
+        <strong style="margin-left: 12px"><b><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="16" /></strong></strong></b></strong>NOTE:</strong> You can select multiple <strong>Classes, Categories, Properties, Memberships, and Attributes</strong> at a time.
+    </li>
+    <br />
+    <li>Once all selections have been made, click on the <strong>APPLY </strong>button and the template will be updated in the Template and Schema worksheet tabs.<br />
+      <br />
+      -OR-<br />
+      <br />
+      Click on the <strong>APPLY &amp; LOAD</strong> button to update the Template and Schema worksheet and also load data at the same time.
+    </li>
+    <br />
+    <li>The <strong>Template</strong> and <strong>Schema </strong>sheet get loaded on the left side of the screen showing the data selected in the Edit Template screen.<br />
+      <br />
+      <img height="366" src="../assets/images/Microsoft Excel Add-In/Configure Template_Template and Schema sheet loaded.png" width="876" />
+    </li>
+  </ol>
+  <p> </p>
+  <hr />
+  <h2 id="18">Edit Property and Membership for one-to-many Relationships</h2>
+  <p>Users can perform the Input Data Editing and Synchronization for Memberships and Properties having one-to-many relationships between objects. This feature enhances Property Data and Membership editing by using the alternative data table format equivalent to PLEXOS Desktop to synchronize one-to-many relationships using Excel Add-In. Additionally, users can also specify these one-to-many relationships in the Template Builder. </p>
+  <p> </p>
+  <p>To support this enhancement, a new column <strong>“Parent Object”</strong> was added to the Properties sheet for dynamic Input Properties to identify the Parent of the Properties with one-to-many relationships for each Object in the Class. Previously, Property Data Synchronization was available only for Memberships having one-to-one relationships between Objects. Now, with the introduction of the &quot;Parent Object&quot; column in the Properties sheet, users gain the ability to edit Property Data for one-to-many relationships in the Property sheets of Excel Add-In, which displays data in a dedicated worksheet for both Static and Dynamic Properties.<br />
+    <br />
+    <img height="385" src="../assets/images/Microsoft Excel Add-In/Parent Object column.png" width="316" />
+  </p>
+  <p> </p>
+  <p>A new<strong> {ParentClass}{ChildClass} </strong>sheet will be created when a user enters any Membership having a one-to-many relationship. In the table shown below, the value specified as &quot;1&quot; denotes a relationship between the Objects.</p>
+  <p><img height="342" src="../assets/images/Microsoft Excel Add-In/ParentClassChildClass sheet.png" width="405" /></p>
+  <p> </p>
+  <p><img height="341" src="../assets/images/Microsoft Excel Add-In/ParentClassChildClass sheet_loaded data.png" width="516" /></p>
+  <p> </p>
+  <hr />
+  <h2>Custom Column Support in the Excel Add-In</h2>
+  <p>Custom columns are added to the Object grid in the PLEXOS Databases to store additional information or unique identifiers for each object. The Excel Add-In allows you to view and interact with these custom columns within the PLEXOS database, making it easier to map and manage various objects like generators and more using unique identifiers such as the EIA Plant/Gen ID. This feature enables seamless tracking of unique attributes for various objects, such as generators, directly in Excel, making it easier to view, interact with, and map these custom data points within your workflows.  </p>
+  <p> </p>
+  <h3>Fetch Custom Column Data</h3>
+  <p>To retrieve custom column data via the Excel Add-In, you need to provide the following inputs in the <strong>Schema </strong>sheet:</p>
+  <ul class="Disc">
+    <li>Sheet Name</li>
+    <li>Table Name</li>
+    <li>Column Name</li>
+    <li>PLEXOS Equivalent (Custom column name in the PLEXOS Database)</li>
+    <li>Type (set to customcolumn)</li>
+  </ul>
+  <p> </p>
+  <p>For example, if your PLEXOS Database has <strong>EIA Plant ID</strong> as a Custom Column, you need to provide the following highlighted inputs:</p>
+  <p><img src="../assets/images/Microsoft Excel Add-In/Custom column_plexos database.png" /></p>
+  <p> </p>
+  <p><img src="../assets/images/Microsoft Excel Add-In/Custom column_schema sheet columns.png" /></p>
+  <p> </p>
+  <p>Click on the <strong>Load Data</strong> to fetch the relevant information.</p>
+  <p><img height="534" src="../assets/images/Microsoft Excel Add-In/Custom column_column.png" width="516" /></p>
+  <p> </p>
+  <p>If any incorrect data is provided for custom columns, the data will not load, and an error message will appear in the logs sheet for troubleshooting.<br />
+    <br />
+    <img src="../assets/images/Microsoft Excel Add-In/Custom column_log sheet error.png" />
+  </p>
+  <p> </p>
+  <hr />
+  <h2 id="ESHSD">Edit Simulation Horizon Start Dates (<strong>DateFrom</strong> and <strong>ChronoDateFrom)</strong></h2>
+  <p>The <strong>Excel Add-In</strong> supports editing the <strong>DateFrom</strong> and <strong>ChronoDateFrom</strong> fields for Horizon objects. These attributes define the start of the simulation horizon and can be directly configured within the spreadsheet environment.</p>
+  <p> </p>
+  <p>These attributes define the start of the Simulation horizon:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>DateFrom:</strong> Specifies the calendar-based starting point of the simulation for the <strong>Planning Horizon,</strong> which includes Preview, LT, PASA, and MT phases.</li>
+    <br />
+    <li><strong>ChronoDateFrom:</strong> Indicates the chronological start of the simulation when using a Chronological Horizon, applicable to the<strong> ST Phase.</strong></li>
+  </ul>
+  <p> </p>
+  <p>These fields are editable within the <strong>Input Data</strong> tab. When values are entered, they are recognized and automatically formatted as valid dates by the Add-In.</p>
+  <p> </p>
+  <p><img height="516" src="../assets/images/RN_2025/May 2025/Team Flamingo/Edit DateFrom.gif" width="856" /></p>
+  <p> </p>
+  <p><strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong>NOTE: </strong>When updating the DateFrom and ChronoDateFrom values, ensure that the <strong>Chronological Horizon (ST) </strong>remains a subset of the <strong>Planning Horizon. </strong>Misalignment between these may lead to simulation errors.</p>
+  <h4>➤ Why This Helps?</h4>
+  <ul class="Disc">
+    <li>This  improves usability by allowing you to control simulation start parameters without switching between tools, saving time and streamlining your workflow.  </li>
+    <br />
+    <li>Enhances Playbook development workflows, where users building Models in Excel Add-In can  easily adjust the horizon settings for each Simulation or Model directly from the spreadsheet.</li>
+  </ul>
+  <hr />
+  <h2 id="SFBD">Stay Focused with Background Data Loading in Excel Add-In</h2>
+  <p>The<strong> PLEXOS Cloud Excel Add-In</strong> supports <strong>background data loading </strong>for both <strong>input </strong>and <strong>output </strong>operations, allowing you to remain on your active worksheet while data loads in the background.  </p>
+  <h4><img height="446" src="../assets/images/RN_2025/June 2025/Team Flamingo/Input Data.gif" width="1032" /><br />
+    <br />
+    ➤ Why This Matters? 
+  </h4>
+  <p>This eliminates unnecessary screen shifts, improves focus, and boosts productivity, especially for users managing multiple configurations or working with large simulation datasets. </p>
+  <hr />
+  <h2 id="EAIV">Excel Add-In Validations and Restrictions</h2>
+  <p>The <strong>Excel Add-In</strong> ensures accurate <strong>data linking</strong>, <strong>efficient configuration</strong>, and better <strong>error visibility </strong>when working with PLEXOS Studies.</p>
+  <p> </p>
+  <ol class="AlphaNumeric">
+    <li>
+      <h4><strong>File Size Restrictions for Excel File Linking</strong></h4>
+      <ol>
+        <li>Displays validation messages when large Excel files are linked to a study, preventing misconfigurations and ensuring reliable uploads.</li>
+        <br />
+        <li><strong>File Size Limits:</strong>
+          <ol><br />
+            <li><strong>XLSB</strong> (binary files): Max size is <strong>20 MB</strong>.</li>
+            <br />
+            <li><strong>XLSM / XLSX</strong>: Max size is <strong>85 MB</strong>.</li>
+          </ol>
+        </li>
+        <br />
+        <li>Files exceeding the limit trigger an error message and log entry.<br />
+          <br />
+          <img height="335" src="../assets/images/RN_2025/August 2025/Team Flamingo/Excel File Size Limits.png" style="cursor: nwse-resize;" width="800" />
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h4>Row Limit in Output Query Configuration Sheet</h4>
+      <ol>
+        <li>
+          <p>Row limit is <strong>10</strong> to <strong>100</strong> in the <strong>Simulation Output Query Configuration</strong> table.</p>
+        </li>
+        <br />
+        <li>
+          <p>Adding more than <strong>100</strong> rows prompts a validation message.<br />
+            <br />
+            <img height="324" src="../assets/images/RN_2025/August 2025/Team Flamingo/Increased Row Limit.png" width="800" />
+          </p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h4>Schema Validation with Error Reporting</h4>
+      <ol>
+        <li>
+          <p>Automatically checks schema definitions and flags invalid/mistyped entries (e.g., wrong class, category, type, or attribute names) in the <strong>Template Schema</strong>.</p>
+        </li>
+        <br />
+        <li>
+          <p>Invalid values are skipped, logged with timestamps, and clearly highlighted for easy correction.<br />
+            <br />
+            <br />
+            <img height="267" src="../assets/images/RN_2025/August 2025/Team Flamingo/Schema Validation.png" width="800" />
+          </p>
+        </li>
+      </ol>
+    </li>
+  </ol>
+  <hr />
+  <h2>Predefined Attribute Selection in Excel Add-In</h2>
+  <p>The <strong>Excel Add-In</strong> allows you to select predefined simulation attribute values from a dropdown menu, removing the need to enter them manually.</p>
+  <p> </p>
+  <p>Supported fields display a drop-down list of valid attribute values, eliminating the need to check <strong>PLEXOS Desktop</strong> or external documentation to confirm correct entries.</p>
+  <p> </p>
+  <p><img height="530" src="../assets/images/RN_2025/August 2025/Team Flamingo/Simulation Attribute Values.gif" width="1013" /></p>
+  <p><br />
+    <strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /> </strong></strong><strong>NOTE:</strong> Drop-downs appear only for string-based attributes with fixed allowed values. Fields that take numbers or dates (like integers or timestamps) do not support drop-downs.
+  </p>
+  <p> </p>
+</body>
+</html>

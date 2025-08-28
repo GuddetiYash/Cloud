@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>October 2022 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-2598</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">2ee674b0-f1db-4875-98d5-014dcb96b432</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-2598, TZXE7D2DFWED-1834737786-2598</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="topic-comment" content="Edited June 26" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>October 2022 Release Notes</h1>
+  <h3>
+    <h>In this article: </h>
+  </h3>
+  <ul>
+    <li><a href="#armoir">PLEXOS Cloud Desktop Integration</a></li>
+    <li><a href="#bed">Command Line Interface (CLI)</a></li>
+    <li><a href="#closet">Monte Carlo (Auto-Sample) Improvements</a></li>
+    <li><a href="#desk">PLEXOS Cloud MS Excel Add-In</a></li>
+    <li><a href="#earbud">Geocoding Support for Universal and Battery Classes</a></li>
+    <li><a href="#futon">Solution View Changes</a></li>
+    <li><a href="#glue">Tenant Preference Enhancements</a></li>
+    <li><a href="#fridge">Study Management Enhancements</a></li>
+    <li><a href="#igloo">Enhancements to In-App Reports (Solution Reports)</a></li>
+    <li><a href="#holder">Additional Improvements and Bug Fixes</a></li>
+  </ul>
+  <p> </p>
+  <p>Learn more about the October 2022 release in the video below:</p>
+  <p> </p>
+  <p><iframe src="https://player.vimeo.com/video/761935452?h=db15e23614&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="640" height="360" allowfullscreen=""></iframe></p>
+  <p> </p>
+  <p>You can also continue reading to learn more detail about the new enhancements and features in this release.<br />
+     </p>
+  <p> </p>
+  <h2 id="armoir"><strong>PLEXOS Cloud Desktop Integration</strong></h2>
+  <p>PLEXOS Desktop introduces a new PLEXOS Cloud Integration in version <strong><b>9.1 R03</b></strong>. The Cloud Integration seamlessly integrates PLEXOS Desktop and PLEXOS Cloud for key workflows and reduces the dependence on the PLEXOS Cloud Bridge application. From inside PLEXOS desktop users can now:</p>
+  <p> </p>
+  <ul>
+    <li>Save a Study to PLEXOS Cloud</li>
+    <li>View a Study in PLEXOS Cloud</li>
+    <li>View the Solution list and Download\view Solutions in PLEXOS Cloud</li>
+    <li>Run and Configure a Model\View Model in PLEXOS Cloud</li>
+    <li>Sync a Study from desktop to PLEXOS Cloud and vice versa</li>
+  </ul>
+  <p> </p>
+  <p>Read more about getting started with <a class="rn_button" href="/articles/KB_Article/PLEXOS-Cloud-integration-with-Desktop" target="_blank">PLEXOS Desktop Cloud Integrated 9.1 R03</a>.</p>
+  <p> </p>
+  <h2 id="bed"><strong>Command Line Interface (CLI)</strong></h2>
+  <p>Users can now interact with PLEXOS Cloud and automate processes using the CLI (also called the PLEXOS Cloud Toolkit). The CLI is a modern and simple way to interact with the application without having to use an API. You can trigger commands such as uploading a Study, running a simulation, downloading output in a variety of formats, and much more.</p>
+  <p> </p>
+  <p>Read more about getting started with the PLEXOS Cloud CLI <a class="rn_button" href="/articles/KB_Article/Introduction-to-PLEXOS-Cloud-CLI" target="_blank">here</a>.</p>
+  <p> </p>
+  <h2 id="closet"><strong>Monte Carlo (Auto-Sample) Improvements</strong></h2>
+  <p>Monte Carlo Simulations have been revamped in PLEXOS Cloud. PLEXOS Cloud also now supports user-defined (exogenous) samples in addition to endogenously defined samples.</p>
+  <p> </p>
+  <p>Previously, users had to populate the Stochastic Object with the total number of samples divided by the number of virtual machines (VMs). For example, if you wanted to run 100 samples over 10 machines (10 samples on each machine), the Variable Sample Draws had to be populated with the number 10 instead of 100. Now, users need only define the number of samples in the Stochastic Object. This means that if you have 100 samples, you specify 100 Variable Sample Draws. </p>
+  <p> </p>
+  <p>You can learn more in this article about <a class="rn_button" href="/articles/KB_Article/Monte-Carlo-V2" target="_blank">Monte Carlo (Auto-Sample)</a>.</p>
+  <p> </p>
+  <h2 id="desk"><strong>PLEXOS Cloud MS Excel Add-In</strong></h2>
+  <p>The new Microsoft Excel Add-in allows you to review and edit model input data and synchronize changes to PLEXOS Cloud directly from Excel. The Microsoft Excel Add-In replaces the now deprecated Excel Plugin. The Add-in is lightweight and supports both model data and the data files associated with the Study. Small, targeted changes or complex bulk changes based on formulas can be done easily and saved back to the cloud with just a few clicks.</p>
+  <p> </p>
+  <p>Read more about using the <a class="rn_button" href="../../Data/Microsoft_Excel_Add-In.htm" target="_blank">Excel Add-In</a> to enhance your modeling experience with PLEXOS Cloud.</p>
+  <p> </p>
+  <h2 id="earbud"><strong>Geocoding Support for Universal and Battery Classes</strong></h2>
+  <p>Geocoding support for map visualization has been added for the following Universal classes and the Battery class. This applies to the map visualization in the Setup and Solutions views.<br />
+    The object class, and its corresponding icon and Geometry Type are summarized in the table below.</p>
+  <p> </p>
+  <table align="center" class="MsoTableGrid" style="border-collapse: collapse;border: none;">
+    <tbody>
+      <tr>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 160px;padding: 0in 7px 0in 7px;border-top: 1px solid black;border-right: 1px solid black;border-left: 1px solid black;" valign="top">Class</td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 68px;padding: 0in 7px 0in 7px;border-top: 1px solid black;border-right: 1px solid black;border-left: none;" valign="top">Icon</td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 155px;padding: 0in 7px 0in 7px;border-top: 1px solid black;border-right: 1px solid black;border-left: none;" valign="top">Shape</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 160px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: 1px solid black;" valign="top">Flow Node</td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 68px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top"><img height="46" src="../../assets/images/RN_2022/October/Flow Node.png" style="width: 28px; height: 29px; margin-top: 3px; margin-left: 3px;" width="43" /></td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 155px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top">Point</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 160px;padding: 0in 7px 0in 7px;height: 39px;border-top: none;border-right: 1px solid black;border-left: 1px solid black;" valign="top">Facility</td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 55px;padding: 0in 7px 0in 7px;height: 39px;border-top: none;border-right: 1px solid black;border-left: none" valign="top"><img alt="" height="16" src="../../assets/images/RN_2022/October/Facility.png" style="width: 32px; height: 32px; margin: 3px 1px 1px;" width="16" /></td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 155px;padding: 0in 7px 0in 7px;height: 39px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top">Point</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 160px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: 1px solid black;" valign="top">Flow Storage</td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 68px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top"><img src="../../assets/images/RN_2022/October/Storage.png" style="width: 36px; height: 32px;" /></td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 155px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top">Point</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 160px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: 1px solid black;" valign="top">Flow Path</td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 68px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top"><img src="../../assets/images/RN_2022/October/Flow Path.png" style="width: 34px; height: 35px;" /></td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 155px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top">Line String</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 160px;padding: 0in 7px 0in 7px;height: 30px;border-top: none;border-right: 1px solid black;border-left: 1px solid black;" valign="top">Entity</td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 68px;padding: 0in 7px 0in 7px;height: 30px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top"><img src="../../assets/images/RN_2022/October/Entity.png" style="width: 24px; height: 24px; margin-top: 2px; margin-left: 3px;" /></td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 155px;padding: 0in 7px 0in 7px;height: 30px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top">Polygon</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 160px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: 1px solid black;" valign="top">Market</td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 68px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top"><img height="27" src="../../assets/images/RN_2022/October/Market.png" style="margin-left: 5px;" width="22" /></td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 155px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top">Polygon</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 160px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: 1px solid black;" valign="top">Battery</td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 68px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top"><img src="../../assets/images/RN_2022/October/Battery.png" style="width: 22px; height: 25px; margin-left: 6px;" /></td>
+        <td colspan="1" rowspan="1" style="border-bottom: 1px solid black;width: 155px;padding: 0in 7px 0in 7px;border-top: none;border-right: 1px solid black;border-left: none;" valign="top">Point</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><br />
+    In the Map view, you can see that polygon objects such as Markets appear as shown below.<br />
+     </p>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/October/Polygon1.png" /></div>
+  <p> </p>
+  <p>Objects such as Facilities, which are geocoded as points, appear with their icons as shown below.</p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img alt="" height="430" src="../../assets/images/RN_2022/October/Polygon Details.png" width="605" /></div>
+  <p> </p>
+  <p><b><strong><b><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;" />  </b></strong>NOTE:</b> As of the October 2022 Release, the following classes do not have geocoding support:</p>
+  <ul>
+    <li style="margin-left: 8px;">Commodities</li>
+    <li style="margin-left: 8px;">Processes</li>
+    <li style="margin-left: 8px;">Maintenance</li>
+    <li style="margin-left: 8px;">Flow Network</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h3><strong>Solution Output Grid Changes</strong></h3>
+  <p>The Solutions Output Grid has increased the yearly period type data reporting from 5 years to 30 years. You can view this change if you navigate to <strong>Solutions </strong>and then select the <strong>Grid </strong>icon.</p>
+  <p> </p>
+  <h2 style="left: 60px;top: 5857.86px;"><b>Search Models and Solutions within the Solutions Panel</b></h2>
+  <p>In the Solutions pane, a new Filter has been added that allows you to easily find the Solution or Model you are looking for. You can filter by Model name, triggered by user, status, and date range. You can also sort by Date and Model Name (A to Z).<br />
+     </p>
+  <p>Go to <b>Solutions </b>&gt; Click on the <b>Filter </b>icon &gt; Click <b>More Options</b>.</p>
+  <p> </p>
+  <p><img src="../../assets/images/RN_2022/October/More Options.png" /><br />
+     </p>
+  <p><b></b></p>
+  <h2><b>Search Models </b></h2>
+  <p>Click in the Search Bar and enter a few keywords of your Model name. A list of models matching your search keywords will display. You can select as many models as you want. Only the latest selected Model name is displayed inside a chip, previously selected items are present inside a popup that is opened by clicking ‘+N More’ button next to the latest selected chip. Search text can be cleared by clicking on the ‘x’ icon.</p>
+  <p><br />
+    <b><strong><b><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;" />  </b></strong>NOTE</b>: The Search Model will only show a list of Models available for your Study.
+  </p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/October/Solutions.png" /></div>
+  <p> </p>
+  <p><br />
+    <b>Sort By</b><br />
+    Sort your simulations by date or model name in alphabetical order. In the search results, use an up and down arrow (next to the Solutions label) to view results in Ascending or Descending order.
+  </p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/October/Solutions Panel.png" style="border-width: 1px;border-style: solid;border-color: #000000;border-left-width: 1px;border-left-style: solid;border-left-color: #000000;border-top-width: 1px;border-top-style: solid;border-top-color: #000000;border-right-width: 1px;border-right-style: solid;border-right-color: #000000;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #000000" /></div>
+  <p> </p>
+  <p><br />
+    <b>Date Range</b><br />
+    Manage your search results by applying a specific date range. Simulations which are part your selected date range are displayed.
+  </p>
+  <p> </p>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/October/Date Range.png" /></div>
+  <p> </p>
+  <p><br />
+    <b>Search Users</b><br />
+    This Search Bar allows you to select and view the user-specific simulations.<br />
+    <br />
+    <b>Status</b><br />
+    It displays all the statuses applicable for listed simulations under models in your study. You can select any status to view the simulations under models that matches the selected status.
+  </p>
+  <p> </p>
+  <h2 id="glue"><strong>Tenant Preference Enhancements</strong></h2>
+  <p><a target="_blank"><span style="color: #0e101a;">The Tenant Preferences page allows the admin to change settings/preferences that impact what users see in the tenant. </span></a><span style="color: #0e101a;">The admin can view all engines available for the tenant and decide which to show or hide to users. Additionally, the admin can replace the PLEXOS Cloud logo at the top left of the interface with a company logo.</span><br />
+     </p>
+  <div style="margin-left: -0.11in"><img src="../../assets/images/RN_2022/October/Tenant Preferences.jpg" style="border-width: 1px; border-style: solid;" /></div>
+  <p> </p>
+  <div>Learn more on the <a class="rn_button" href="/articles/KB_Article/Tenant-Preferences-page" target="_blank">Tenant Preferences page</a>.</div>
+  <h2 id="fridge"><br />
+    <strong>Study Management Enhancements</strong>
+  </h2>
+  <h3><strong>Bulk Actions</strong></h3>
+  <p>Bulk actions are now available to <strong>Archive</strong>, <strong>Delete</strong>, or <strong>Change Owners</strong> for studies in the Study Management tab under Administration.<br />
+     </p>
+  <div style="margin-left: 0.02in"><img src="../../assets/images/RN_2022/October/Bulk Actions.png" /></div>
+  <p> </p>
+  <p>When you click the <strong>Archive </strong>button <img src="../../assets/images/RN_2022/October/Archive.png" style="width: 27px; height: 24px;" />, all the selected studies will be archived when you click <strong>Confirm</strong>.<br />
+     </p>
+  <div style="margin-left: 40px;"><img height="351" src="../../assets/images/RN_2022/October/Archive Studies.png" width="613" /></div>
+  <p><br />
+    Studies can only be deleted after being archived. After you have archived the selected studies you can <strong>Delete </strong>them by clicking the <img src="../../assets/images/RN_2022/October/trashcan.png" style="width: 25px; height: 23px;" />icon. You will then be prompted to <strong>Confirm </strong>and delete the studies.<br />
+     </p>
+  <div style="margin-left: 40px;"><img height="352" src="../../assets/images/RN_2022/October/Delete Studies.png" width="616" /></div>
+  <p> </p>
+  <p>Admins can also update the ownership of multiple studies at once. After selecting <strong>Change Owner</strong>, you will be shown a dropdown menu from which you can set the new owner for the selected studies.</p>
+  <p> </p>
+  <div style="margin-left: 0.07in"><img src="../../assets/images/RN_2022/October/Change.png" /><br />
+     </div>
+  <p> </p>
+  <h3><strong>Viewing Simulation Run Times</strong></h3>
+  <p>You can now view the <strong>Engine Run Time</strong> for each Study on the Simulation Management page.<br />
+     </p>
+  <p><img src="../../assets/images/RN_2022/October/Simulation Management.png" /></p>
+  <h2 id="igloo"><br />
+    <strong>Enhancements to In-App Reports (Solution Reports)</strong>
+  </h2>
+  <p>There are some minor enhancements performed on the IRP Reports section. Details are as below:</p>
+  <p> </p>
+  <ol>
+    <li style="margin-left: 8px;">In the Solutions tab, the header name has changed.  <b>Analysis for [Solution _Name]</b> replaces <b>Insights for [Solution_Name].</b></li>
+  </ol>
+  <p> </p>
+  <p style="margin-left: 0.78in"><img height="204" src="../../assets/images/RN_2022/October/Battery Insights.jpg" width="413" /></p>
+  <p> </p>
+  <ol start="2">
+    <li style="margin-left: 8px;">In the Reports tab under Solutions, the table now shows <strong>Total </strong>at the bottom of the Report which replaces <strong>Totals</strong>.</li>
+  </ol>
+  <p> </p>
+  <p style="margin-left: 0.88in"><img src="../../assets/images/RN_2022/October/Hydrogen.jpg" /></p>
+  <p> </p>
+  <ol start="3">
+    <li style="margin-left: 8px;">When you right-click on any Report there is a new <strong>View Details</strong> option. This shows the <b>Period type ID</b> and <b>Phase ID </b>and all properties on the report. This is helpful to understand what data will show in the report and what data you have or don&#39;t have in this Solution.  </li>
+  </ol>
+  <p> </p>
+  <p><img src="../../assets/images/RN_2022/October/Report Details.png" /></p>
+  <p><br />
+    <b><strong><b><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;" />  </b></strong>NOTE: </b>The Period Type ID and Phase ID values must be added in the JSON configuration file before uploading to PLEXOS Cloud. You will receive an error if they are not populated.
+  </p>
+  <ul>
+    <li style="margin-left: 0.02in"><b>Red Text</b>- properties that are not part of the Solution output data. The columns or formulas that leverage these properties will be blank or not calculate correctly. To include these on future runs for your Models, add them in PLEXOS desktop in Reports.<br />
+       </li>
+    <li style="margin-bottom: 11px;margin-left: 0.02in"><b>Black Text</b>- properties that are part of the Solution output for this Model and therefore will populate for this Report.</li>
+  </ul>
+  <p> </p>
+  <h2 id="holder"><strong>Minor Improvements and Bug Fixes</strong></h2>
+  <p>There have been improvements to Congestion Analysis that capture battery operation and account for contingent congestion in reporting. <br />
+    <br />
+    A 1 Core – 4 GB VM has been added for running simulations.<br />
+    <br />
+    Users can now download and initialize studies created externally stored in zipped file sizes larger than 2GB in Cloud Bridge.
+  </p>
+</body>
+</html>

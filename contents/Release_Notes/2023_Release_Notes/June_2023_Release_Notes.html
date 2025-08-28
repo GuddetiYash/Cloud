@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <title>June 2023 Release Notes</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/>
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-2450</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">7b76f846-a138-461f-865d-da309ad811a2</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-2450, TZXE7D2DFWED-1834737786-2450</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<meta name="rh-index-keywords" content="June 2023 Release Notes,PLEXOS Cloud,Release Notes"/><meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>Highlights of the June 2023 Release: </h1>
+  <ul>
+    <li><a href="#1one">Solution Output Analysis (Map, Grid and Reports)</a></li>
+    <li><a href="#2two">Model Building and Editing (Desktop Integration and Excel)</a></li>
+    <li><a href="#3three">Model Execution</a></li>
+    <li><a href="#4four">BI Analytics</a></li>
+    <li><a href="#5five">Administration (Simulation Management and Storage Management)</a></li>
+    <li><a href="#6six">Integration and Automation - CLI/API</a></li>
+    <li><a href="#7seven">Additional Improvements and Bug Fixes</a></li>
+  </ul>
+  <p> </p>
+  <p>The following video covers the overview of the features from <strong>June 2023 </strong>releases:<br/>
+     </p>
+  <p><iframe allowfullscreen="" height="380" src="https://player.vimeo.com/video/835536021?h=58479" width="660" style="cursor: nesw-resize;"></iframe></p>
+  <p> </p>
+  <p>For more detailed descriptions of the features and improvements available in the <strong>June 2023</strong> release, scroll through the topics below.</p>
+  <p> </p>
+  <h2>Important Notice - End of Support for Cloud Bridge</h2>
+  <p><strong>Starting January 2024</strong>, Energy Exemplar will no longer support Cloud Bridge. This means the end of technical support, security updates, and ensured compatibility of Cloud Bridge with new releases of PLEXOS Cloud and related products. To facilitate a smooth transition, we encourage you to use the PLEXOS Cloud-Desktop Integration, which is equipped with all the features present in Cloud Bridge.<br/>
+     </p>
+  <h2 id="1one">Solution Output Analysis (Map, Grid, Reports)</h2>
+  <h3>Support for All Classes on Map View</h3>
+  <p>The Solutions Map Properties Panel and the Setup Map now accommodate all available classes, eliminating the previous limitation of displaying only a subset of classes on the Map. You can see the list of supported classes, which includes all classes in PLEXOS Cloud, from <strong>DATA</strong> &gt; <strong>SETUP</strong> &gt; <strong>Edit</strong>. <br/>
+    <br/>
+    <strong><img src="../../assets/images/Blue_Book_Closed.gif"/> NOTE</strong>: This does not include Membership Classes (e.g., GasStorage.GasContracts).<br/>
+    <br/>
+    The following image shows the Map within Setup showing the additional supported Classes.<br/>
+    <br/>
+    <img height="316" src="../../assets/images/RN_2023/June/map1.jpg" width="646"/><br/>
+    <br/>
+    <br/>
+    You can also view these Classes on the Solutions Map. They are represented by the same icons that are visible on the Setup Map.<br/>
+    <br/>
+    <img height="341" src="../../assets/images/RN_2023/June/map2.jpg" width="657"/>
+  </p>
+  <h3>Seamless Solution Transition with Persistent Grid Context</h3>
+  <p>Improvements have been made to the user experience on the Output Data Grid Page when switching between <strong>Solutions</strong> from the left panel. The Data Grid retains its context and smoothly reloads the updated data from the selected Solution.  The Data Grid will preserve the selections, the time intervals, sorting settings, filters, and orientation. This supports switching between Solutions in the same Model or different Models.<br/>
+    <br/>
+    <strong><strong><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;"/> </strong>NOTE:</strong> If the phase selected by the user does not contain any Solution data, the corresponding section will appear empty on the Data Grid.
+  </p>
+  <p> </p>
+  <h2 id="2two">Model Building and Editing (Desktop Integration and Excel)</h2>
+  <h3>Browse Cloud and Clone Study in Desktop</h3>
+  <p>The new <strong>Cloud Study</strong> panel and Clone functionality in PLEXOS Desktop allow users to browse and find available studies on PLEXOS Cloud and Clone a Study for editing in PLEXOS Desktop. Cloning creates a local copy of a Study on a user’s PC, complete with version history, so that users can start to collaborate on the Study in PLEXOS Desktop with integrated version management features.<br/>
+    <br/>
+    <strong><strong><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;"/> </strong>NOTE: </strong>The Clone Study feature is available with PLEXOS Desktop 9.2 R05 and above.<br/>
+    <br/>
+    Refer to the detailed article <a href="../../Getting_Started/PLEXOS_Cloud_Integration_with_PLEXOS_Desktop.htm" target="_blank">PLEXOS Cloud Integration with PLEXOS Desktop</a> for more information.
+  </p>
+  <p> </p>
+  <h3>Create a New Study from an Existing Study Version</h3>
+  <p>Users can now save any version of a Study as a new Study. This action allows users to take a specific state, or version, of their Study and create a new one. This is useful if many changes were made that users aren’t happy with, and they want to revert to an earlier state. This functionality previously only existed in Cloud Bridge.<br/>
+    <br/>
+    <strong><strong><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;"/> </strong>NOTE:</strong> The existing Study will not be changed. This creates a brand-new Study from an existing version. If the existing Study is no longer needed, make sure to Archive or Delete it to manage storage.<br/>
+    <br/>
+    <img height="325" src="../../assets/images/RN_2023/June/saveasnewstudy.jpg" width="497"/><br/>
+    <br/>
+    Refer to the detailed article <a href="../../Data/Managing_Study_Version_in_PLEXOS_Cloud.htm" target="_blank">Managing Study Versions in PLEXOS Cloud</a> for more information.
+  </p>
+  <p> </p>
+  <h3>Logging Data from the Excel Add-In</h3>
+  <p>The Excel Add-In now includes a Log sheet that allows users to track and view the modifications made to a Study when data is pushed or pulled. A new Log worksheet is automatically generated each day when a user loads a Study for the first time. The Log sheet provides information such as Timestamp, Type, Message, Version, Environment, and Operation for data pushing and pulling. This feature enables users to monitor, identify, and report any problems that may arise during their Excel Add-In activities.<br/>
+    <br/>
+    <strong><strong><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;"/> </strong>NOTE: </strong>The Log sheet specifically tracks the changes made in the DATABASE and DATA FILES tabs within the Input Data section.<br/>
+    <br/>
+    <img height="270" src="../../assets/images/RN_2023/June/excel.jpg" width="648"/><br/>
+    <br/>
+    Refer to the detailed article on the <a href="../../Data/Microsoft_Excel_Add-In.htm" target="_blank">PLEXOS Cloud Microsoft Excel Add-In </a>  for more information on Log sheets.
+  </p>
+  <p> </p>
+  <h3>Tag a Datafile to a Property with the Excel Add-In</h3>
+  <p>The Excel Add-in now provides support for Data File references for a Class Property, which is used to define the value of a Property during a PLEXOS simulation based on time-series data stored in the referenced Data File. Excel Add-in users can now define Properties that reference Data Files in the Template, and then add/update/remove Data File references in the Property tables.<br/>
+    <br/>
+    This will help users improve their workflow while making bulk edits to Properties.<br/>
+    <br/>
+    Refer to the detailed article on the <a href="../../Data/Microsoft_Excel_Add-In.htm" target="_blank">PLEXOS Cloud Microsoft Excel Add-In </a> to learn more about how to tag a Datafile to a property.
+  </p>
+  <p><br/>
+     </p>
+  <h3>Add a Row/Column to Existing Datafiles in the Excel Add-In</h3>
+  <p>Users can now add multiple rows and columns in the Timeseries File sheet loaded under the DATA FILES tab of the Excel Add-In. Users have the flexibility to configure these rows and columns as required. They can manually set a Header name and assign property values, making the sheet more flexible and easier to read. Previously, users were limited to adding any new rows and columns to existing Data Files.<br/>
+    <br/>
+    Refer to the detailed article on the <a href="../../Data/Microsoft_Excel_Add-In.htm" target="_blank">PLEXOS Cloud Microsoft Excel Add-In </a>  for more information on adding data rows and columns.
+  </p>
+  <p><br/>
+     </p>
+  <h2 id="3three">Model Execution</h2>
+  <h3>Simulation Groups</h3>
+  <p>A Simulation Group is a set of Simulations that run together in a batch. Users can create and modify these groups, eliminating the need for manual selection of multiple Models each time they wish to run them. By simply selecting a predefined group and clicking &quot;Run,&quot; users can execute all the Models within the Simulation Group effortlessly.<br/>
+    <br/>
+    Each Simulation Group is equipped with its own settings, which define the Models, Run Configuration Settings (such as Run Type, Virtual Machine, etc.). When triggered, the Simulation Group executes each Model on separate Virtual Machines simultaneously or sequentially (based on Simulation Setting), utilizing the specified Simulation Group settings.<br/>
+    <br/>
+    <img src="../../assets/images/RN_2023/June/simgroup1.jpg"/><br/>
+    <br/>
+    <img height="163" src="../../assets/images/RN_2023/June/simgroup2.jpg" width="829"/><br/>
+    <br/>
+    <br/>
+    You can create a Simulation Group in one of the following ways: (1) through the &quot;Classes&quot; tab on the <strong>Models</strong> page or (2) via the <strong>Simulations</strong> page.<br/>
+    <br/>
+    Learn more about creating and executing Simulation Groups in the article <a href="../../Simulations/Simulation_Group_in_PLEXOS_Cloud.htm" target="_blank">Simulation Group in PLEXOS Cloud</a>.<br/>
+     
+  </p>
+  <h3>Run Configuration Panel Changes to Show Recommendations</h3>
+  <p>In this release, significant changes have been made to the UI of the Run Configuration Panel to enhance visibility. The panel now includes two cards to show the <strong>Previous Configuration</strong>, and <strong>Recommendation</strong> along with a Custom Run Configuration.<br/>
+     </p>
+  <div style="margin-left: 40px;">1. <strong>Previous Configuration</strong> - The Previous Configuration card displays the configuration details of the previous successful Run. Users have the option to select it and proceed with that exact configuration.<br/>
+    <br/>
+    <img height="541" src="../../assets/images/RN_2023/June/runconfig1.jpg" width="264"/><br/>
+    <br/>
+     
+  </div>
+  <div style="margin-left: 40px;">2. <strong>Recommendation</strong> - The Recommendation card provides a suggested configuration tailored to the user&#39;s Model, aiming to optimize core usage.<br/>
+     </div>
+  <div style="margin-left: 40px;">3. <strong>Custom Run Configuration</strong> - The Custom Run Configuration card functions as the traditional option, allowing users to view and adjust their settings according to their specific requirements.<br/>
+    <br/>
+    <img height="618" src="../../assets/images/RN_2023/June/runconfig2.jpg" width="307"/>
+  </div>
+  <p><br/>
+     <br/>
+    Additionally, the Panel now offers the capability to add Models to a Simulation Group. Users can either create a new Simulation Group or add their Model to an existing one. For a graphical representation of the steps, please refer to the following GIF.<br/>
+    <br/>
+    <img src="../../assets/images/RN_2023/June/gif.jpg"/><br/>
+    <br/>
+     
+  </p>
+  <h2 id="4four">BI Analytics</h2>
+  <p><strong><strong><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;"/> </strong>NOTE:</strong> The features described in this section related to BI Analytics are only available to users that own the BI Analytics add-on with the core-based licensing or the Analytics Tier with usage-based licensing.</p>
+  <h3>BI Solution Comparison (Beta Release)</h3>
+  <p>Under the <strong>Compare</strong> page users can compare different Solutions using BI Reports after completing the &quot;Add to BI&quot; operation for the Simulation Group.<br/>
+    <br/>
+    To facilitate this comparison, users need to create a <strong>Simulation Group</strong>. Once the Simulation Group runs successfully, it will be available in the Compare page. After adding the Simulation Group to the BI, users can compare the data of different Solutions of Models within that Simulation Group. Each group allows for a minimum of two and a maximum of six Solutions to be compared. This powerful feature enables users to analyze and compare results across different Solutions.
+  </p>
+  <p><br/>
+    <img height="417" src="../../assets/images/RN_2023/June/bichart.jpg" style="border-width: 1px;border-style: solid;border-left-width: 1px;border-left-style: solid;border-top-width: 1px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;border-bottom-width: 1px;border-bottom-style: solid" width="753"/><br/>
+    <br/>
+    <br/>
+    Learn more about the new feature in the article <a href="../../Reports/BI_Solution_Comparison.htm" target="_blank">BI Solution Comparison</a>.<br/>
+     
+  </p>
+  <h3>Remove a Simulation Group from BI Analytics</h3>
+  <p>If you want to remove a Simulation Group from BI, simply click on the <strong>Remove Solution Group</strong> from BI icon.<br/>
+    <br/>
+    <img height="450" src="../../assets/images/RN_2023/June/removegroup.jpg" width="301"/>
+  </p>
+  <p> </p>
+  <h3>Manage BI Solutions</h3>
+  <p>Users can now better manage their Solutions that have been added BI. Users are limited to ten (10) Solutions added to BI Analytics at any time, and other users within the tenant can add different Solutions and all users can view all Solutions added to BI. <br/>
+    <br/>
+    This new feature empowers users to review the Solutions added to BI, and if they wish to remove them, they can do so by using the &quot;Remove Solution/Solution Group from BI&quot; feature. This allows users to reduce space and regain the option to add new Solutions to BI.<br/>
+    <br/>
+    <img height="390" src="../../assets/images/RN_2023/June/addtobi.jpg" width="687"/><br/>
+    <br/>
+     
+  </p>
+  <h2 id="5five">Administration (Simulation Management and Storage Management)</h2>
+  <h3>Retain Selected Filters in Study and Solutions Tabs in Storage Management</h3>
+  <p>In the <strong>Studies </strong>and <strong>Solutions </strong>tab of the <strong>Storage Management </strong>page, applied filters will be retained even if the browser or grid refreshes. <br/>
+    <br/>
+    Previously, users had to manually reapply the filters after saving the data or when the browser or grid refreshed. With this improvement, users can seamlessly continue working with their preferred filters without repetitive manual adjustments.<br/>
+    <br/>
+    <img height="276" src="../../assets/images/RN_2023/June/retainfilter.jpg" width="795"/><br/>
+    <br/>
+     
+  </p>
+  <h3>Email Notifications for Saves as New Study</h3>
+  <p>Users will receive email notifications indicating the Successful or Failed status of the Study creation process for the Save as New Study action. Additionally, users can view an activity “New Study Created Successfully&quot; or &quot;New Study Creation Failed” added in the <strong>Activity History</strong> panel of an existing Study (Source Study) under the Overview tab.<br/>
+    <br/>
+    <img height="444" src="../../assets/images/RN_2023/June/emailnotif.jpg" style="border-style: solid;" width="712"/><br/>
+    <br/>
+    <br/>
+    <br/>
+    <img height="521" src="../../assets/images/RN_2023/June/emailnotif2.jpg" style="border-style: solid;" width="293"/>
+  </p>
+  <h2 id="6six">Integration and Automation - CLI/API</h2>
+  <p>There have been no changes to PLEXOS Cloud APIs or the PLEXOS Cloud Toolkit (CLI) in the June 2023 Release of PLEXOS Cloud. Please return in July for any changes or enhancements.<br/>
+     </p>
+  <h2 id="7seven">Additional Improvements and Bug Fixes</h2>
+  <p>We have continued to make improvements to PLEXOS Cloud, with a focus on enhancing the user experience, stability, and performance. <br/>
+    <br/>
+    The CI Select Node Object under the <strong>Congestion Insights </strong>page has the option to Search the Nodes and apply a filter on the results.<br/>
+    <br/>
+    Additional design enhancements have been made in the <strong>BI Reports</strong> section, specifically related to changes in wording. The term &quot;Add&quot; has been used instead of &quot;Publish,&quot; and &quot;Remove&quot; has been used instead of &quot;Unpublish.&quot;<br/>
+    <br/>
+    The Credit Usage Trend on the Subscription page will now have a &quot;Show All&quot; option in addition to the existing 7 days, 30 days, and 60 days trends for “Capacity-Based Licensing.&quot;<br/>
+    <br/>
+    <strong>Important Note for PLEXOS Desktop Integration and Cloud Bridge</strong><br/>
+    We recommend that users leverage the PLEXOS Desktop Integration and the CLI -OR- Cloud Bridge for interacting with their Study. Going back and forth between Cloud Bridge and CLI-based integrations for one Study (desktop and the command line) can create versioning issues in rare circumstances.
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+
+</body></html>

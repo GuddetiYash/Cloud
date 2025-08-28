@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>December 2023 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body onload="displayLastModifiedDate()">
+  <p style="color: white; font-size:10px; text-align: right;">Last updated on: <span data-field="date" data-format="MMMM DD, YYYY" style="color: white; font-size: 10px;">December 07, 2023</span></p>
+  <h1>Highlights of the December 2023 Release:</h1>
+  <ul>
+    <li><a href="#1one">Solution Output Analysis (Map, Grid and Solution Reports)</a>
+      <ul>
+        <li>Maintain Time Periods When Switching Period Types on the Solution Map or Grid</li>
+        <li>New Default Solutions Map State for Improved Performance</li>
+        <li>Configure the Default Solutions Page Based on User Preferences</li>
+        <li>Editing Input Properties and viewing Connections for Map Objects on the SETUP page</li>
+        <li>Enhanced User Experience in Executive View</li>
+      </ul>
+    </li>
+    <li><a href="#2two">BI Analytics </a>
+      <ul>
+        <li>AutoSave BI Reports Periodically</li>
+      </ul>
+    </li>
+    <li><a href="#3three">Model Execution </a>
+      <ul>
+        <li>Support for Users to Remove themselves from a Private Study</li>
+      </ul>
+    </li>
+    <li><a href="#4four">Model Building and Editing (Desktop Integration and Excel)</a>
+      <ul>
+        <li>Manage triggering new Simulations with zero Credits for Trial Tenants</li>
+      </ul>
+    </li>
+    <li><a href="#5five">Additional Improvements and Bug Fixes</a></li>
+    <li><a href="#6six">Announcements</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="1one">Solution Output Analysis (Map, Grid and Solution Reports)</h2>
+  <h3>Maintain Time Periods When Switching Period Types on the Solution Map or Grid</h3>
+  <p><strong>NOTE</strong>: This change is applicable for <strong>Analytics Tier</strong> customers.</p>
+  <p> </p>
+  <p>You can now easily navigate between various time periods when exploring Maps or Grids to analyze the output. </p>
+  <p>This allows you to seamlessly switch between broader, comprehensive views and delve deeper into specific details. When transitioning between period types (such as hourly, daily, weekly, monthly, quarterly, or yearly), the system remembers your last selection. </p>
+  <p>This means that as you move between periods on the Map or Grid, the system uses your previously selected time as a starting point, ensuring a smooth and consistent user experience even when switching between Map and Grid views.</p>
+  <p> </p>
+  <p><strong>For Example</strong>: If you were viewing Yearly data for Jan 1st, 2023, and decide to switch to Monthly  intervals, the system will not automatically adjust the date; it will remain the same so that the user can change their preferred date.</p>
+  <p><br />
+    <img height="371" src="../../assets/images/RN_2023/December 2023 Release SS/PeriodSelection.gif" width="658" />
+  </p>
+  <h3>New Default Solutions Map State for Improved Performance</h3>
+  <p>The Solutions Map now opens with no input objects selected or displayed. This design empowers users to choose precisely what they wish to view on the Map. This adjustment is particularly beneficial for large Models where loading objects can be time-consuming, resulting in a notable enhancement in page load time by not loading objects that a user may not want.</p>
+  <p> </p>
+  <p>To make the most of the Map and load exactly what users need quickly, users can take advantage of Map Layouts. By saving their preferred views of the Map in a Map Layout, they can conveniently load all input and output objects with a single click, bypassing the need to individually select items from the Properties Panel.<br />
+    For graphical representation, refer to the GIF below:</p>
+  <p> </p>
+  <p> </p>
+  <p><img height="438" src="../../assets/images/RN_2023/December 2023 Release SS/blank map and map layout.gif" width="663" /></p>
+  <p> </p>
+  <p> </p>
+  <h3>Configure the Default Solutions Page Based on User Preferences</h3>
+  <p> </p>
+  <p>You can now set the default page that will load when you click on Solutions in PLEXOS Cloud. Users can select Map (the current default), Grid, Solution Reports, or BI Analytics. This new feature is available from the Display Settings under Preferences. This option gives users the flexibility to choose their desired view.</p>
+  <p><br />
+    <strong>To change the default page – </strong>
+  </p>
+  <p> </p>
+  <p>1.Click on your <strong>username</strong> in the top right.</p>
+  <p>2.Navigate to <strong>Preferences</strong> and scroll down to Display Settings.</p>
+  <p> </p>
+  <p><img height="234" src="../../assets/images/RN_2023/December 2023 Release SS/Preferences.png" style="cursor: nwse-resize;" width="262" /></p>
+  <p> </p>
+  <p>3.Select the desired page: <strong>Map</strong>, <strong>Grid</strong>, <strong>Solution Reports</strong>, or <strong>BI Analytics</strong>.</p>
+  <p> </p>
+  <p><img height="128" src="../../assets/images/RN_2023/December 2023 Release SS/DisplaySettings.png" width="615" /></p>
+  <p> </p>
+  <p>4.The change will be reflected in your next login. When you open the Solutions area, it will open the page you selected.</p>
+  <p> </p>
+  <h3>Editing Input Properties and viewing Connections for Map Objects on the SETUP page</h3>
+  <p><strong>NOTE</strong>: This change is applicable for both <strong>Simulate</strong> and <strong>Analytics Tier</strong> customers.</p>
+  <p><br />
+    You can now edit the Input Properties for any object available on the map from the <strong>SETUP</strong> tab of the <strong>Data</strong> page. You do not have to Run the Simulation to view or edit the Input Properties and view Connections (Map or Bus diagram) for the selected object on the map. This feature saves time by allowing you to edit the Input Properties and view Connections on the <strong>SETUP</strong> page before running a Simulation. Previously, you could edit the Input Properties and View Connections for the selected map objects in the Map and Grid tab of the Solutions page.</p>
+  <p><br />
+    <strong>NOTE</strong>: When you make changes to the Input Properties and click on the <strong>APPLY</strong> button, the new version of that Study gets created. You can view and manage the Study version in the <strong>VERSIONS</strong> tab.
+  </p>
+  <p> </p>
+  <p><img height="380" src="../../assets/images/RN_2023/December 2023 Release SS/Edit Input properties before Running a Simulation.gif" width="675" /></p>
+  <p> </p>
+  <p>Learn more about  <a href="  https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Data%2FMake_Changes_to_an_Input_Dataset.htm">Make Changes to an Input Datasets</a>. </p>
+  <h3>Enhanced User Experience in Executive View</h3>
+  <p><strong>NOTE</strong>: This change is applicable for <strong>Analytics Tier </strong>customers only.<br />
+    To optimize usability and provide a more user-friendly experience, we have made a series of improvements to the Executive View page. These improvements are designed to empower users with increased usable space and enhanced visibility of key information. Here are the key changes:</p>
+  <ul class="Disc">
+    <li>Increased usable space:</li>
+  </ul>
+  <ul class="Circle">
+    <li>The View Description now appears only when you hover over the View name. Previously the View Description was always displayed above the tabs within the Executive View.</li>
+    <li>The Report Description is hidden by default and only displayed if available. Previously the Report Description panel was always shown even if empty.</li>
+    <li>The View Name is now collapsed by default.</li>
+  </ul>
+  <p> </p>
+  <p><img height="316" src="../../assets/images/RN_2023/December 2023 Release SS/Executive View UI enhacements.gif" style="padding: 20px;" width="561" /></p>
+  <p>Learn more about <strong><a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Reports%2FExecutive_View_in_PLEXOS_Cloud.htm">Executive View in PLEXOS Cloud</a></strong>.</p>
+  <h2 id="2two">BI Analytics</h2>
+  <h3>AutoSave BI Reports Periodically</h3>
+  <p><strong>NOTE</strong>: This change is applicable for <strong>Analytics Tier</strong> customers only.</p>
+  <p>Auto Save functionality is now available in BI Reports for a more seamless user experience. This feature ensures periodic saving of BI Reports to reduce the risk of accidental data loss or overwriting data. <br />
+    The default Auto Save interval is set to 10 minutes, automatically preserving your edits while in Edit mode.</p>
+  <p> </p>
+  <p><img height="398" src="../../assets/images/RN_2023/December 2023 Release SS/AutoSave.png" width="579" /></p>
+  <p> </p>
+  <p>Learn more about this feature in the article for <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Reports%2FHow_BI_Analytics_Dashboard_Enhances_the_Reporting_Experience.htm">BI Analytics in PLEXOS Cloud</a>.</p>
+  <p> </p>
+  <h2 id="3three">Model Execution</h2>
+  <h3>Support for Users to Remove themselves from a Private Study</h3>
+  <p><strong>NOTE</strong>: This change is applicable for both <strong>Simulate</strong> and <strong>Analytics</strong> <strong>Tier</strong> customers.</p>
+  <p> </p>
+  <p>Users can now leave a Private Study if they no longer want to be part of it or receive any notifications (notifications can be managed from the Preferences page). This will help users better focus on the Studies they are working on and avoid distractions by being added to unnecessary Studies.</p>
+  <p> </p>
+  <p><img height="255" src="../../assets/images/RN_2023/December 2023 Release SS/Leave Study button.png" width="390" /></p>
+  <p> </p>
+  <p>If you are the <strong>Owner</strong> of a Private Study, you can leave a Study only after you assign someone else as the Owner of that Study. Please note that users cannot leave a <strong>Public</strong> Study. </p>
+  <p><br />
+    <strong>NOTE</strong>: If you leave a Study marked as Favorite, that Study will be removed from the <strong>Favorites</strong> section of the Study dropdown.<br />
+     
+  </p>
+  <p>Learn more about the <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Admin%2FStudy_Level_Permission.htm">Study Level Permission</a></p>
+  <p> </p>
+  <h2 id="4four">Model Building and Editing (Desktop Integration and Excel)</h2>
+  <h3>Manage triggering new Simulations with zero Credits for Trial Tenants</h3>
+  <p><strong>NOTE</strong>: This change is applicable for both <strong>Simulate</strong> and <strong>Analytics Tier </strong>customers.</p>
+  <p><br />
+    Trial Tenant users cannot trigger a Simulation when their available Compute Credits are zero. However, any Simulation Run before the Compute Credits are zero, will continue to Run and Complete, but users cannot Run a Simulation once that Simulation finishes. Tenant Admin cannot enable the toggle, but they can connect with the EE Support team or CSMs to purchase more Credits. </p>
+  <p> </p>
+  <p><strong>NOTE</strong>: For Production customers, the checkbox will be enabled, allowing them to Run a Simulation even if their Compute Credits are zero or below.</p>
+  <p>For Trial Tenant customers, the checkbox will be disabled by default, and they cannot enable it.</p>
+  <p><br />
+    For New Production Customers, the checkbox will be disabled by default, but they can enable it, if required to Run a Simulation even if the Compute Credits are zero or below.</p>
+  <p> </p>
+  <p><img height="210" src="../../assets/images/RN_2023/December 2023 Release SS/Prevent triggering new Simulation with 0 credits.png" width="433" /></p>
+  <p> </p>
+  <p>Learn more about the <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Admin%2FTenant_Preferences_Page.htm">Tenant Preferences Page</a>. </p>
+  <p> </p>
+  <h2 id="5five">Additional Improvements and Bug Fixes</h2>
+  <p>1. <strong>Activity history shows activities for Simulations and Simulation Groups</strong>. </p>
+  <p>The Activity History panel on the Study Overview page now shows activities for both individual Simulations and Simulation Groups. We have enhanced the Activity History tab to display Simulation-related events such as Simulation triggered or completed along with Simulation Group activities including group creation and deletion.</p>
+  <p> </p>
+  <p><img height="481" src="../../assets/images/RN_2023/December 2023 Release SS/ActivityHistory.png" width="315" /></p>
+  <p> </p>
+  <p>2. <strong>‘New’ tag is added to indicate new Model in the Simulation Group</strong>:</p>
+  <p> </p>
+  <p>A newly added model is now highlighted with the tag ‘New’ in the Simulation Groups list under Solution Comparison to help differentiate whether the Model has been added to BI in the existing Simulation Group or not. <br />
+    The new tag will be there until user removes the Existing Simulation Group from BI and again with the newly added Model into the BI.</p>
+  <p> </p>
+  <p><img height="308" src="../../assets/images/RN_2023/December 2023 Release SS/NewTag.png" width="244" /></p>
+  <p> </p>
+  <h2 id="6six">Announcements</h2>
+  <h3>Cloud Bridge End of Support</h3>
+  <p>Starting <strong>J</strong><strong>anuary 2024</strong>, Energy Exemplar will no longer support Cloud Bridge. This means the end of technical support, security updates, and ensured compatibility of Cloud Bridge with new releases of PLEXOS Cloud and related products.<br />
+    To facilitate a smooth transition, we encourage you to leverage the PLEXOS Cloud Toolkit (CLI) with the Desktop-To-Cloud Integration. This offers a seamless experience for users to build and edit their models on the PLEXOS desktop while running simulations and analyzing output in the PLEXOS Cloud.</p>
+  <p> <br />
+    Click to learn more about the <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Cloud_Integration_with_PLEXOS_Desktop%2FPLEXOS_Cloud_Integration_with_PLEXOS_Desktop.htm&amp;rhsearch=parquet">PLEXOS Desktop to Cloud Integration</a>.<br />
+     </p>
+</body>
+</html>

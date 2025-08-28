@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>July 2022 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-2312</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">7b34a050-1866-4907-a9de-f10661981d87</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-2312, TZXE7D2DFWED-1834737786-2312</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>July 2022 Release Notes</h1>
+  <h3>In this article:</h3>
+  <ul>
+    <li><a href="#1one">Solution Output Data Grid</a></li>
+    <li><a href="#7seven">Study Access and Management</a></li>
+    <li><a href="#4four">Excel Plug-In Enhancements</a></li>
+    <li><a href="#5five">Cloud Bridge Enhancements</a></li>
+    <li><a href="#3three">Monte Carlo Chart Analysis Improvements</a></li>
+    <li><a href="#2two">Configuring Proxy Settings</a></li>
+    <li><a href="#8eight">Updated Navigation</a></li>
+    <li><a href="#6six">Additional Bug Fixes and Improvements</a></li>
+  </ul>
+  <p>For more detailed descriptions of the improvements available in the July release, scroll through the topics below.</p>
+  <h2 id="1one"><br />
+    <b>Solution Output Data Grid</b>
+  </h2>
+  <p>After a successful model run, you can now view more data with faster performance across the data grid. There has also been a major update to the Solution Output Data Grid for retrieving data across dates. Learn more about the new features below: </p>
+  <h3><br />
+    <b>Updated Approach for Retrieving Data  </b>
+  </h3>
+  <p>You can now view more data in <strong>List</strong> view without having to filter by date. By default, you can now view data for the full horizon. <br />
+     </p>
+  <p>Previously, you could only view a certain number of days, months or years at a time, and would constantly have to change the date to view data from the desired time interval. Now, if you run a model with a 1-year horizon and intervals of 1 hour, for example, you can view output data for all the intervals in the horizon without having to filter by date. <br />
+     </p>
+  <p>While viewing output data in <strong>List</strong> view, you click the <strong>Next</strong> button, as shown below, to load more data. <br />
+     </p>
+  <p style="margin-left: 0.03in"><img src="../../assets/images/RN_2022/July/Outputgrid_navigate.jpg" /><br />
+     </p>
+  <h2 id="7seven"><br />
+    <strong>Study Access and Management  </strong> 
+  </h2>
+  <p>We have improved study access and management on PLEXOS Cloud to enhance the experience for modelers and administrators.</p>
+  <p> </p>
+  <h3><strong>Study Access</strong></h3>
+  <p>You can choose to make studies Public as shown below. A Public Study is one that can be accessed by all users in the system. Each user’s license will determine the level of access they have to the Study. To make a Study Public, navigate to the Overview tab under the Study, and in the upper right corner click <strong>Manage Team</strong>. Under Manage Team Members, switch the toggle to make the Study <strong>Public</strong>.</p>
+  <p> </p>
+  <p><img src="../../assets/images/RN_2022/July/StudyManage_public.jpg" /></p>
+  <p><br />
+    When the option appears to approve, select <strong>Yes</strong> to confirm that the study will be moved from Private to Public.<br />
+     </p>
+  <p style="margin-left: 0.03in"><img src="../../assets/images/RN_2022/July/StudyManage_public_Y.jpg" /><br />
+     </p>
+  <h2 id="4four"><strong>Excel Plug-In Enhancements</strong></h2>
+  <p>The Excel Plug-in now can now support multi-banded variables, scenario data, and geocoded objects for modelling. Learn more about the enhancements below.</p>
+  <p><br />
+    The Excel Plug-in will now include support for multi-banded variables to so users can both create and modify variables such as Generator Heat Rate Incr or Load Point. If banded data exists, it will show up as individual rows when the pull data command is executed. The inclusion of the banded information is automatic for relevant model properties.</p>
+  <p> </p>
+  <p>Scenario data is also supported with this release of the Plug-In.  Any modelling data existing in a user scenario will be populated in additional rows along with the base data.  </p>
+  <p> </p>
+  <p>Users will now be able to selectively turn on and off data pulls within the template sheet without having to delete the rows that define them. This will allow the user to restrict the amount of data each pull operation receives while preserving the template definition so it can be easily reactivated without the trouble of recreation.</p>
+  <p> </p>
+  <p>Geospatial coordinate information can now also be retrieved. This feature can be selectively turned on and off for each table by specifying Yes/No in the &quot;IncludeGeocode&quot; column in the Excel Plug-In template worksheet.<br />
+     </p>
+  <p>Refer to the following article for more information on the <a class="rn_button" href="/articles/KB_Article/Edit-Input-Data-Directly-in-Excel-with-Tools-Plugin" target="_blank">Excel Plugin</a> for PLEXOS Cloud.<br />
+     </p>
+  <h2 id="5five"><strong>Cloud Bridge Enhancements</strong></h2>
+  <p> A new version of Cloud Bridge is now available for installation under the <strong>Tools</strong> page. Once the new version is successfully installed, users should uninstall the previous version.<br />
+    <br />
+    <strong><strong><b><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;" />  </b></strong>NOTE:</strong> Before you delete/uninstall the old version of Cloud Bridge, please check the version number. Make sure to delete the older version.<br />
+    <br />
+    Read more to learn about what makes this version of Cloud Bridge different from previous releases.
+  </p>
+  <p><br />
+    <br />
+    <strong>Cloud Bridge SSO</strong> 
+  </p>
+  <p>Browser-based authentication is now supported in Cloud Bridge for both Single Sign-On (SSO) and non-SSO users. This means that once you click on Sign In in Cloud Bridge, you will be redirected to your browser where you can enter your email (for SSO users) or your email and password (for non-SSO users).<br />
+    <br />
+    If you are already authenticated for Cloud in your browser, you will simply be redirected and authenticated for Cloud Bridge without having to reenter your username.
+  </p>
+  <p> </p>
+  <h3><strong>MSI Installer</strong>  </h3>
+  <p>This new version of Cloud Bridge also uses an MSI Installer. This benefits users since it can be managed by an IT Administrator and deployed to users through automation. It also grants IT more control over the application than previous versions, which could only be updated by desktop users. You can find more information in the following article on <a class="rn_button" href="/articles/KB_Article/Browser-based-Authentication-for-Cloud-Bridge" target="_blank">Browser-based Authentication for Cloud Bridge</a> on the MSI Installer and SSO capabilities.</p>
+  <p> </p>
+  <h2 id="6six"><b><b>Monte Carlo Chart Analysis Improvements</b></b></h2>
+  <h3><strong>Histogram Comparison</strong></h3>
+  <p>When doing a histogram comparison of two solutions, appropriate messages have been added that allow you to identify why the comparison is not possible between the two simulations. Two sample error messages are shown below.</p>
+  <div>
+    <p> </p>
+    <p style="margin-left: -0.02in"><img src="../../assets/images/RN_2022/July/ChartMessage_1.jpg" /></p>
+    <p style="margin-left: 0.02in"><img src="../../assets/images/RN_2022/July/ChartMessage2.jpg" /><br />
+       </p>
+    <h3><br />
+      <strong>Saved Filters </strong>
+    </h3>
+    <p>Previous issues related to filters that were not changing when switching between two or more simulations have been resolved. Filters now change correctly as shown below.<br />
+       </p>
+    <p style="margin-left: 0.02in"><img src="../../assets/images/RN_2022/July/Histrogram.jpg" /></p>
+  </div>
+  <h2 id="2two"><br />
+    <b>Configuring Proxy Settings</b>
+  </h2>
+  <p>You can now learn more about configuring network proxy settings for PLEXOS Cloud and its binaries. These settings are helpful for IT and network administrators. Read more in the following article about <a class="rn_button" href="/articles/KB_Article/Proxy-Settings-for-PLEXOS-Cloud" target="_blank">Proxy Settings for PLEXOS Cloud</a>.</p>
+  <h2 id="8eight"><br />
+    <strong>Updated Navigation</strong>
+  </h2>
+  <p>The Cloud interface has been updated to include menu items such as <strong>Tools</strong> and <strong>Sign Out</strong> under your Username in the dropdown, as shown below. This frees up space in the top navigation bar and improves the organization of the page. You can also navigate to the <strong>Status Page</strong> now for real-time information on Cloud performance from the dropdown menu.<br />
+     </p>
+  <p style="margin-left: 0.03in"><img src="../../assets/images/RN_2022/July/Updated Navigation Menu.jpg" /></p>
+  <p> </p>
+  <h2><b><b>Additional Bug Fixes and Improvements</b></b></h2>
+  <p>We have continued to fix bugs affecting user experience, stability, and performance, including fixes related to Cloud Bridge.<br />
+    <br />
+    If you have a favorite (starred) study and then your access to that study is removed, the system removes it as a favorite. Previously, if a study was listed as a favorite, you could not remove the favorite or access the study.<br />
+    <br />
+    When you upload a study to Cloud, if your solver is set to Gurobi or CPLEX, Cloud will not overwrite your solver setting. If the solver is not Gurobi or CPLEX, Cloud will set it by default as Gurobi.<br />
+    <br />
+    A previous issue has been resolved so users can now export drill-down summary data in .csv/.xlsx format.<br />
+    <br />
+    Price outputs in the Solution Summary now report correctly as the Region average in the selected interval.
+  </p>
+</body>
+</html>

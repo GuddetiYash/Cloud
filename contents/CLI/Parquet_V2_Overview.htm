@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Parquet V2 Overview</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="rh-authors" content="Jigyasa" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>Parquet V2 Overview</h1>
+  <p>Contents</p>
+  <ol class="Decimal">
+    <li><a href="#1">Overview </a></li>
+    <li><a href="#2">Additional PLEXOS Toolkit Changes for Parquet (v2)</a></li>
+    <li><a href="#4">Limitation</a></li>
+  </ol>
+  <h2 id="1">Overview</h2>
+  <p>Parquet Version 2 (v2) schema is a newer version of the Parquet file format, which is an open source, column-oriented data file format designed for efficient data storage and retrieval. The system considers the Parquet (v2) schema as the default choice for all Simulation Runs whenever users run any simulation.</p>
+  <p>The option to select the Legacy (v1) schema is available in the Run Configuration panel. If required, you  can simply enable the toggle for Legacy (v1) schema to utilize it for their selected Simulations.</p>
+  <p>The Parquet (v2) schema has the following benefits over the Legacy (v1) schema: </p>
+  <ol class="RoundSquare">
+    <li><strong>Enhanced Compression:</strong> Reduces file size and improves the read/write performance by leveraging delta encoding for sorted timestamp columns.</li>
+    <br />
+    <li><strong>Support for Block Reporting Querying:</strong> Introduces a phase table that links reporting blocks to interval periods, facilitating block reporting querying use-cases. </li>
+    <br />
+    <li><strong>Compatibility with PLEXOS 10:</strong> Allows users to open the Parquet output just like the native PLEXOS zip Solution in PLEXOS desktop, enhancing interoperability between Desktop and Cloud. </li>
+    <br />
+    <li><strong>Expanded Information: </strong>Includes additional data from the PLEXOS Solution ZIP file to support more querying use-cases. This encompasses membership information beyond reported properties, extra tables, and columns for master schema data. This reduces the need to join output data with input data to gain a comprehensive system view. </li>
+  </ol>
+  <p><br />
+    New options have been added in the Simulation Enqueue request JSON body when using the ‘PLEXOS-Cloud Simulation Enqueue’ command to enqueue Simulations. This is via a SolutionOptions object within the existing SimulationOptions object. This SolutionOptions object has a property called &quot;ParquetSchemaVersion&quot; which is an integer denoting the schema version of the Parquet Files being requested, either 1 or 2.</p>
+  <p><br />
+    This SolutionOptions object is optional and will be default to the current value of schema Version 1 if it is not specified otherwise, so existing scripts will continue to work as expected with no changes.</p>
+  <p><br />
+    <strong>Find below an example of the top-level request JSON body with this option being specified to request Version 2 schema files:</strong>
+  </p>
+  <p style="margin-left: 24px"><em><br />
+      &quot;SimulationOptions&quot;: {</em></p>
+  <p style="margin-left: 28px"><em>&quot;Locale&quot;: 1033,</em></p>
+  <p style="margin-left: 28px"><em>&quot;EnableRealTimeLog&quot;: true,</em></p>
+  <p style="margin-left: 28px"><em>&quot;SolutionOptions&quot;: {</em></p>
+  <p style="margin-left: 28px"> </p>
+  <p style="margin-left: 32px"><em>&quot;ParquetSchemaVersion&quot;:2</em></p>
+  <p style="margin-left: 32px"><em>}</em></p>
+  <p style="margin-left: 32px"><em> },</em></p>
+  <p style="margin-left: 32px"><em>&quot;SimulationData&quot;: [</em></p>
+  <p style="margin-left: 32px"><em>{</em></p>
+  <p style="margin-left: 36px"><em>&quot;Type&quot;: &quot;ChangesetDatabase&quot;</em></p>
+  <p style="margin-left: 36px"><em>},</em></p>
+  <p style="margin-left: 36px"><em>{</em></p>
+  <p style="margin-left: 36px"><em>&quot;Type&quot;: &quot;TimeseriesZipped&quot;</em></p>
+  <p style="margin-left: 36px"><em>}</em></p>
+  <p style="margin-left: 36px"><em>],</em></p>
+  <p style="margin-left: 36px"><em>&quot;SimulationEngine&quot;: {</em></p>
+  <p style="margin-left: 36px"><em>&quot;EngineId&quot;: &quot;c99f5481-61da-4199-8cec-e354ba17b7fe&quot; </em></p>
+  <p style="margin-left: 36px"><em>}</em></p>
+  <p> </p>
+  <p><b>NOTE</b>: This is only a sample of a portion of a full request and does not include every option to make a full enqueue request.</p>
+  <hr />
+  <h2 id="2">Additional PLEXOS Cloud Toolkit Changes for Parquet Version 2</h2>
+  <p>Alongside the introduction of the new Object and Property fields in the Simulation Enqueue request body, Parquet Version 2 schema files have been integrated into several other aspects of the PLEXOS Cloud Toolkit as well:</p>
+  <ul>
+    <li>All the commands under ‘PLEXOS-Cloud Solution Convert’ now have an additional option to specify the schema version of the output database after conversion.</li>
+  </ul>
+  <p style="margin-left:72px; margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"><img alt="A screen shot of a computer
+Description automatically generated" height="308" src="../assets/images/image98.png" style="width: 422px; height: 158px;" /><span lang="EN-US" style="color:black"></span></span></span></span></p>
+  <ul>
+    <li>The response records of the ‘plexos-cloud solution list’ command now have an additional property for “TypeVersion.” For most types, this will be “NULL,” but for types with Parquet files, this can be either 1 or 2, denoting the Parquet schema version that was requested.</li>
+  </ul>
+  <p style="margin-left:72px; margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"><img alt="A computer screen shot of a computer code
+Description automatically generated" src="../assets/images/image99.png" style="width: 422px; height: 158px;" /><span lang="EN-US" style="color:black"></span></span></span></span></p>
+  <p> </p>
+  <p><b></b><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nwse-resize;" width="17" /></strong><strong>NOTE: </strong> These changes for the Parquet Schema Version on both the ‘solution list’ and ‘simulation enqueue’ command also apply to direction API (Application Programming Interface) integration for both enqueuing Simulations and listing Solution types.</p>
+  <p> </p>
+  <p><strong>Specific Schema Change Details for Parquet Version 2 Parquet Files</strong>:</p>
+  <p>[1] All partitions under the data Parquet files will utilize ZSTD compression encoding and Delta Binary Packed.</p>
+  <ul class="Disc">
+    <li><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"><a href="https://parquet.apache.org/docs/file-format/data-pages/encodings/#a-namedeltaencadelta-encoding-delta_binary_packed--5" style="color:#0563c1; text-decoration:underline">https://parquet.apache.org/docs/file-format/data-pages/encodings/#a-namedeltaencadelta-encoding-delta_binary_packed--5</a></span></span></span></li>
+  </ul>
+  <p>[2] Additional Columns on full_key_info Table:</p>
+  <ol class="RoundSquare">
+    <li><strong>ParentObjectCategoryName -</strong> This column represents the name of the parent object category associated with a collection. It provides a human-readable identifier for the parent category in the hierarchy of objects. For example, in a system-line membership, the parent object category might be <strong>System</strong>, which relates to the parent class defined in the schema.<br />
+      <br/>
+    </li>
+    <li><strong>ChildObjectCategoryName -</strong> Represents the name of the child object category associated with a collection. This column identifies the child category in the hierarchy of objects and is a counterpart to the parent category. For example, the child object category might be a Line in a system-line membership<strong></strong>.<br />
+      <br/>
+    </li>
+    <li><strong>ParentClassLangId - </strong>This column stores the Lang ID of the parent class in a collection. The Lang ID is a persistent identifier that remains constant across all PLEXOS versions, uniquely identifying the parent class. For example, the parent class for a system-line membership would have a fixed Lang ID (e.g., &quot;1&quot; for &quot;System&quot;).<br />
+      <br/>
+    </li>
+    <li><strong>ChildClassLangId -</strong> This column stores the Lang ID of the child class in a collection. Similar to the ParentClassLangId, this is a persistent identifier that uniquely identifies the child class across all PLEXOS versions. For example, in a system-line membership, the child class <strong>Line </strong>would have a consistent Lang ID (e.g., &quot;11&quot;).<br />
+      <br/>
+    </li>
+    <li><strong>CollectionLangId -</strong> This represents the Lang ID of the collection itself, which uniquely identifies the specific relationship between a parent and child class. This Lang ID remains consistent across PLEXOS versions, ensuring the collection&#39;s definition is stable. For example, the collection representing the relationship between <strong>System </strong>and <strong>Line </strong>might have a Lang ID of &quot;57.&quot;<br />
+      <br/>
+    </li>
+    <li><strong>PropertyLangId -</strong> This column stores the Lang ID of a specific property, ensuring it is uniquely identifiable across all PLEXOS versions, regardless of changes to primary keys or other identifiers. For example, the <strong>Shadow Price</strong> property may have a consistent Lang ID of <strong>742</strong>, enabling version-independent tracking and querying.<br />
+      <br/>
+    </li>
+    <li><strong>SeriesId -</strong> The Series ID serves as a key representing a specific value (originating from PLEXOS) for a particular Period ID. It functions as the primary key for the data table in the output Parquet file.</li>
+    <br/>
+  </ol>
+  <p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"></span></span></span></p>
+  <p>[3] Additional Column on t_class Table:</p>
+  <ul class="Disc">
+    <li>Inherits_from</li>
+  </ul>
+  <p>[4] New Table for &quot;membership_info&quot;:</p>
+  <ul class="Disc">
+    <li>Contains a subset of columns from full_key_info directly related to membership information, including parent/child object and class columns, and collection columns.</li>
+    <li>This table can be used in the near future to address network topology membership dependencies in the input database when analyzing congestion insights.<span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"></span></span></span><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"></span></span></span></li>
+  </ul>
+  <p>[5] New Table for &quot;phase&quot;:</p>
+  <ul class="Disc">
+    <li>Maps simulation intervals to reporting periods by each phase (Interval_id, Phase_Type_Id, Period_Id).</li>
+    <li>Designed to facilitate use-cases involving block reporting, especially when parquet data is flattened at the interval level. This table allows the construction of one-to-many mappings between interval periods and reporting &quot;block&quot; periods.</li>
+  </ul>
+  <p>[6] Inclusion of Multiple Tables from the Original PLEXOS Output Database:</p>
+  <ul class="Disc">
+    <li>T_class_group</li>
+    <li>T_collection</li>
+    <li>T_property</li>
+    <li>T_unit</li>
+  </ul>
+  <p> </p>
+  <p style="margin-bottom:11px">These tables follow the same schema design as the PLEXOS database and are primarily included to reduce the need to access the input database for additional information, such as complement collection names and property units.</p>
+  <hr />
+  <h2 id="4">Limitation</h2>
+  <p>The PLEXOS Cloud Schema specifies both Start and End dates. Any misalignment in configuration can cause data to shift by one interval, leading to inaccurate results in the Parquet files. To prevent this critical issue, we recommend using the <strong>Beginning of Period</strong> as the Date-Time Convention for the End Date. Follow this guideline to ensure accurate data alignment and reliable Simulations:<br />
+     <br />
+    <strong><strong><img height="12" src="../assets/images/5 Minute Credit Calculation Mehod/Pin 3.png" style="cursor: nesw-resize;" width="17" /></strong><strong>NOTE: </strong> </strong>The <strong>End of Period</strong> convention is supported, but it&#39;s not recommended for the PLEXOS Cloud Runs if you use Parquet Solution files.  <br />
+     <br />
+    Under the <strong>Date Time Convention</strong> dropdown, Select the <strong>Beginning of Period </strong>option. You may continue to use End of Period if you are not leveraging the Cloud generated Parquet Solution files. 
+  </p>
+  <p><img height="556" src="../assets/images/Parquet V2/Date time convention.png" width="945" /></p>
+  <p style="margin-left:24px; margin-bottom:11px"> </p>
+  <p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"></span></span></span></p>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>March 2022 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-2283</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">9c985bed-0186-4954-b7d6-114ed29d9f6a</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-2283, TZXE7D2DFWED-1834737786-2283</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>March 2022 Release Notes</h1>
+  <h2>In this article:</h2>
+  <ul>
+    <li><a href="#1one">Analyze Output Data that is Outside a Normal Range using Event Detection</a></li>
+    <li><a href="#2two">Import and Export Shape Files </a> </li>
+    <li><a href="#3three">Cloud Bridge Enhancements</a></li>
+    <li><a href="#4four">Additional Bug Fixes and Improvements</a></li>
+  </ul>
+  <p> </p>
+  <p>The following video is a quick overview of the features in the March release:</p>
+  <p> <br />
+    <iframe allowfullscreen="" height="360" src="https://player.vimeo.com/video/693944262?h=6a1684baec" width="640"></iframe>
+  </p>
+  <p> </p>
+  <p> </p>
+  <p>For more detailed descriptions of the improvements available in the March release, scroll through the topics below.</p>
+  <p> </p>
+  <h2 id="1one">Analyze Output Data that is Outside a Normal Range using Event Detection  </h2>
+  <p>Periods of a typical output data are called Events. Ideally, after a successful simulation, the user wants to quickly validate the output. This process can be quite labor-intensive and error-prone.</p>
+  <p>Event Detection can speed up this process by identifying and prioritizing time periods that may be of interest for further confirmation. We want to make it easier and faster to identify periods of time where output data falls outside of normal range.<br />
+    Using Artificial Intelligence Machine Learning (AIML) techniques, we now offer Event Detection. From the Solution Summary on any successful Solution, you can view a heat map of Events and drill into them. This enables you to quickly identify interesting events that may need further study like Price Spikes, Price Drops, Unserved and Dump Energy.  </p>
+  <p> </p>
+  <h3><b>Event Detection View</b></h3>
+  <p>To go to Event detection view, from Solutions tab, click on <b>Event detection icon</b> in the top far right as displayed in the screenshot. It will show you the list of events detected along with all the possible streams together like variations in Price, Dump Energy and Unserved Energy.</p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/March 1.jpg" /><br />
+     </p>
+  <h3><br />
+    <b>Solution Summary View</b>
+  </h3>
+  <p style="margin-left: 40px;">To see the solution summary, from the Solutions tab, click on <b>Solution Summary icon</b> in the top right as shown in the screenshot below (highlighted icon).</p>
+  <p style="margin-left: 40px;"><br />
+    It will show you the color-coded tabular view of the number of events detected, where the color &#39;reddish-pink&#39; denotes the highest number of events, color &#39;yellow&#39; denotes a smaller number of events, and grey (no color) denotes there are no events detected at that period of time.<br />
+     </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/March 2.jpg" /><br />
+     </p>
+  <p><br />
+    <b>Navigated from Solution Summary View</b><br />
+     
+  </p>
+  <p>To see the events of selected property and month, you can click on any color-coded cell from the Solution Summary view. As you can see in the below example it is showing data only from the selected month of August.</p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/March 3.jpg" /></p>
+  <p> </p>
+  <h2 id="2two">Import and Export Shape Files   </h2>
+  <p>We now support the modification of the geospatial data through shape files. Shape files allow you to edit the geospatial data to have accurate representations of zones, regions and pools, etc.</p>
+  <p> </p>
+  <p>You can download a copy of the shape file and update the coordinates and upload the file back to PLEXOS Cloud. The update on shape files can be done by using any shape file editor (like GIS editor, Map shaper, etc).</p>
+  <p> </p>
+  <p>The user can also upload a 3rd party shape file (Open-source shape files) and it’ll be rendered on the map.</p>
+  <p> </p>
+  <p><b>To upload a shape file:</b></p>
+  <ul>
+    <li>Go to <b>Setup</b></li>
+    <li>Click on the <b>Upload</b> button on the far right.</li>
+    <li>Drag or browse to locate your file (Must be in zip format) and click <b>Upload</b></li>
+  </ul>
+  <p> </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/March 4.jpg" /><br />
+     </p>
+  <p><b>To download a shape file:</b></p>
+  <p>Click on <b>Download</b>, you’ll get two options to download, Shapefile (Geocoded - contains shapefile which has geocoded data only) or Shapefile (All - contains shapefile which has non geocoded as well as geocoded data.)<br />
+     </p>
+  <p style="margin-left: -0.07in"><img src="../../assets/images/RN_2022/March/March 5.jpg" /><br />
+     </p>
+  <p>Click on <b>Edit</b> to edit the uploaded shape file as per the requirement and then click on <b>Save</b> to save your settings.</p>
+  <p> </p>
+  <p style="margin-left: 0.03in"><img src="../../assets/images/RN_2022/March/March 6.jpg" /></p>
+  <p><img src="../../assets/images/RN_2022/March/March 7.jpg" /><br />
+     </p>
+  <p> </p>
+  <h2 id="3three">Cloud Bridge Enhancements   </h2>
+  <p>This release focuses on improving the workflow for users when moving data between PLEXOS and PLEXOS Cloud. Many new features make it easier and faster for users to accomplish key tasks such as running simulations and saving new versions.</p>
+  <p> </p>
+  <p><b>Updated User Interface</b></p>
+  <p>Cloud Bridge now has 3 different parallel sections on the home page - Studies, Models, and Solutions. It will give you an overview of Studies, Models, and their Solutions altogether.<br />
+     </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/CBE1.jpg" /><br />
+     </p>
+  <p>To see the number of Models in a study, click on any <b>Study</b> from the Studies column.</p>
+  <p>It will list all the Models associated with that study along with the date and time of the last run if available.<br />
+     </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/CBE2.jpg" /></p>
+  <p> </p>
+  <p>Once you click on any Model, it will show all the Solutions available for that model in the Solutions column with the status for each. This includes in-progress runs, canceled, failed, and successful runs.<br />
+     </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/CBE3.jpg" /></p>
+  <p>   </p>
+  <ul>
+    <li>If the Solution was successful, you can download the Solution log and Solution zip.</li>
+    <li>If you can&#39;t see models on any of the studies that means it has not been initialized earlier, to use that study, you need to download and initialize that first.</li>
+    <li>To do so, click on <b>Download and Initialize project files</b>.</li>
+  </ul>
+  <p> </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/CBE4.jpg" /></p>
+  <ul>
+    <li>Select the desired location on your machine to save the study and click <b>OK</b>.</li>
+  </ul>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/CBE5.jpg" /><br />
+    <br />
+     
+  </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/CBE6.jpg" /></p>
+  <p> </p>
+  <ul>
+    <li>Once the initialization is successful, you will see the following window, click <b>OK</b> to close.</li>
+  </ul>
+  <p> </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/CBE7.jpg" /></p>
+  <ul>
+    <li>You can also sort the model by date by clicking on the up arrow.</li>
+  </ul>
+  <p> </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/CBE8.jpg" /></p>
+  <p> </p>
+  <h3><b>Run a Model Directly from Cloud Bridge</b></h3>
+  <p>With this feature, you don&#39;t need to go to PLEXOS Cloud to update and run the study. You can do it all in one place. This feature will make the process of running a model easier and faster for you.</p>
+  <p> </p>
+  <p>To run a model directly from Cloud Bridge, follow below mentioned steps:</p>
+  <ul>
+    <li>From a selected study, go to <b>Model</b> and click on <b>Run</b>.</li>
+  </ul>
+  <p> </p>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/CBE9.jpg" /></div>
+  <p> </p>
+  <ul>
+    <li>If a Model has a run history, it will prompt a window to run the Model using the previous configuration or customize the existing configuration.</li>
+  </ul>
+  <p> </p>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/Run Model 1.jpg" /></div>
+  <p> </p>
+  <ul>
+    <li>Click on <b>Run</b> to run the model with the previous configuration, else, click on <b>CONFIGURE</b> if you want to change the configuration.</li>
+    <li>Once you click on Run, it will show the status of &#39;run&#39; as shown in the screenshot below. Click <b>OK</b> to close the window.</li>
+  </ul>
+  <p> </p>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/Run Model 2.jpg" /></div>
+  <div style="margin-left: 40px;"> </div>
+  <ul>
+    <li>If the Model has never been run, it will redirect to PLEXOS Cloud, where you can configure the selected Model and run it.</li>
+  </ul>
+  <p> </p>
+  <p><b>View Status of In-Progress Simulations:</b></p>
+  <p>Now, you can view the status of the simulation in Cloud Bridge as well in the Solutions column. The status will get updated on demand. That means when you click on the <b>Refresh </b><img alt="Refresh1.png" src="../../assets/images/RN_2022/March/Refresh.jpg" style="width: 20px; height: 15px;" /> button, it will show you the current status, as shown in the images below:</p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/Assigned to Pool 1.jpg" /><br />
+    <img height="338" src="../../assets/images/RN_2022/March/Running 1.jpg" width="653" /><br />
+     
+  </p>
+  <p>You can also launch the Solution in a browser by clicking on highlighted icon on the right.</p>
+  <p> </p>
+  <p style="margin-left: 40px;"><img height="311" src="../../assets/images/RN_2022/March/Launch.jpg" width="652" /></p>
+  <p> </p>
+  <p>To view real-time logs, you can download the log file once the simulation run completes successfully.</p>
+  <p> </p>
+  <p><b>Create a Study from an Existing Version (Version History):</b></p>
+  <p>You can now create a new Study from an existing version of any Study.</p>
+  <p>Follow the below steps to create a Study from its existing version:</p>
+  <p> </p>
+  <ul>
+    <li>Click on <b>Version</b> in selected Study.</li>
+  </ul>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/Version.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); margin-top: 5px; margin-bottom: 6px;" /><br />
+     </div>
+  <ul>
+    <li>Click on the <b>Create Study</b> button in the version row from which you want to create the Study.</li>
+  </ul>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/Create a Study.jpg" style="margin-top: 6px; margin-bottom: 6px;" /></div>
+  <p> </p>
+  <ul>
+    <li>Enter the Study name and description of the new Study to be created and click <b>OK</b>.</li>
+  </ul>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/Create a Study 1.jpg" style="margin-top: 7px; margin-bottom: 6px;" /></div>
+  <p> </p>
+  <ul>
+    <li>A progress dialog box will appear that shows the progress of high-level steps that are taking place on PLEXOS Cloud.</li>
+  </ul>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/Create a Study 2.jpg" style="margin-top: 8px; margin-bottom: 6px;" /></div>
+  <p> </p>
+  <ul>
+    <li>Upon completion of the Study creation process, you will get an option to click on<b> Launch Study</b> which will open the Study Overview page on PLEXOS Cloud for this Study.</li>
+  </ul>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/Create a Study 3.jpg" style="margin-top: 9px; margin-bottom: 6px;" /></div>
+  <p> </p>
+  <ul>
+    <li>If you click Ok, it will take you back to the Version History page in Cloud Bridge.</li>
+    <li>To work locally (PLEXOS Desktop) with this newly created study, go to the Cloud Bridge home page and click on the Download and Initialize button of the newly created study.</li>
+  </ul>
+  <div style="margin-left: 40px;"><img src="../../assets/images/RN_2022/March/Create a Study 4.jpg" style="margin-top: 10px; margin-bottom: 6px;" /></div>
+  <p> </p>
+  <p><b>Browser-based authentication for Cloud Bridge ( For both SSO and Non-SSO users):</b></p>
+  <p><b><strong><b><img src="../../assets/images/Blue_Book_Closed.gif" style="cursor: nesw-resize;" />  </b></strong>Note: </b>The Browser-based authentication feature mentioned in the video has been moved to the April 2022 release.</p>
+  <p><b><b>   </b></b></p>
+  <h2 id="4four"><b><b>Additional Bug Fixes and Improvements:</b></b></h2>
+  <p><b><b> </b></b>We have continued to fix bugs affecting user experience, stability, and performance, including fixes related to Cloud Bridge. With this release, we have enhanced the memory limitations on time series file changes. Cloud Bridge previously limited the size of time-series file changes (when updating a study) to 1GB. This limit now has been increased to 2GB. This should reduce upload errors for large updates.</p>
+</body>
+</html>

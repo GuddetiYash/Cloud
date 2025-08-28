@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>April 2022 Release Notes</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-2281</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">eeb47e31-a0ee-458c-a981-9e99d7d5e46e</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-2281, TZXE7D2DFWED-1834737786-2281</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<meta name="robots" content="noindex, nofollow" /></head>
+<body>
+  <h1>April 2022 Release Notes</h1>
+  <h3>In this article:</h3>
+  <ul>
+    <li><a href="#1one">Integrated Resource Planning</a></li>
+    <li><a href="#2two">Chronological Split Execution </a> </li>
+    <li><a href="#3three">Support for Read-Only and Report Viewer License Types</a></li>
+    <li><a href="#4four">Ability to view engine version and solver for all previous runs</a></li>
+    <li><a href="#5five">Geocoding with the Excel Plugin</a></li>
+    <li><a href="#6six">Additional Bug Fixes and Improvements</a></li>
+  </ul>
+  <p> </p>
+  <p>The following video is a quick overview of the features in the April release:</p>
+  <p><br />
+     <iframe allowfullscreen="" height="360" src="https://player.vimeo.com/video/707767607?h=55323e3840" width="640"></iframe><br />
+     </p>
+  <p>For more detailed descriptions of the improvements available in the April release, scroll through the topics below.</p>
+  <p> </p>
+  <h2 id="1one"><b>Integrated Resource Planning (IRP) Report</b></h2>
+  <p>PLEXOS Cloud now includes the first out-of-the-box in application report that is based on a new configurable framework. This report is available in Solutions, known as Integrated Resource Planning or IRP, helps users better understand the economics of the LT plan, Capacity position, and Energy position. It is designed to provide analysts transparency into cost components, reduce post-processing, and streamline the IRP process. In addition to the IRP process in the United States, any LT plans can benefit from this report.<br />
+    <br />
+    <img alt="" height="369" src="../../assets/images/RN_2022/April/April1.jpg" style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); margin-top: 5px; margin-bottom: 3px;" width="801" /><br />
+     
+  </p>
+  <p><b><b><img src="../../assets/images/Blue_Book_Closed.gif" /> </b>NOTE</b>: These reports are not supported for Monte Carlo or Stochastic runs.</p>
+  <p><a class="rn_button" href="/articles/KB_Article/An-Overview-Integrated-Resource-Planning" target="_blank">Click to know more about the </a><a href="../../Reports/Integrated_Resource_Planning_(IRP).htm">IRP</a> report including all required outputs </p>
+  <p> </p>
+  <h2 id="2two"><b>Chronological Split Execution</b> </h2>
+  <p>Chronological Split Execution gives you the ability to split the Model into pieces based on time such as year or month for parallel processing. This is an opportunity to leverage cloud compute to improve total simulation run time.</p>
+  <p>You will see two options in the Run configuration window – Single Run and Distributed Run.</p>
+  <p> </p>
+  <p>To split the model simulation by horizon units, select the option ‘<b>Distributed Run</b>’</p>
+  <p> </p>
+  <p>It will show the drop-down of the following methods:</p>
+  <p> </p>
+  <ul>
+    <li>
+      <p><b>Chronological Split execution</b></p>
+    </li>
+    <li>
+      <p><b>Monte Carlo samples</b></p>
+    </li>
+  </ul>
+  <p> </p>
+  <p><b>Chronological Split Execution</b>:</p>
+  <p>It divides the splits by Horizon units– Months, Weeks, or Days.<br />
+    With Chronological, select the number of splits that you need for the simulation. It can be any number above 1, but you should choose something that aligns with your Model and allows it to be evenly split. Then select the Horizon Units (Months, Weeks, or Days) and choose the machine configuration for Parent Virtual Machine and Child Virtual Machine.</p>
+  <p> </p>
+  <p>Parent Virtual Machine coordinates the entire simulation and adds all the outputs together at the end.</p>
+  <p> </p>
+  <p>And Child Virtual Machine supports each of the individual splits to run separately.</p>
+  <p> </p>
+  <p><b><b><img src="../../assets/images/Blue_Book_Closed.gif" /> </b>NOTE:</b> Chronological Split Execution is only supported with engine versions 9.0 R07 and above. It will not be enabled in the dropdown for earlier engine versions. Along with that, Solutions of Chronological Split Execution are not currently supported with the option &quot;Publishing to Reports&quot;.</p>
+  <p><br />
+    However, both of these limitations will be fixed in the upcoming release.</p>
+  <p> </p>
+  <p><img src="../../assets/images/RN_2022/April/April 2.jpg" /><br />
+    <br />
+    <br />
+    <b>Monte Carlo samples</b>:<br />
+    <br />
+    It divides the machines to run a number of samples per virtual machine. It can be any number that varies from 2 to 999. In Monte Carlo samples you can select the virtual machine type and number of VM required to run independent samples per virtual machine. It enhances the overall simulation process.<br />
+    For example, if you want to run 100 samples, you could provide 25 samples per virtual machine. In that case, you can select 4 virtual machines in parallel to make the execution faster.
+  </p>
+  <p> </p>
+  <p><b><b><img src="../../assets/images/Blue_Book_Closed.gif" /> </b>NOTE</b>: For Monte Carlo Samples, a Stochastic Model must be enabled in the model.</p>
+  <p> </p>
+  <p><img src="../../assets/images/RN_2022/April/April 3.jpg" /><br />
+     </p>
+  <p> </p>
+  <h2 id="3three">Support for Read-Only and Report Viewer License Types</h2>
+  <p>Administrators can now assign two additional license types to users. These licenses, Read-Only and Report Viewer enable access to certain functions within the tool that is different from the standard Modeler user.</p>
+  <p> </p>
+  <p>The Read-Only user has access to view the Study Overview, Models, Solutions, and Reports for the Studies they have access to in PLEXOS Cloud. But they do not have access to run simulations or edit data.</p>
+  <p> </p>
+  <p>A user with the Report Viewer license can only view the Reports section of the interface for the Studies.</p>
+  <p><br />
+    <b>Examples of Read-only users</b>:<br />
+    <br />
+    <img src="../../assets/images/RN_2022/April/April 4.jpg" />
+  </p>
+  <p><img src="../../assets/images/RN_2022/April/April 5.jpg" /><br />
+     </p>
+  <p><br />
+    A user with the &#39;Report Viewer License&#39; can only view the Reports section of the interface for the Studies they have access.</p>
+  <h3><br />
+    <b>Examples of a Report Viewer</b>
+  </h3>
+  <p><img src="../../assets/images/RN_2022/April/April 6.jpg" /></p>
+  <p><br />
+    <img src="../../assets/images/RN_2022/April/April7.jpg" /><br />
+     
+  </p>
+  <h2 id="4four"><br />
+    <b>Ability to view engine version and solver for all previous runs</b>
+  </h2>
+  <p>The existing Previous Run Details feature now includes the ability to view all details across all previous runs for the selected Model. This is available from the Run Configuration panel launched from the Study Overview, Models, or Solutions workspaces.</p>
+  <p> </p>
+  <p>When you click on Run, you will see the option to view previous run details, click on that.</p>
+  <p><img src="../../assets/images/RN_2022/April/April 8.jpg" /><br />
+     </p>
+  <p>You will get the details of all the previous runs of the selected Model.</p>
+  <p><br />
+    <img src="../../assets/images/RN_2022/April/April 9.jpg" /><br />
+     
+  </p>
+  <h2 id="5five"><b>Geocoding with the Excel Plugin</b></h2>
+  <p>The PLEXOS Excel plugin includes a new feature to allow the user to review and perform bulk edits of the geographical coordinates (geocodes) of modeled objects. <br />
+    <br />
+    There is a new column labeled “Include Geocode” available in the template tab of the Excel plugin.  This column accepts the values “Yes” or “No” and toggles whether geocodes are retrieved for the specific table.  <br />
+    When “Include Geocode” is set to “Yes” for a table and the user clicks on pull data, the resulting table will have an additional column called “Location” that contains the longitude and latitude information for the entity.  The user does not need to alter the schema tab to include these variables.  This data will be formatted in the format [±x.xxx, ±y.yyy], with longitude going before latitude.  The Location column can be edited manually or via intelligent Excel features such as lookup, concatenation, or autofill.  <br />
+    The results can be saved directly back into the study when Push Data is called.  This feature will make setting up geographical information in the PLEXOS study faster and much more flexible.
+  </p>
+  <p> </p>
+  <h2 id="6six"><b><b>Additional Bug Fixes and Improvements:</b></b></h2>
+  <p><b><b> </b></b>We have continued to fix bugs affecting user experience, stability, and performance, including fixes related to Cloud Bridge.</p>
+  <p>Additionally, we have added real-time status updates for running simulations, fixed chart analysis issues, and improved visualizations around group generators by power station.</p>
+</body>
+</html>

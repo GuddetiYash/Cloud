@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Make Changes to an Input Dataset</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1207</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">df08cde0-534c-4110-a7ec-95470e0ed334</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1207, TZXE7D2DFWED-1834737786-1207</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-index-keywords" content="Input Data set" />
+<meta name="robots" content="noindex, nofollow" /></head>
+<body onload="displayLastModifiedDate()">
+  <p style="color: white; font-size:10px; text-align: right;">Last updated on: <span data-field="date" data-format="MMMM DD, YYYY" style="color: white; font-size: 10px;">June 26, 2024</span></p>
+  <p> </p>
+  <h1>Make Changes to an Input Dataset</h1>
+  <p> </p>
+  <p>Because PLEXOS Desktop is required to update input data, you must be an existing PLEXOS Desktop customer to complete these steps.</p>
+  <p>Currently, PLEXOS Cloud does not have features for changing an input dataset. Input data can be viewed but not changed. To make changes to an input dataset, follow these steps:</p>
+  <h2>Overview</h2>
+  <ol>
+    <li>On your local machine, open the project folder that contains the input data you want to change.</li>
+    <li>Open the project’s XML file in PLEXOS Desktop.</li>
+    <li>Make the desired data changes.</li>
+    <li>Save the XML file.</li>
+    <li>Upload the XML file to PLEXOS Cloud using PLEXOS Desktop or via CLI.
+      <p class="note">For detailed steps on how to upload the Study from PLEXOS Desktop check  the article, <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Cloud_Integration_with_PLEXOS_Desktop%2FPLEXOS_Cloud_Integration_with_PLEXOS_Desktop.htm">PLEXOS Cloud Integration with PLEXOS Desktop</a> , and from CLI check the article, <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=CLI%2FCLI_Toolkit.htm"> CLI Toolkit</a></p>
+    </li>
+    <li>Return to PLEXOS Cloud. Your updated input data will be available in the Study drop-down menu.</li>
+  </ol>
+  <p> </p>
+  <p>Example: Update the Chile_Demo dataset</p>
+  <p class="note"><strong>NOTE</strong>: If you do not have the Demo_Chile dataset, please request it from Energy Exemplar support.</p>
+  <ol>
+    <li>Open the Chile_Demo.zip file on your local machine.</li>
+    <li>Then open the XML file in PLEXOS Desktop. Notice many of the properties are defined in CSV files.<br />
+      <br />
+      <img alt="" src="http://portal.energyexemplar.com/help/walkme/SFKB/Make changes to an input dataset/example_1.jpg" style="margin-top: 10px; margin-bottom: 8px;" width="600px" />
+    </li>
+    <li>Make a simple data change that is easy to track. For this example, change the <strong>La_Silla_FV</strong> generator’s <strong>VO&amp;M Charge</strong> from &quot;0.1&quot; to &quot;2&quot;.<br />
+      <br />
+      <img alt="" src="http://portal.energyexemplar.com/help/walkme/SFKB/Make changes to an input dataset/example_2.jpg" style="margin-top: 12px; margin-bottom: 12px;" width="600px" /><br />
+      <br />
+      <img alt="" src="http://portal.energyexemplar.com/help/walkme/SFKB/Make changes to an input dataset/example_3.jpg" style="margin-top: 12px; margin-bottom: 15px;" width="500px" />
+    </li>
+    <li>Save the XML file.</li>
+    <li>You can make any other data or settings changes in a similar manner. You can also adjust any values in the CSV files either in PLEXOS Desktop or externally in Excel/other software. Be sure to save the XML file.</li>
+    <li>Upload the XML file to PLEXOS Cloud using PLEXOS Desktop or via CLI.
+      <p class="note">For detailed steps on how to upload the Study from PLEXOS Desktop check  the article , <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Cloud_Integration_with_PLEXOS_Desktop%2FPLEXOS_Cloud_Integration_with_PLEXOS_Desktop.htm">PLEXOS Cloud Integration with PLEXOS Desktop</a> and from CLI check the article,<a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=CLI%2FCLI_Toolkit.htm"> CLI Toolkit</a></p>
+    </li>
+  </ol>
+  <p> </p>
+  <h2>View Input Properties</h2>
+  <ol>
+    <li>Go to <strong>Solutions</strong>.</li>
+    <li>Select a solution.</li>
+    <li>On the Insights pane, open the <strong>Properties</strong> drop-down menu and turn on <strong>Generators</strong>.</li>
+    <li>On the map, click on a generator. The Map &amp; Bus Diagram will open.</li>
+    <li>Click the <strong>Properties</strong> tab.<br />
+      <img alt="" src="http://portal.energyexemplar.com/help/walkme/SFKB/Make changes to an input dataset/example_8.jpg" style="margin-top: 17px; margin-bottom: 18px;" width="600px" />
+    </li>
+  </ol>
+  <p>For more information about viewing data on the map, see the &quot;Visualize Solution Data&quot; section of <a href="../Getting_Started/Getting_Started_Using_PLEXOS_Cloud.htm" target="_blank">Getting Started with PLEXOS Cloud</a>.</p>
+  <p> </p>
+  <h2>View Advanced Configuration</h2>
+  <ol>
+    <li>While you cannot currently adjust input data in PLEXOS Cloud, you can view Model settings by selecting <strong>Run &gt;&gt; Advanced Configuration</strong><br />
+      <img alt="" height="157" src="http://portal.energyexemplar.com/help/walkme/SFKB/Make changes to an input dataset/example_9.jpg" style="margin-top: 18px; margin-bottom: 18px;" width="419" />
+    </li>
+  </ol>
+  <h2>Edit Input Properties and view Connections for Map objects on the SETUP page</h2>
+  <p><strong>NOTE:</strong> This change is applicable for both <strong>Simulate </strong>and <strong>Analytics</strong> tier customers.</p>
+  <p><br />
+    You can now edit the Input Properties for any object available on the map from the <strong>SETUP</strong> tab of the <strong>Data </strong>page. You do not have to Run the Simulation to view or edit the Input Properties and view Connections (Map or Bus diagram) for the selected object on the map. This feature saves time by allowing you to edit the Input Properties and view Connections on the SETUP page before running a Simulation. Previously, you could edit the Input Properties and View Connections for the selected map objects in the Map and Grid tab of the Solutions page.</p>
+  <p><br />
+    <strong>NOTE: </strong>When you make changes to the Input Properties and click on the <strong>APPLY</strong> button, the new version of that Study gets created. You can view and manage the Study version in the <strong>VERSIONS</strong> tab.
+  </p>
+  <p> </p>
+  <p><img height="360" src="../assets/images/Make Changes to an Input Dataset/Edit Input properties before Running a Simulation.gif" width="639" /></p>
+  <p> </p>
+</body>
+</html>

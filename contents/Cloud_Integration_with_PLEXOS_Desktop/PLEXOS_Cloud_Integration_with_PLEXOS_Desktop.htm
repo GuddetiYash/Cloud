@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>PLEXOS Cloud Integration with PLEXOS Desktop</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TZXE7D2DFWED-1834737786-1208</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">a135f945-0b82-41af-89df-4c0a2c9982b7</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://energyexemplarptyltd.sharepoint.com/sites/RoboHelp/_layouts/15/DocIdRedir.aspx?ID=TZXE7D2DFWED-1834737786-1208, TZXE7D2DFWED-1834737786-1208</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <meta name="rh-authors" content="Nageshwar" />
+  <meta name="topic-comment" content="This was currently in RoboHelp and I started to revise" />
+  <meta name="rh-index-keywords" content="PLEXOS Cloud Integration with PLEXOS Desktop,PLEXOS Cloud login,PLEXOS Desktop" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <h1>PLEXOS Cloud Integration with PLEXOS Desktop</h1>
+  <h2>In this article</h2>
+  <ul>
+    <li><a href="#1">Introduction </a></li>
+    <li><a href="#2">Features </a></li>
+    <li><a href="#3">Downloading and Installing PLEXOS Desktop </a></li>
+    <li><a href="#4">Installing PLEXOS 9.1 R03 or Later </a></li>
+    <li><a href="#5">Installing the PLEXOS Cloud Toolkit (CLI) from PLEXOS Cloud </a></li>
+    <li><a href="#6">Setting the Windows Environment Variables for the PLEXOS Cloud Toolkit (CLI)</a></li>
+    <li><a href="#7">Logging into PLEXOS Cloud from PLEXOS Desktop</a></li>
+    <li><a href="#8">PLEXOS Desktop Welcome Window </a></li>
+    <li><a href="#9">Browsing Cloud and Clone Study on Desktop </a></li>
+    <li><a href="#10">Saving a Study to PLEXOS Cloud </a></li>
+    <li><a href="#11">Syncing a Study </a></li>
+    <li><a href="#12">Viewing a Study in PLEXOS Cloud </a></li>
+    <li><a href="#13">Viewing Completed Simulation Logs </a></li>
+    <li><a href="#14">Viewing Version History in Cloud and Desktop</a></li>
+    <li><a href="#15">View the Solution List and Download/View Solutions in PLEXOS Cloud </a></li>
+    <li><a href="#16">Run and Configure Model </a></li>
+    <li><a href="#17">Viewing a Model in PLEXOS Cloud</a></li>
+    <li><a href="#18">Execute multiple Simulations from Execute window</a><a href="#18"> </a></li>
+    <li><a href="#19">Installing the PLEXOS-Cloud-Cli.msi via command line </a></li>
+  </ul>
+  <h2 id="1"><b>Introduction</b></h2>
+  <p>PLEXOS Desktop introduces a new PLEXOS Cloud Integration in version <b>9.1 R03</b>. The Cloud Integration seamlessly integrates PLEXOS Desktop and PLEXOS Cloud for key workflows and reduces dependence on the PLEXOS Cloud Bridge application. PLEXOS users will notice a <b>Sign In </b>button in the PLEXOS Desktop title bar and a Cloud button in the ribbon. Users who do not yet have access to PLEXOS Cloud will experience no other differences in PLEXOS Desktop.</p>
+  <p> </p>
+  <h2 id="2"><b>Features</b></h2>
+  <p>The PLEXOS Desktop 9.1 R03 and up embeds key PLEXOS Cloud actions directly in the PLEXOS Desktop interface. It will allow you to execute key PLEXOS Cloud functions from PLEXOS Desktop. Currently, the following functions are supported for version 9.1 R03:</p>
+  <ul>
+    <li style="margin-left: 8px;">Save a Study to PLEXOS Cloud</li>
+    <li style="margin-left: 8px;">View a Study in PLEXOS Cloud</li>
+    <li style="margin-left: 8px;">View the Solution list and Download\view Solutions in PLEXOS Cloud</li>
+    <li style="margin-left: 8px;">Run and Configure a Model\View Model in PLEXOS Cloud</li>
+    <li style="margin-bottom: 11px;margin-left: 8px;">Sync a Study from desktop to PLEXOS Cloud and vice versa</li>
+  </ul>
+  <h2 id="3"><b><br />
+      Downloading and Installing PLEXOS Desktop</b></h2>
+  <p>To successfully run &amp; perform the activities in the PLEXOS Desktop, you must install PLEXOS 9.1 R03 or later and download and install the <strong>PLEXOS Cloud Toolkit (CLI)</strong>. The PLEXOS Cloud Toolkit is required for the integration to work.<br />
+    <br />
+    Overview of steps to set up the integration:
+  </p>
+  <ol>
+    <li>Install PLEXOS 9.1 R03 or later</li>
+    <li>Install the PLEXOS Cloud Toolkit (CLI) from PLEXOS Cloud</li>
+    <li>Set the Windows environment variables for the PLEXOS Cloud Toolkit (CLI)</li>
+    <li>Login to PLEXOS Cloud from PLEXOS desktop</li>
+  </ol>
+  <h2 id="4"><br />
+    <strong>Installing PLEXOS 9.1 R03 or Later</strong>
+  </h2>
+  <p>Download and install <strong>PLEXOS 9.1 R03</strong> from <a href="https://portal.energyexemplar.com/">https://portal.energyexemplar.com/ </a></p>
+  <h2 id="5">Installing the PLEXOS Cloud Toolkit (CLI) from PLEXOS Cloud</h2>
+  <p>PLEXOS Desktop uses the PLEXOS Cloud Toolkit (also known as the PLEXOS Cloud Command Line Interface or CLI) for communication with the cloud. This Toolkit is also useful for integration and automation activities. It is easy to use and does not require programming experience. Learn More about <a href="file:///articles/KB_Article/Introduction-to-PLEXOS-Cloud-CLI">Introduction to PLEXOS Cloud CLI</a>.<br />
+    <br />
+    Follow the steps below to download and install the CLI:<br />
+     
+  </p>
+  <div style="margin-left: 40px;">1. Login to PLEXOS Cloud<br />
+    <br />
+    2. Click on your <b>Username</b>.<br />
+    <br />
+    3. Select <strong>TOOLS</strong>.<br />
+    <br />
+    4. Click on the download button for <strong>PLEXOS Cloud Toolkit</strong>.
+  </div>
+  <p>              <img alt="" src="../assets/images/image17.png" style="cursor: nwse-resize;" /></p>
+  <div style="margin-left: 40px;">5. After the PLEXOS-Cloud-Cli.msi file is downloaded successfully, Double-click the downloaded file to start the default per-user installation process. If you need to perform a per-machine installation you can do that via a command line, see the section below on Installing the PLEXOS-Cloud-Cli.msi via the command line.<br />
+    <br />
+    <span style="background: #e6e6e6;"><span><span><span><span><span><img alt="" height="225" src="../assets/images/image18.png" width="304" /></span></span></span></span></span></span>
+  </div>
+  <div style="margin-left: 40px;"><br />
+    6. Note the location where the installation was done (the directory on your machine).<br />
+    <br />
+    7. Follow the prompts in the installer to complete the installation.<br />
+    <br />
+    8. In Windows Explorer navigate to the directory where you installed the CLI. Copy (Ctrl + C) the path to that directory. You will use this in the next step.<br />
+    <br />
+    <img alt="" height="469" src="../assets/images/image19.png" width="988" />
+  </div>
+  <div style="margin-left: 40px;"><br />
+    <strong>NOTE:</strong> Users are recommended to enable the <strong>CLI Settings</strong> checkbox shown below to receive the update for the latest CLI version after PLEXOS Launch:<br />
+    <br />
+    <img height="428" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Enable checkbox to receive CLI updates.gif" width="435" />
+  </div>
+  <h2 id="6"><strong><br />
+      Setting the Windows Environment Variables for the PLEXOS Cloud Toolkit (CLI)</strong></h2>
+  <p>PLEXOS triggers the CLI to run commands in PLEXOS Cloud. A Windows environment variable, the Path, needs to be set to allow PLEXOS to trigger those CLI commands regardless of the install location on your machine. To do this you need to set the Path Environment Variable.<br />
+     </p>
+  <div style="margin-left: 40px;">1. From the Windows Search bar enter &quot;Settings&quot; to open the <strong>Windows Settings</strong> screen. Alternatively, you can go to Windows Explorer, right click and click Properties.<br />
+    <br />
+    2. On the Settings screen enter &quot;environment variables&quot; in the Settings Search and select <strong>Edit the system environment variables.</strong><br />
+    <br />
+    <img height="283" src="../assets/images/image20.png" width="265" /> 
+  </div>
+  <div style="margin-left: 40px;"><br />
+    3. A System Properties dialog will appear, click on the<strong> Environment Variables</strong> button. <br />
+    <br />
+    4. From the Environment Variables screen, select Path from the User Variables section and click <strong>Edit</strong>. Alternatively, if multiple users leverage the same machine you can edit the System Variable for Path below.<br />
+    <br />
+    <img height="371" src="../assets/images/image21.png" width="334" />
+  </div>
+  <div style="margin-left: 40px;"><br />
+    5. Click <strong>New </strong>to create environment variable.<br />
+    <br />
+    <img height="347" src="../assets/images/image22.png" width="311" />
+  </div>
+  <div style="margin-left: 40px;"><br />
+    6. Paste the path where you installed the CLI from the previous major step, then Click <strong>OK.</strong><br />
+    <br />
+    <img height="372" src="../assets/images/image23.png" width="331" />
+  </div>
+  <div style="margin-left: 40px;"><br />
+    7. Click <strong>OK </strong>to exit out of the Windows Settings screen.<br />
+    <br />
+    8. You can test that this worked by opening a Command Prompt and entering &quot;plexos-cloud&quot;. If you get an error such as &quot;plexos-cloud is not recognized as an internal or external command&quot; you need to follow the steps above again. If you get an error related to your PLEXOS Cloud environment not being set, learn more in the linked article: <a href="file:///articles/KB_Article/Introduction-to-PLEXOS-Cloud-CLI" target="_blank">Introduction to PLEXOS Cloud CLI</a>.
+  </div>
+  <p> </p>
+  <h2 id="7"><strong>Logging into PLEXOS Cloud from PLEXOS Desktop</strong></h2>
+  <p>1. After installing PLEXOS Desktop and the PLEXOS Cloud toolkit (CLI), open PLEXOS Desktop version 9.1 R03 or above.<br />
+    <br />
+    2. Click the Sign In button at the top right of the screen.<br />
+     
+  </p>
+  <div style="margin-left: 40px;"><strong>a.</strong>  If you don&#39;t see your name or the Cloud icon is disabled, uninstall the PLEXOS Cloud CLI (PLEXOS Cloud Toolkit) and re-install using the steps below to resolve the issue:<br />
+     </div>
+  <div style="margin-left: 80px;"><img height="96" src="../assets/images/Sign In button.png" width="867" /></div>
+  <div style="margin-left: 40px;"><br />
+    <b>Note: </b>The below steps should be performed by an Admin User only to provide access to other users who do not have admin rights and want to use the PLEXOS Desktop to Cloud Integration.<br />
+    <br />
+    <strong>b.</strong>  See the <a href="#CLIref"><strong>Install the PLEXOS Cloud Toolkit (CLI) from PLEXOS Cloud</strong></a> heading above for Download and Installation steps and continue below steps after step 5.<br />
+    <br />
+    <strong>c.</strong>  In the Destination Folder dialog, while installing PLEXOS Cloud CLI, change the folder path to Program Files Folder (Recommended) or to a folder where every user has access to it (Public).<br />
+    <br />
+    For example, C:\ProgramFiles\
+  </div>
+  <div style="margin-left: 80px;"><img height="242" src="../assets/images/image25.png" width="306" /></div>
+  <div style="margin-left: 40px;"><br />
+    <strong>d.</strong>  Create a .txt file in the folder (plexos-cloud-location.txt) and paste the file path of the installed plexos-cloud.exe in the .txt file.<br />
+     
+  </div>
+  <div style="margin-left: 80px;"><img height="82" src="../assets/images/image27.png" width="293" /></div>
+  <div style="margin-left: 40px;"><br />
+    <strong>e.</strong>  Copy the .txt file and paste it into the other users (who do not have admin access) directory at C:\Users\Username\EnergyExemplar<br />
+     
+  </div>
+  <div style="margin-left: 80px;"><img height="122" src="../assets/images/image28.png" width="381" /></div>
+  <div style="margin-left: 40px;"><br />
+    <strong>f. </strong> A non-admin user can now open the PLEXOS Desktop to Cloud integration (9.1 R03 and above) and Load a Study to successfully see the changes.<br />
+     
+  </div>
+  <div style="margin-left: 80px;"><img height="75" src="../assets/images/image30.png" width="653" /></div>
+  <p><br />
+    3. Select the required environment from the list. The environment is the region where your PLEXOS Cloud environment is hosted. You can validate this from the URL you use to login- <strong>North America (NA), Europe (EU), Australia (AU)</strong>. The <strong>Other </strong>is for Energy Exemplar employees.<br />
+    <br />
+    <strong>NOTE: </strong>The PLEXOS Cloud Sign-In panel may show up on the left side of the screen, just Pin the panel so it will stay on the right side of the screen. <br />
+    <br />
+          <img height="294" src="../assets/images/image31.png" width="674" />
+  </p>
+  <p><br />
+    4. Click on the <b>Sign In </b>button to get redirected to the <strong>PLEXOS Cloud Sign In</strong> page. Enter the your email and click on the <strong>CONTINUE </strong>button.<br />
+    <br />
+          <img height="324" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/PLEXOS Cloud Sign In page.png" style="cursor: nesw-resize;" width="680" />
+  </p>
+  <p> </p>
+  <p>5.  If your email has access to multiple tenants within a single environment, you will get redirected to the <strong>Select a tenant to continue</strong> page. Users who belong to a single tenant will be logged in to their respective tenant without being prompted to select a tenant. </p>
+  <p><br />
+    6.  By default, the <a class="glossterm" data-glossterm="Primary Tenant" href="#">Primary Tenant</a> is selected but you can select the desired Tenant from the list and click on the <strong>CONTINUE </strong>button.</p>
+  <p> </p>
+  <p><strong>NOTE: </strong>When an Admin creates a user and assigns their initial tenant, it will be designated as the Primary Tenant. The user will only see the &quot;Primary&quot; tag associated with this tenant&#39;s name. </p>
+  <p> </p>
+  <p>      <img height="326" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Select different tenant page.png" width="686" /><br />
+    <br />
+    7. After successful authentication, you will get logged in for the selected tenant. You are now ready to use PLEXOS and PLEXOS Cloud together.
+  </p>
+  <p> </p>
+  <p><b>NOTE</b>: After you Sign In successfully, your name will display in place of the Sign In button in the upper right section of the screen.</p>
+  <p> </p>
+  <p>8.  If a user needs to change the tenant after logging in to the PLEXOS Desktop, they can either change the tenant from PLEXOS Cloud (without Signing out) or can sign out and sign in again within PLEXOS Desktop, to access the tenant selection page.<br />
+    <br />
+    <br />
+    <strong></strong>
+  </p>
+  <h2 id="8"><strong>PLEXOS Desktop Welcome Window</strong></h2>
+  <p> The Welcome Window in PLEXOS Desktop is designed to identify and show a list of all the PLEXOS Cloud Studies and downloaded Solutions on the local machine. Users can click on the Study name to open that Study in PLEXOS Cloud directly. The Welcome Window provides users instant access to the following features:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Tenant Details: </strong>View the Environment and Tenant Name you are logged into at the top-right of the Welcome Window page.<br />
+       </li>
+    <li><strong>Create a New Database: </strong>Build a new Local Study using the default and custom templates provided.</li>
+    <br />
+    <li><strong>Open an Existing Database: </strong>View the list of Cloud Studies and get started on an existing project Local project (saved on your machine) or Cloud project. Users can also browse PLEXOS Cloud and Clone a Cloud Study to start working on a Cloud Study.</li>
+    <br />
+    <li><strong>Open a Model Solution: </strong>Open a Model Solution for previously executed Model Runs for the currently selected Study in the Open an Existing Database panel.</li>
+    <br />
+    <li><strong>Product News:</strong> Receive regular Product Updates, Release Notifications, Articles, Blogs, Training, and much more.</li>
+    <br />
+    <li><strong>Sign-In Button:</strong> Sign-In to PLEXOS Cloud to smoothly synchronize data between the Desktop and PLEXOS Cloud.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p>The Welcome window provides a more user-friendly experience on start-up and a convenient way to get started with a new or existing database, either locally or on PLEXOS Cloud.</p>
+  <p><br />
+    <img height="658" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Welcome window homepage.png" width="1236" /><br />
+     
+  </p>
+  <p>Learn more about the things you can do in the <a href="https://portal.energyexemplar.com/unified-help/plexos-desktop/#t=Article.WelcomeWindow.html">Welcome Window.</a></p>
+  <p> </p>
+  <h2 id="9"><strong>Browsing Cloud and Clone Study in Desktop</strong></h2>
+  <p>The Clone to Desktop functionality in PLEXOS Desktop allows users to add a PLEXOS Cloud study to their local machine for editing. PLEXOS Desktop users can browse all the available studies on PLEXOS Cloud that have been shared with them and Clone a local copy of a Study to their PC to start collaborating on the Study in PLEXOS Desktop with integrated version management features. Follow the steps below to Clone a Study from PLEXOS Cloud to Desktop:<br />
+    <br />
+    <strong>NOTE:</strong> The Clone to Desktop Study feature is available with <strong>PLEXOS Desktop 9.2 R05 </strong>and above.<br />
+    <br />
+    1.  Navigate to <strong>PLEXOS Desktop &gt; Welcome Window &gt; Open an Existing Database panel &gt; Cloud tab &gt; Kebab menu for the desired Cloud Study &gt; Clone to Desktop option.<br />
+      <br />
+      <img height="472" src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Clone to Desktop option.png" width="518" /></strong><br />
+    <br />
+    2.  A Clone Study pop-up displays with the following caution message (Before selecting a folder to clone the Study):<br />
+    <br />
+    <strong>“For better results, avoid saving to shared drives or OneDrive. Please choose a local drive to prevent potential sync issues.”</strong>
+  </p>
+  <p>      <img src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Caution message for Clone Study.png" /></p>
+  <p>If you proceed and select a folder within OneDrive or a shared drive, the caution changes to a warning message as follows:</p>
+  <p><strong>“It looks like the selected drive is OneDrive. Cloning studies from Cloud to OneDrive may result in sync issues and other unexpected errors. Please select a local drive before cloning to avoid any issues.”</strong><br />
+    <br />
+          <img src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Warning message for Clone Study.png" />
+  </p>
+  <p>This warning disables the Clone to Desktop button, requiring you to select a local drive before proceeding.</p>
+  <p><br />
+    3.  Select the destination folder where you want to store the Study.<br />
+    <br />
+    4.  The Study Cloning process will start. This process may take several minutes, depending on the size of the Study, and the progress is indicated in the Application Status Bar at the bottom left of the screen.<br />
+    <br />
+    5.  After cloning is complete, the cloned Study will open automatically on PLEXOS Desktop as shown below:<br />
+    <br />
+          <img src="../assets/images/image34.png" />
+  </p>
+  <h2 id="10"><br />
+    Saving a Study to PLEXOS Cloud</h2>
+  <p>A PLEXOS database that has been saved to PLEXOS Cloud is known as a Study. The following video covers the process of uploading (saving) a Study to PLEXOS Cloud from PLEXOS Desktop:</p>
+  <p> </p>
+  <p><iframe allowfullscreen="" height="380" src="https://player.vimeo.com/video/896775630?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="660" style="cursor: nesw-resize;"></iframe></p>
+  <p> </p>
+  <p> </p>
+  <div>1. Click the <b>Open </b>button to browse and open a local PLEXOS database.<br />
+     </div>
+  <div><strong>NOTE:</strong> Cloud Study doesn&#39;t upload .txt files. Only .csv files are supported on the cloud. If your .txt files contain comma-separated values, you could simply rename the files to .csv extension. Another option is to open the .txt in Excel by setting the right delimiter, and then <strong>Save As</strong> the file into .csv format.</div>
+  <div> </div>
+  <div>2. Check the Status of your Study,  in the bottom left corner of the screen. If the local database has not been saved or synced to PLEXOS Cloud it will show an Offline state.<br />
+    <br />
+    <strong>NOTE:</strong> It is best practice to have every XML Study stored in its own folder from which you are uploading your study to Cloud.<br />
+    <br />
+    <strong>NOTE:</strong> Using network drives are not supported for syncing with PLEXOS
+    <p>Cloud. Network drives perform much slower than local drives. Additionally sharing a study on a network drive among multiple users for collaboration purposes will cause conflicts with versioning.</p>
+  </div>
+  <div> </div>
+  <div>
+    <p>3.  Known Limitations for Saving Study from PLEXOS Desktop to PLEXOS Cloud are as follows:</p>
+    <p> </p>
+    <ul class="Disc">
+      <li><strong>Creating/Adding New Study:</strong> Uncompressed study size of up to 12 GB is supported. </li>
+      <li><strong>Creating/uploading a new version:</strong><br />
+         
+        <ul>
+          <li><strong>XML Changes:</strong> 500,000   records (there should not be more than 500,000 changes in the XML. By changes, includes add, removes &amp; modifies.)</li>
+          <li><strong>CSV/TimeSeries:</strong> No more than 3 GB of total timeseries changes can be pushed. For example, if 5 files change, the sum of their change (diff) size should not be more than 3 GB.</li>
+        </ul>
+      </li>
+      <li>
+        <p lwc-ocu6ikr8h3=""><span><span><span>For Model Names w</span></span></span>e allow only the characters as below in the Model Names:</p>
+        <p lwc-ocu6ikr8h3=""> </p>
+        <ul>
+          <li lwc-ocu6ikr8h3="">Alphabets<span> </span><strong lwc-ocu6ikr8h3="">A-Z, a-z</strong></li>
+          <li lwc-ocu6ikr8h3="">Numbers<span> </span><strong lwc-ocu6ikr8h3="">0-9</strong></li>
+          <li lwc-ocu6ikr8h3="">brackets<span> </span><strong lwc-ocu6ikr8h3="">( )</strong></li>
+          <li lwc-ocu6ikr8h3="">Underscore<strong lwc-ocu6ikr8h3=""><span> </span>_</strong></li>
+          <li lwc-ocu6ikr8h3="">Hyphen<span> </span><strong lwc-ocu6ikr8h3="">-</strong><br />
+            <span><br />
+              Any characters other than above will get converted to dot &quot;.&quot;  For example, If you enter = or $ in your Model Name, it will automatically changes to &quot;.&quot; Any Leading or Trailing white spaces in Model names will be trimmed.</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p> </p>
+  </div>
+  <div>4. Click on the <b>Save</b> dropdown and select the <b>Save Study to PLEXOS Cloud </b>option. It will upload your Study to PLEXOS Cloud.<br />
+    <br />
+    <img height="304" src="../assets/images/image35.png" width="295" />
+  </div>
+  <div><br />
+    <strong>NOTE: </strong>Before you save a Study to the PLEXOS Cloud, you will see a warning pop-up as shown below. Also, you can edit the Study Name per your requirement in this pop-up:<br />
+    <br />
+    <img height="198" src="../assets/images/image36.png" width="318" />
+    <p><strong>A. Caution Messages for New Study Saved on Shared Drive or One Drive</strong><br />
+      <br />
+      You will notice a caution message if the Study is currently saved on a Shared drive or OneDrive. In this scenario, the Create Study on Cloud button remains enabled but prompts you to move the Study to a local drive if it is saved on a Network or Shared Drive to prevent possible issues. Refer to the following caution message:
+    </p>
+    <p><strong>“If the Study is saved on a Shared drive or OneDrive, uploading it to the cloud may cause sync issues and other unexpected errors. To avoid potential problems, ensure the Study is saved on a local drive before uploading.”</strong><br />
+      <br />
+      <img src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Caution message for new database.png" />
+    </p>
+    <p> </p>
+    <p><strong>B.  Warning Message for New Study Saved on OneDrive or Shared Drive</strong><br />
+      <br />
+      If the Study is saved on any OneDrive or Shared Drive folder, the following warning message displays. This warning disables the Create Study on Cloud button, requiring you to select a local drive before proceeding.
+    </p>
+    <p><strong>“It looks like this study is located on OneDrive. Uploading studies from OneDrive to the cloud may result in sync issues and other unexpected errors. Please move the study to a local drive before uploading to avoid any issues.”</strong></p>
+    <p><br />
+      <img src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Warning message for new database.png" /><br />
+      <br />
+      <br />
+      <strong>C.  Warning Message for Uploading Studies to Cloud</strong><br />
+       
+    </p>
+    <p>If you attempt to upload a Study to PLEXOS Cloud that is saved on OneDrive or a shared drive via the path: Save dropdown &gt; Save Study to PLEXOS Cloud option, a warning message will appear to prevent the upload.This warning disables the Create button until the study is moved to a local drive.</p>
+    <p><strong>“It looks like the Study is located on a shared drive. Uploading studies from shared drives to the cloud may result in sync issues and other unexpected errors. Please move the study to a local drive before uploading to avoid any issues.”</strong><br />
+      <br />
+      <img src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Save study to plexos cloud option.png" /><br />
+      <br />
+      <img src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Warning message for saving study to cloud.png" />
+    </p>
+    <p><strong></strong></p>
+  </div>
+  <div>5.  Click on the <strong>Create</strong> button to start uploading a Study.<br />
+     </div>
+  <div>6.  Upon successful Save Study to PLEXOS Cloud operation, you will notice a Windows notification at the bottom right of your screen. This notification will be visible regardless of whether you are in the same tab, a different tab, or another application.<br />
+    <br />
+     <img height="504" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Study added to cloud pop up.png" width="280" />
+    <p> </p>
+    <p>7.  If the upload fails, an error message will appear at the bottom left of the desktop interface, with an option to open the CLI Logs.</p>
+    <p> </p>
+    <p><img height="87" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Failed Study save operation_error message.png" width="679" /></p>
+  </div>
+  <div><b>NOTE</b>: You can view the status of the Study upload in the bottom left corner of the screen. Refer the table shown below to understand different status and its description:<br />
+    <br />
+    <img height="346" src="../assets/images/Study upload Status.png" width="773" /><br />
+     
+  </div>
+  <div style="margin-left: 40px;">
+    <table border="1" style="width: 500px;">
+      <thead>
+        <tr>
+          <th colspan="1" rowspan="1" style="text-align: center;">
+            <div style="text-align: left;">Status</div>
+          </th>
+          <th colspan="1" rowspan="1" style="text-align: center;">
+            <div style="text-align: left;">Description</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="1" rowspan="1" style="text-align: center;">
+            <div style="text-align: left;">Local Study</div>
+          </td>
+          <td colspan="1" rowspan="1" style="text-align: center;">
+            <div style="text-align: left;">The Study is in Offline state</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="1" style="text-align: center;">
+            <div style="text-align: left;">Cloud Study</div>
+          </td>
+          <td colspan="1" rowspan="1" style="text-align: center;">
+            <div style="text-align: left;">The Study is in Online state</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="1" style="text-align: center;">
+            <div style="text-align: left;">Out of Sync</div>
+          </td>
+          <td colspan="1" rowspan="1" style="text-align: center;">
+            <div style="text-align: left;">The Study is Out of Sync state</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-bottom: 11px;"><br />
+    8. After the Study is successfully uploaded, the status icon will turn into a green cloud <span style="background: #e6e6e6;"><span style="color: #2b579a;"><img src="../assets/images/image38.png" /> </span></span> <br />
+    <br />
+    9.  You will be re-directed to the Overview page in the PLEXOS Cloud with the uploaded Study selected automatically.
+  </div>
+  <div style="margin-bottom: 11px;">10. If the Study upload failed, you will see an error message stating, <strong>&quot;There was an error while performing a cloud operation&quot;</strong> in the status bar.<br />
+    <br />
+    <img height="362" src="../assets/images/image40.png" width="282" />
+  </div>
+  <p>11. In this case you can check the CLI Logs to view the error details at this location:   <strong>C:\Users\Username\AppData\Local\PLEXOS Cloud\Logs</strong>.<br />
+     </p>
+  <h2 id="11"><strong>Syncing a Study</strong></h2>
+  <div>
+    <div style="margin-bottom: 11px;margin-left: 8px;">
+      <div style="margin-bottom: 11px;margin-left: 8px;">
+        <div style="margin-bottom: 11px;margin-left: 8px;">
+          <div>1. Click on the <b>Cloud</b> buttonthe  from the menu ribbon and select <b>Sync Study</b>.</div>
+          <div style="margin-left: 40px;"><img height="175" src="../assets/images/image42.png" style="cursor: nesw-resize;" width="293" /></div>
+          <div style="margin-bottom: 11px;">2. It will allow you to check current Study status of local vs cloud version.</div>
+          <div style="margin-bottom: 11px;">3. If the Cloud version is newer it will download and merge those changes. If the local (desktop) version is newer it will upload those changes.</div>
+          <div style="margin-bottom: 11px;">4. All versions are tracked and shown in Version History in PLEXOS Cloud. To view the Version History click the Cloud button and select <strong>View Study in Cloud</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="" style="left: 100px;top: 1517.59px;">
+    <h2 id="12"><br />
+      <b>Viewing a Study in PLEXOS Cloud</b>
+    </h2>
+    <div style="margin-bottom: 11px;">To view your Study in PLEXOS Cloud:</div>
+    <div style="margin-bottom: 11px;margin-left: 8px;">
+      <div>1. Click on the <b>Cloud</b> button from the ribbon and select <b>View Study in Cloud</b>.<br />
+        <br />
+        <img height="158" src="../assets/images/image44.png" width="246" />
+      </div>
+      <div style="margin-bottom: 11px;">2. The selected Study will open in a new browser tab displaying the Study Overview page in PLEXOS Cloud.</div>
+      <div style="margin-bottom: 11px;">3. The Study Overview page shows a high-level view of the Models, the privacy and membership settings and the Version History. The Version History shows a list of all changes for the Study by all users.<br />
+        <br />
+        <strong>NOTE: </strong>There should be one Study under one folder. You cannot have two or more Studies in one folder as it causes some operation on the Study to work improperly.<br />
+         
+        <h3>Repair Study in the PLEXOS Desktop</h3>
+        <p>The Repair Study option enables users to define a new path where the Study exists. This allows users to continue working with Local Studies without the need for manual deletion and download. It effectively resolves corruption issues in Study data files or situations where the folder of a Cloud Study was modified or renamed. </p>
+        <p>Users can easily identify Studies requiring repair by observing a red dot on the Study icon within the <strong>Open an Existing Database</strong> panel in the Welcome Window.</p>
+        <p> </p>
+        <p><img height="284" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Study Repair_Welcome Window.png" width="316" /></p>
+        <p> </p>
+        <p> </p>
+        <h4>Welcome Window</h4>
+        <p>Follow the steps mentioned below to repair a Study that has a red dot on the Study icon within the <strong>Open an Existing Database</strong> panel in the Welcome Window: </p>
+        <p> </p>
+        <ol class="Decimal">
+          <li>To repair this Study, click on the kebab menu next to the Study name.<br />
+            <br />
+            <img height="186" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Welcome Window_Repair option.png" width="433" />
+          </li>
+          <li>Click on the <strong>Repair</strong> option.</li>
+          <li>A window opens on your machine that allows you to select and open the Study from the path where the Study is available now.  <br />
+            <br />
+            <img height="232" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Select Study file_Study Repair.png" width="440" /><br />
+            <br />
+            -OR-
+          </li>
+          <li>If you click on the Study Name and the <strong>File not found</strong> error dialog appears as shown below. Click on the <strong>Repair</strong> option to continue.<br />
+            <br />
+            <img height="271" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Study click to repair.png" width="399" /><br />
+            <br />
+            <img height="128" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/File not Found error.png" width="400" />
+          </li>
+          <li>The Repairing process starts, and the status will be shown at the bottom left of the PLEXOS Desktop interface.<br />
+            <br />
+            <img height="285" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Repairing Study Status.png" width="388" /><br />
+             
+          </li>
+          <li>After the Study is repaired successfully, the status gets changed to Success and the red dot on the Study icon will be disabled.<br />
+            <br />
+            <img height="289" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Repair success.png" width="392" /><br />
+            <br />
+            <strong>NOTE:</strong> If the Study doesn’t repair, delete the Study from your machine and Clone the same Study from PLEXOS Cloud using the Cloud tab.
+          </li>
+        </ol>
+        <p> </p>
+        <h4><br />
+          Cloud Dropdown</h4>
+        <p>Follow the steps below to repair the Study, when you open a Study directly from the Open dropdown in the PLEXOS Desktop and notice the Study repair error:</p>
+        <p> </p>
+        <ol class="Decimal">
+          <li>Open the Study in PLEXOS Desktop that needs a repair.</li>
+          <li>An error message, This <strong>Study needs repair </strong>appears at the bottom left of the interface as shown below:  <br />
+            <br />
+            <img height="411" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Cloud dropdown_study repair.png" width="453" />
+          </li>
+          <li>Click on the Cloud dropdown and select the Repair Study option.<br />
+            <br />
+            <img height="168" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/cloud dropdown_repair study option.png" width="282" />
+          </li>
+          <li>The Study Repair process starts and after successful Repair, the below-shown dialog appears along with the success status at the bottom left of the interface:<br />
+            <br />
+            <img height="318" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Study repair_success_cloud dropdown.png" width="353" />
+          </li>
+        </ol>
+      </div>
+    </div>
+    <h2 id="13"><br />
+      <strong>Viewing Completed Simulation Logs</strong>
+    </h2>
+    Click on the Cloud button from the menu and select <strong>View Integration Logs </strong>to view and edit simulation logs in Notepad.
+    <h2 style="left: 100px; top: 1517.59px;"><img height="179" src="../assets/images/image45.png" width="286" /></h2>
+    <h2 id="14"><br />
+      <strong>Viewing Version History in PLEXOS Cloud</strong>
+    </h2>
+    <div>1.  Click on the Cloud button from the menu and select <strong>View Version History</strong>.<br />
+      <br />
+      <img height="175" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/View Version History in Cloud.png" width="293" />
+    </div>
+    <br />
+    2. It will re-direct you to the Version History page of the PLEXOS Cloud with the Study selected. You can track the changes made to the Study in the past.
+    <h2><img height="222" src="../assets/images/image48.png" width="496" /><br />
+      <br />
+      Viewing Version History on PLEXOS Desktop
+    </h2>
+  </div>
+  <p>With the 10.0 R02 release of PLEXOS Desktop, users can access and manage the Version History and Simulation data for their Cloud Studies directly from PLEXOS Desktop. The Version History panel provides a dedicated side panel for Study Version Management, offering users a clear overview of the Study&#39;s current status and its change history. The Version History is shown in a timeline, providing users with visibility of the project&#39;s history. Users can conveniently pin the side panel to the PLEXOS display, ensuring it remains visible during editing sessions, enabling seamless Push of changes as they work, and being notified when collaborators on Cloud have made new changes.<br />
+    <br />
+    <img height="346" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Version History panel in desktop.png" width="650" />
+  </p>
+  <p> </p>
+  <p><strong>NOTE: </strong>When a Study is Cloned from PLEXOS Cloud, all the Versions of that Study are grouped into one version and are shown as <strong>Initial Commit</strong> in the Desktop Version History panel.</p>
+  <p> </p>
+  <h3>Version History tab</h3>
+  <p>Follow the steps below to View and Manage Study Versions in PLEXOS Desktop:</p>
+  <ul class="Disc">
+    <li>Click on any Cloud Studies Study from the <strong>Open an Existing Database</strong> panel to open the Versions panel automatically.</li>
+    <li>To allow opening the <strong>Version History</strong> panel automatically when Cloud Studies Study is loaded, click on the <strong>PLEXOS menu &gt; Settings &gt; Cloud </strong>tab and enable the <strong>Open cloud panel on opening a database</strong> checkbox.<br />
+      <br />
+      <img height="499" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Enable checkbox to load Versions panel.gif" width="500" /><br />
+      <br />
+      -OR-
+    </li>
+    <li>Click on the <strong>Cloud</strong> dropdown available in the top-left menu of the screen.</li>
+    <li>Select the <strong>View Version History in the Desktop</strong> option.<br />
+      <br />
+      <img height="190" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/View Version History in Desktop.png" width="300" />
+    </li>
+    <li>
+      <p>The Versions panel will display on the right of the screen showing the associated Local Versions of the selected Study. <br />
+        <br />
+        <img height="317" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Version History loaded panel.png" width="239" />
+      </p>
+    </li>
+    <li>
+      <p>Additionally, users can <a class="glossterm" data-glossterm="Pull " href="#">Pull </a>and <a class="glossterm" data-glossterm="Push " href="#">Push </a>the changes from Local Study to Cloud using the dedicated Push and Pull button available at the top-right of the Version History panel.</p>
+    </li>
+  </ul>
+  <div style="margin-bottom: 11px;">
+    <h3>Best Practices</h3>
+    <ol class="Decimal">
+      <li><strong>Unwanted removes in cloud study after subsequent push</strong>
+        <p>This issue can occur due to the following reasons:</p>
+        <p><strong>A. Synchronization Process </strong><br />
+          During the synchronization process between PLEXOS Desktop and the PLEXOS Cloud, when you execute the Pull Changes command, if updates are pulled from the PLEXOS Cloud into the input XML (database) file, the PLEXOS Desktop application prompts you to reopen the file to apply the changes.<br />
+          <br />
+          <img src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Syncronization process.png" />
+        </p>
+        <p> </p>
+        <p>If the Ignore option is selected instead of reopening the file and the XML file is subsequently saved, the changes pulled from the PLEXOS Cloud are not retained.<br />
+           <br />
+          On the next Push operation, these lost changes are shown as Removed on the version history page. For instance, changes from version 39 may appear as removed in version 40.<br />
+           <br />
+          This behaviour can be configured in the PLEXOS Desktop settings to align with your workflow and prevent change loss during sync operations.<br />
+          <br />
+          <img src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Sync process.png" />
+        </p>
+        <p><br />
+          <strong>B. Version Mismatch</strong><br />
+          If team members are not using the same PLEXOS version for a project or study, discrepancies can arise. Version upgrades or downgrades often alter IDs in the XML file, which results in additional removals and additions during changeset creation.
+        </p>
+      </li>
+    </ol>
+  </div>
+  <div style="margin-bottom: 11px;"> 
+    <h3>Simulations tab</h3>
+    <p>The <strong>Simulations</strong> tab allows users to view Simulation lists and download Solutions or Solution Log Files directly from the PLEXOS Desktop. The Simulations tab provides easy access to Simulation-related data in one place and a Refresh button to fetch the updated Simulation data. It includes the following columns to provide users with all the Simulation information for the currently selected Study:</p>
+    <p> </p>
+    <ul class="Disc">
+      <li><strong>Model Name</strong> - Shows the list of all executed Simulations. </li>
+      <li><strong>Status</strong> - Shows the state of the Simulation upon completion, categorized as Successful, Failed, Cancelled, or Completed with Error.</li>
+      <li><strong>Started</strong> - Shows the start date and time of the Simulation execution.  </li>
+      <li><strong>User</strong> - Shows the name of the user who executed the Simulation.</li>
+      <li><strong>Actions</strong> - Allow users to Download the Solution File, Log File, and View in Cloud option for each Simulation.</li>
+    </ul>
+    <p> </p>
+    <p><img height="453" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Simulations tab.png" width="463" /></p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+  </div>
+  <h2 id="15">View the Solution List and Download/View Solutions in PLEXOS Cloud  </h2>
+  <div style="margin-bottom: 11px;margin-left: 8px;">
+    <div>1. Open the desired Study in PLEXOS Desktop, navigate to Simulation and select the required Model.</div>
+    <div>2. All the Solutions available under that Model will display on the right-hand pane of the screen.<br />
+      <br />
+      <span style="background: #e6e6e6;"><span style="color: #2b579a;"><img height="329" src="../assets/images/View Solution List.png" width="761" /> </span></span>
+    </div>
+    <div> </div>
+    <div>3. Click <img src="../assets/images/image50.png" /> icon to download the Solution File. Upon successful download of the Solution File, users will notice a Windows pop-up at the bottom-right of the screen regardless of whether they are in the same tab, a different tab, or another application. This is helpful when a user initiates the Download Solution process for a large Solution that takes  time to download, allowing them to continue with other tasks until the download is complete. This notification will proactively inform you of the successful completion of the Solution Download process.<br />
+      <br />
+      <img height="417" src="../assets/images/PLEXOS Cloud Integration with PLEXOS Desktop/Solution File Download pop up.png" width="696" />
+    </div>
+    <div style="margin-bottom: 11px;">4. Click <span style="background: #e6e6e6;"><span style="color: #2b579a;"><img src="../assets/images/image51.png" /> </span></span> icon to launch the Solution in PLEXOS Cloud. This allows you to evaluate the output using map-based visualizations, Solution Reports, Congestion Analysis, and other tools not available in the desktop.</div>
+    <div>
+      <h2 id="16">Run and Configure Model</h2>
+    </div>
+    <div>1. Find a Model for your Study that you want to Execute or Run and Right-click on it.<br />
+       </div>
+    <div>2. Select the <b>Execute in Cloud </b>option.<br />
+      <br />
+      <span style="background: #e6e6e6;"><span style="color: #2b579a;"><img height="255" src="../assets/images/image54.png" width="180" /></span></span>
+    </div>
+     
+    <div>3. It will prompt you to select <b>Run Model</b> or <b>Configure</b> on the right-hand pane of the screen.<br />
+      <br />
+      <span style="background: #e6e6e6;"><span style="color: #2b579a;"><img height="350" src="../assets/images/image55.png" width="626" /></span></span>
+    </div>
+     
+    <div style="margin-left: 40px;"><b>a. Run Model</b>: Click Run Model to automatically use the previous run configuration for the selected Run.<br />
+       </div>
+    <div style="margin-bottom: 11px;margin-left: 40px;"><b>b. Configure</b>: Click Configure to redirect you to the Run Configuration page in PLEXOS Cloud (in a browser), where you can select the required configuration for your Model. If this is the first time you are running the Model in PLEXOS Cloud it will automatically open the browser and take you to PLEXOS Cloud.</div>
+    <div style="margin-bottom: 11px;">4. Once in PLEXOS Cloud, click the <strong>Run </strong>button for your select <strong>Model </strong>and define the run settings.<br />
+       </div>
+    <h2 id="17"><b>Viewing a Model in PLEXOS Cloud</b></h2>
+    <div>1. Right-click on the model from your Study for which you want to view Model settings, compare scenarios, or edit data.<br />
+      <br />
+      <span style="background: #e6e6e6;"><span style="color: #2b579a;"><img height="328" src="../assets/images/image56.png" width="229" /></span></span>
+    </div>
+     
+    <div style="margin-bottom: 11px;">2. The selected Model will open in PLEXOS Cloud for you to view. Here you view, edit, and compare Model settings, set up a Run, and more.<br />
+      <br />
+      <strong></strong>
+      <h2 id="18"><strong>Execute multiple Simulations from the Execute window</strong></h2>
+      To Execute multiple Simulation from PLEXOS Desktop to PLEXOS Cloud in one click,<br />
+      <br />
+      1.  Click on the <b>Execute</b> button in the PLEXOS Desktop window menu ribbon.<br />
+      <br />
+      <img height="72" src="../assets/images/image57.png" width="594" /><br />
+      <br />
+      2.  You can see the list of Models in the <strong>Models and Projects</strong> pane (on the left-side of the screen). Select the desired Models and click on <strong>Add</strong> button to move them to <strong>Models and Projects selected for next Execution</strong> pane (on the right-side the screen).<br />
+      <br />
+      <img height="401" src="../assets/images/Models and Project pane.png" width="735" /><br />
+      <br />
+      3.  Click the <b>Execute in Cloud</b> button to execute the selected models in the PLEXOS Cloud.<br />
+       
+      <p>      a.  If any of the selected Models has previous successful run, your Simulation will be queued for all selected Models based on previous run recommended machine configuration.<br />
+         </p>
+      <p>       b.  If none of the selected Model have successful run before, you will be re-directed to the PLEXOS Cloud Run Configuration pane. where you need to configure and run the simulation.</p>
+      <br />
+      <b>NOTE:</b> If the selected Study is Out of Sync with the PLEXOS Cloud, you will see a dialog stating, “The Study &lt;StudyName&gt; is out of sync with PLEXOS Cloud. Would you like to sync the Study with PLEXOS Cloud before running the simulation?”<br />
+      <br />
+      <img height="104" src="../assets/images/image61.png" width="331" /><br />
+      <br />
+      4.  You will be re-directed to the PLEXOS Cloud Run Configuration panel. Select the desired configuration for your run and click the Run Model button.<br />
+      <br />
+      <img height="421" src="../assets/images/image62.png" width="228" /><br />
+      <br />
+      5.  Your run will be queued, and you can see the status of your run in the Solutions tab.
+    </div>
+  </div>
+  <p> </p>
+  <h2 id="19">Installing the PLEXOS-Cloud-Cli.msi via command line</h2>
+  <div style="left: 100px;top: 1517.59px;">This is only required if you do not want to install the CLI via the normal MSI installer or need to install it for the machine and not for the user.<br />
+    <br />
+    1.  After the <strong>PLEXOS-Cloud-Cli.msi</strong> file is downloaded successfully, open cmd or terminal preview and change the current directory to the root directory of the downloaded msi file by executing the following commands: <strong>cd &lt;downloaded msi file path&gt; </strong><br />
+    <br />
+    <img height="98" src="../assets/images/Installing CLI command line.png" width="456" />
+  </div>
+  <div style="left: 100px;top: 1517.59px;"><br />
+    2. Use the applicable command to choose the installation type as below:<br />
+    <br />
+    <img height="258" src="../assets/images/image67.png" width="318" />
+  </div>
+  <div style="left: 100px;top: 1517.59px;"><br />
+    3. Wait for the installer to complete the installation. The installation wizard will walk you through the installation process.</div>
+  <div id="" style="left: 60px;top: 2390.57px;margin-left: 40px;"> </div>
+  <p id="" style="left: 100px;top: 3389.5px;"><strong>NOTE: </strong>Very large uploads can experience performance issues during the initial upload or creation of a study in PLEXOS Cloud. This is because larger files require more time to upload and the process can strain the system&#39;s resources. To avoid such situations files above 10 GB are not supported by PLEXOS Cloud, attempting to upload them is likely to fail.</p>
+  <p style="left: 100px;top: 3389.5px;"> </p>
+  <h2 style="left: 100px; top: 3389.5px;">Troubleshooting PLEXOS Desktop (Log Files)</h2>
+  <p>The new centralized log collection feature consolidates essential log files and configuration data into a single, user-defined location on your machine to streamline diagnostics and support for the PLEXOS Desktop. This enhancement simplifies log management and facilitates ease of access and share for support resolution.<br />
+    <br />
+    <img src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Centralized log files.png" />
+  </p>
+  <p>Previously scattered across multiple directories, log files for PLEXOS Desktop, Central License Manager, and CLI are now automatically stored in a single, user defined folder, making retrieval straightforward.<br />
+           </p>
+  <p>To define the destination folder for centralized log collection, run the following command in Command Prompt:</p>
+  <p><strong>     pxc environment diagnostic-information -d &quot;Folder path where the Log Files will be stored&quot;</strong><br />
+    <br />
+    <img height="143" src="../assets/images/RN_2024/Nov 2024 Release SS/Flamingo/Log files collection comand.png" width="736" />
+  </p>
+  <p>Upon completion, a confirmation message will appear. Logs are saved in the &quot;PLEXOS-Logs-&lt;Date of Collection&gt;&quot; folder for easy access.</p>
+</body>
+</html>

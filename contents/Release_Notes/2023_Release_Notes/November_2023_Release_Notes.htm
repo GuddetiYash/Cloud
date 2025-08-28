@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <title>November 2023 Release Notes</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/>
+  <meta name="rh-authors" content="Jigyasa"/>
+<meta name="rh-index-keywords" content="November 2023,November 2023 Release Notes"/><meta name="robots" content="noindex, nofollow" /></head>
+<body onload="displayLastModifiedDate()">
+  <p style="color: white; font-size:10px; text-align: right;">Last updated on: <span data-field="date" data-format="MMMM DD, YYYY" style="color: white; font-size: 10px;">November 10, 2023</span></p>
+  <h1>November 2023 Release Notes</h1>
+  <h1>Highlights of the November 2023 release:</h1>
+  <ul>
+    <li><a href="#1one">Solution Output Analysis (Map, Grid and Solution Reports)</a>
+      <ul>
+        <li>Date Range Filter for Solution Reports</li>
+        <li>User Interface Enhancements in the Executive View</li>
+      </ul>
+    </li>
+    <li><a href="#2two">Model Execution </a>
+      <ul>
+        <li>View multiple Simulations at a time using the Simulation Monitoring Dashboard</li>
+        <li>Icons to help identify the associated Study Version for Models in Compare/Simulation Groups</li>
+      </ul>
+    </li>
+    <li><a href="#3three">Model Building and Editing (Desktop Integration and Excel)</a>
+      <ul>
+        <li>Quick and easy configuration of Template and Schema using the new Template Builder in Excel Add-In</li>
+      </ul>
+    </li>
+    <li><a href="#4four">Integration and Automation - CLI/API</a></li>
+    <li><a href="#5five">Additional Improvements and Bug Fixes</a></li>
+    <li><a href="#6six">Announcements</a></li>
+    <li><a href="#7seven">Known Issues</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="1one">Solution Output Analysis (Map, Grid and Solution Reports)</h2>
+  <h3>Date Range Filter for Solution Reports</h3>
+  <p> </p>
+  <p><b>NOTE:</b> This change is applicable only for <strong>Analytics Tier</strong> customers.</p>
+  <p> </p>
+  <p>In the Solution Report configuration, we have added a new filter property —a &quot;date range&quot;. The availability of the Date Range Filter will improve your data analysis and reporting with Solution Reports. This helps you customize your Reports by specifying start and end dates in the YYYY-MM-DDT00:00:00 format directly in the Report&#39;s JSON file. It is a simple and flexible way to customize your reports. The advantage of this feature is it allows you to filter out any data that is not relevant to the time period of interest.</p>
+  <p> </p>
+  <p>For example, if you wish to retrieve the data for only January 2023, you can set the date range as:</p>
+  <p><br/>
+    “date range”: [“2023-01-01T00:00:00”, “2023-01-31T23:59:59”]</p>
+  <p> </p>
+  <p>JSON Example:</p>
+  <p> </p>
+  <p><img height="290" src="../../assets/images/RN_2023/November Release SS/DateFilter.png" width="606"/></p>
+  <p> </p>
+  <p>Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Reports%2FSolution_Reports_in_PLEXOS_Cloud.htm">Solution Reports in PLEXOS Cloud</a>.<br/>
+     </p>
+  <h2 id="2two">Model Execution</h2>
+  <h3>View multiple Simulations at a time using the Simulation Monitoring Dashboard</h3>
+  <p><b>Note: </b>This change is applicable for both <strong>Simulate</strong> and <strong>Analytics Tier</strong> customers.</p>
+  <p> </p>
+  <p>The Simulation Monitoring Dashboard enables you to monitor real-time progress updates, including status, key metrics, and logs for ongoing Simulations. Access this feature through the Simulations page by double-clicking on the Status icon for any In Progress Simulation (other states are not clickable). The monitoring dashboard opens in a new tab, displaying the Model&#39;s name as tab label. You can now open 5 tabs simultaneously, with each tab displaying a different run’s Simulation content. The content of each dashboard displayed in a tab will remain dynamic, allowing you to view the latest update for each widget and each piece of information. If you aren’t happy with the output, you can cancel the Simulation. This feature empowers you to efficiently oversee various aspects of the Simulation without constantly switching between different views.</p>
+  <p> </p>
+  <p><img height="199" src="../../assets/images/RN_2023/November Release SS/SimMonDashboard.png" width="646"/></p>
+  <p> </p>
+  <p>Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Simulations%2FSimulation_Monitoring_Dashboard.htm">Simulation Monitoring Dashboard</a>.</p>
+  <p> </p>
+  <h3>Icons to help identify the associated Study Version for Models in Compare/Simulation Groups</h3>
+  <p> </p>
+  <p><b>NOTE:</b> This change is applicable only for <strong>Analytics Tier</strong> customers</p>
+  <p> </p>
+  <p>Icons to help a user easily identify if a Model in a Simulation Group is associated with the latest Study version are now available on the Compare and Simulation Groups pages. The goal behind incorporating icons into the Simulation Group is to provide clear differentiation between the latest and previous Study Versions.</p>
+  <p> </p>
+  <p><img height="295" src="../../assets/images/RN_2023/November Release SS/IconOnCompara.jpg" width="249"/></p>
+  <p> </p>
+  <p> </p>
+  <h2 id="3three">Model Building and Editing (Desktop Integration and Excel)</h2>
+  <p> </p>
+  <h3>Quick and easy configuration of Template and Schema using the new Template Builder in Excel Add-In</h3>
+  <p>The Template Builder feature enables users to interactively create or modify a Template, defining various Classes and Properties to be synchronized for editing/updating within the Excel workbook.<br/>
+    This feature offers a user-friendly interface for constructing or editing Templates, given the extensive range of Classes and Properties that can be edited in a PLEXOS Model. Users can browse Classes, and select their Properties, Categories, and Membership Classes to construct a Template that specifies the properties synchronized via the Excel Add-In. Utilizing the Template Editor enhances the process of finding and selecting the correct properties to include in a schema, eliminating the potential for manual data input errors that can occur when manually editing the Template. This saves time and minimizes errors for users creating Templates for themselves or sharing them with their team.</p>
+  <p> </p>
+  <p><img height="431" src="../../assets/images/Microsoft Excel Add-In/Template Editor homescreen.png" width="578"/></p>
+  <p> </p>
+  <p>Learn more about <a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Data%2FMicrosoft_Excel_Add-In.htm&amp;rhsearch=monte%20carlo&amp;ux=search">Template Builder Feature in Excel Add-In.</a></p>
+  <p> </p>
+  <p> </p>
+  <h2 id="4four">Integration and Automation - CLI/API</h2>
+  <h3>New CLI commands added for Executive Views</h3>
+  <p><b>NOTE: </b>This change is applicable only for<strong> Analytics Tier</strong> customers.</p>
+  <h4>a) Command to create and publish Executive Views</h4>
+  <p>Users can now create and publish Executive Views via the Command Line Interface (CLI). This improvement provides several benefits, such as the efficient publishing or automation of Views, making the sharing of critical reporting and data easier. It optimizes resources, streamlines the process, and reduces manual efforts.</p>
+  <p><br/>
+    Users can utilize the Command-Line Interface (CLI) to publish Views that incorporate Solution and BI Reports, by using the following CLI command:</p>
+  <p><strong><i>pxc solution view publish --file {filePath}</i></strong></p>
+  <p> </p>
+  <p><img height="136" src="../../assets/images/RN_2023/November Release SS/CLIViewpublish.png" width="626"/></p>
+  <p> </p>
+  <p>The above command includes path to a JSON file which contains View name, View Description, tenant ID and Study Id, etc. as shown in the image below -</p>
+  <p> </p>
+  <p><img height="222" src="../../assets/images/RN_2023/November Release SS/PublishView.png" width="666"/></p>
+  <p><strong>Definition of the Parameters used in the above shown JSON sample</strong>:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Name</strong>: This is the unique name of the View in the tenant</li>
+    <li><strong>Tenant ID</strong>: This is the company’s tenant Id  </li>
+    <li><strong>Study ID</strong>: This is the Study ID of the Study which is used for publishing the View.</li>
+    <li><strong>ShowCreatedBy</strong> : This is the flag to show or hide the name of the Analyst who created the View.</li>
+    <li><strong>ShowCreatedOn</strong>: This is the flag to show the date on which View is created. It should be ‘True’ always.</li>
+    <li><strong>DatasetID</strong>: This is the Solution ID </li>
+    <li><strong>BIReportDatasetId</strong>: This can be empty. Not required to pass any value in this parameter.</li>
+    <li><strong>DatasetType</strong>: This determines the type of the Dataset.  ‘0’ - Used for Solution, ‘1’ - Solution Comparision; Please use only ‘0’ as the value here, as we currently do not support any other values. </li>
+    <li><strong>Type</strong>: This is the type of report (BI or Solution Report) that you are publishing. ‘0’ is for BI Report and ‘1’ is for Solution Report.</li>
+    <li><strong>Model Name</strong>: Model Name is the Model on which this Solution was triggered.</li>
+    <li><strong>Original Report Name</strong>: Solution/BI Report name that you are using for publishing the View)<br/>
+       </li>
+  </ul>
+  <p> </p>
+  <p><b>Note:</b></p>
+  <p>Views that contain a Solution Report, cannot be created or edited in the PLEXOS Cloud user interface at this time. Creating and Editing Views with Solution Reports can only be done via the CLI. When an &#39;Analyst&#39; selects Edit/Save As from the Action Menu, a popup will appear, displaying the message: &quot;Unable to perform this action as this View contains Solution Reports. This functionality will be supported in a future release.&quot;</p>
+  <p> </p>
+  <p><img height="183" src="../../assets/images/RN_2023/November Release SS/ActionNotSupported.jpg" width="433"/></p>
+  <p> </p>
+  <p>Additionally, the ability to preview Views containing Solution Reports is currently not accessible. Clicking on the View name will display a message on the View page stating: &quot;Solution Reports can&#39;t be previewed.&quot; </p>
+  <p> </p>
+  <p><img height="193" src="../../assets/images/RN_2023/November Release SS/SolRePreview.jpg" width="515"/></p>
+  <p> </p>
+  <h4>b) Command to get the download details of a Solution Report </h4>
+  <p><br/>
+    By executing the following command, users can obtain details about the Solution Report    available for download. This information can then be used to retrieve Solution data and download the Report in .csv format.<br/>
+     <br/>
+    <strong><em>pxc solution view get-downloadable-report-details --viewId [ ]      </em></strong>
+  </p>
+  <p> </p>
+  <p><img height="225" src="../../assets/images/RN_2023/November Release SS/ViewDownload.png" width="659"/></p>
+  <p> </p>
+  <p><em></em></p>
+  <h4>c) Command to fetch the Solution/BI Report Details </h4>
+  <p> </p>
+  <p>This CLI command can be used to fetch the Solution or BI Report details of a View which then can be used to download the Report in .csv format.<br/>
+    This command will return ViewID, reportId, name of the View, datasetId and type of Report.</p>
+  <p> </p>
+  <p><em>pxc solution view get-report-data --outputDirectory {DirectoryName} --file {fileName} --reportId {reportId} --solutionId {solutionId} --viewId {viewId}</em></p>
+  <p> </p>
+  <p><em><img height="170" src="../../assets/images/RN_2023/November Release SS/CLIGetReport.png" width="707"/></em></p>
+  <p><br/>
+     </p>
+  <h2 id="5five">Additional Improvements and Bug Fixes</h2>
+  <p><span>We have continued to make improvements in  PLEXOS Cloud, with a focus on enhancing the user experience, stability, and performance.</span></p>
+  <p>In this release, CLI support has been added for creating or publishing Executive Views. User interface improvements have also been made for Executive Views. Furthermore, an issue with the Aggregator in the Map has been resolved.</p>
+  <h2 id="6six">Announcements</h2>
+  <h4>Cloud Bridge End of Support</h4>
+  <p><br/>
+    Starting January 2024, Energy Exemplar will no longer support Cloud Bridge. This means the end of technical support, security updates, and ensured compatibility of Cloud Bridge with new releases of PLEXOS Cloud and related products.<br/>
+    To facilitate a smooth transition, we encourage you to leverage the PLEXOS Cloud Toolkit (CLI) with the Desktop-To-Cloud Integration. This offers a seamless experience for users to build and edit their models on the PLEXOS desktop while running simulations and analyzing output in the PLEXOS Cloud.<br/>
+     <br/>
+    Click to learn more about the<a href="https://portal.energyexemplar.com/unified-help/plexos-cloud/#t=Cloud_Integration_with_PLEXOS_Desktop%2FPLEXOS_Cloud_Integration_with_PLEXOS_Desktop.htm&amp;rhsearch=parquet"> PLEXOS Desktop to Cloud Integration</a>.<br/>
+     </p>
+  <h2 id="7seven">Known Issues</h2>
+  <ul class="Disc">
+    <li><strong>Output to Input Group Changes</strong>: If the previous output of the same Model is selected as input, the Simulation will run, but there is a possibility that the output may not be generated.</li>
+  </ul>
+  <p> </p>
+  <ul class="Disc">
+    <li><b>Map Layout Query</b>: The query which you save in the Map layout doesn&#39;t saves the time-period settings properly. </li>
+  </ul>
+  <p> </p>
+
+</body></html>
