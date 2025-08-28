@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>Acceptable Use Policy</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <h1>Acceptable Use Policy</h1>
+  <p><strong>Table of Contents</strong></p>
+  <p> </p>
+  <ul class="Disc">
+    <li><a href="#1">Introduction</a></li>
+    <li><a href="#2">Purpose</a></li>
+    <li><a href="#3">Scope</a></li>
+    <li><a href="#4">License Management and User Authentication</a></li>
+    <li><a href="#5">Hardware Specifications and Computational Resources</a></li>
+    <li><a href="#6">Virtualization and Cloud Computing Environments</a></li>
+    <li><a href="#7">Modules and Component Licensing</a></li>
+    <li><a href="#8">Resource Usage</a></li>
+    <li><a href="#9">Content Guidelines</a></li>
+    <li><a href="#10">Security</a></li>
+    <li><a href="#11">Service Integrity</a></li>
+    <li><a href="#12">Compliance and Enforcement</a></li>
+    <li><a href="#13">Scalability and License Optimization</a></li>
+    <li><a href="#14">Best Practices for Deployment</a></li>
+    <li><a href="#15">Contract End</a></li>
+    <li><a href="#16">Policy Updates and Communication</a></li>
+    <li><a href="#17">Acknowledgment</a></li>
+  </ul>
+  <p> </p>
+  <h2 id="1">Introduction</h2>
+  <p>At Energy Exemplar, we are committed to delivering best-in-class energy market simulation and analysis tools, while strictly adhering to industry best practices in software licensing and usage. </p>
+  <p><br />
+    Our Acceptable Use Policy is designed to ensure equitable access to our products, maintain the integrity of our licensing model, and support sustainable business practices in the energy modeling sector.</p>
+  <hr />
+  <h2 id="2">Purpose</h2>
+  <p>This Acceptable Use Policy outlines the appropriate use of Energy Exemplar’s software-as-a-service (SaaS) platform and associated products (PLEXOS, Aurora, Adapt2, and  Datasets). It is designed to ensure a high-quality experience for all users, protect Energy Exemplar’s customers&#39; systems from misuse, and maintain integrity and compliance within Energy Exemplar’s licensing model.</p>
+  <hr />
+  <h2 id="3">Scope</h2>
+  <p>This policy applies to all users of Energy Exemplar products, including customers, their employees, and any third parties granted access.</p>
+  <hr />
+  <h2 id="4">License Management and User Authentication</h2>
+  <p>Energy Exemplar assigns licenses to specific users or entities, requires authentication of  those users to ensure only authorized individuals can access the software, and enforces compliance with the terms of the license agreement.</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Each named user license is assigned to a single person (named user).</li>
+    <li>Sharing login credentials or user accounts is strictly prohibited and may result in immediate license suspension. A license “cooling period” may be defined for some license types to prevent license sharing. </li>
+    <li>For enterprise server installations, each user must have a valid individual license. </li>
+    <li>If deemed necessary, license audits will be conducted using industry-standard software asset management tools.</li>
+  </ul>
+  <hr />
+  <h2 id="5">Hardware Specifications and Computational Resources</h2>
+  <p>There are technical requirements and limitations associated with hardware (such as computers or servers) that runs Energy Exemplar software, as well as the computational power (e.g., logical processors available to the machine, commonly referred to as “cores” ) that can be used for simulations or other tasks.</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Unless specified otherwise in the contract, Named User desktop licenses are provided for standard workstations with up to 8 logical processors.</li>
+    <li>If a workstation with more than 8 logical processors is used, additional Core licenses must be procured to maintain compliance.</li>
+    <li>Core licenses are required to be assigned to every logical processor on the infrastructure where Energy Exemplar software (PLEXOS /Aurora) is deployed. Scaling infrastructure with additional cores temporarily will require additional licenses for compliance.</li>
+  </ul>
+  <p><br />
+    Any parallel processing or distributed computing should be set out explicitly in the License Agreement. </p>
+  <hr />
+  <h2 id="6">Virtualization and Cloud Computing Environments </h2>
+  <p>There are also requirements surrounding the deployment and use of software in virtualized settings, such as virtual machines (VMs), and in cloud-based infrastructures, where computing resources are delivered over the internet.</p>
+  <p><br />
+    <strong><strong><strong>➤ </strong></strong>Deployment in virtual machine (VM) environments is permitted, provided that: </strong>
+  </p>
+  <p> </p>
+  <ul class="Disc">
+    <li>The total number of logical processors (virtual cores) with access to Energy Exemplar software across all VMs does not exceed the licensed core count. </li>
+    <li>VM replication or cloning is not used to artificially increase available computational resources. </li>
+    <li>Temporary scaling of resources on VMs requires additional licenses to be purchased prior to use to remain compliant. The maximum number of core licenses necessary must align with the maximum number of infrastructure cores deployed during the Simulation.</li>
+  </ul>
+  <p><br />
+    <strong><strong><strong>➤ </strong></strong>For Cloud-based Installations: </strong>
+  </p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Customers must ensure that the aggregate core count across all cloud instances remains within license limits at all times. </li>
+    <li>Auto-scaling features must be configured to respect licensed core limitations. Usage of containerization technologies (e.g., Docker) must comply with core count restrictions.</li>
+    <li>Temporary scaling of resources on the cloud requires that additional licenses be purchased prior to usage in order to remain compliant. The maximum number of core licenses necessary must align with the maximum number of infrastructure cores deployed during simulation.</li>
+  </ul>
+  <hr />
+  <h2 id="7">Modules and Component Licensing</h2>
+  <p>Specific licensing agreements govern access and use of individual software modules and components within a larger software platform. Each module or component may have distinct licensing terms that define how and by whom it can be used.</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Access to specific modules is strictly controlled by module-specific licensing.</li>
+    <li>Usage of any component or feature is subject to the specific terms of the customer&#39;s license agreement. </li>
+    <li>Customers are required to maintain accurate records of module usage and report any changes in utilization that may affect licensing requirements.</li>
+  </ul>
+  <hr />
+  <h2 id="8">Resource Usage </h2>
+  <ul class="Disc">
+    <li>Users must not exceed reasonable usage limits for their subscription tier. </li>
+    <li>We reserve the right to limit excessive API calls or data transfers. Any API use shall be in accordance with EE’s established policies and procedures as conveyed to the customer.</li>
+  </ul>
+  <hr />
+  <h2 id="9">Content Guidelines</h2>
+  <ul class="Disc">
+    <li>Users must not upload, store, or transmit any illegal, harmful, or offensive content.</li>
+    <li>All uploaded content must respect intellectual property rights.</li>
+  </ul>
+  <hr />
+  <h2 id="10">Security </h2>
+  <ul class="Disc">
+    <li>Users are responsible for maintaining the security of their account credentials. </li>
+    <li>Any suspected security breaches must be reported to Energy Exemplar immediately.</li>
+  </ul>
+  <hr />
+  <h2 id="11">Service Integrity </h2>
+  <ul class="Disc">
+    <li>Users must not attempt to disrupt or degrade the service for others.</li>
+    <li>Reverse engineering or attempting to circumvent any part of the system is prohibited.</li>
+    <li>Security penetration testing cannot be conducted on Energy Exemplar production environments without prior approval.</li>
+  </ul>
+  <hr />
+  <h2 id="12">Compliance and Enforcement</h2>
+  <p>We employ industry-leading software license compliance tools to monitor and enforce this policy. </p>
+  <p> </p>
+  <p><strong><strong><strong>➤ </strong></strong>Regular compliance checks will be conducted, including but not limited to:</strong></p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Automated usage reporting </li>
+    <li>Remote license validation</li>
+    <li>On-premises audits (with reasonable notice) for enterprise customers</li>
+  </ul>
+  <p> </p>
+  <p><strong><strong><strong>➤ </strong></strong>Violations of this policy may result in:</strong></p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Temporary suspension of service</li>
+    <li>Retroactive billing for excess usage</li>
+    <li>Termination of the license agreement in severe or repeated cases</li>
+  </ul>
+  <hr />
+  <h2 id="13">Scalability and License Optimization</h2>
+  <ul class="Disc">
+    <li>Our account management team is available to conduct regular license optimization reviews. </li>
+    <li>Customers are encouraged to participate in our annual usage assessment program to identify potential cost savings or performance improvements.</li>
+  </ul>
+  <hr />
+  <h2 id="14">Best Practices for Deployment </h2>
+  <p>Energy Exemplar prescribes certain essential guidelines and strategies to ensure a smooth and effective deployment process. Adherence to these best practices will help minimize disruptions, ensure system stability, and enhance overall project success.</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Implement a formal internal license management process. </li>
+    <li>Regularly review and optimize workflows to ensure efficient resource utilization. </li>
+    <li>Utilize provided license monitoring tools to track usage patterns and identify potential issues proactively. </li>
+    <li>Engage with our training programs to ensure effective and compliant use of features.</li>
+  </ul>
+  <hr />
+  <h2 id="15">Contract End</h2>
+  <p>At the end of any contract term (whether due to termination or expiry) any product or component that is not renewed should be uninstalled from all customer devices and all datasets and copies of them should be deleted. The Energy Exemplar support team can <br />
+    assist with any questions in this area.</p>
+  <hr />
+  <h2 id="16">Policy Updates and Communication </h2>
+  <ul class="Disc">
+    <li>This policy will undergo regular reviews and will be updated as needed.</li>
+    <li>Any changes to this policy will be communicated to all customers through our dedicated software governance portal with at least 30 days’ notice before they are implemented.</li>
+    <li>Customers are invited to share their feedback on this policy through our dedicated software governance portal.</li>
+  </ul>
+  <hr />
+  <h2 id="17">Acknowledgment</h2>
+  <p>By using our SaaS platform and products, you acknowledge and agree to abide by these acceptable use guidelines. We reserve the right to interpret and enforce this policy in accordance with the spirit of fair use and industry best practices in software licensing.</p>
+  <p> </p>
+  <p> </p>
+</body>
+</html>
