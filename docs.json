@@ -1,12 +1,12 @@
 {
-  "name": "PLEXOS Cloud Docs",
-  "logo": "/assets/logo.svg",
-  "favicon": "/assets/favicon.ico",
-  "theme": {
-    "colors": {
-      "primary": "#1B5FFF"
-    }
-  },
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Mint Starter Kit",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
+  },,
   "topbarCtaButton": {
     "name": "Chat with Support",
     "url": "/Additional_Resources/Chat_with_Support"
