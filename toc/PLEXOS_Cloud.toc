@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map type="toc">
+<title>PLEXOS_Cloud</title>
+<book navtitle="Getting Started" href="../contents/Getting_Started/Getting_Started_Using_PLEXOS_Cloud.htm" format="html" processing-role="normal">
+  <book navtitle="Configuration" format="html" processing-role="normal">
+    <page href="../contents/Getting_Started/Configuration/SAML_2.0_Integration.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Getting_Started/Configuration/Okta_Integration_for_SAML_2.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Getting_Started/Configuration/How_to_Configure_Azure_IdP.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="PLEXOS Cloud Licensing Options" format="html" processing-role="normal">
+    <page href="../contents/Getting_Started/PLEXOS_Cloud_Licensing_Options/Analytics_Bundle.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Getting_Started/PLEXOS_Cloud_Licensing_Options/Simulate_and_Analytics_Bundle_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+  </book>
+  <page href="../contents/Getting_Started/Getting_Started_Using_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Getting_Started/Mapping_Cloud_to_Desktop_Terminology.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Getting_Started/Minimum_System_Requirements.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Getting_Started/PLEXOS_Cloud_Workspace.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Getting_Started/Preferences_Page.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="CLI" format="html" processing-role="normal">
+  <page href="../contents/CLI/CLI_Toolkit.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/CLI/Parquet_V2_Overview.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/CLI/PLEXOS_Cloud_Python_SDK.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/CLI/CLI_Automation_document.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Cloud Integration with PLEXOS Desktop" format="html" processing-role="normal">
+  <page href="../contents/Cloud_Integration_with_PLEXOS_Desktop/PLEXOS_Cloud_Integration_with_PLEXOS_Desktop.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Marketplace" href="../contents/Marketplace/Marketplace_Overview.htm" format="html" processing-role="normal">
+  <page href="../contents/Marketplace/PLEXOS_Cloud_Marketplace.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Marketplace/Publishing_Playbooks_to_the_Marketplace.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Marketplace/Publishing_Reports_to_the_Marketplace.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Marketplace/Frequently_Asked_Questions.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Data" href="../contents/Data/Data_Overview.htm" format="html" processing-role="normal">
+  <book navtitle="Input Data Editor" format="html" processing-role="normal">
+    <page href="../contents/Data/Make_Changes_to_an_Input_Dataset.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="Setup Tab" format="html" processing-role="normal">
+    <page href="../contents/Data/Geocoding_Object_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Data/Understanding_the_Setup_Tab.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Data/Editing_Polygons_and_Components.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Solutions/Custom_Icons_with_Maps.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Data/Downloading_and_Uploading_Geocodes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Data/Map_Settings.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="Versions Tab" format="html" processing-role="normal">
+    <page href="../contents/Data/Version__Management_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Data/Managing_Study_Version_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+  </book>
+  <page href="../contents/Data/Viewing_the_Chart_Analysis_Dashboard.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Data/Microsoft_Excel_Add-In.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Models" href="../contents/Models/Models_overview.htm" format="html" processing-role="normal">
+  <page navtitle="Run Configuration Panel" href="../contents/Models/Run_Configuration_Panel.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Data/Geocoding_Object_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Models/Object_Editing_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Models/Distributed_(Monte_Carlo_Chronological_Split_Execution)_Runs.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Simulations" href="../contents/Simulations/Simulations_Overview.htm" format="html" processing-role="normal">
+  <page href="../contents/Simulations/Credit_Calculation_Method.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Simulations/Credit_Refund_Policy.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Simulations/Simulation_Management.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Simulations/Simulation_Monitoring_Dashboard.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Simulations/Simulation_Groups.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Simulations/Manage_Study_Level_Simulation_Preferences.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Simulations/Pre-_and_Post-Simulation_Tasks.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Simulation Analytics" format="html" processing-role="normal">
+  <page href="../contents/Simulation_Analytics/Simulation_Analytics.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="PLEXOS Intelligence" href="../contents/PLEXOS_Intelligence/Plexos_Intelligence_Overview.htm" format="html" processing-role="normal">
+  <page href="../contents/PLEXOS_Intelligence/PLEXOS_Intelligence.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/PLEXOS_Intelligence/Example_Prompts_for_PLEXOS_Intelligence.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/PLEXOS_Intelligence/PLEXOS_Intelligence_AI_Policy.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Solutions" href="../contents/Solutions/Solutions_Overview.htm" format="html" processing-role="normal">
+  <book navtitle="Dashboard" format="html" processing-role="normal">
+    <page href="../contents/Solutions/Dashboard_in_PLEXOS_Cloud_[Beta].htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Solutions/Best_Practices_for_Using_the_Dashboard_Feature.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Solutions/Frequently_Asked_Questions.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="Map Tab" format="html" processing-role="normal">
+    <page href="../contents/Solutions/Congestion_Analysis_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Solutions/Enabling_Pivot_View.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Solutions/Custom_Icons_with_Maps.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Solutions/Using_Maps.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="Grid Tab" format="html" processing-role="normal">
+    <page href="../contents/Data/Output_Data_Grid_Page.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="Nodal Analysis Tab" format="html" processing-role="normal">
+    <page href="../contents/Solutions/Nodal_Analysis_Tab/Understanding_the_Nodal_Analysis_Tab.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Solutions/Nodal_Analysis_Tab/Understanding_Congestion_and_Analysis_Concepts.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="Reports Tab" format="html" processing-role="normal">
+    <page href="../contents/Reports/Solution_Reports_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Reports/Analyze_Monthly_PLEXOS_Cloud_Usage.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Reports/Integrated_Resource_Planning_(IRP).htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="BI Analytics Tab" format="html" processing-role="normal">
+    <page href="../contents/Reports/How_BI_Analytics_Dashboard_Enhances_the_Reporting_Experience.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Reports/Support_For_Secondary_Y_axis_in_BI.htm" format="html" processing-role="normal"></page>
+  </book>
+  <page href="../contents/Solutions/Overview__to_the_Enhanced_Solutions_Pane.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Comparison" format="html" processing-role="normal">
+  <page href="../contents/Solutions/Solution_Comparison_in_Data_Grid.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Reports/BI_Solution_Comparison.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Reports" format="html" processing-role="normal">
+  <page href="../contents/Reports/Executive_View_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Troubleshooting" href="../contents/Troubleshooting/Troubleshooting_Overview.htm" format="html" processing-role="normal">
+  <page href="../contents/Troubleshooting/Understanding_Errors_in_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Troubleshooting/Proxy_Settings_for_PLEXOS_Cloud.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Troubleshooting/PLEXOS_Cloud_Workspace_Session_Not_Working.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Troubleshooting/Troubleshooting_Help_Menu_Issues.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Troubleshooting/Unzipping_Files_in_PLEXOS_Cloud_Workspace.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Troubleshooting/Cloud_Connectivity_and_Performance_Testing.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Troubleshooting/Locale_Error_When_Running_a_Simulation.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Troubleshooting/Issue_with_Compressing_Files.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Troubleshooting/Troubleshooting_PLEXOS_Cloud_Issues.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Admin" href="../contents/Admin/Admin.htm" format="html" processing-role="normal">
+  <page href="../contents/Admin/Central_License_Manager_Efficient_Synchronization_of_Licenses_and_Accounts.htm" format="html" processing-role="normal"></page>
+  <page navtitle="Central License Manager (CLM)" href="../contents/Admin/Central_License_Manager_(CLM).htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Admin/Enabling_PLEXOS_Cloud_Excel_Add-In_from_the_Microsoft_Marketplace.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Admin/Turning_on_Cloud_Burst.htm" format="html" processing-role="normal"></page>
+  <page navtitle="Updating Your Password" href="../contents/Admin/Update_Your_Password.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Admin/Managing_Storage.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Admin/Tenant_Preferences_Page.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Admin/Study_Level_Permission.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Admin/User_Management.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Datahub" format="html" processing-role="normal">
+  <page href="../contents/Datahub/Datahub_Overview.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Datahub/Using_Datahub_Via_the_User_Interface.htm" format="html" processing-role="normal"></page>
+</book>
+<book navtitle="Release Notes" format="html" processing-role="normal">
+  <page href="../contents/Release_Notes/PLEXOS_Cloud_Release_Notes.htm" format="html" processing-role="normal"></page>
+  <book navtitle="2025" format="html" processing-role="normal">
+    <page href="../contents/Release_Notes/2025_Release_Notes/August_2025_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2025_Release_Notes/July_2025_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2025_Release_Notes/June_2025_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2025_Release_Notes/May_2025_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2025_Release_Notes/April_2025_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2025_Release_Notes/March_2025_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2025_Release_Notes/February_2025_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2025_Release_Notes/January_2025_Release_Notes.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="2024" format="html" processing-role="normal">
+    <page href="../contents/Release_Notes/2024_Release_Notes/December_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/November_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/October_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/September_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/August_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/July_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/June_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/May_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/April_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/March_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/February_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/Release_Notes/2024_Release_Notes/January_2024_Release_Notes.htm" format="html" processing-role="normal"></page>
+  </book>
+</book>
+<book navtitle="Additional Resources" format="html" processing-role="normal">
+  <page href="../contents/Additional_Resources/Acceptable_Use_Policy.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Additional_Resources/Chat_with_Support.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Additional_Resources/Xpert.htm" format="html" processing-role="normal"></page>
+  <page href="../contents/Additional_Resources/Feedback.htm" format="html" processing-role="normal"></page>
+</book>
+</map>
